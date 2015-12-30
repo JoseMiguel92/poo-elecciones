@@ -16,8 +16,8 @@ public class Simpatizante extends Votantes{
     }
 //Metodos Publicos
     @Override
-    public void  enviarEncuesta() {
-        encuesta=pregSimp.clone(); 
+    public String toString(){
+        return super.toString();
     }
     //Metodos Privados
 

@@ -33,16 +33,15 @@ public class Militante extends Votantes{
         this.carnet = carnet;
     }
 //Metodos Publicos
-    @Override
-    public void enviarEncuesta() {
-        encuesta=pregMil.clone(); 
-    }
+    //Enviar encuesta lo movemos a partidos
    
 //Metodos Privados
 
     @Override
     public String toString() {
-        return "Militante{" + nombreApellidos + ", cuota= " + cuota + "€" +", carnet= " + carnet + '}';
+        return super.toString()+
+                "\nNumero Carnet: "+this.carnet+
+                "\nCuota: "+this.cuota;
     }
 
 
