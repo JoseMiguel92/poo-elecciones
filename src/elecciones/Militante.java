@@ -11,7 +11,7 @@ public class Militante extends Votantes{
     protected String carnet;
     
 //Contructores
-    public Militante(double cuota, String carnet, String nombreApellidos, int edad, String profesion, char genero, String siglasPartido) {
+    public Militante(int edad, String profesion, char genero, String siglasPartido,double cuota, String carnet, String nombreApellidos) {
         super(nombreApellidos, edad, profesion, genero, siglasPartido);
         this.cuota = cuota;
         this.carnet = carnet;
