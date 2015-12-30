@@ -24,7 +24,8 @@ public class Coalicion extends FormacionPolitica{
 //Metodos Publicos
     @Override
     public Lista elaborarListas(Eleccion eleccion){
-    
+        Lista lista = null;
+        return lista;
     }
     
     @Override
