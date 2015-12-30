@@ -23,10 +23,6 @@ public class Coalicion extends FormacionPolitica{
     }
     
 //Metodos Publicos
-    @Override
-    public ArrayList elaborarListas(){
-        return super.elaborarListas();
-    };
     
     @Override
     public String toString(){

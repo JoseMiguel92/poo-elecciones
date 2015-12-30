@@ -28,5 +28,7 @@ public class Elecciones implements Serializable{
         System.out.println(podemos.toString());
         
         
+        PartidoPolitico psoe = new PartidoPolitico("Partido Socialista","PSOE","psoe.es");
+        
     };
 };

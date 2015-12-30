@@ -13,6 +13,8 @@ public class FormacionPolitica {
     protected String nombre;
     protected String siglas;
     protected String logo;
+    protected Lista militantes; 
+    protected ArrayList<Votantes> votantes;
 //Contructores
     public FormacionPolitica(String nombre, String siglas, String logo) {
         this.nombre = nombre;
@@ -39,13 +41,20 @@ public class FormacionPolitica {
     public void setLogo(String logo) {
         this.logo = logo;
     }
+    public Lista getMilitantes(){
+        return this.militantes;
+    }
+    public void setMilitantes(Lista milis){
+        this.militantes=milis;
+    }
+    public ArrayList<Votantes> getVotantes(){
+        return this.votantes;
+    }
+    public void setVotantes(ArrayList<Votantes> vots){
+        this.votantes=vots;
+    }
 //Metodos Publicos
-  //public ArrayList elaborarListas(ArrayList m1, int escaños){
-    public ArrayList elaborarListas(){
-            
-        return new ArrayList();
-    };
-    
+
     @Override
     public String toString(){
         return "Nombre formación: " +nombre+
