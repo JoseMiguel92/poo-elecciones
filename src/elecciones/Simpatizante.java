@@ -6,7 +6,7 @@ package elecciones;
  */
 
 public class Simpatizante extends Votantes{
-    String[] pregSimp = {"Pregunta Simpatizante 1", "Pregunta Simpatizante 2", "Pregunta Simpatizante 3"};
+    
 //Contructores
     public Simpatizante(String nombreApellido, int edad, String profesion, char genero, String siglasPartido) {
         super(nombreApellido, edad, profesion, genero, siglasPartido);
@@ -18,6 +18,10 @@ public class Simpatizante extends Votantes{
     @Override
     public String toString(){
         return super.toString();
+    }
+    
+    public void enviarEncuesta(String[] enc1){
+        this.setEncuesta(enc1);
     }
     //Metodos Privados
 
