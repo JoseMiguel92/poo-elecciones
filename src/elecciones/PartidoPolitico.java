@@ -19,6 +19,12 @@ public class PartidoPolitico extends FormacionPolitica {
     }
 
 //Metodos Publicos
+    @Override
+    public Lista elaborarListas(Eleccion eleccion){
+        Lista lista = null;
+        return lista;
+    }
+    
     public void cargarListas(){
     
     };
@@ -40,15 +46,6 @@ public class PartidoPolitico extends FormacionPolitica {
             }
         }
     };
-
-    public ArrayList<Votantes> getTodos_votantes() {
-        return votantes;
-    }
-
-    public void setTodos_votantes(ArrayList<Votantes> todos_votantes) {
-        this.votantes = todos_votantes;
-    }
-    
     
 //Metodos Privados
 

@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * @autor Daniel Oliver
  */
 public class Coalicion extends FormacionPolitica{
-    private ArrayList<PartidoPolitico> coalicion_partidos;
+    private ArrayList<PartidoPolitico> partidosCoalicion;
 
     
 //Contructores
@@ -15,21 +15,24 @@ public class Coalicion extends FormacionPolitica{
     }
 //GETs y SETs
     public ArrayList<PartidoPolitico> getCoalicion_partidos() {
-        return coalicion_partidos;
+        return partidosCoalicion;
     }
-
     public void setCoalicion_partidos(ArrayList<PartidoPolitico> coalicion_partidos) {
-        this.coalicion_partidos = coalicion_partidos;
+        this.partidosCoalicion = coalicion_partidos;
     }
     
 //Metodos Publicos
+    @Override
+    public Lista elaborarListas(Eleccion eleccion){
+    
+    }
     
     @Override
     public String toString(){
         
         // Lista de todos los partidos que forman la coalición
         StringBuilder partidos = new StringBuilder();
-        for (PartidoPolitico p : coalicion_partidos){
+        for (PartidoPolitico p : partidosCoalicion){
             partidos.append(p.getNombre());
             partidos.append(";");
         }

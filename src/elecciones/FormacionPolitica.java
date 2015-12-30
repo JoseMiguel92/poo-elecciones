@@ -54,6 +54,10 @@ public class FormacionPolitica {
         this.votantes=vots;
     }
 //Metodos Publicos
+    public Lista elaborarListas(Eleccion eleccion){
+        Lista lista = null;
+        return lista;
+    };
 
     @Override
     public String toString(){
