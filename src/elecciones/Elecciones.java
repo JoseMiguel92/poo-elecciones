@@ -17,7 +17,7 @@ public class Elecciones implements Serializable{
     public static void main(String[] args) throws IOException {
         PartidoPolitico podemos = new PartidoPolitico("Podemos", "PDM", "URLlogo");
         
-        Militante pepito1 = new Militante(10.5,"Numero Socio:1","Pepito",30,"profesor",'m',"URJC");
+        Militante pepito1 = new Militante("Pepito",30,"profesor",'m',"URJC",10.5,"Numero Socio:1");
         
         Simpatizante pepito2 = new Simpatizante("Pepito",30,"profesor",'m',"URJC");
         

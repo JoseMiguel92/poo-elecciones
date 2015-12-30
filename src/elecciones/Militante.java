@@ -9,9 +9,9 @@ public class Militante extends Votantes{
 //Atributos
     protected double cuota;
     protected String carnet;
-    String[] pregMil = {"Pregunta Militante 1", "Pregunta Militante 2", "Pregunta Militante 3"};
+    
 //Contructores
-    public Militante(double cuota, String carnet, String nombreApellidos, int edad, String profesion, char genero, String siglasPartido) {
+    public Militante(String nombreApellidos, int edad, String profesion, char genero, String siglasPartido,double cuota, String carnet) {
         super(nombreApellidos, edad, profesion, genero, siglasPartido);
         this.cuota = cuota;
         this.carnet = carnet;
@@ -33,7 +33,11 @@ public class Militante extends Votantes{
         this.carnet = carnet;
     }
 //Metodos Publicos
-    //Enviar encuesta lo movemos a partidos
+    
+    @Override
+    public void enviarEncuesta(String[] enc1){
+        this.setEncuesta(enc1);
+    }
    
 //Metodos Privados
 
