@@ -13,17 +13,17 @@ import java.util.ArrayList;
 public class Lista {
 //Atributos
     private String descripcion;
-    private ArrayList<Militante> lista_militantes;
+    private ArrayList<Militante> candidatos;
 
     
 //Contructores
     //Crear lista vacia (evitamos NULLPOINTEREXCEPTION)
     public Lista(){
-        this.lista_militantes = new ArrayList<Militante>();
+        this.candidatos = new ArrayList<Militante>();
     }
     // Crear lista a partir de ArrayList
     public Lista(ArrayList<Militante> lista){
-        this.lista_militantes = lista;
+        this.candidatos = lista;
     }
     // Crear lista a partir de un fichero de texto dado su nombre.
     public Lista(String nombreArchivo) throws IOException{
@@ -36,11 +36,11 @@ public class Lista {
     }
     
     public ArrayList<Militante> getLista_militantes() {
-        return lista_militantes;
+        return candidatos;
     }
 //Metodos Publicos
     public void add(Militante mil) {
-        this.lista_militantes.add(mil);
+        this.candidatos.add(mil);
     }
 //Metodos Privados
 }
