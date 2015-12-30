@@ -84,8 +84,8 @@ public abstract class Votantes {
     public String toString() {
         return "Nombre y Apellidos:" + nombreApellidos + 
                 "\nEdad: " + edad + 
-                "\nProfesion: " + profesion + 
                 "\nGenero: " + genero + 
+                "\nProfesion: " + profesion +                 
                 "\nSiglas Partido: " + siglasPartido;
     }
        
