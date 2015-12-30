@@ -69,17 +69,16 @@ public abstract class Votantes {
     public abstract void enviarEncuesta(String[] encuesta);
     // metodo abstracto implementado en cada Hijo
     
-/**    public String[] enviarEncuesta(){
-        String[] pregMil = {"pregunta1", "pregunta2", "pregunta3"};
-        String[] pregSimp = {"pregunta1", "pregunta2", "pregunta3"};
-        if (this instanceof Simpatizante) {
-            return encuesta=pregSimp.clone();
-        } else {
-            return encuesta=pregMil.clone();
-        }
-    };
-    */
-    
+//    public String[] enviarEncuesta(){
+//        String[] pregMil = {"pregunta1", "pregunta2", "pregunta3"};
+//        String[] pregSimp = {"pregunta1", "pregunta2", "pregunta3"};
+//        if (this instanceof Simpatizante) {
+//            return encuesta=pregSimp.clone();
+//        } else {
+//            return encuesta=pregMil.clone();
+//        }
+//    };
+
     @Override
     public String toString() {
         return "Nombre y Apellidos:" + nombreApellidos + 
