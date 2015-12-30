@@ -66,6 +66,8 @@ public abstract class Votantes {
     }
 
 //Metodos Publicos
+    public abstract void enviarEncuesta(String[] encuesta);
+    
 /**    public String[] enviarEncuesta(){
         String[] pregMil = {"pregunta1", "pregunta2", "pregunta3"};
         String[] pregSimp = {"pregunta1", "pregunta2", "pregunta3"};
@@ -85,10 +87,7 @@ public abstract class Votantes {
                 "\nGenero: " + genero + 
                 "\nSiglas Partido: " + siglasPartido;
     }
-    
-    public void hacerEncuesta(String encuesta){
-        //"Rellena encuesta" o hace lo que le da la gana con ella
-    }
+       
 //Metodos Privados
 
 
