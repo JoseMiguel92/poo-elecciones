@@ -17,6 +17,10 @@ public class Lista {
 
     
 //Contructores
+    //Crear lista vacia (evitamos NULLPOINTEREXCEPTION)
+    public Lista(){
+        this.lista_militantes = new ArrayList<Militante>();
+    }
     // Crear lista a partir de ArrayList
     public Lista(ArrayList<Militante> lista){
         this.lista_militantes = lista;
@@ -35,6 +39,8 @@ public class Lista {
         return lista_militantes;
     }
 //Metodos Publicos
-
+    public void add(Militante mil) {
+        this.lista_militantes.add(mil);
+    }
 //Metodos Privados
 }
