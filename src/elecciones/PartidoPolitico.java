@@ -27,7 +27,8 @@ public class PartidoPolitico extends FormacionPolitica {
 
     @Override
     public String toString() {
-        return "PartidoPolitico{" + todos_votantes + '}';
+        return "Nombre Partido: "+nombre+
+                "Siglas Partido: "+siglas;
     }
 
     @Override

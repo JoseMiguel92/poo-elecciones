@@ -45,6 +45,13 @@ public class FormacionPolitica {
             
         return new ArrayList();
     };
+    
+    @Override
+    public String toString(){
+        return "Nombre formación: " +nombre+
+                "\nSiglas: " +siglas;
+    }
+    
 //Metodos Privados
 
 }

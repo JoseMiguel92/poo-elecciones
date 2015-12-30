@@ -27,6 +27,20 @@ public class Coalicion extends FormacionPolitica{
     public ArrayList elaborarListas(){
         return super.elaborarListas();
     };
+    
+    @Override
+    public String toString(){
+        
+        // Lista de todos los partidos que forman la coalición
+        StringBuilder partidos = new StringBuilder();
+        for (PartidoPolitico p : coalicion_partidos){
+            partidos.append(p.getNombre());
+            partidos.append(";");
+        }
+        return "Nombre coalición: " +nombre+
+                "\nSiglas: " +siglas+
+                "\nFormada por los partidos: "+partidos;
+    }
 //Metodos Privados
 
 }
