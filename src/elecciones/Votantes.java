@@ -67,6 +67,7 @@ public abstract class Votantes {
 
 //Metodos Publicos
     public abstract void enviarEncuesta(String[] encuesta);
+    // metodo abstracto implementado en cada Hijo
     
 /**    public String[] enviarEncuesta(){
         String[] pregMil = {"pregunta1", "pregunta2", "pregunta3"};
