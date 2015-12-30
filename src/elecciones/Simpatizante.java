@@ -20,6 +20,7 @@ public class Simpatizante extends Votantes{
         return super.toString();
     }
     
+    @Override
     public void enviarEncuesta(String[] enc1){
         this.setEncuesta(enc1);
     }
