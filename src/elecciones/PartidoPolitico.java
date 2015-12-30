@@ -14,7 +14,7 @@ public class PartidoPolitico extends FormacionPolitica {
 //Contructores
     public PartidoPolitico(String nombre, String siglas, String logo) {
         super(nombre, siglas, logo);
-        militantes = new Lista();
+        candidatos = new Lista();
         votantes = new ArrayList<Votantes>();
     }
 

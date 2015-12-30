@@ -41,11 +41,11 @@ public class FormacionPolitica {
     public void setLogo(String logo) {
         this.logo = logo;
     }
-    public Lista getMilitantes(){
-        return this.militantes;
+    public Lista getCandidatos(){
+        return this.candidatos;
     }
-    public void setMilitantes(Lista milis){
-        this.militantes=milis;
+    public void setCandidatos(Lista milis){
+        this.candidatos=milis;
     }
     public ArrayList<Votantes> getVotantes(){
         return this.votantes;
