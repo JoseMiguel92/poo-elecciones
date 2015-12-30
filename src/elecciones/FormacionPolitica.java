@@ -13,7 +13,7 @@ public class FormacionPolitica {
     protected String nombre;
     protected String siglas;
     protected String logo;
-    protected Lista militantes; 
+    protected Lista candidatos; 
     protected ArrayList<Votantes> votantes;
 //Contructores
     public FormacionPolitica(String nombre, String siglas, String logo) {
