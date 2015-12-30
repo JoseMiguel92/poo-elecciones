@@ -34,6 +34,7 @@ public class Militante extends Votantes{
     }
 //Metodos Publicos
     
+    @Override
     public void enviarEncuesta(String[] enc1){
         this.setEncuesta(enc1);
     }
