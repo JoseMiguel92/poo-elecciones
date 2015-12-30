@@ -33,11 +33,6 @@ public abstract class Votantes {
     public void setNombreApellidos(String nombre) {
         this.nombreApellidos = nombre;
     }
-
-    @Override
-    public String toString() {
-        return "Votantes{" + "Nombre y Apellidos=" + nombreApellidos + ", edad=" + edad + ", profesion=" + profesion + ", genero=" + genero + ", siglasPartido=" + siglasPartido + ", encuesta=" + encuesta + '}';
-    }
     
     public int getEdad() {
         return edad;
@@ -81,7 +76,19 @@ public abstract class Votantes {
         }
     };
     */
-    public abstract void enviarEncuesta();
+    
+    @Override
+    public String toString() {
+        return "Nombre y Apellidos:" + nombreApellidos + 
+                "\nEdad: " + edad + 
+                "\nProfesion: " + profesion + 
+                "\nGenero: " + genero + 
+                "\nSiglas Partido: " + siglasPartido;
+    }
+    
+    public void hacerEncuesta(String encuesta){
+        //"Rellena encuesta" o hace lo que le da la gana con ella
+    }
 //Metodos Privados
 
 

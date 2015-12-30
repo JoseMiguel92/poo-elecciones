@@ -33,9 +33,13 @@ public class PartidoPolitico extends FormacionPolitica {
         return super.elaborarListas(); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void lanzarEncuestas(){
+    public void lanzarEncuestas(String encuestaMilitantes, String encuestaSimpatizantes){
         for (Votantes votante : todos_votantes) {
-            votante.enviarEncuesta();
+            if(votante instanceof Militante){
+                votante.hacerEncuesta(encuestaMilitantes);
+            } else if(votante instanceof Simpatizante){
+                votante.hacerEncuesta(encuestaSimpatizantes);
+            }
         }
     };
 
