@@ -1,4 +1,5 @@
 package elecciones;
+// prueba 02012016
 /**
  * @autor Raul Martin
  * @autor Jose Miguel Garcia
