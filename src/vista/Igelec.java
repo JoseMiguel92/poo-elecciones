@@ -29,17 +29,33 @@ public class Igelec extends javax.swing.JFrame {
     private void initComponents() {
 
         Cargar = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        TabPersonas = new javax.swing.JPanel();
+        InfoPersonas = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        añadirPersona = new javax.swing.JButton();
+        borrarPersona = new javax.swing.JButton();
+        importarPersona = new javax.swing.JButton();
+        exportarPersona = new javax.swing.JButton();
+        TabFP = new javax.swing.JPanel();
+        InfoFormacionesPoliticas = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        añadirPartido = new javax.swing.JButton();
+        añadirCoalicion = new javax.swing.JButton();
+        borrarFormacion = new javax.swing.JButton();
+        importarPartido = new javax.swing.JButton();
+        exportarPartido = new javax.swing.JButton();
+        TabCircun = new javax.swing.JPanel();
+        InfoCircunscripciones = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        añadirCircun = new javax.swing.JButton();
+        borrarCircun = new javax.swing.JButton();
+        importarCircun = new javax.swing.JButton();
+        exportarCircun = new javax.swing.JButton();
+        salidaTexto = new java.awt.TextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -50,80 +66,216 @@ public class Igelec extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        InfoPersonas.setViewportView(jTable3);
 
-        jTextField1.setText("jTextField1");
+        añadirPersona.setText("Añadir");
+        añadirPersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                añadirPersonaActionPerformed(evt);
+            }
+        });
 
-        jLabel1.setText("Nombre");
+        borrarPersona.setText("Eliminar seleccionados");
 
-        jButton1.setText("Añadir");
+        importarPersona.setText("Importar");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        exportarPersona.setText("Exportar");
+
+        javax.swing.GroupLayout TabPersonasLayout = new javax.swing.GroupLayout(TabPersonas);
+        TabPersonas.setLayout(TabPersonasLayout);
+        TabPersonasLayout.setHorizontalGroup(
+            TabPersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TabPersonasLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(101, 101, 101)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(InfoPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 705, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(TabPersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(borrarPersona)
+                    .addComponent(importarPersona)
+                    .addComponent(exportarPersona)
+                    .addComponent(añadirPersona))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        TabPersonasLayout.setVerticalGroup(
+            TabPersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TabPersonasLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(189, 189, 189))))
+                .addGroup(TabPersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TabPersonasLayout.createSequentialGroup()
+                        .addComponent(añadirPersona)
+                        .addGap(18, 18, 18)
+                        .addComponent(borrarPersona)
+                        .addGap(18, 18, 18)
+                        .addComponent(importarPersona)
+                        .addGap(18, 18, 18)
+                        .addComponent(exportarPersona))
+                    .addComponent(InfoPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        Cargar.addTab("Partido Politico", jPanel1);
+        Cargar.addTab("Personas", TabPersonas);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 861, Short.MAX_VALUE)
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        InfoFormacionesPoliticas.setViewportView(jTable2);
+
+        añadirPartido.setText("Añadir Partido Político");
+        añadirPartido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                añadirPartidoActionPerformed(evt);
+            }
+        });
+
+        añadirCoalicion.setText("Crear Coalición");
+
+        borrarFormacion.setText("Eliminar Seleccionados");
+
+        importarPartido.setText("Importar Partido");
+
+        exportarPartido.setText("Exportar Partido");
+
+        javax.swing.GroupLayout TabFPLayout = new javax.swing.GroupLayout(TabFP);
+        TabFP.setLayout(TabFPLayout);
+        TabFPLayout.setHorizontalGroup(
+            TabFPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TabFPLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(InfoFormacionesPoliticas, javax.swing.GroupLayout.PREFERRED_SIZE, 705, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(TabFPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(añadirCoalicion)
+                    .addComponent(añadirPartido)
+                    .addComponent(borrarFormacion)
+                    .addComponent(importarPartido)
+                    .addComponent(exportarPartido))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 481, Short.MAX_VALUE)
+        TabFPLayout.setVerticalGroup(
+            TabFPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TabFPLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(TabFPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TabFPLayout.createSequentialGroup()
+                        .addComponent(añadirPartido)
+                        .addGap(18, 18, 18)
+                        .addComponent(añadirCoalicion)
+                        .addGap(18, 18, 18)
+                        .addComponent(borrarFormacion)
+                        .addGap(18, 18, 18)
+                        .addComponent(importarPartido)
+                        .addGap(18, 18, 18)
+                        .addComponent(exportarPartido))
+                    .addComponent(InfoFormacionesPoliticas, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        Cargar.addTab("Cargar", jPanel2);
+        Cargar.addTab("Formaciones Políticas", TabFP);
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        InfoCircunscripciones.setViewportView(jTable4);
+
+        añadirCircun.setText("Añadir");
+        añadirCircun.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                añadirCircunActionPerformed(evt);
+            }
+        });
+
+        borrarCircun.setText("Borrar");
+
+        importarCircun.setText("Importar");
+
+        exportarCircun.setText("Exportar");
+
+        javax.swing.GroupLayout TabCircunLayout = new javax.swing.GroupLayout(TabCircun);
+        TabCircun.setLayout(TabCircunLayout);
+        TabCircunLayout.setHorizontalGroup(
+            TabCircunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TabCircunLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(InfoCircunscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 705, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(TabCircunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(borrarCircun)
+                    .addComponent(importarCircun)
+                    .addComponent(exportarCircun)
+                    .addComponent(añadirCircun))
+                .addContainerGap(109, Short.MAX_VALUE))
+        );
+        TabCircunLayout.setVerticalGroup(
+            TabCircunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TabCircunLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(TabCircunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TabCircunLayout.createSequentialGroup()
+                        .addComponent(añadirCircun)
+                        .addGap(18, 18, 18)
+                        .addComponent(borrarCircun)
+                        .addGap(18, 18, 18)
+                        .addComponent(importarCircun)
+                        .addGap(18, 18, 18)
+                        .addComponent(exportarCircun))
+                    .addComponent(InfoCircunscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+
+        Cargar.addTab("Circunscripciones", TabCircun);
+
+        salidaTexto.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        salidaTexto.setEditable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Cargar, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Cargar)
-                .addContainerGap())
+                .addComponent(salidaTexto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Cargar)
-                .addContainerGap())
+                .addComponent(Cargar, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(salidaTexto, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE))
         );
+
+        Cargar.getAccessibleContext().setAccessibleName("Pestañas");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void añadirPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirPartidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_añadirPartidoActionPerformed
+
+    private void añadirPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirPersonaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_añadirPersonaActionPerformed
+
+    private void añadirCircunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirCircunActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_añadirCircunActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,12 +315,28 @@ public class Igelec extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane Cargar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JScrollPane InfoCircunscripciones;
+    private javax.swing.JScrollPane InfoFormacionesPoliticas;
+    private javax.swing.JScrollPane InfoPersonas;
+    private javax.swing.JPanel TabCircun;
+    private javax.swing.JPanel TabFP;
+    private javax.swing.JPanel TabPersonas;
+    private javax.swing.JButton añadirCircun;
+    private javax.swing.JButton añadirCoalicion;
+    private javax.swing.JButton añadirPartido;
+    private javax.swing.JButton añadirPersona;
+    private javax.swing.JButton borrarCircun;
+    private javax.swing.JButton borrarFormacion;
+    private javax.swing.JButton borrarPersona;
+    private javax.swing.JButton exportarCircun;
+    private javax.swing.JButton exportarPartido;
+    private javax.swing.JButton exportarPersona;
+    private javax.swing.JButton importarCircun;
+    private javax.swing.JButton importarPartido;
+    private javax.swing.JButton importarPersona;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
+    private java.awt.TextArea salidaTexto;
     // End of variables declaration//GEN-END:variables
 }
