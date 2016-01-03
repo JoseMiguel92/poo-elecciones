@@ -16,6 +16,7 @@ public class Igelec extends javax.swing.JFrame {
      */
     public Igelec() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
