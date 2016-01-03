@@ -16,6 +16,10 @@ public class TablaVotos {
         this.tabla_votos = tabla_votos;
     }
     
+    public TablaVotos(){
+        this.tabla_votos = new ArrayList<>();
+    }
+    
     public ArrayList<ItemVotos> getTabla_votos() {
         return tabla_votos;
     }
@@ -24,4 +28,6 @@ public class TablaVotos {
         this.tabla_votos = tabla_votos;
         
     }
+
+
 }
