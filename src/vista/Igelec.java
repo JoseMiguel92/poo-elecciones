@@ -56,7 +56,7 @@ public class Igelec extends javax.swing.JFrame {
         Cargar = new javax.swing.JTabbedPane();
         TabPersonas = new javax.swing.JPanel();
         InfoPersonas = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        jTablePersonas = new javax.swing.JTable();
         añadirPersona = new javax.swing.JButton();
         borrarPersona = new javax.swing.JButton();
         importarPersona = new javax.swing.JButton();
@@ -71,7 +71,7 @@ public class Igelec extends javax.swing.JFrame {
         exportarPartido = new javax.swing.JButton();
         TabCircun = new javax.swing.JPanel();
         InfoCircunscripciones = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        jTableCircunscripcion = new javax.swing.JTable();
         añadirCircun = new javax.swing.JButton();
         borrarCircun = new javax.swing.JButton();
         importarCircun = new javax.swing.JButton();
@@ -201,18 +201,8 @@ public class Igelec extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        InfoPersonas.setViewportView(jTable3);
+        jTablePersonas.setModel(new modelos.PersonaTableModel());
+        InfoPersonas.setViewportView(jTablePersonas);
 
         añadirPersona.setText("Añadir");
         añadirPersona.addActionListener(new java.awt.event.ActionListener() {
@@ -261,22 +251,7 @@ public class Igelec extends javax.swing.JFrame {
 
         Cargar.addTab("Personas", TabPersonas);
 
-        jTableFormacionesPoliticas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nombre", "Siglas"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        jTableFormacionesPoliticas.setModel(new modelos.PartidoTableModel());
         InfoFormacionesPoliticas.setViewportView(jTableFormacionesPoliticas);
         if (jTableFormacionesPoliticas.getColumnModel().getColumnCount() > 0) {
             jTableFormacionesPoliticas.getColumnModel().getColumn(0).setResizable(false);
@@ -345,18 +320,8 @@ public class Igelec extends javax.swing.JFrame {
 
         Cargar.addTab("Formaciones Políticas", TabFP);
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        InfoCircunscripciones.setViewportView(jTable4);
+        jTableCircunscripcion.setModel(new modelos.CircunscripcionTableModel());
+        InfoCircunscripciones.setViewportView(jTableCircunscripcion);
 
         añadirCircun.setText("Añadir");
         añadirCircun.addActionListener(new java.awt.event.ActionListener() {
@@ -550,9 +515,9 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelLogoPP;
     private javax.swing.JLabel jLabelNombrePP;
     private javax.swing.JLabel jLabelSiglasPP;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
+    private javax.swing.JTable jTableCircunscripcion;
     private javax.swing.JTable jTableFormacionesPoliticas;
+    private javax.swing.JTable jTablePersonas;
     private javax.swing.JTextField jTextFieldEdadAñadirM;
     private javax.swing.JTextField jTextFieldGeneroAñadirM;
     private javax.swing.JTextField jTextFieldLogoPP;
