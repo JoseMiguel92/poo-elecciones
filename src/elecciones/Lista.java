@@ -17,6 +17,30 @@ public class Lista {
     private FormacionPolitica formacionPolitica;  // NO BORRAR
     private EleccionEnCircunscripcion eleccionEnCircunscripcion; // NO BORRAR
 
+    public ArrayList<Militante> getCandidatos() {
+        return candidatos;
+    }
+
+    public void setCandidatos(ArrayList<Militante> candidatos) {
+        this.candidatos = candidatos;
+    }
+
+    public FormacionPolitica getFormacionPolitica() {
+        return formacionPolitica;
+    }
+
+    public void setFormacionPolitica(FormacionPolitica formacionPolitica) {
+        this.formacionPolitica = formacionPolitica;
+    }
+
+    public EleccionEnCircunscripcion getEleccionEnCircunscripcion() {
+        return eleccionEnCircunscripcion;
+    }
+
+    public void setEleccionEnCircunscripcion(EleccionEnCircunscripcion eleccionEnCircunscripcion) {
+        this.eleccionEnCircunscripcion = eleccionEnCircunscripcion;
+    }
+
     
 //Contructores
     //Crear lista vacia (evitamos NULLPOINTEREXCEPTION)

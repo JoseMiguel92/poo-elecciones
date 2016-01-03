@@ -43,8 +43,21 @@ public class EleccionEnCircunscripcion {
     public int getEscaños() {
         return escaños;
     }
-    public void setEscaños(int escaños) {
-        this.escaños = escaños;
+    public void setEscaños(int poblacion) {
+        if (poblacion<25){
+            escaños=1;
+        }else if(poblacion<101){
+            escaños=2;
+        }else if(poblacion<201){
+            escaños=3;
+        }else if (poblacion<301){
+            escaños=4;
+        }else{
+            escaños=(int) (4+Math.ceil((poblacion-300)/300));
+            if((escaños%2)==0){
+                escaños++;
+            }
+        }
     }
     public double getParticipaccion() {
         return participaccion;
@@ -96,11 +109,30 @@ public class EleccionEnCircunscripcion {
     };
 
     public TablaEscaños calcularResultados(TablaVotos votos){
-                
+           //Coger this.resultadoVotos
+            this.setEscaños(poblacion);
+            int escañosTotales = this.getEscaños();
+            simularResultados();
+            aplicarLey(votos, escañosTotales);
         return this.resultadoEscaños;
     };
+    public void aplicarLey(TablaVotos votos, int escañosTotales){
+        double [][] TablaAux = null;
+        TablaVotos votos_copia = new TablaVotos(votos.getTabla_votos());
+        for (int i = 0; i < votos_copia.getTabla_votos().size(); i++) {
+            for (int j = 0; j < escañosTotales; j++) {
+                TablaAux[i][j]=votos_copia.getTabla_votos().get(i).getNumeroVotos()/j;
+            }
+        }
+        
+        for (int j = 0; j < escañosTotales; j++) {
+            int escañosNuevos = this.resultadoEscaños.getTabla_votos().get(Dhondt.getMaximo(TablaAux, escañosTotales, votos_copia.getTabla_votos().size())).getNumeroEscaños()+1;
+            this.resultadoEscaños.getTabla_votos().get(Dhondt.getMaximo(TablaAux, escañosTotales, votos_copia.getTabla_votos().size())).setNumeroEscaños(escañosNuevos);
+            }
+        
+    };
+        
     public void calcularListas(TablaEscaños escaños){
-    
     };
     //OPCIONALES
     public void imprimirTablaVotos(){
