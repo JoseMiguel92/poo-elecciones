@@ -13,5 +13,16 @@ import javax.swing.table.DefaultTableModel;
  * @author poltatil
  */
 public class CircunscripcionTableModel extends DefaultTableModel{
-    
+    public CircunscripcionTableModel(){
+        super(
+                new Object [][] {},
+                new String [] {"Nombre", "Habitantes"}
+        );
+    }
+    // Bloqueamos la edición de celdas en la tabla
+    @Override
+    public boolean isCellEditable(int row, int column) {
+        // Da igual la fila y la columna, decimos que NO siempre.
+        return false;
+    }
 }

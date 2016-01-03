@@ -67,7 +67,7 @@ public class Eleccion {
     public void imprimirListaElectos(){
     
     };
-    public void imprimirMayprias(){
+    public void imprimirMayorias(){
     
     };
 //Metodos Privados

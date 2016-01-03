@@ -12,5 +12,16 @@ import javax.swing.table.DefaultTableModel;
  * @author poltatil
  */
 public class PartidoTableModel extends DefaultTableModel{
-    
+    public PartidoTableModel(){
+        super(
+                new Object [][] {},
+                new String [] {"Nombre", "Siglas"}
+        );
+    }
+        // Bloqueamos la edición de celdas en la tabla
+    @Override
+    public boolean isCellEditable(int row, int column) {
+        // Da igual la fila y la columna, decimos que NO siempre.
+        return false;
+    }
 }
