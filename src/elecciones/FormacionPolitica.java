@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @autor Daniel Oliver
  */
 
-public class FormacionPolitica {
+public abstract class FormacionPolitica {
 //Atributos
     protected String nombre;
     protected String siglas;

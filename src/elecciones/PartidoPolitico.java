@@ -14,8 +14,8 @@ public class PartidoPolitico extends FormacionPolitica {
 //Contructores
     public PartidoPolitico(String nombre, String siglas, String logo) {
         super(nombre, siglas, logo);
-        candidatos = new Lista();
-        votantes = new ArrayList<Votantes>();
+        candidatos = new Lista(); //Array con los militantes que iran en la lista.
+        votantes = new ArrayList<Votantes>(); //Todos los votantes de este partido, militantes y simpatizantes, "censo".
     }
 
 //Metodos Publicos
@@ -47,7 +47,9 @@ public class PartidoPolitico extends FormacionPolitica {
         }
     };
     
-//Metodos Privados
+    public void addSimpatizante(Simpatizante simpa1){
+        votantes.add(simpa1);
+    }
 
 }
 
