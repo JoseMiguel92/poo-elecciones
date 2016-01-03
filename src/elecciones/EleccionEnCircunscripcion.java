@@ -1,4 +1,7 @@
 package elecciones;
+
+import java.util.ArrayList;
+
 /**
  * @autor Raul Martin
  * @autor Jose Miguel Garcia
@@ -13,6 +16,7 @@ public class EleccionEnCircunscripcion {
     protected double participaccion;
     protected TablaVotos resultadoVotos;
     protected TablaEscaños resultadoEscaños;
+    private ArrayList<Lista> listas;
     
 //Contructores
     public EleccionEnCircunscripcion(String nombre, int poblacion, int escaños, double participaccion) {

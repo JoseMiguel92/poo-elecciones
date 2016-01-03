@@ -14,7 +14,7 @@ public abstract class FormacionPolitica {
     protected String siglas;
     protected String logo;
     protected Lista candidatos; 
-    protected ArrayList<Votantes> votantes;
+    //protected ArrayList<Votantes> votantes; // Segun el UML los votantes estan unidos con partido politico
 //Contructores
     public FormacionPolitica(String nombre, String siglas, String logo) {
         this.nombre = nombre;
@@ -47,12 +47,13 @@ public abstract class FormacionPolitica {
     public void setCandidatos(Lista milis){
         this.candidatos=milis;
     }
+    /*
     public ArrayList<Votantes> getVotantes(){
         return this.votantes;
     }
     public void setVotantes(ArrayList<Votantes> vots){
         this.votantes=vots;
-    }
+    }*/
 //Metodos Publicos
     public Lista elaborarListas(Eleccion eleccion){
         Lista lista = null;

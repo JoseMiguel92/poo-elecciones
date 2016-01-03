@@ -13,7 +13,9 @@ import java.util.ArrayList;
 public class Lista {
 //Atributos
     private String descripcion;
-    private ArrayList<Militante> candidatos;
+    private ArrayList<Militante> candidatos; // NO BORRAR
+    private FormacionPolitica formacionPolitica;  // NO BORRAR
+    private EleccionEnCircunscripcion eleccionEnCircunscripcion; // NO BORRAR
 
     
 //Contructores
