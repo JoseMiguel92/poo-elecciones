@@ -2,6 +2,7 @@ package elecciones;
 
 import java.io.IOException;
 import java.io.Serializable;
+import vista.Igelec;
 
 /**
  * @autor Raul Martin
@@ -15,6 +16,10 @@ public class Elecciones implements Serializable{
      * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
-
+        // No tengo ni idea lo que significa Igelec
+        Igelec app = new Igelec();
+        // Lanzamos
+        app.setVisible(true);
+           
     };
 };
