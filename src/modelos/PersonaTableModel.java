@@ -5,6 +5,7 @@
  */
 package modelos;
 
+import elecciones.Militante;
 import elecciones.Votantes;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
@@ -15,9 +16,17 @@ import javax.swing.table.DefaultTableModel;
  */
 
 public class PersonaTableModel extends DefaultTableModel {
+    
+        public PersonaTableModel(){
+        super(
+                new Object [][] {},
+                new String [] {"Nombre y Apellidos","Tipo"}
+        );
+    }
+        
     public void añadir(Votantes v){
         // Creamos un Array de 4 elementos (NombreApellidos, edad, genero y profesion y lo añadimos)
-        super.addRow(new Object[]{v.getNombreApellidos(),v.getEdad(),v.getGenero(),v.getProfesion()});
+        super.addRow(new Object[]{v.getNombreApellidos(),(v instanceof Militante)?"Militante":"Simpatizante"});
     }
     
 
