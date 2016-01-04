@@ -8,6 +8,8 @@ package vista;
 import elecciones.FormacionPolitica;
 import elecciones.Militante;
 import elecciones.PartidoPolitico;
+import elecciones.Simpatizante;
+import elecciones.Votantes;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -17,6 +19,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -27,6 +30,7 @@ public class Igelec extends javax.swing.JFrame {
     
     private ArrayList<FormacionPolitica> formacionesPoliticas = new ArrayList<>();
     private ArrayList<Militante> militantesAuxiliar;
+    private ArrayList<Votantes> votantesAuxiliar;
     
 
     /**
@@ -56,17 +60,21 @@ public class Igelec extends javax.swing.JFrame {
         jTextFieldLogoPP = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTableMilitantesPP = new javax.swing.JTable();
-        jFrameAñadirMilitantePartido = new javax.swing.JFrame();
+        jTableVotantesPP = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jButtonAñadirSPartido = new javax.swing.JButton();
+        jFrameAñadirSimpatizantePartido = new javax.swing.JFrame();
         jLabel4 = new javax.swing.JLabel();
-        jTextFieldNombreAñadirM = new javax.swing.JTextField();
+        jTextFieldNombreAñadirS = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextFieldEdadAñadirM = new javax.swing.JTextField();
+        jTextFieldEdadAñadirS = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextFieldGeneroAñadirM = new javax.swing.JTextField();
-        jTextFieldProfesionM = new javax.swing.JTextField();
+        jTextFieldGeneroAñadirS = new javax.swing.JTextField();
+        jTextFieldProfesionS = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        jButtonAñadirSimpatizante = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jTextFieldSiglasS = new javax.swing.JTextField();
         Cargar = new javax.swing.JTabbedPane();
         TabPersonas = new javax.swing.JPanel();
         InfoPersonas = new javax.swing.JScrollPane();
@@ -117,74 +125,77 @@ public class Igelec extends javax.swing.JFrame {
             }
         });
 
-        jTableMilitantesPP.setModel(new javax.swing.table.DefaultTableModel(
+        jTableVotantesPP.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Nombre Apellidos", "Edad", "Profesion", "Genero", "Siglas", "Cuota", "Carnet"
+                "Nombre Apellidos", "Edad", "Profesion", "Genero", "Siglas"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true, false, false, false, false, true
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTableMilitantesPP);
-        if (jTableMilitantesPP.getColumnModel().getColumnCount() > 0) {
-            jTableMilitantesPP.getColumnModel().getColumn(0).setResizable(false);
-            jTableMilitantesPP.getColumnModel().getColumn(1).setResizable(false);
-            jTableMilitantesPP.getColumnModel().getColumn(2).setResizable(false);
-            jTableMilitantesPP.getColumnModel().getColumn(3).setResizable(false);
-            jTableMilitantesPP.getColumnModel().getColumn(4).setResizable(false);
-            jTableMilitantesPP.getColumnModel().getColumn(5).setResizable(false);
-            jTableMilitantesPP.getColumnModel().getColumn(6).setResizable(false);
+        jScrollPane1.setViewportView(jTableVotantesPP);
+        if (jTableVotantesPP.getColumnModel().getColumnCount() > 0) {
+            jTableVotantesPP.getColumnModel().getColumn(0).setResizable(false);
+            jTableVotantesPP.getColumnModel().getColumn(1).setResizable(false);
+            jTableVotantesPP.getColumnModel().getColumn(2).setResizable(false);
+            jTableVotantesPP.getColumnModel().getColumn(3).setResizable(false);
+            jTableVotantesPP.getColumnModel().getColumn(4).setResizable(false);
         }
+
+        jLabel1.setText("Votantes:");
+
+        jButtonAñadirSPartido.setText("Añadir Simpatizante");
+        jButtonAñadirSPartido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAñadirSPartidoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jFrameAñadirPartidoLayout = new javax.swing.GroupLayout(jFrameAñadirPartido.getContentPane());
         jFrameAñadirPartido.getContentPane().setLayout(jFrameAñadirPartidoLayout);
         jFrameAñadirPartidoLayout.setHorizontalGroup(
             jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameAñadirPartidoLayout.createSequentialGroup()
-                .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(47, 47, 47)
+                .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1))
-                    .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
-                        .addGap(47, 47, 47)
                         .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
-                                .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelNombrePP)
-                                    .addComponent(jLabelSiglasPP)
-                                    .addComponent(jLabelLogoPP))
-                                .addGap(38, 38, 38)
-                                .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextFieldNombrePP)
-                                    .addComponent(jTextFieldSiglasPP)
-                                    .addComponent(jTextFieldLogoPP, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameAñadirPartidoLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButtonAñadirPP)
-                                .addGap(53, 53, 53)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabelNombrePP)
+                            .addComponent(jLabelSiglasPP)
+                            .addComponent(jLabelLogoPP))
+                        .addGap(38, 38, 38)
+                        .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextFieldNombrePP)
+                            .addComponent(jTextFieldSiglasPP)
+                            .addComponent(jTextFieldLogoPP, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameAñadirPartidoLayout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButtonAñadirSPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jButtonAñadirPP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(53, 53, 53)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32))
         );
         jFrameAñadirPartidoLayout.setVerticalGroup(
             jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(jButton1)
-                .addGap(23, 23, 23)
-                .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameAñadirPartidoLayout.createSequentialGroup()
+                .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addGap(33, 33, 33))
-                    .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
+                        .addGap(87, 87, 87)
                         .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelNombrePP)
                             .addComponent(jTextFieldNombrePP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -198,80 +209,103 @@ public class Igelec extends javax.swing.JFrame {
                             .addComponent(jTextFieldLogoPP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(34, 34, 34)
                         .addComponent(jButtonAñadirPP)
-                        .addContainerGap(272, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButtonAñadirSPartido)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
+                        .addContainerGap(64, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(25, 25, 25))
         );
 
         jLabel4.setText("Nombre y Apellidos:");
 
-        jTextFieldNombreAñadirM.setText("jTextField1");
-        jTextFieldNombreAñadirM.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNombreAñadirS.setText("jTextField1");
+        jTextFieldNombreAñadirS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldNombreAñadirMActionPerformed(evt);
+                jTextFieldNombreAñadirSActionPerformed(evt);
             }
         });
 
         jLabel5.setText("Edad:");
 
-        jTextFieldEdadAñadirM.setText("jTextField2");
+        jTextFieldEdadAñadirS.setText("jTextField2");
 
         jLabel6.setText("Genero:");
 
-        jTextFieldGeneroAñadirM.setText("jTextField3");
+        jTextFieldGeneroAñadirS.setText("jTextField3");
 
-        jTextFieldProfesionM.setText("jTextField4");
+        jTextFieldProfesionS.setText("jTextField4");
 
         jLabel7.setText("Profesion:");
 
-        jButton3.setText("Añadir Militante");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAñadirSimpatizante.setText("Añadir Simpatizante");
+        jButtonAñadirSimpatizante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButtonAñadirSimpatizanteActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jFrameAñadirMilitantePartidoLayout = new javax.swing.GroupLayout(jFrameAñadirMilitantePartido.getContentPane());
-        jFrameAñadirMilitantePartido.getContentPane().setLayout(jFrameAñadirMilitantePartidoLayout);
-        jFrameAñadirMilitantePartidoLayout.setHorizontalGroup(
-            jFrameAñadirMilitantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrameAñadirMilitantePartidoLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(jFrameAñadirMilitantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4))
-                .addGap(28, 28, 28)
-                .addGroup(jFrameAñadirMilitantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3)
-                    .addGroup(jFrameAñadirMilitantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jTextFieldNombreAñadirM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextFieldEdadAñadirM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextFieldGeneroAñadirM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextFieldProfesionM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(619, Short.MAX_VALUE))
+        jLabel2.setText("Siglas");
+
+        jTextFieldSiglasS.setText("jTextField1");
+
+        javax.swing.GroupLayout jFrameAñadirSimpatizantePartidoLayout = new javax.swing.GroupLayout(jFrameAñadirSimpatizantePartido.getContentPane());
+        jFrameAñadirSimpatizantePartido.getContentPane().setLayout(jFrameAñadirSimpatizantePartidoLayout);
+        jFrameAñadirSimpatizantePartidoLayout.setHorizontalGroup(
+            jFrameAñadirSimpatizantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrameAñadirSimpatizantePartidoLayout.createSequentialGroup()
+                .addGroup(jFrameAñadirSimpatizantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jFrameAñadirSimpatizantePartidoLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(jFrameAñadirSimpatizantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel2))
+                        .addGap(28, 28, 28)
+                        .addGroup(jFrameAñadirSimpatizantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextFieldNombreAñadirS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldEdadAñadirS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldGeneroAñadirS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldProfesionS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldSiglasS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jFrameAñadirSimpatizantePartidoLayout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(jButtonAñadirSimpatizante)))
+                .addContainerGap(636, Short.MAX_VALUE))
         );
-        jFrameAñadirMilitantePartidoLayout.setVerticalGroup(
-            jFrameAñadirMilitantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrameAñadirMilitantePartidoLayout.createSequentialGroup()
+        jFrameAñadirSimpatizantePartidoLayout.setVerticalGroup(
+            jFrameAñadirSimpatizantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrameAñadirSimpatizantePartidoLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addGroup(jFrameAñadirMilitantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jFrameAñadirSimpatizantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextFieldNombreAñadirM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldNombreAñadirS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jFrameAñadirMilitantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jFrameAñadirSimpatizantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextFieldEdadAñadirM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldEdadAñadirS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jFrameAñadirMilitantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jFrameAñadirSimpatizantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextFieldGeneroAñadirM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldGeneroAñadirS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
-                .addGroup(jFrameAñadirMilitantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jFrameAñadirSimpatizantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jTextFieldProfesionM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addComponent(jButton3)
-                .addContainerGap(252, Short.MAX_VALUE))
+                    .addComponent(jTextFieldProfesionS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jFrameAñadirSimpatizantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jTextFieldSiglasS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addComponent(jButtonAñadirSimpatizante)
+                .addContainerGap(233, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -475,6 +509,12 @@ public class Igelec extends javax.swing.JFrame {
         jFrameAñadirPartido.setLocationRelativeTo(null);
         jFrameAñadirPartido.setSize(400, 400);
         jFrameAñadirPartido.setVisible(true);
+       
+        /*
+        DefaultTableModel modelo = (DefaultTableModel) jTableVotantesPP.getModel();
+        while(modelo.getRowCount() > 0) modelo.removeRow(0);      */
+        
+        limpiarTabla(jTableVotantesPP);
         
         
         
@@ -496,6 +536,8 @@ public class Igelec extends javax.swing.JFrame {
         // TODO add your handling code here:
         PartidoPolitico nuevoPartido = new PartidoPolitico(jTextFieldNombrePP.getText(), jTextFieldSiglasPP.getText(), jTextFieldLogoPP.getText());
         nuevoPartido.setMilitantes(militantesAuxiliar);
+        nuevoPartido.setVotantes(votantesAuxiliar);
+
         formacionesPoliticas.add(nuevoPartido);
         
         //Rellena tabla formaciones politicas
@@ -521,9 +563,33 @@ public class Igelec extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_añadirCoalicionActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButtonAñadirSimpatizanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirSimpatizanteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+        String nom = jTextFieldNombreAñadirS.getText();
+        int edad = Integer.parseInt(jTextFieldEdadAñadirS.getText());
+        String prof = jTextFieldProfesionS.getText();
+        char g = jTextFieldGeneroAñadirS.getText().charAt(0);
+        String siglas = jTextFieldSiglasS.getText();
+        Simpatizante simpatizanteAuxiliar = new Simpatizante(nom,edad,prof,g,siglas);
+        
+        votantesAuxiliar.add(simpatizanteAuxiliar);
+        limpiarTabla(jTableVotantesPP);
+        
+        DefaultTableModel modelo = (DefaultTableModel) jTableVotantesPP.getModel();
+        for(Votantes i : votantesAuxiliar){
+            Object[] fila = new Object[]{i.getNombreApellidos(),i.getEdad(),i.getProfesion(),i.getGenero(),i.getSiglasPartido()};
+            modelo.addRow(fila);
+        }
+        
+        
+        
+        jFrameAñadirSimpatizantePartido.setVisible(false);
+        jTextFieldNombreAñadirS.setText("");
+        jTextFieldEdadAñadirS.setText("");        
+        jTextFieldProfesionS.setText("");
+        jTextFieldGeneroAñadirS.setText("");
+        jTextFieldSiglasS.setText("");
+    }//GEN-LAST:event_jButtonAñadirSimpatizanteActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -536,6 +602,7 @@ public class Igelec extends javax.swing.JFrame {
             
             try{
                 militantesAuxiliar = new ArrayList<>();
+                votantesAuxiliar = new ArrayList<>();
                 BufferedReader inFile = new BufferedReader (new FileReader(entrada));
                 String inputLine;
                 
@@ -551,10 +618,7 @@ public class Igelec extends javax.swing.JFrame {
                     
                     Militante m = new Militante(nomApe,edad,prof,gen,siglas,cuota,carnet);
                     militantesAuxiliar.add(m);    
-                    
-                    
-                    
-                    
+        
             }
             }catch(FileNotFoundException e){
                 e.printStackTrace();
@@ -562,21 +626,46 @@ public class Igelec extends javax.swing.JFrame {
                 
             } catch (IOException ex) {
                 Logger.getLogger(Igelec.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ArrayIndexOutOfBoundsException e2){
+                e2.printStackTrace();
+                System.out.println("Los datos del fichero no son validos");
+                    
             }
-        }    
+            
+        }
+           for(Militante i: militantesAuxiliar){
+            votantesAuxiliar.add(i);
+        }
         
-        DefaultTableModel modelo = (DefaultTableModel) jTableMilitantesPP.getModel();
-        for(Militante i : militantesAuxiliar){
-            Object[] fila = new Object[]{i.getNombreApellidos(),i.getEdad(),i.getProfesion(),i.getGenero(),i.getSiglasPartido(),i.getCuota(),i.getCarnet()};
+        DefaultTableModel modelo = (DefaultTableModel) jTableVotantesPP.getModel();
+        for(Votantes i : votantesAuxiliar){
+            Object[] fila = new Object[]{i.getNombreApellidos(),i.getEdad(),i.getProfesion(),i.getGenero(),i.getSiglasPartido()};
             modelo.addRow(fila);
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextFieldNombreAñadirMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreAñadirMActionPerformed
+    private void jTextFieldNombreAñadirSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreAñadirSActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldNombreAñadirMActionPerformed
+    }//GEN-LAST:event_jTextFieldNombreAñadirSActionPerformed
 
+    private void jButtonAñadirSPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirSPartidoActionPerformed
+        // TODO add your handling code here:
+                jFrameAñadirSimpatizantePartido.setLocationRelativeTo(null);
+        jFrameAñadirSimpatizantePartido.setSize(400, 400);
+        jFrameAñadirSimpatizantePartido.setVisible(true);
+        jTextFieldNombreAñadirS.setText("");
+        jTextFieldEdadAñadirS.setText("");
+        jTextFieldProfesionS.setText("");
+        jTextFieldGeneroAñadirS.setText("");
+        jTextFieldSiglasS.setText("");
+    }//GEN-LAST:event_jButtonAñadirSPartidoActionPerformed
+
+    //metodo para limpiar cualquier tabla
+    public void limpiarTabla(JTable tabla){
+         DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+        while(modelo.getRowCount()>0)modelo.removeRow(0);
+    }
     /**
      * @param args the command line arguments
      */
@@ -637,10 +726,13 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JButton importarPartido;
     private javax.swing.JButton importarPersona;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButtonAñadirPP;
-    private javax.swing.JFrame jFrameAñadirMilitantePartido;
+    private javax.swing.JButton jButtonAñadirSPartido;
+    private javax.swing.JButton jButtonAñadirSimpatizante;
     private javax.swing.JFrame jFrameAñadirPartido;
+    private javax.swing.JFrame jFrameAñadirSimpatizantePartido;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -651,15 +743,17 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableCircunscripcion;
     private javax.swing.JTable jTableFormacionesPoliticas;
-    private javax.swing.JTable jTableMilitantesPP;
     private javax.swing.JTable jTablePersonas;
-    private javax.swing.JTextField jTextFieldEdadAñadirM;
-    private javax.swing.JTextField jTextFieldGeneroAñadirM;
+    private javax.swing.JTable jTableVotantesPP;
+    private javax.swing.JTextField jTextFieldEdadAñadirS;
+    private javax.swing.JTextField jTextFieldGeneroAñadirS;
     private javax.swing.JTextField jTextFieldLogoPP;
-    private javax.swing.JTextField jTextFieldNombreAñadirM;
+    private javax.swing.JTextField jTextFieldNombreAñadirS;
     private javax.swing.JTextField jTextFieldNombrePP;
-    private javax.swing.JTextField jTextFieldProfesionM;
+    private javax.swing.JTextField jTextFieldProfesionS;
     private javax.swing.JTextField jTextFieldSiglasPP;
+    private javax.swing.JTextField jTextFieldSiglasS;
     private java.awt.TextArea salidaTexto;
     // End of variables declaration//GEN-END:variables
+
 }
