@@ -16,7 +16,7 @@ public class EleccionEnCircunscripcion {
     protected double participaccion;
     protected TablaVotos resultadoVotos;
     protected TablaEscaños resultadoEscaños;
-    private ArrayList<Lista> listas;
+    private ArrayList<Lista> listasPartidos;
     private int votosBlanco;
     
 //Contructores
@@ -82,8 +82,8 @@ public class EleccionEnCircunscripcion {
     public TablaVotos simularResultados(){
         TablaVotos resultados = new TablaVotos();
         int totalVotos = (int) (this.getPoblacion()*Math.round(this.participaccion));
-        for (int i = 0; i < listas.size(); i++) {
-            FormacionPolitica formacion = listas.get(i).getFormacionPolitica();
+        for (int i = 0; i < listasPartidos.size(); i++) {
+            FormacionPolitica formacion = listasPartidos.get(i).getFormacionPolitica();
             ItemVotos a1;
             int numVotos = (int)(Math.random() * totalVotos);
             a1 = new ItemVotos(formacion,totalVotos);
@@ -97,8 +97,8 @@ public class EleccionEnCircunscripcion {
             //Cuidado con tener numVotos mayor que totalVotos
         TablaVotos resultados = new TablaVotos();
         int totalVotos = (int) (this.getPoblacion()*Math.round(this.participaccion));
-        for (int i = 0; i < listas.size(); i++) {
-            FormacionPolitica formacion = listas.get(i).getFormacionPolitica();
+        for (int i = 0; i < listasPartidos.size(); i++) {
+            FormacionPolitica formacion = listasPartidos.get(i).getFormacionPolitica();
             ItemVotos a1;
             a1 = new ItemVotos(formacion,totalVotos);
             totalVotos-=numVotos;
