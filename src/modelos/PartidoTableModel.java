@@ -5,6 +5,8 @@
  */
 package modelos;
 
+import elecciones.FormacionPolitica;
+import elecciones.PartidoPolitico;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -15,7 +17,7 @@ public class PartidoTableModel extends DefaultTableModel{
     public PartidoTableModel(){
         super(
                 new Object [][] {},
-                new String [] {"Nombre", "Siglas"}
+                new String [] {"Nombre", "Siglas","Tipo"}
         );
     }
         // Bloqueamos la edición de celdas en la tabla
@@ -24,4 +26,9 @@ public class PartidoTableModel extends DefaultTableModel{
         // Da igual la fila y la columna, decimos que NO siempre.
         return false;
     }
+    
+    public void añadir(FormacionPolitica fp){
+        super.addRow(new Object[]{fp.getNombre(),fp.getSiglas(),(fp instanceof PartidoPolitico)?"Partido":"Coalición"});
+    }
+    
 }

@@ -7,49 +7,73 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jButtonAñadirPP" min="-2" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabelLogoPP" min="-2" pref="67" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jTextFieldLogoPP" min="-2" pref="90" max="-2" attributes="0"/>
+                      </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabelNombrePP" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelSiglasPP" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelLogoPP" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jLabelNombrePP" max="32767" attributes="0"/>
+                                      <Component id="jLabelSiglasPP" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldSiglasPP" min="-2" pref="90" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jTextFieldNombrePP" min="-2" pref="90" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jTextFieldLogoPP" alignment="0" pref="90" max="32767" attributes="0"/>
-                              <Component id="jTextFieldSiglasPP" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextFieldNombrePP" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="696" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+                  <Component id="jButtonAñadirPP" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabelNombrePP" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelNombrePP" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                       <Component id="jTextFieldNombrePP" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabelSiglasPP" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextFieldSiglasPP" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabelSiglasPP" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldSiglasPP" min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabelLogoPP" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextFieldLogoPP" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelLogoPP" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+                  <EmptySpace pref="28" max="32767" attributes="0"/>
                   <Component id="jButtonAñadirPP" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="234" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -65,24 +89,142 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelNombrePP">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Nombre"/>
+            <Property name="text" type="java.lang.String" value="Nombre *"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldNombrePP">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelSiglasPP">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Siglas"/>
+            <Property name="text" type="java.lang.String" value="Siglas *"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldSiglasPP">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelLogoPP">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Logo"/>
+            <Property name="text" type="java.lang.String" value="Logo *"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldLogoPP">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Introduce los datos del partido"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JFrame" name="jFrameA&#xf1;adirPersona">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabelLogoPP1" min="-2" pref="67" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jTextFieldLogoPP1" min="-2" pref="90" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jLabelNombreApellidos" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jLabelSiglasPP1" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldSiglasPP1" min="-2" pref="90" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jTextFieldNombreApellidos" min="-2" pref="90" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+                  <Component id="jButtonAñadirPersona" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelNombreApellidos" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="jTextFieldNombreApellidos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabelSiglasPP1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldSiglasPP1" alignment="0" min="-2" pref="27" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jTextFieldLogoPP1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelLogoPP1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="28" max="32767" attributes="0"/>
+                  <Component id="jButtonAñadirPersona" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="jButtonA&#xf1;adirPersona">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="A&#xf1;adir"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonA&#xf1;adirPersonaActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelNombreApellidos">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nombre *"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldNombreApellidos">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelSiglasPP1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Siglas *"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldSiglasPP1">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelLogoPP1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Logo *"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldLogoPP1">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Introduce los datos del partido"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
@@ -258,13 +400,8 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="InfoPersonas" min="-2" pref="705" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="borrarPersona" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="importarPersona" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="exportarPersona" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="añadirPersona" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="añadirPersona" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="126" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -273,15 +410,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="añadirPersona" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="borrarPersona" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="importarPersona" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="exportarPersona" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="añadirPersona" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="InfoPersonas" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="14" max="32767" attributes="0"/>
@@ -311,21 +440,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="a&#xf1;adirPersonaActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="borrarPersona">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Eliminar seleccionados"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="importarPersona">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Importar"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="exportarPersona">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Exportar"/>
-              </Properties>
-            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="TabFP">
@@ -347,11 +461,8 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="añadirCoalicion" min="-2" max="-2" attributes="0"/>
                           <Component id="añadirPartido" min="-2" max="-2" attributes="0"/>
-                          <Component id="borrarFormacion" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="importarPartido" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="exportarPartido" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="19" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -364,16 +475,10 @@
                               <Component id="añadirPartido" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="añadirCoalicion" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="borrarFormacion" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="importarPartido" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="exportarPartido" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="InfoFormacionesPoliticas" min="-2" pref="352" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="24" max="32767" attributes="0"/>
+                      <EmptySpace pref="14" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -426,21 +531,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="a&#xf1;adirCoalicionActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="borrarFormacion">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Eliminar Seleccionados"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="importarPartido">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Importar Partido"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="exportarPartido">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Exportar Partido"/>
-              </Properties>
-            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="TabCircun">
@@ -459,13 +549,8 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="InfoCircunscripciones" min="-2" pref="705" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="borrarCircun" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="importarCircun" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="exportarCircun" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="añadirCircun" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="109" max="32767" attributes="0"/>
+                      <Component id="añadirCircun" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="126" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -474,15 +559,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="añadirCircun" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="borrarCircun" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="importarCircun" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="exportarCircun" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="añadirCircun" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="InfoCircunscripciones" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="14" max="32767" attributes="0"/>
@@ -512,20 +589,64 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="a&#xf1;adirCircunActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="borrarCircun">
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="Acciones">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Acciones">
+                <Property name="tabTitle" type="java.lang.String" value="Acciones"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jButtonExportar" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jButtonImportar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
+                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="638" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jButtonImportar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jButtonExportar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="170" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JButton" name="jButtonImportar">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Borrar"/>
+                <Property name="text" type="java.lang.String" value="Importar Datos"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonImportarActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButtonExportar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Exportar Datos"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="importarCircun">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Importar"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="exportarCircun">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Exportar"/>
-              </Properties>
+            <Component class="javax.swing.JButton" name="jButton1">
             </Component>
           </SubComponents>
         </Container>
