@@ -63,6 +63,7 @@ public class Igelec extends javax.swing.JFrame {
         jTableVotantesPP = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jButtonAñadirSPartido = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jFrameAñadirSimpatizantePartido = new javax.swing.JFrame();
         jLabel4 = new javax.swing.JLabel();
         jTextFieldNombreAñadirS = new javax.swing.JTextField();
@@ -159,32 +160,38 @@ public class Igelec extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setText("Datos Del Partido:");
+
         javax.swing.GroupLayout jFrameAñadirPartidoLayout = new javax.swing.GroupLayout(jFrameAñadirPartido.getContentPane());
         jFrameAñadirPartido.getContentPane().setLayout(jFrameAñadirPartidoLayout);
         jFrameAñadirPartidoLayout.setHorizontalGroup(
             jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameAñadirPartidoLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
                 .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
+                        .addGap(103, 103, 103)
                         .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelNombrePP)
-                            .addComponent(jLabelSiglasPP)
-                            .addComponent(jLabelLogoPP))
-                        .addGap(38, 38, 38)
-                        .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextFieldNombrePP)
-                            .addComponent(jTextFieldSiglasPP)
-                            .addComponent(jTextFieldLogoPP, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameAñadirPartidoLayout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButtonAñadirSPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButtonAñadirPP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(53, 53, 53)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                            .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jButtonAñadirSPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(jButtonAñadirPP))))
+                    .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
+                                .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelNombrePP)
+                                    .addComponent(jLabelSiglasPP)
+                                    .addComponent(jLabelLogoPP))
+                                .addGap(38, 38, 38)
+                                .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextFieldNombrePP)
+                                    .addComponent(jTextFieldSiglasPP)
+                                    .addComponent(jTextFieldLogoPP, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel3))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -193,9 +200,14 @@ public class Igelec extends javax.swing.JFrame {
         jFrameAñadirPartidoLayout.setVerticalGroup(
             jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameAñadirPartidoLayout.createSequentialGroup()
-                .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addContainerGap(64, Short.MAX_VALUE)
+                .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3))
+                .addGap(18, 18, 18)
+                .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
-                        .addGap(87, 87, 87)
                         .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelNombrePP)
                             .addComponent(jTextFieldNombrePP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -207,24 +219,17 @@ public class Igelec extends javax.swing.JFrame {
                         .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelLogoPP)
                             .addComponent(jTextFieldLogoPP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(34, 34, 34)
-                        .addComponent(jButtonAñadirPP)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButtonAñadirSPartido)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
-                        .addContainerGap(64, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonAñadirSPartido)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonAñadirPP)))
                 .addGap(25, 25, 25))
         );
 
         jLabel4.setText("Nombre y Apellidos:");
 
-        jTextFieldNombreAñadirS.setText("jTextField1");
         jTextFieldNombreAñadirS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldNombreAñadirSActionPerformed(evt);
@@ -233,13 +238,7 @@ public class Igelec extends javax.swing.JFrame {
 
         jLabel5.setText("Edad:");
 
-        jTextFieldEdadAñadirS.setText("jTextField2");
-
         jLabel6.setText("Genero:");
-
-        jTextFieldGeneroAñadirS.setText("jTextField3");
-
-        jTextFieldProfesionS.setText("jTextField4");
 
         jLabel7.setText("Profesion:");
 
@@ -252,14 +251,12 @@ public class Igelec extends javax.swing.JFrame {
 
         jLabel2.setText("Siglas");
 
-        jTextFieldSiglasS.setText("jTextField1");
-
         javax.swing.GroupLayout jFrameAñadirSimpatizantePartidoLayout = new javax.swing.GroupLayout(jFrameAñadirSimpatizantePartido.getContentPane());
         jFrameAñadirSimpatizantePartido.getContentPane().setLayout(jFrameAñadirSimpatizantePartidoLayout);
         jFrameAñadirSimpatizantePartidoLayout.setHorizontalGroup(
             jFrameAñadirSimpatizantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jFrameAñadirSimpatizantePartidoLayout.createSequentialGroup()
-                .addGroup(jFrameAñadirSimpatizantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jFrameAñadirSimpatizantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jFrameAñadirSimpatizantePartidoLayout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addGroup(jFrameAñadirSimpatizantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -268,17 +265,17 @@ public class Igelec extends javax.swing.JFrame {
                             .addComponent(jLabel5)
                             .addComponent(jLabel4)
                             .addComponent(jLabel2))
-                        .addGap(28, 28, 28)
-                        .addGroup(jFrameAñadirSimpatizantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextFieldNombreAñadirS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldEdadAñadirS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldGeneroAñadirS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldProfesionS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldSiglasS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jFrameAñadirSimpatizantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextFieldNombreAñadirS)
+                            .addComponent(jTextFieldEdadAñadirS)
+                            .addComponent(jTextFieldGeneroAñadirS)
+                            .addComponent(jTextFieldProfesionS)
+                            .addComponent(jTextFieldSiglasS, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))
                     .addGroup(jFrameAñadirSimpatizantePartidoLayout.createSequentialGroup()
                         .addGap(112, 112, 112)
                         .addComponent(jButtonAñadirSimpatizante)))
-                .addContainerGap(636, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
         jFrameAñadirSimpatizantePartidoLayout.setVerticalGroup(
             jFrameAñadirSimpatizantePartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -305,7 +302,7 @@ public class Igelec extends javax.swing.JFrame {
                     .addComponent(jTextFieldSiglasS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addComponent(jButtonAñadirSimpatizante)
-                .addContainerGap(233, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -733,6 +730,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JFrame jFrameAñadirSimpatizantePartido;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
