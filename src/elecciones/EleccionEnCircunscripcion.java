@@ -80,33 +80,30 @@ public class EleccionEnCircunscripcion implements Serializable{
     }
     
 //Metodos Publicos
-    public TablaVotos simularResultados(){
+    public void simularResultados(){
         TablaVotos resultados = new TablaVotos();
-        int totalVotos = (int) (this.getPoblacion()*Math.round(this.participaccion));
+        int totalVotos = (int) Math.round(this.getPoblacion()*this.participaccion);
         for (int i = 0; i < listasPartidos.size(); i++) {
             FormacionPolitica formacion = listasPartidos.get(i).getFormacionPolitica();
-            ItemVotos a1;
             int numVotos = (int)(Math.random() * totalVotos);
-            a1 = new ItemVotos(formacion,totalVotos);
+            ItemVotos a1 = new ItemVotos(formacion,numVotos);
             totalVotos-=numVotos;
             resultados.getTabla_votos().add(a1);   
         }
             this.votosBlanco=totalVotos;
-        return resultados;
     };
-        public TablaVotos simularResultados(int numVotos){
+        public void simularResultados(int numVotos){
             //Cuidado con tener numVotos mayor que totalVotos
         TablaVotos resultados = new TablaVotos();
         int totalVotos = (int) (this.getPoblacion()*Math.round(this.participaccion));
         for (int i = 0; i < listasPartidos.size(); i++) {
             FormacionPolitica formacion = listasPartidos.get(i).getFormacionPolitica();
             ItemVotos a1;
-            a1 = new ItemVotos(formacion,totalVotos);
+            a1 = new ItemVotos(formacion,numVotos);
             totalVotos-=numVotos;
             resultados.getTabla_votos().add(a1);   
         }
             this.votosBlanco=totalVotos;
-        return resultados;
     };
 
     public TablaEscaños calcularResultados(TablaVotos votos){
