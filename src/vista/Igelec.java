@@ -6,8 +6,17 @@
 package vista;
 
 import elecciones.FormacionPolitica;
+import elecciones.Militante;
 import elecciones.PartidoPolitico;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -17,6 +26,8 @@ import javax.swing.table.DefaultTableModel;
 public class Igelec extends javax.swing.JFrame {
     
     private ArrayList<FormacionPolitica> formacionesPoliticas = new ArrayList<>();
+    private ArrayList<Militante> militantesAuxiliar;
+    
 
     /**
      * Creates new form igelec
@@ -43,6 +54,9 @@ public class Igelec extends javax.swing.JFrame {
         jTextFieldSiglasPP = new javax.swing.JTextField();
         jLabelLogoPP = new javax.swing.JLabel();
         jTextFieldLogoPP = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableMilitantesPP = new javax.swing.JTable();
         jFrameAñadirMilitantePartido = new javax.swing.JFrame();
         jLabel4 = new javax.swing.JLabel();
         jTextFieldNombreAñadirM = new javax.swing.JTextField();
@@ -91,11 +105,49 @@ public class Igelec extends javax.swing.JFrame {
 
         jLabelLogoPP.setText("Logo");
 
+        jButton1.setText("Cargar Militantes");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jTableMilitantesPP.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre Apellidos", "Edad", "Profesion", "Genero", "Siglas", "Cuota", "Carnet"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, false, false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTableMilitantesPP);
+        if (jTableMilitantesPP.getColumnModel().getColumnCount() > 0) {
+            jTableMilitantesPP.getColumnModel().getColumn(0).setResizable(false);
+            jTableMilitantesPP.getColumnModel().getColumn(1).setResizable(false);
+            jTableMilitantesPP.getColumnModel().getColumn(2).setResizable(false);
+            jTableMilitantesPP.getColumnModel().getColumn(3).setResizable(false);
+            jTableMilitantesPP.getColumnModel().getColumn(4).setResizable(false);
+            jTableMilitantesPP.getColumnModel().getColumn(5).setResizable(false);
+            jTableMilitantesPP.getColumnModel().getColumn(6).setResizable(false);
+        }
+
         javax.swing.GroupLayout jFrameAñadirPartidoLayout = new javax.swing.GroupLayout(jFrameAñadirPartido.getContentPane());
         jFrameAñadirPartido.getContentPane().setLayout(jFrameAñadirPartidoLayout);
         jFrameAñadirPartidoLayout.setHorizontalGroup(
             jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameAñadirPartidoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(106, 106, 106))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameAñadirPartidoLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButtonAñadirPP)
@@ -109,26 +161,36 @@ public class Igelec extends javax.swing.JFrame {
                             .addComponent(jTextFieldLogoPP, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
                             .addComponent(jTextFieldSiglasPP)
                             .addComponent(jTextFieldNombrePP))))
-                .addContainerGap(696, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
         );
         jFrameAñadirPartidoLayout.setVerticalGroup(
             jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addGap(15, 15, 15)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelNombrePP)
                     .addComponent(jTextFieldNombrePP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelSiglasPP)
-                    .addComponent(jTextFieldSiglasPP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelLogoPP)
-                    .addComponent(jTextFieldLogoPP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(92, 92, 92)
-                .addComponent(jButtonAñadirPP)
-                .addContainerGap(234, Short.MAX_VALUE))
+                .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelSiglasPP)
+                            .addComponent(jTextFieldSiglasPP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(31, 31, 31)
+                        .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelLogoPP)
+                            .addComponent(jTextFieldLogoPP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(92, 92, 92)
+                        .addComponent(jButtonAñadirPP)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameAñadirPartidoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33))))
         );
 
         jLabel4.setText("Nombre y Apellidos:");
@@ -402,6 +464,7 @@ public class Igelec extends javax.swing.JFrame {
         jFrameAñadirPartido.setVisible(true);
         
         
+        
     }//GEN-LAST:event_añadirPartidoActionPerformed
 
     private void añadirPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirPersonaActionPerformed
@@ -419,6 +482,7 @@ public class Igelec extends javax.swing.JFrame {
     private void jButtonAñadirPPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirPPActionPerformed
         // TODO add your handling code here:
         PartidoPolitico nuevoPartido = new PartidoPolitico(jTextFieldNombrePP.getText(), jTextFieldSiglasPP.getText(), jTextFieldLogoPP.getText());
+        nuevoPartido.setMilitantes(militantesAuxiliar);
         formacionesPoliticas.add(nuevoPartido);
         
         //Rellena tabla formaciones politicas
@@ -433,7 +497,10 @@ public class Igelec extends javax.swing.JFrame {
         jTextFieldLogoPP.setText("");
         jTextFieldSiglasPP.setText("");
         
+        
+        
         System.out.println(formacionesPoliticas.toString());
+        
         
     }//GEN-LAST:event_jButtonAñadirPPActionPerformed
 
@@ -444,6 +511,54 @@ public class Igelec extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        JFileChooser fileChooser = new JFileChooser();
+        int archivo = fileChooser.showOpenDialog(this); //Se abre la ventana para seleccionar archivo a cargar.
+        if (archivo == JFileChooser.APPROVE_OPTION){
+            File fichero = fileChooser.getSelectedFile(); //Se crea una variable con el fichero
+            String entrada = fichero.getPath();//Se recoge la ruta del fichero
+            
+            
+            try{
+                militantesAuxiliar = new ArrayList<>();
+                BufferedReader inFile = new BufferedReader (new FileReader(entrada));
+                String inputLine;
+                
+                while ((inputLine = inFile.readLine())!=null){
+                    String[] AtributosMilitante = inputLine.split(":");
+                    String nomApe = AtributosMilitante[0];
+                    int edad = Integer.parseInt(AtributosMilitante[1]);
+                    String prof = AtributosMilitante[2];
+                    char gen = AtributosMilitante[3].charAt(0);
+                    String siglas = AtributosMilitante[4];
+                    double cuota = Double.parseDouble(AtributosMilitante[5]);
+                    String carnet = AtributosMilitante[6];
+                    
+                    Militante m = new Militante(nomApe,edad,prof,gen,siglas,cuota,carnet);
+                    militantesAuxiliar.add(m);    
+                    
+                    
+                    
+                    
+            }
+            }catch(FileNotFoundException e){
+                e.printStackTrace();
+                
+                
+            } catch (IOException ex) {
+                Logger.getLogger(Igelec.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }    
+        
+        DefaultTableModel modelo = (DefaultTableModel) jTableMilitantesPP.getModel();
+        for(Militante i : militantesAuxiliar){
+            Object[] fila = new Object[]{i.getNombreApellidos(),i.getEdad(),i.getProfesion(),i.getGenero(),i.getSiglasPartido(),i.getCuota(),i.getCarnet()};
+            modelo.addRow(fila);
+        }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -504,6 +619,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JButton importarCircun;
     private javax.swing.JButton importarPartido;
     private javax.swing.JButton importarPersona;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButtonAñadirPP;
     private javax.swing.JFrame jFrameAñadirMilitantePartido;
@@ -515,8 +631,10 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelLogoPP;
     private javax.swing.JLabel jLabelNombrePP;
     private javax.swing.JLabel jLabelSiglasPP;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableCircunscripcion;
     private javax.swing.JTable jTableFormacionesPoliticas;
+    private javax.swing.JTable jTableMilitantesPP;
     private javax.swing.JTable jTablePersonas;
     private javax.swing.JTextField jTextFieldEdadAñadirM;
     private javax.swing.JTextField jTextFieldGeneroAñadirM;
