@@ -58,7 +58,7 @@ public class Igelec extends javax.swing.JFrame {
         jTextFieldSiglasPP = new javax.swing.JTextField();
         jLabelLogoPP = new javax.swing.JLabel();
         jTextFieldLogoPP = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jButtonCargarMilitantes = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableVotantesPP = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
@@ -119,10 +119,10 @@ public class Igelec extends javax.swing.JFrame {
 
         jLabelLogoPP.setText("Logo:");
 
-        jButton1.setText("Cargar Militantes");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonCargarMilitantes.setText("Cargar Militantes");
+        jButtonCargarMilitantes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonCargarMilitantesActionPerformed(evt);
             }
         });
 
@@ -169,15 +169,6 @@ public class Igelec extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameAñadirPartidoLayout.createSequentialGroup()
                 .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
-                        .addGap(103, 103, 103)
-                        .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jButtonAñadirSPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(jButtonAñadirPP))))
-                    .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
@@ -190,7 +181,16 @@ public class Igelec extends javax.swing.JFrame {
                                     .addComponent(jTextFieldNombrePP)
                                     .addComponent(jTextFieldSiglasPP)
                                     .addComponent(jTextFieldLogoPP, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel3))))
+                            .addComponent(jLabel3)))
+                    .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jButtonAñadirPP, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jFrameAñadirPartidoLayout.createSequentialGroup()
+                            .addGap(103, 103, 103)
+                            .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jButtonCargarMilitantes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButtonAñadirSPartido, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
@@ -220,7 +220,7 @@ public class Igelec extends javax.swing.JFrame {
                             .addComponent(jLabelLogoPP)
                             .addComponent(jTextFieldLogoPP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)
+                        .addComponent(jButtonCargarMilitantes)
                         .addGap(18, 18, 18)
                         .addComponent(jButtonAñadirSPartido)
                         .addGap(18, 18, 18)
@@ -588,7 +588,7 @@ public class Igelec extends javax.swing.JFrame {
         jTextFieldSiglasS.setText("");
     }//GEN-LAST:event_jButtonAñadirSimpatizanteActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonCargarMilitantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarMilitantesActionPerformed
         // TODO add your handling code here:
         JFileChooser fileChooser = new JFileChooser();
         int archivo = fileChooser.showOpenDialog(this); //Se abre la ventana para seleccionar archivo a cargar.
@@ -640,7 +640,7 @@ public class Igelec extends javax.swing.JFrame {
             modelo.addRow(fila);
         }
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonCargarMilitantesActionPerformed
 
     private void jTextFieldNombreAñadirSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreAñadirSActionPerformed
         // TODO add your handling code here:
@@ -722,10 +722,10 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JButton importarCircun;
     private javax.swing.JButton importarPartido;
     private javax.swing.JButton importarPersona;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonAñadirPP;
     private javax.swing.JButton jButtonAñadirSPartido;
     private javax.swing.JButton jButtonAñadirSimpatizante;
+    private javax.swing.JButton jButtonCargarMilitantes;
     private javax.swing.JFrame jFrameAñadirPartido;
     private javax.swing.JFrame jFrameAñadirSimpatizantePartido;
     private javax.swing.JLabel jLabel1;
