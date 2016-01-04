@@ -81,27 +81,25 @@ public class EleccionEnCircunscripcion implements Serializable{
     
 //Metodos Publicos
     public void simularResultados(){
-        TablaVotos resultados = new TablaVotos();
         int totalVotos = (int) Math.round(this.getPoblacion()*this.participaccion);
         for (int i = 0; i < listasPartidos.size(); i++) {
             FormacionPolitica formacion = listasPartidos.get(i).getFormacionPolitica();
             int numVotos = (int)(Math.random() * totalVotos);
             ItemVotos a1 = new ItemVotos(formacion,numVotos);
             totalVotos-=numVotos;
-            resultados.getTabla_votos().add(a1);   
+            this.resultadoVotos.getTabla_votos().add(a1);   
         }
             this.votosBlanco=totalVotos;
     };
         public void simularResultados(int numVotos){
             //Cuidado con tener numVotos mayor que totalVotos
-        TablaVotos resultados = new TablaVotos();
         int totalVotos = (int) (this.getPoblacion()*Math.round(this.participaccion));
         for (int i = 0; i < listasPartidos.size(); i++) {
             FormacionPolitica formacion = listasPartidos.get(i).getFormacionPolitica();
             ItemVotos a1;
             a1 = new ItemVotos(formacion,numVotos);
             totalVotos-=numVotos;
-            resultados.getTabla_votos().add(a1);   
+            this.resultadoVotos.getTabla_votos().add(a1);   
         }
             this.votosBlanco=totalVotos;
     };
