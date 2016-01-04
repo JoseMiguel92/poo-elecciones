@@ -3,35 +3,54 @@
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Container class="javax.swing.JFrame" name="jFrameA&#xf1;adirPartido">
+      <Properties>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[911, 550]"/>
+        </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[911, 530]"/>
+        </Property>
+        <Property name="resizable" type="boolean" value="false"/>
+        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[911, 530]"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jButtonAñadirPP" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabelNombrePP" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelSiglasPP" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelLogoPP" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabelNombrePP" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabelSiglasPP" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabelLogoPP" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jTextFieldNombrePP" max="32767" attributes="0"/>
+                                      <Component id="jTextFieldSiglasPP" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jTextFieldLogoPP" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace pref="59" max="-2" attributes="0"/>
+                                  <Component id="jButtonAñadirPP" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jTextFieldLogoPP" alignment="0" pref="90" max="32767" attributes="0"/>
-                              <Component id="jTextFieldSiglasPP" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextFieldNombrePP" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <EmptySpace pref="57" max="32767" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" pref="526" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="138" max="32767" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" pref="526" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -39,15 +58,19 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabelNombrePP" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextFieldNombrePP" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
+                          <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabelNombrePP" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextFieldNombrePP" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabelSiglasPP" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -58,14 +81,9 @@
                               <Component id="jLabelLogoPP" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jTextFieldLogoPP" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Component id="jButtonAñadirPP" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                          <EmptySpace pref="272" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -75,7 +93,7 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="jButtonA&#xf1;adirPP">
           <Properties>
-            <Property name="text" type="java.lang.String" value="A&#xf1;adir"/>
+            <Property name="text" type="java.lang.String" value="A&#xf1;adir Partido Politico"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonA&#xf1;adirPPActionPerformed"/>
@@ -83,21 +101,21 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelNombrePP">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Nombre"/>
+            <Property name="text" type="java.lang.String" value="Nombre:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldNombrePP">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelSiglasPP">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Siglas"/>
+            <Property name="text" type="java.lang.String" value="Siglas:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldSiglasPP">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelLogoPP">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Logo"/>
+            <Property name="text" type="java.lang.String" value="Logo:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldLogoPP">
@@ -245,6 +263,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="jTextField1"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldNombreA&#xf1;adirMActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>

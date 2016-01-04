@@ -92,18 +92,23 @@ public class Igelec extends javax.swing.JFrame {
         exportarCircun = new javax.swing.JButton();
         salidaTexto = new java.awt.TextArea();
 
-        jButtonAñadirPP.setText("Añadir");
+        jFrameAñadirPartido.setMinimumSize(new java.awt.Dimension(911, 550));
+        jFrameAñadirPartido.setPreferredSize(new java.awt.Dimension(911, 530));
+        jFrameAñadirPartido.setResizable(false);
+        jFrameAñadirPartido.setSize(new java.awt.Dimension(911, 530));
+
+        jButtonAñadirPP.setText("Añadir Partido Politico");
         jButtonAñadirPP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAñadirPPActionPerformed(evt);
             }
         });
 
-        jLabelNombrePP.setText("Nombre");
+        jLabelNombrePP.setText("Nombre:");
 
-        jLabelSiglasPP.setText("Siglas");
+        jLabelSiglasPP.setText("Siglas:");
 
-        jLabelLogoPP.setText("Logo");
+        jLabelLogoPP.setText("Logo:");
 
         jButton1.setText("Cargar Militantes");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -144,38 +149,45 @@ public class Igelec extends javax.swing.JFrame {
         jFrameAñadirPartidoLayout.setHorizontalGroup(
             jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameAñadirPartidoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(106, 106, 106))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameAñadirPartidoLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
                 .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButtonAñadirPP)
                     .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1))
+                    .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
+                        .addGap(47, 47, 47)
                         .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelNombrePP)
-                            .addComponent(jLabelSiglasPP)
-                            .addComponent(jLabelLogoPP))
-                        .addGap(38, 38, 38)
-                        .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextFieldLogoPP, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                            .addComponent(jTextFieldSiglasPP)
-                            .addComponent(jTextFieldNombrePP))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
+                                .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelNombrePP)
+                                    .addComponent(jLabelSiglasPP)
+                                    .addComponent(jLabelLogoPP))
+                                .addGap(38, 38, 38)
+                                .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextFieldNombrePP)
+                                    .addComponent(jTextFieldSiglasPP)
+                                    .addComponent(jTextFieldLogoPP, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameAñadirPartidoLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButtonAñadirPP)
+                                .addGap(53, 53, 53)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(32, 32, 32))
         );
         jFrameAñadirPartidoLayout.setVerticalGroup(
             jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(41, 41, 41)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNombrePP)
-                    .addComponent(jTextFieldNombrePP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
                 .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addGap(33, 33, 33))
+                    .addGroup(jFrameAñadirPartidoLayout.createSequentialGroup()
+                        .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelNombrePP)
+                            .addComponent(jTextFieldNombrePP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(23, 23, 23)
                         .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelSiglasPP)
@@ -184,18 +196,19 @@ public class Igelec extends javax.swing.JFrame {
                         .addGroup(jFrameAñadirPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelLogoPP)
                             .addComponent(jTextFieldLogoPP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(92, 92, 92)
+                        .addGap(34, 34, 34)
                         .addComponent(jButtonAñadirPP)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameAñadirPartidoLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33))))
+                        .addContainerGap(272, Short.MAX_VALUE))))
         );
 
         jLabel4.setText("Nombre y Apellidos:");
 
         jTextFieldNombreAñadirM.setText("jTextField1");
+        jTextFieldNombreAñadirM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNombreAñadirMActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Edad:");
 
@@ -559,6 +572,10 @@ public class Igelec extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextFieldNombreAñadirMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreAñadirMActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNombreAñadirMActionPerformed
 
     /**
      * @param args the command line arguments

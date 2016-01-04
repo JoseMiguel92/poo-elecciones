@@ -45,7 +45,8 @@ public class Militante extends Votantes{
     public String toString() {
         return super.toString()+
                 "\nNumero Carnet: "+this.carnet+
-                "\nCuota: "+this.cuota;
+                "\nCuota: "+this.cuota+
+                "\n";
     }
 
 
