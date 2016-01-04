@@ -1,5 +1,6 @@
 package elecciones;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -8,7 +9,7 @@ import java.util.ArrayList;
  * @autor Daniel Oliver
  */
 
-public class EleccionEnCircunscripcion {
+public class EleccionEnCircunscripcion implements Serializable{
 //Atributos
     protected String nombre;
     protected int poblacion;

@@ -1,11 +1,14 @@
 package elecciones;
+
+import java.io.Serializable;
+
 /**
  * @autor Raul Martin
  * @autor Jose Miguel Garcia
  * @autor Daniel Oliver
  */
 
-public class ItemEscaños {
+public class ItemEscaños implements Serializable{
 //Atributos
     protected FormacionPolitica formacion;
     protected int numeroEscaños;

@@ -1,12 +1,15 @@
 package elecciones;
 // prueba 02012016
+
+import java.io.Serializable;
+
 /**
  * @autor Raul Martin
  * @autor Jose Miguel Garcia
  * @autor Daniel Oliver
  */
 
-public abstract class Votantes {
+public abstract class Votantes implements Serializable{
 //Atributos
     protected String nombreApellidos;
     protected int edad;

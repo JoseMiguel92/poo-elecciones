@@ -1,11 +1,14 @@
 package elecciones;
+
+import java.io.Serializable;
+
 /**
  * @autor Raul Martin
  * @autor Jose Miguel Garcia
  * @autor Daniel Oliver
  */
 
-public class Simpatizante extends Votantes{
+public class Simpatizante extends Votantes implements Serializable{
     
 //Contructores
     public Simpatizante(String nombreApellido, int edad, String profesion, char genero, String siglasPartido) {

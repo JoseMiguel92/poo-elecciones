@@ -1,5 +1,6 @@
 package elecciones;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -8,7 +9,7 @@ import java.util.ArrayList;
  * @autor Daniel Oliver
  */
 
-public class TablaEscaños {
+public class TablaEscaños implements Serializable{
 //Atributos
     protected ArrayList<ItemEscaños> tabla_escaños;
 

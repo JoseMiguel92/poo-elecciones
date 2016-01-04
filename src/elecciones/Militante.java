@@ -1,11 +1,14 @@
 package elecciones;
+
+import java.io.Serializable;
+
 /**
  * @autor Raul Martin
  * @autor Jose Miguel Garcia
  * @autor Daniel Oliver
  */
 
-public class Militante extends Votantes{
+public class Militante extends Votantes implements Serializable{
 //Atributos
     protected double cuota;
     protected String carnet;

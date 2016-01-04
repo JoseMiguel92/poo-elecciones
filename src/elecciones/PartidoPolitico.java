@@ -1,4 +1,5 @@
 package elecciones;
+import java.io.Serializable;
 import java.util.ArrayList;
 /**
  * @autor Raul Martin
@@ -6,7 +7,7 @@ import java.util.ArrayList;
  * @autor Daniel Oliver
  */
 
-public class PartidoPolitico extends FormacionPolitica {
+public class PartidoPolitico extends FormacionPolitica implements Serializable{
     
     String[] pregMil = {"Pregunta Militante 1", "Pregunta Militante 2", "Pregunta Militante 3"};
     String[] pregSimp = {"Pregunta Simpatizante 1", "Pregunta Simpatizante 2", "Pregunta Simpatizante 3"};

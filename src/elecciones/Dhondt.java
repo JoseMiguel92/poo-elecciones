@@ -1,11 +1,13 @@
 package elecciones;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Josemi
  */
 
-public class Dhondt {
+public class Dhondt implements Serializable{
 
     //Cogemos el mayor de la tabla creada y lo eliminamos.
     //Devuelve la fila que contiene el partido con el maximo.

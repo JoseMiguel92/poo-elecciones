@@ -1,11 +1,12 @@
 package elecciones;
+import java.io.Serializable;
 import java.util.ArrayList;
 /**
  * @autor Raul Martin
  * @autor Jose Miguel Garcia
  * @autor Daniel Oliver
  */
-public class Coalicion extends FormacionPolitica{
+public class Coalicion extends FormacionPolitica implements Serializable{
     private ArrayList<PartidoPolitico> partidosCoalicion;
 
     

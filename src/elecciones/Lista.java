@@ -1,6 +1,7 @@
 package elecciones;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
@@ -10,7 +11,7 @@ import java.util.ArrayList;
  * @autor Daniel Oliver
  */
 
-public class Lista {
+public class Lista implements Serializable{
 //Atributos
     private String descripcion;
     private ArrayList<Militante> candidatos; // NO BORRAR
