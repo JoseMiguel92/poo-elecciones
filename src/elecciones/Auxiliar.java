@@ -4,7 +4,7 @@ package elecciones;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-
+//prueba1
 /**
  * @autor Raul Martin
  * @autor Jose Miguel Garcia
