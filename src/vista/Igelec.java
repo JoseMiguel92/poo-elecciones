@@ -95,21 +95,23 @@ public class Igelec extends javax.swing.JFrame {
         jTextFieldNombreCircuns = new javax.swing.JTextField();
         jTextFieldPoblacionCircuns = new javax.swing.JTextField();
         jButtonAñadirCircuns = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        jTextFieldParticipacionCircuns = new javax.swing.JTextField();
         Cargar = new javax.swing.JTabbedPane();
         TabBienvenido = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jButtonCrearEleccion = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        TabCircun = new javax.swing.JPanel();
+        InfoCircunscripciones = new javax.swing.JScrollPane();
+        jTableCircunscripcion = new javax.swing.JTable();
+        añadirCircun = new javax.swing.JButton();
         TabFP = new javax.swing.JPanel();
         InfoFormacionesPoliticas = new javax.swing.JScrollPane();
         jTableFormacionesPoliticas = new javax.swing.JTable();
         añadirPartido = new javax.swing.JButton();
         añadirCoalicion = new javax.swing.JButton();
-        TabCircun = new javax.swing.JPanel();
-        InfoCircunscripciones = new javax.swing.JScrollPane();
-        jTableCircunscripcion = new javax.swing.JTable();
-        añadirCircun = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         salidaTexto = new javax.swing.JTextArea();
 
@@ -381,6 +383,8 @@ public class Igelec extends javax.swing.JFrame {
 
         jButtonAñadirCircuns.setText("Añadir");
 
+        jLabel14.setText("Participacion:");
+
         javax.swing.GroupLayout jFrameCrearCircunscripcionLayout = new javax.swing.GroupLayout(jFrameCrearCircunscripcion.getContentPane());
         jFrameCrearCircunscripcion.getContentPane().setLayout(jFrameCrearCircunscripcionLayout);
         jFrameCrearCircunscripcionLayout.setHorizontalGroup(
@@ -390,14 +394,16 @@ public class Igelec extends javax.swing.JFrame {
                     .addGroup(jFrameCrearCircunscripcionLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addGroup(jFrameCrearCircunscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel12))
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel13))
                         .addGap(18, 18, 18)
                         .addGroup(jFrameCrearCircunscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTextFieldNombreCircuns)
-                            .addComponent(jTextFieldPoblacionCircuns, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)))
+                            .addComponent(jTextFieldPoblacionCircuns)
+                            .addComponent(jTextFieldParticipacionCircuns, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)))
                     .addGroup(jFrameCrearCircunscripcionLayout.createSequentialGroup()
-                        .addGap(163, 163, 163)
+                        .addGap(161, 161, 161)
                         .addComponent(jButtonAñadirCircuns)))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
@@ -412,9 +418,13 @@ public class Igelec extends javax.swing.JFrame {
                 .addGroup(jFrameCrearCircunscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(jTextFieldPoblacionCircuns, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jFrameCrearCircunscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel14)
+                    .addComponent(jTextFieldParticipacionCircuns, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(jButtonAñadirCircuns)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addGap(25, 25, 25))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -471,6 +481,39 @@ public class Igelec extends javax.swing.JFrame {
 
         Cargar.addTab("Bienvenido", TabBienvenido);
 
+        jTableCircunscripcion.setModel(new modelos.CircunscripcionTableModel());
+        InfoCircunscripciones.setViewportView(jTableCircunscripcion);
+
+        añadirCircun.setText("Añadir");
+        añadirCircun.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                añadirCircunActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout TabCircunLayout = new javax.swing.GroupLayout(TabCircun);
+        TabCircun.setLayout(TabCircunLayout);
+        TabCircunLayout.setHorizontalGroup(
+            TabCircunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TabCircunLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(InfoCircunscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 705, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(añadirCircun)
+                .addContainerGap(121, Short.MAX_VALUE))
+        );
+        TabCircunLayout.setVerticalGroup(
+            TabCircunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TabCircunLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(TabCircunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(añadirCircun)
+                    .addComponent(InfoCircunscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        Cargar.addTab("Circunscripciones", TabCircun);
+
         jTableFormacionesPoliticas.setModel(new modelos.PartidoTableModel());
         InfoFormacionesPoliticas.setViewportView(jTableFormacionesPoliticas);
         if (jTableFormacionesPoliticas.getColumnModel().getColumnCount() > 0) {
@@ -524,39 +567,6 @@ public class Igelec extends javax.swing.JFrame {
         );
 
         Cargar.addTab("Formaciones Políticas", TabFP);
-
-        jTableCircunscripcion.setModel(new modelos.CircunscripcionTableModel());
-        InfoCircunscripciones.setViewportView(jTableCircunscripcion);
-
-        añadirCircun.setText("Añadir");
-        añadirCircun.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                añadirCircunActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout TabCircunLayout = new javax.swing.GroupLayout(TabCircun);
-        TabCircun.setLayout(TabCircunLayout);
-        TabCircunLayout.setHorizontalGroup(
-            TabCircunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TabCircunLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(InfoCircunscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 705, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(añadirCircun)
-                .addContainerGap(121, Short.MAX_VALUE))
-        );
-        TabCircunLayout.setVerticalGroup(
-            TabCircunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TabCircunLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(TabCircunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(añadirCircun)
-                    .addComponent(InfoCircunscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-
-        Cargar.addTab("Circunscripciones", TabCircun);
 
         salidaTexto.setEditable(false);
         salidaTexto.setColumns(20);
@@ -842,6 +852,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -866,6 +877,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldNombreC;
     private javax.swing.JTextField jTextFieldNombreCircuns;
     private javax.swing.JTextField jTextFieldNombrePP;
+    private javax.swing.JTextField jTextFieldParticipacionCircuns;
     private javax.swing.JTextField jTextFieldPoblacionCircuns;
     private javax.swing.JTextField jTextFieldProfesionS;
     private javax.swing.JTextField jTextFieldSiglasC;
