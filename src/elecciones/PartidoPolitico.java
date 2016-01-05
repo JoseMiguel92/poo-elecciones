@@ -15,6 +15,10 @@ public class PartidoPolitico extends FormacionPolitica implements Serializable{
     private ArrayList<Votantes> votantes;
     private ArrayList<Militante> militantes; // utilizo nombre de militantes para mayor claridad
 
+    public PartidoPolitico(String nombre, String siglas, String logo){
+        super(nombre, siglas, logo);
+    }
+    
     public ArrayList<Votantes> getVotantes() {
         return votantes;
     }
