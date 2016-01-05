@@ -44,7 +44,7 @@ public class PartidoPolitico extends FormacionPolitica implements Serializable{
 
 //Metodos Publicos
     @Override
-    public Lista elaborarListas(Eleccion eleccion){
+    public Lista elaborarListas(int escaños){
         Lista lista = null;
         return lista;
     }
