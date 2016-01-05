@@ -134,9 +134,8 @@ public class EleccionEnCircunscripcion implements Serializable{
 
     public void calcularResultados(){
            //Coger this.resultadoVotos
-            this.setEscaños(poblacion);
             int escañosTotales = this.getEscaños();
-            simularResultados();
+            simularResultados();//DEVUELVE resultadoVotos
             
             aplicarLey(resultadoVotos, escañosTotales);
     };
@@ -149,7 +148,6 @@ public class EleccionEnCircunscripcion implements Serializable{
             Lista listaPartido = partido.elaborarListas(escaños);
             listaPartido.setCircunscripcionPertenece(this);
             listasPartidos.add(i, listaPartido);     
-            
         }
     };
     //OPCIONALES
@@ -176,6 +174,7 @@ public class EleccionEnCircunscripcion implements Serializable{
             }
         
     };
+    
     private int pedirVotos(){
         int numVotos=0;
         if (true){//ELEGIR O NO POR INTERFAZ
