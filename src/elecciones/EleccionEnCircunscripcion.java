@@ -91,9 +91,8 @@ public class EleccionEnCircunscripcion implements Serializable{
         }
             this.votosBlanco=totalVotos;
     };
-        public void simularResultados(int numVotos) throws IllegalArgumentException{
-        
-        int totalVotos = (int) (this.getPoblacion()*Math.round(this.participaccion));
+    public void simularResultados(int numVotos) throws IllegalArgumentException{  
+        int totalVotos = (int) Math.round((this.getPoblacion()*this.participaccion));
         // Si nVotos mayor a total votos tiramos excepcion
         if(numVotos>totalVotos) throw new IllegalArgumentException();
         for (int i = 0; i < listasPartidos.size(); i++) {
@@ -105,13 +104,12 @@ public class EleccionEnCircunscripcion implements Serializable{
             this.votosBlanco=totalVotos;
     };
 
-    public TablaEscaños calcularResultados(TablaVotos votos){
+    public void calcularResultados(TablaVotos votos){
            //Coger this.resultadoVotos
             this.setEscaños(poblacion);
             int escañosTotales = this.getEscaños();
             simularResultados();
             aplicarLey(votos, escañosTotales);
-        return this.resultadoEscaños;
     };
     public void aplicarLey(TablaVotos votos, int escañosTotales){
         double [][] TablaAux = null;
