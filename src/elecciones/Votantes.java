@@ -14,7 +14,7 @@ public abstract class Votantes implements Serializable{
     protected String nombreApellidos;
     protected int edad;
     protected String profesion;
-    protected char genero;
+    protected String genero;
     protected String siglasPartido;
     protected String[] encuesta;
 
@@ -22,7 +22,7 @@ public abstract class Votantes implements Serializable{
     public Votantes(String nombreApellidos){
         this.nombreApellidos= nombreApellidos;
     }
-    public Votantes(String nombreApellidos, int edad, String profesion, char genero, String siglasPartido) {
+    public Votantes(String nombreApellidos, int edad, String profesion, String genero, String siglasPartido) {
         this.nombreApellidos = nombreApellidos;
         this.edad = edad;
         this.profesion = profesion;
@@ -50,10 +50,10 @@ public abstract class Votantes implements Serializable{
     public void setProfesion(String profesion) {
         this.profesion = profesion;
     }
-    public char getGenero() {
+    public String getGenero() {
         return genero;
     }
-    public void setGenero(char genero) {
+    public void setGenero(String genero) {
         this.genero = genero;
     }
     public String getSiglasPartido() {

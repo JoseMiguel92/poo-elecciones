@@ -11,7 +11,7 @@ import java.io.Serializable;
 public class Simpatizante extends Votantes implements Serializable{
     
 //Contructores
-    public Simpatizante(String nombreApellido, int edad, String profesion, char genero, String siglasPartido) {
+    public Simpatizante(String nombreApellido, int edad, String profesion, String genero, String siglasPartido) {
         super(nombreApellido, edad, profesion, genero, siglasPartido);
     }
     public Simpatizante(String nombreApellido){

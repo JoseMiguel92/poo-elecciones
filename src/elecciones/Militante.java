@@ -10,11 +10,11 @@ import java.io.Serializable;
 
 public class Militante extends Votantes implements Serializable{
 //Atributos
-    protected double cuota;
+    protected String cuota;
     protected String carnet;
     
 //Contructores
-    public Militante(String nombreApellidos, int edad, String profesion, char genero, String siglasPartido,double cuota, String carnet) {
+    public Militante(String nombreApellidos, int edad, String profesion, String genero, String siglasPartido,String cuota, String carnet) {
         super(nombreApellidos, edad, profesion, genero, siglasPartido);
         this.cuota = cuota;
         this.carnet = carnet;
@@ -23,10 +23,10 @@ public class Militante extends Votantes implements Serializable{
         super(nombreApellidos);
     }
 //GETs y SETs
-    public double getCuota() {
+    public String getCuota() {
         return cuota;
     }
-    public void setCuota(double cuota) {
+    public void setCuota(String cuota) {
         this.cuota = cuota;
     }
     public String getCarnet() {
