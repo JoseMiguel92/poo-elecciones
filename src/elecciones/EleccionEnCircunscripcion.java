@@ -104,12 +104,12 @@ public class EleccionEnCircunscripcion implements Serializable{
             this.votosBlanco=totalVotos;
     };
 
-    public void calcularResultados(TablaVotos votos){
+    public void calcularResultados(){
            //Coger this.resultadoVotos
             this.setEscaños(poblacion);
             int escañosTotales = this.getEscaños();
             simularResultados();
-            aplicarLey(votos, escañosTotales);
+            aplicarLey(resultadoVotos, escañosTotales);
     };
     public void aplicarLey(TablaVotos votos, int escañosTotales){
         double [][] TablaAux = null;
