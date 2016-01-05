@@ -31,7 +31,6 @@ public class Igelec extends javax.swing.JFrame {
     private ArrayList<FormacionPolitica> formacionesPoliticas = new ArrayList<>();
     private ArrayList<Militante> militantesAuxiliar;
     private ArrayList<Votantes> votantesAuxiliar;
-    
 
     /**
      * Creates new form igelec
@@ -96,7 +95,8 @@ public class Igelec extends javax.swing.JFrame {
         añadirCircun = new javax.swing.JButton();
         importarCircun = new javax.swing.JButton();
         exportarCircun = new javax.swing.JButton();
-        salidaTexto = new java.awt.TextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        salidaTexto = new javax.swing.JTextArea();
 
         jFrameAñadirPartido.setMinimumSize(new java.awt.Dimension(911, 550));
         jFrameAñadirPartido.setResizable(false);
@@ -457,24 +457,25 @@ public class Igelec extends javax.swing.JFrame {
 
         Cargar.addTab("Circunscripciones", TabCircun);
 
-        salidaTexto.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         salidaTexto.setEditable(false);
+        salidaTexto.setColumns(20);
+        salidaTexto.setRows(5);
+        salidaTexto.setText("-- Información --");
+        jScrollPane2.setViewportView(salidaTexto);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Cargar, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(salidaTexto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(Cargar)
+            .addComponent(jScrollPane2)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Cargar, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(salidaTexto, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))
         );
 
         Cargar.getAccessibleContext().setAccessibleName("Pestañas");
@@ -529,8 +530,6 @@ public class Igelec extends javax.swing.JFrame {
         jTextFieldNombrePP.setText("");
         jTextFieldLogoPP.setText("");
         jTextFieldSiglasPP.setText("");
-        
-        
         
         System.out.println(formacionesPoliticas.toString());
         
@@ -717,6 +716,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelNombrePP;
     private javax.swing.JLabel jLabelSiglasPP;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableCircunscripcion;
     private javax.swing.JTable jTableFormacionesPoliticas;
     private javax.swing.JTable jTablePersonas;
@@ -729,7 +729,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldProfesionS;
     private javax.swing.JTextField jTextFieldSiglasPP;
     private javax.swing.JTextField jTextFieldSiglasS;
-    private java.awt.TextArea salidaTexto;
+    private javax.swing.JTextArea salidaTexto;
     // End of variables declaration//GEN-END:variables
 
 }
