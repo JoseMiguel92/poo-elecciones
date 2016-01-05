@@ -2,6 +2,7 @@ package elecciones;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  * @autor Raul Martin
@@ -9,23 +10,25 @@ import java.util.ArrayList;
  * @autor Daniel Oliver
  */
 
+
+
 public class EleccionEnCircunscripcion implements Serializable{
 //Atributos
     protected String nombre;
     protected int poblacion;
     protected int escaños;
-    protected double participaccion;
+    protected double participacion;
     protected TablaVotos resultadoVotos;
     protected TablaEscaños resultadoEscaños;
     private ArrayList<Lista> listasPartidos;
     private int votosBlanco;
     
 //Contructores
-    public EleccionEnCircunscripcion(String nombre, int poblacion, double participaccion) {
+    public EleccionEnCircunscripcion(String nombre, int poblacion, double participacion) {
         this.nombre = nombre;
         this.poblacion = poblacion;
         this.escaños = Escaños(poblacion);
-        this.participaccion = participaccion;
+        this.participacion = participacion;
     }
     
     public ArrayList<Lista> getListasPartidos() {
@@ -84,11 +87,11 @@ public class EleccionEnCircunscripcion implements Serializable{
             } else return esc;
         }
     }
-    public double getParticipaccion() {
-        return participaccion;
+    public double getParticipacion() {
+        return participacion;
     }
-    public void setParticipaccion(double participaccion) {
-        this.participaccion = participaccion;
+    public void setParticipacion(double participaccion) {
+        this.participacion = participaccion;
     }
     public TablaVotos getResultadoVotos() {
         return resultadoVotos;
@@ -105,7 +108,7 @@ public class EleccionEnCircunscripcion implements Serializable{
     
 //Metodos Publicos
 //    public void simularResultados(){
-//        int totalVotos = (int) Math.round(this.getPoblacion()*this.participaccion);
+//        int totalVotos = (int) Math.round(this.getPoblacion()*this.participacion);
 //        for (int i = 0; i < listasPartidos.size(); i++) {
 //            FormacionPolitica formacion = listasPartidos.get(i).getFormacionPolitica();
 //            int numVotos = (int)(Math.random() * totalVotos);
@@ -116,7 +119,7 @@ public class EleccionEnCircunscripcion implements Serializable{
 //            this.votosBlanco=totalVotos;
 //    };
     public void simularResultados() throws IllegalArgumentException{       
-        int totalVotos = (int) Math.round((this.getPoblacion()*this.participaccion));
+        int totalVotos = (int) Math.round((this.getPoblacion()*this.participacion));
         for (int i = 0; i < listasPartidos.size(); i++) {
             int numVotos=pedirVotos();
             if(numVotos==-1){

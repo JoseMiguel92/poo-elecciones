@@ -23,10 +23,12 @@ public class PartidoPolitico extends FormacionPolitica implements Serializable{
         this.votantes = votantes;
     }
 
+    
     public ArrayList<Militante> getMilitantes() {
         return militantes;
     }
 
+    @Override
     public void setMilitantes(ArrayList<Militante> militantes) {
         this.militantes = militantes;
     }

@@ -20,8 +20,6 @@ public class Eleccion implements Serializable {
 
    
 
-
-    
 //Contructores
     public Eleccion(String nombre) {
         this.nombre = nombre;
