@@ -16,7 +16,7 @@ public class Lista implements Serializable{
     private String descripcion;
     private ArrayList<Militante> diputados; // NO BORRAR
     private FormacionPolitica formacionPolitica;  // NO BORRAR
-    private EleccionEnCircunscripcion eleccionEnCircunscripcion; // NO BORRAR
+    private EleccionEnCircunscripcion circunscripcionPertenece; // NO BORRAR
 
     public ArrayList<Militante> getDiputados() {
         return diputados;
@@ -34,12 +34,12 @@ public class Lista implements Serializable{
         this.formacionPolitica = formacionPolitica;
     }
 
-    public EleccionEnCircunscripcion getEleccionEnCircunscripcion() {
-        return eleccionEnCircunscripcion;
+    public EleccionEnCircunscripcion getCircunscripcionPertenece() {
+        return circunscripcionPertenece;
     }
 
-    public void setEleccionEnCircunscripcion(EleccionEnCircunscripcion eleccionEnCircunscripcion) {
-        this.eleccionEnCircunscripcion = eleccionEnCircunscripcion;
+    public void setCircunscripcionPertenece(EleccionEnCircunscripcion eleccionEnCircunscripcion) {
+        this.circunscripcionPertenece = eleccionEnCircunscripcion;
     }
 
     
