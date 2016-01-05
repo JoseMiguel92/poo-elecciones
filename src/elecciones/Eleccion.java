@@ -72,7 +72,7 @@ public class Eleccion implements Serializable {
 //Metodos Publicos
     public void realizarEleccion(){
         for(EleccionEnCircunscripcion circunscripcion : eleccionesEnCircunscripcion){
-            circunscripcion.calcularResultados();
+            circunscripcion.calcularResultados();// DEVUELVE LOS ESCAÑOS DE CADA PÀRTIDO POR CIRCUNSCRIPCION
             circunscripcion.calcularListas();
         }
     }
