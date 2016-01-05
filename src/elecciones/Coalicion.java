@@ -1,6 +1,7 @@
 package elecciones;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 /**
  * @autor Raul Martin
  * @autor Jose Miguel Garcia
@@ -24,10 +25,12 @@ public class Coalicion extends FormacionPolitica implements Serializable{
         
         int numPartidos = partidos.size();
         for (PartidoPolitico partido : partidos){
-            ArrayList<Militante> milis = partido.getMilitantes();
+            int nMilis = partido.getMilitantes().size();
+            List<Militante> milis = partido.getMilitantes().subList(0, nMilis*(1/numPartidos));
+            
+            militantes.addAll(milis);
         }
         
-
     }
 //GETs y SETs
     public ArrayList<PartidoPolitico> getCoalicion_partidos() {
