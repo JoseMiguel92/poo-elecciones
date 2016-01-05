@@ -7,9 +7,6 @@
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[911, 550]"/>
         </Property>
-        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[911, 530]"/>
-        </Property>
         <Property name="resizable" type="boolean" value="false"/>
         <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[911, 530]"/>
@@ -397,12 +394,11 @@
                       <Component id="InfoPersonas" min="-2" pref="705" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="borrarPersona" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="importarPersona" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="exportarPersona" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="añadirPersona" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="109" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -414,15 +410,13 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="añadirPersona" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="borrarPersona" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="importarPersona" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="exportarPersona" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="InfoPersonas" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="14" max="32767" attributes="0"/>
+                      <EmptySpace pref="24" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -448,11 +442,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="a&#xf1;adirPersonaActionPerformed"/>
               </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="borrarPersona">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Eliminar seleccionados"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="importarPersona">
               <Properties>
@@ -485,11 +474,10 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="añadirCoalicion" min="-2" max="-2" attributes="0"/>
                           <Component id="añadirPartido" min="-2" max="-2" attributes="0"/>
-                          <Component id="borrarFormacion" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="importarPartido" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="exportarPartido" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="47" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -502,8 +490,6 @@
                               <Component id="añadirPartido" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="añadirCoalicion" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="borrarFormacion" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="importarPartido" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -564,11 +550,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="a&#xf1;adirCoalicionActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="borrarFormacion">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Eliminar Seleccionados"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JButton" name="importarPartido">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Importar Partido"/>
@@ -598,7 +579,6 @@
                       <Component id="InfoCircunscripciones" min="-2" pref="705" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="borrarCircun" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="importarCircun" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="exportarCircun" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="añadirCircun" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -615,15 +595,13 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="añadirCircun" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="borrarCircun" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="importarCircun" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="exportarCircun" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="InfoCircunscripciones" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="14" max="32767" attributes="0"/>
+                      <EmptySpace pref="24" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -649,11 +627,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="a&#xf1;adirCircunActionPerformed"/>
               </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="borrarCircun">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Borrar"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="importarCircun">
               <Properties>

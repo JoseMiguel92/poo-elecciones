@@ -81,7 +81,6 @@ public class Igelec extends javax.swing.JFrame {
         InfoPersonas = new javax.swing.JScrollPane();
         jTablePersonas = new javax.swing.JTable();
         añadirPersona = new javax.swing.JButton();
-        borrarPersona = new javax.swing.JButton();
         importarPersona = new javax.swing.JButton();
         exportarPersona = new javax.swing.JButton();
         TabFP = new javax.swing.JPanel();
@@ -89,20 +88,17 @@ public class Igelec extends javax.swing.JFrame {
         jTableFormacionesPoliticas = new javax.swing.JTable();
         añadirPartido = new javax.swing.JButton();
         añadirCoalicion = new javax.swing.JButton();
-        borrarFormacion = new javax.swing.JButton();
         importarPartido = new javax.swing.JButton();
         exportarPartido = new javax.swing.JButton();
         TabCircun = new javax.swing.JPanel();
         InfoCircunscripciones = new javax.swing.JScrollPane();
         jTableCircunscripcion = new javax.swing.JTable();
         añadirCircun = new javax.swing.JButton();
-        borrarCircun = new javax.swing.JButton();
         importarCircun = new javax.swing.JButton();
         exportarCircun = new javax.swing.JButton();
         salidaTexto = new java.awt.TextArea();
 
         jFrameAñadirPartido.setMinimumSize(new java.awt.Dimension(911, 550));
-        jFrameAñadirPartido.setPreferredSize(new java.awt.Dimension(911, 530));
         jFrameAñadirPartido.setResizable(false);
         jFrameAñadirPartido.setSize(new java.awt.Dimension(911, 530));
 
@@ -317,8 +313,6 @@ public class Igelec extends javax.swing.JFrame {
             }
         });
 
-        borrarPersona.setText("Eliminar seleccionados");
-
         importarPersona.setText("Importar");
 
         exportarPersona.setText("Exportar");
@@ -332,11 +326,10 @@ public class Igelec extends javax.swing.JFrame {
                 .addComponent(InfoPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 705, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(TabPersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(borrarPersona)
                     .addComponent(importarPersona)
                     .addComponent(exportarPersona)
                     .addComponent(añadirPersona))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
         TabPersonasLayout.setVerticalGroup(
             TabPersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -346,13 +339,11 @@ public class Igelec extends javax.swing.JFrame {
                     .addGroup(TabPersonasLayout.createSequentialGroup()
                         .addComponent(añadirPersona)
                         .addGap(18, 18, 18)
-                        .addComponent(borrarPersona)
-                        .addGap(18, 18, 18)
                         .addComponent(importarPersona)
                         .addGap(18, 18, 18)
                         .addComponent(exportarPersona))
                     .addComponent(InfoPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         Cargar.addTab("Personas", TabPersonas);
@@ -383,8 +374,6 @@ public class Igelec extends javax.swing.JFrame {
             }
         });
 
-        borrarFormacion.setText("Eliminar Seleccionados");
-
         importarPartido.setText("Importar Partido");
 
         exportarPartido.setText("Exportar Partido");
@@ -400,10 +389,9 @@ public class Igelec extends javax.swing.JFrame {
                 .addGroup(TabFPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(añadirCoalicion)
                     .addComponent(añadirPartido)
-                    .addComponent(borrarFormacion)
                     .addComponent(importarPartido)
                     .addComponent(exportarPartido))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         TabFPLayout.setVerticalGroup(
             TabFPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -414,8 +402,6 @@ public class Igelec extends javax.swing.JFrame {
                         .addComponent(añadirPartido)
                         .addGap(18, 18, 18)
                         .addComponent(añadirCoalicion)
-                        .addGap(18, 18, 18)
-                        .addComponent(borrarFormacion)
                         .addGap(18, 18, 18)
                         .addComponent(importarPartido)
                         .addGap(18, 18, 18)
@@ -436,8 +422,6 @@ public class Igelec extends javax.swing.JFrame {
             }
         });
 
-        borrarCircun.setText("Borrar");
-
         importarCircun.setText("Importar");
 
         exportarCircun.setText("Exportar");
@@ -451,7 +435,6 @@ public class Igelec extends javax.swing.JFrame {
                 .addComponent(InfoCircunscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 705, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(TabCircunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(borrarCircun)
                     .addComponent(importarCircun)
                     .addComponent(exportarCircun)
                     .addComponent(añadirCircun))
@@ -465,13 +448,11 @@ public class Igelec extends javax.swing.JFrame {
                     .addGroup(TabCircunLayout.createSequentialGroup()
                         .addComponent(añadirCircun)
                         .addGap(18, 18, 18)
-                        .addComponent(borrarCircun)
-                        .addGap(18, 18, 18)
                         .addComponent(importarCircun)
                         .addGap(18, 18, 18)
                         .addComponent(exportarCircun))
                     .addComponent(InfoCircunscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         Cargar.addTab("Circunscripciones", TabCircun);
@@ -713,9 +694,6 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JButton añadirCoalicion;
     private javax.swing.JButton añadirPartido;
     private javax.swing.JButton añadirPersona;
-    private javax.swing.JButton borrarCircun;
-    private javax.swing.JButton borrarFormacion;
-    private javax.swing.JButton borrarPersona;
     private javax.swing.JButton exportarCircun;
     private javax.swing.JButton exportarPartido;
     private javax.swing.JButton exportarPersona;
