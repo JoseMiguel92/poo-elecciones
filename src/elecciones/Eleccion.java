@@ -23,10 +23,8 @@ public class Eleccion implements Serializable {
 
     
 //Contructores
-    public Eleccion(String nombre, double participacion, int escaños) {
+    public Eleccion(String nombre) {
         this.nombre = nombre;
-        this.participacion = participacion;
-        this.escaños = escaños;
     }
     
 //GETs y SETs
