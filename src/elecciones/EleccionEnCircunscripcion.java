@@ -88,26 +88,30 @@ public class EleccionEnCircunscripcion implements Serializable{
     }
     
 //Metodos Publicos
-    public void simularResultados(){
-        int totalVotos = (int) Math.round(this.getPoblacion()*this.participaccion);
-        for (int i = 0; i < listasPartidos.size(); i++) {
-            FormacionPolitica formacion = listasPartidos.get(i).getFormacionPolitica();
-            int numVotos = (int)(Math.random() * totalVotos);
-            ItemVotos a1 = new ItemVotos(formacion,numVotos);
-            totalVotos-=numVotos;
-            this.resultadoVotos.getTabla_votos().add(a1);   
-        }
-            this.votosBlanco=totalVotos;
-    };
-    public void simularResultados(int numVotos) throws IllegalArgumentException{  
+//    public void simularResultados(){
+//        int totalVotos = (int) Math.round(this.getPoblacion()*this.participaccion);
+//        for (int i = 0; i < listasPartidos.size(); i++) {
+//            FormacionPolitica formacion = listasPartidos.get(i).getFormacionPolitica();
+//            int numVotos = (int)(Math.random() * totalVotos);
+//            ItemVotos a1 = new ItemVotos(formacion,numVotos);
+//            totalVotos-=numVotos;
+//            this.resultadoVotos.getTabla_votos().add(a1);   
+//        }
+//            this.votosBlanco=totalVotos;
+//    };
+    public void simularResultados() throws IllegalArgumentException{       
         int totalVotos = (int) Math.round((this.getPoblacion()*this.participaccion));
+        int numVotos=pedirVotos();
+        if(numVotos==-1){
+            numVotos = (int)(Math.random() * totalVotos);
+        }
         // Si nVotos mayor a total votos tiramos excepcion
         if(numVotos>totalVotos) throw new IllegalArgumentException();
         for (int i = 0; i < listasPartidos.size(); i++) {
             FormacionPolitica formacion = listasPartidos.get(i).getFormacionPolitica();
-            ItemVotos a1 = new ItemVotos(formacion,numVotos);
+            ItemVotos votospartido = new ItemVotos(formacion,numVotos);
             totalVotos-=numVotos;
-            this.resultadoVotos.getTabla_votos().add(a1);   
+            this.resultadoVotos.getTabla_votos().add(votospartido);   
         }
             this.votosBlanco=totalVotos;
     };
@@ -117,6 +121,7 @@ public class EleccionEnCircunscripcion implements Serializable{
             this.setEscaños(poblacion);
             int escañosTotales = this.getEscaños();
             simularResultados();
+            
             aplicarLey(resultadoVotos, escañosTotales);
     };
 
@@ -155,4 +160,11 @@ public class EleccionEnCircunscripcion implements Serializable{
             }
         
     };
+    private int pedirVotos(){
+        int numVotos=0;
+        if (true){//ELEGIR O NO POR INTERFAZ
+            //numVotos=LO QUE DIGA LA INTERFAZ
+        }else numVotos=-1;//SI DA QUE NO SE INICIA A -1
+        return numVotos;
+    }
 }
