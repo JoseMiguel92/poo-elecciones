@@ -55,32 +55,6 @@ public class Igelec extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jFrame3 = new javax.swing.JFrame();
-        jButtonAñadirPP = new javax.swing.JButton();
-        jLabelNombrePP = new javax.swing.JLabel();
-        jTextFieldNombrePP = new javax.swing.JTextField();
-        jLabelSiglasPP = new javax.swing.JLabel();
-        jTextFieldSiglasPP = new javax.swing.JTextField();
-        jLabelLogoPP = new javax.swing.JLabel();
-        jTextFieldLogoPP = new javax.swing.JTextField();
-        jButtonCargarMilitantes = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTableVotantesPP = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jButtonAñadirSPartido = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jFrame4Simpa = new javax.swing.JFrame();
-        jLabel4 = new javax.swing.JLabel();
-        jTextFieldNombreAñadirS = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jTextFieldEdadAñadirS = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jTextFieldGeneroAñadirS = new javax.swing.JTextField();
-        jTextFieldProfesionS = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jButtonAñadirSimpatizante = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jTextFieldSiglasS = new javax.swing.JTextField();
         jFrameCrearCoalicion = new javax.swing.JFrame();
         jLabel9 = new javax.swing.JLabel();
         jTextFieldNombreC = new javax.swing.JTextField();
@@ -108,16 +82,32 @@ public class Igelec extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jañadirPartido = new javax.swing.JButton();
-        jFrame4 = new javax.swing.JFrame();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jTextFieldNombreCircuns2 = new javax.swing.JTextField();
-        jTextFieldPoblacionCircuns2 = new javax.swing.JTextField();
-        jButtonAñadirCircuns2 = new javax.swing.JButton();
-        jLabel20 = new javax.swing.JLabel();
-        jTextFieldParticipacionCircuns2 = new javax.swing.JTextField();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jFrame3 = new javax.swing.JFrame();
+        jButtonAñadirPP = new javax.swing.JButton();
+        jLabelNombrePP = new javax.swing.JLabel();
+        jTextFieldNombrePP = new javax.swing.JTextField();
+        jLabelSiglasPP = new javax.swing.JLabel();
+        jTextFieldSiglasPP = new javax.swing.JTextField();
+        jLabelLogoPP = new javax.swing.JLabel();
+        jTextFieldLogoPP = new javax.swing.JTextField();
+        jButtonCargarMilitantes = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableVotantesPP = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jButtonAñadirSPartido = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jFrame4Simpa = new javax.swing.JFrame();
+        jLabel4 = new javax.swing.JLabel();
+        jTextFieldNombreAñadirS = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextFieldEdadAñadirS = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jTextFieldGeneroAñadirS = new javax.swing.JTextField();
+        jTextFieldProfesionS = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jButtonAñadirSimpatizante = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jTextFieldSiglasS = new javax.swing.JTextField();
         jFrame4Mili = new javax.swing.JFrame();
         jLabel15 = new javax.swing.JLabel();
         jTextFieldNombreAñadirS1 = new javax.swing.JTextField();
@@ -151,209 +141,6 @@ public class Igelec extends javax.swing.JFrame {
         añadirCoalicion = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         salidaTexto = new javax.swing.JTextArea();
-
-        jFrame3.setMinimumSize(new java.awt.Dimension(911, 550));
-        jFrame3.setResizable(false);
-        jFrame3.setSize(new java.awt.Dimension(911, 530));
-
-        jButtonAñadirPP.setText("Añadir Partido Politico");
-        jButtonAñadirPP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAñadirPPActionPerformed(evt);
-            }
-        });
-
-        jLabelNombrePP.setText("Nombre:");
-
-        jLabelSiglasPP.setText("Siglas:");
-
-        jLabelLogoPP.setText("Logo:");
-
-        jButtonCargarMilitantes.setText("Cargar Militantes");
-        jButtonCargarMilitantes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCargarMilitantesActionPerformed(evt);
-            }
-        });
-
-        jTableVotantesPP.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nombre Apellidos", "Edad", "Profesion", "Genero", "Siglas"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTableVotantesPP);
-        if (jTableVotantesPP.getColumnModel().getColumnCount() > 0) {
-            jTableVotantesPP.getColumnModel().getColumn(0).setResizable(false);
-            jTableVotantesPP.getColumnModel().getColumn(1).setResizable(false);
-            jTableVotantesPP.getColumnModel().getColumn(2).setResizable(false);
-            jTableVotantesPP.getColumnModel().getColumn(3).setResizable(false);
-            jTableVotantesPP.getColumnModel().getColumn(4).setResizable(false);
-        }
-
-        jLabel1.setText("Votantes:");
-
-        jButtonAñadirSPartido.setText("Añadir Simpatizante");
-        jButtonAñadirSPartido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAñadirSPartidoActionPerformed(evt);
-            }
-        });
-
-        jLabel3.setText("Datos Del Partido:");
-
-        javax.swing.GroupLayout jFrame3Layout = new javax.swing.GroupLayout(jFrame3.getContentPane());
-        jFrame3.getContentPane().setLayout(jFrame3Layout);
-        jFrame3Layout.setHorizontalGroup(
-            jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrame3Layout.createSequentialGroup()
-                .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jFrame3Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jFrame3Layout.createSequentialGroup()
-                                .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelNombrePP)
-                                    .addComponent(jLabelSiglasPP)
-                                    .addComponent(jLabelLogoPP))
-                                .addGap(38, 38, 38)
-                                .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextFieldNombrePP)
-                                    .addComponent(jTextFieldSiglasPP)
-                                    .addComponent(jTextFieldLogoPP, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel3)))
-                    .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jFrame3Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jButtonAñadirPP, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jFrame3Layout.createSequentialGroup()
-                            .addGap(103, 103, 103)
-                            .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButtonCargarMilitantes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtonAñadirSPartido, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
-                .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32))
-        );
-        jFrame3Layout.setVerticalGroup(
-            jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrame3Layout.createSequentialGroup()
-                .addContainerGap(64, Short.MAX_VALUE)
-                .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel3))
-                .addGap(18, 18, 18)
-                .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jFrame3Layout.createSequentialGroup()
-                        .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelNombrePP)
-                            .addComponent(jTextFieldNombrePP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(23, 23, 23)
-                        .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelSiglasPP)
-                            .addComponent(jTextFieldSiglasPP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(31, 31, 31)
-                        .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelLogoPP)
-                            .addComponent(jTextFieldLogoPP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonCargarMilitantes)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonAñadirSPartido)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonAñadirPP)))
-                .addGap(25, 25, 25))
-        );
-
-        jLabel4.setText("Nombre y Apellidos:");
-
-        jTextFieldNombreAñadirS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldNombreAñadirSActionPerformed(evt);
-            }
-        });
-
-        jLabel5.setText("Edad:");
-
-        jLabel6.setText("Genero:");
-
-        jLabel7.setText("Profesion:");
-
-        jButtonAñadirSimpatizante.setText("Añadir Simpatizante");
-        jButtonAñadirSimpatizante.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAñadirSimpatizanteActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setText("Siglas");
-
-        javax.swing.GroupLayout jFrame4SimpaLayout = new javax.swing.GroupLayout(jFrame4Simpa.getContentPane());
-        jFrame4Simpa.getContentPane().setLayout(jFrame4SimpaLayout);
-        jFrame4SimpaLayout.setHorizontalGroup(
-            jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrame4SimpaLayout.createSequentialGroup()
-                .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jFrame4SimpaLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextFieldNombreAñadirS)
-                            .addComponent(jTextFieldEdadAñadirS)
-                            .addComponent(jTextFieldGeneroAñadirS)
-                            .addComponent(jTextFieldProfesionS)
-                            .addComponent(jTextFieldSiglasS, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))
-                    .addGroup(jFrame4SimpaLayout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addComponent(jButtonAñadirSimpatizante)))
-                .addContainerGap(56, Short.MAX_VALUE))
-        );
-        jFrame4SimpaLayout.setVerticalGroup(
-            jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrame4SimpaLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextFieldNombreAñadirS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextFieldEdadAñadirS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextFieldGeneroAñadirS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jTextFieldProfesionS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextFieldSiglasS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addComponent(jButtonAñadirSimpatizante)
-                .addContainerGap(50, Short.MAX_VALUE))
-        );
 
         jLabel9.setText("Nombre Coalicion:");
 
@@ -568,68 +355,208 @@ public class Igelec extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
-        jLabel18.setText("Nombre de la circunscripcion:");
+        jFrame3.setMinimumSize(new java.awt.Dimension(911, 550));
+        jFrame3.setResizable(false);
+        jFrame3.setSize(new java.awt.Dimension(911, 530));
 
-        jLabel19.setText("Poblacion:");
+        jButtonAñadirPP.setText("Añadir Partido Politico");
+        jButtonAñadirPP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAñadirPPActionPerformed(evt);
+            }
+        });
 
-        jButtonAñadirCircuns2.setText("Añadir");
+        jLabelNombrePP.setText("Nombre:");
 
-        jLabel20.setText("Participacion:");
+        jLabelSiglasPP.setText("Siglas:");
 
-        javax.swing.GroupLayout jFrame4Layout = new javax.swing.GroupLayout(jFrame4.getContentPane());
-        jFrame4.getContentPane().setLayout(jFrame4Layout);
-        jFrame4Layout.setHorizontalGroup(
-            jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrame4Layout.createSequentialGroup()
-                .addGroup(jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jFrame4Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel18)
-                            .addComponent(jLabel20)
-                            .addComponent(jLabel19))
-                        .addGap(18, 18, 18)
-                        .addGroup(jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextFieldNombreCircuns2)
-                            .addComponent(jTextFieldPoblacionCircuns2)
-                            .addComponent(jTextFieldParticipacionCircuns2, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)))
-                    .addGroup(jFrame4Layout.createSequentialGroup()
-                        .addGap(161, 161, 161)
-                        .addComponent(jButtonAñadirCircuns2)))
-                .addContainerGap(41, Short.MAX_VALUE))
+        jLabelLogoPP.setText("Logo:");
+
+        jButtonCargarMilitantes.setText("Cargar Militantes");
+        jButtonCargarMilitantes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCargarMilitantesActionPerformed(evt);
+            }
+        });
+
+        jTableVotantesPP.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre Apellidos", "Edad", "Profesion", "Genero", "Siglas"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTableVotantesPP);
+        if (jTableVotantesPP.getColumnModel().getColumnCount() > 0) {
+            jTableVotantesPP.getColumnModel().getColumn(0).setResizable(false);
+            jTableVotantesPP.getColumnModel().getColumn(1).setResizable(false);
+            jTableVotantesPP.getColumnModel().getColumn(2).setResizable(false);
+            jTableVotantesPP.getColumnModel().getColumn(3).setResizable(false);
+            jTableVotantesPP.getColumnModel().getColumn(4).setResizable(false);
+        }
+
+        jLabel1.setText("Votantes:");
+
+        jButtonAñadirSPartido.setText("Añadir Simpatizante");
+        jButtonAñadirSPartido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAñadirSPartidoActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Datos Del Partido:");
+
+        javax.swing.GroupLayout jFrame3Layout = new javax.swing.GroupLayout(jFrame3.getContentPane());
+        jFrame3.getContentPane().setLayout(jFrame3Layout);
+        jFrame3Layout.setHorizontalGroup(
+            jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrame3Layout.createSequentialGroup()
+                .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jFrame3Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jFrame3Layout.createSequentialGroup()
+                                .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelNombrePP)
+                                    .addComponent(jLabelSiglasPP)
+                                    .addComponent(jLabelLogoPP))
+                                .addGap(38, 38, 38)
+                                .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextFieldNombrePP)
+                                    .addComponent(jTextFieldSiglasPP)
+                                    .addComponent(jTextFieldLogoPP, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel3)))
+                    .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jFrame3Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jButtonAñadirPP, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jFrame3Layout.createSequentialGroup()
+                            .addGap(103, 103, 103)
+                            .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jButtonCargarMilitantes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButtonAñadirSPartido, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32))
         );
-        jFrame4Layout.setVerticalGroup(
-            jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrame4Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addGroup(jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(jTextFieldNombreCircuns2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19)
-                    .addComponent(jTextFieldPoblacionCircuns2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel20)
-                    .addComponent(jTextFieldParticipacionCircuns2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(jButtonAñadirCircuns2)
+        jFrame3Layout.setVerticalGroup(
+            jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrame3Layout.createSequentialGroup()
+                .addContainerGap(64, Short.MAX_VALUE)
+                .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3))
+                .addGap(18, 18, 18)
+                .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jFrame3Layout.createSequentialGroup()
+                        .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelNombrePP)
+                            .addComponent(jTextFieldNombrePP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(23, 23, 23)
+                        .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelSiglasPP)
+                            .addComponent(jTextFieldSiglasPP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(31, 31, 31)
+                        .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelLogoPP)
+                            .addComponent(jTextFieldLogoPP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonCargarMilitantes)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonAñadirSPartido)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonAñadirPP)))
                 .addGap(25, 25, 25))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        jLabel4.setText("Nombre y Apellidos:");
+
+        jTextFieldNombreAñadirS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNombreAñadirSActionPerformed(evt);
             }
-        ));
-        jScrollPane4.setViewportView(jTable1);
+        });
+
+        jLabel5.setText("Edad:");
+
+        jLabel6.setText("Genero:");
+
+        jLabel7.setText("Profesion:");
+
+        jButtonAñadirSimpatizante.setText("Añadir Simpatizante");
+        jButtonAñadirSimpatizante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAñadirSimpatizanteActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Siglas");
+
+        javax.swing.GroupLayout jFrame4SimpaLayout = new javax.swing.GroupLayout(jFrame4Simpa.getContentPane());
+        jFrame4Simpa.getContentPane().setLayout(jFrame4SimpaLayout);
+        jFrame4SimpaLayout.setHorizontalGroup(
+            jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame4SimpaLayout.createSequentialGroup()
+                .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jFrame4SimpaLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextFieldNombreAñadirS)
+                            .addComponent(jTextFieldEdadAñadirS)
+                            .addComponent(jTextFieldGeneroAñadirS)
+                            .addComponent(jTextFieldProfesionS)
+                            .addComponent(jTextFieldSiglasS, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))
+                    .addGroup(jFrame4SimpaLayout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(jButtonAñadirSimpatizante)))
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
+        jFrame4SimpaLayout.setVerticalGroup(
+            jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame4SimpaLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jTextFieldNombreAñadirS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jTextFieldEdadAñadirS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jTextFieldGeneroAñadirS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jTextFieldProfesionS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jTextFieldSiglasS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addComponent(jButtonAñadirSimpatizante)
+                .addContainerGap(50, Short.MAX_VALUE))
+        );
 
         jLabel15.setText("Nombre y Apellidos:");
 
@@ -709,11 +636,11 @@ public class Igelec extends javax.swing.JFrame {
                 .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
                     .addComponent(jTextFieldGeneroAñadirS1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
+                .addGap(18, 18, 18)
                 .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel23)
-                    .addComponent(jTextFieldProfesionS1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jTextFieldProfesionS1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel23))
+                .addGap(12, 12, 12)
                 .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel24)
                     .addComponent(jTextFieldSiglasS1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -725,7 +652,7 @@ public class Igelec extends javax.swing.JFrame {
                 .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldCarnet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel26))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addComponent(jButtonAñadirMilitante)
                 .addGap(35, 35, 35))
         );
@@ -1162,7 +1089,6 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButtonAñadirCircuns;
-    private javax.swing.JButton jButtonAñadirCircuns2;
     private javax.swing.JButton jButtonAñadirCoalicion;
     private javax.swing.JButton jButtonAñadirMilitante;
     private javax.swing.JButton jButtonAñadirPP;
@@ -1173,7 +1099,6 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JFrame jFrame3;
-    private javax.swing.JFrame jFrame4;
     private javax.swing.JFrame jFrame4Mili;
     private javax.swing.JFrame jFrame4Simpa;
     private javax.swing.JFrame jFrameCrearCoalicion;
@@ -1186,10 +1111,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -1210,10 +1132,8 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTable jTablaCircunscripciones;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTableCircunscripcion;
     private javax.swing.JTable jTableFormacionesPoliticas;
@@ -1230,12 +1150,9 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldNombreAñadirS1;
     private javax.swing.JTextField jTextFieldNombreC;
     private javax.swing.JTextField jTextFieldNombreCircuns;
-    private javax.swing.JTextField jTextFieldNombreCircuns2;
     private javax.swing.JTextField jTextFieldNombrePP;
     private javax.swing.JTextField jTextFieldParticipacionCircuns;
-    private javax.swing.JTextField jTextFieldParticipacionCircuns2;
     private javax.swing.JTextField jTextFieldPoblacionCircuns;
-    private javax.swing.JTextField jTextFieldPoblacionCircuns2;
     private javax.swing.JTextField jTextFieldProfesionS;
     private javax.swing.JTextField jTextFieldProfesionS1;
     private javax.swing.JTextField jTextFieldSiglasC;
