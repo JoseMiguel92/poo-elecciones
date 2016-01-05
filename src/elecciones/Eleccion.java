@@ -171,8 +171,39 @@ public class Eleccion implements Serializable {
     
     
     public void imprimirMayorias(){
-    
+        if (resultadosTotalEscaños.getTablaEscaños().size()<5){
+            for(ItemEscaños partido : resultadosTotalEscaños.getTablaEscaños()){
+                if(partido.getNumeroEscaños()>(escaños/2)){
+                    partido.getFormacion().toString();
+                }else{
+                    
+                }
+            }
+        }
+       
     };
-//Metodos Privados
+    
+    private ArrayList<ItemEscaños> cuatroFuerzas(){
+        ArrayList<ItemEscaños> fuerzas = new ArrayList<>();
+        if (resultadosTotalEscaños.getTablaEscaños().size()<5){
+            return resultadosTotalEscaños.getTablaEscaños();
+         }else{
+            int contadorFuerzas = 0;
+            int numEscañosMayor = 0;
+            int posicion = 0;
+            for(int i=0; i<=4;i++){
+                for (int j=0; j<resultadosTotalEscaños.getTablaEscaños().size();){
+                    if(resultadosTotalEscaños.getTablaEscaños().get(j).getNumeroEscaños()>numEscañosMayor){
+                        numEscañosMayor = resultadosTotalEscaños.getTablaEscaños().get(j).getNumeroEscaños();
+                        posicion = j;
+                    }
+                }
+                // Añadir al nuevo ArrayList la posicion i.
+                fuerzas.add(resultadosTotalEscaños.getTablaEscaños().get(posicion));
+                resultadosTotalEscaños.getTablaEscaños().remove(posicion);             
+            }
+        }
+        return fuerzas;
+    }
 
 }
