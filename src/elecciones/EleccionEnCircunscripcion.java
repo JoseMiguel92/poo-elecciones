@@ -28,7 +28,15 @@ public class EleccionEnCircunscripcion implements Serializable{
         this.participaccion = participaccion;
     }
     
+    public ArrayList<Lista> getListasPartidos() {
+        return listasPartidos;
+    }
+
 //GETs y SETs
+    public void setListasPartidos(ArrayList<Lista> listasPartidos) {    
+        this.listasPartidos = listasPartidos;
+    }
+
     public String getNombre() {
         return nombre;
     }

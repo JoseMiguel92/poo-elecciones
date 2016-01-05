@@ -19,6 +19,9 @@ public class Eleccion implements Serializable {
     protected String apodo;
     private ArrayList<EleccionEnCircunscripcion> eleccionesEnCircunscripcion;
     
+
+
+    
 //Contructores
     public Eleccion(String nombre, double participacion, int escaños) {
         this.nombre = nombre;
@@ -49,7 +52,13 @@ public class Eleccion implements Serializable {
         return resultadosTotalVotos;
     }
     public void setResultadosTotalVotos(TablaVotos resultadosTotalVotos) {
-        this.resultadosTotalVotos = resultadosTotalVotos;
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                String nombrePP = eleccionesEnCircunscripcion.get(i).getListasPartidos().get(j).getFormacionPolitica().getNombre();
+            }
+            
+        }
+        
     }
     public TablaEscaños getResultadosTotalEscaños() {
         return resultadosTotalEscaños;
@@ -57,6 +66,8 @@ public class Eleccion implements Serializable {
     public void setResultadosTotalEscaños(TablaEscaños resultadosTotalEscaños) {
         this.resultadosTotalEscaños = resultadosTotalEscaños;
     }
+    
+    
     
 //Metodos Publicos
     public void imprimirTablaGlobalVotos(){

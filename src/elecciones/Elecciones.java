@@ -2,6 +2,7 @@ package elecciones;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.ArrayList;
 import vista.Igelec;
 
 /**
@@ -15,7 +16,7 @@ public class Elecciones implements Serializable{
      * @param args the command line arguments
      * @throws java.io.IOException
      */
-    
+
     
     public static void main(String[] args) throws IOException {
         // No tengo ni idea lo que significa Igelec

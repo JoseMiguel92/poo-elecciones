@@ -414,6 +414,76 @@
         </Component>
       </SubComponents>
     </Container>
+    <Container class="javax.swing.JFrame" name="jFrameCrearCircunscripcion">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jTextFieldNombreCircuns" max="32767" attributes="0"/>
+                              <Component id="jTextFieldPoblacionCircuns" pref="199" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
+                          <Component id="jButtonAñadirCircuns" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="41" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldNombreCircuns" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldPoblacionCircuns" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jButtonAñadirCircuns" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="68" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel12">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nombre de la circunscripcion:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel13">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Poblacion:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldNombreCircuns">
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldPoblacionCircuns">
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonA&#xf1;adirCircuns">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="A&#xf1;adir"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -519,6 +589,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Crear Eleccion"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCrearEleccionActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton1">
               <Properties>
@@ -554,8 +627,6 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="añadirCoalicion" min="-2" max="-2" attributes="0"/>
                           <Component id="añadirPartido" min="-2" max="-2" attributes="0"/>
-                          <Component id="importarPartido" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="exportarPartido" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="47" max="32767" attributes="0"/>
                   </Group>
@@ -570,10 +641,6 @@
                               <Component id="añadirPartido" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="añadirCoalicion" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="importarPartido" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="exportarPartido" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="InfoFormacionesPoliticas" min="-2" pref="352" max="-2" attributes="0"/>
                       </Group>
@@ -630,16 +697,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="a&#xf1;adirCoalicionActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="importarPartido">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Importar Partido"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="exportarPartido">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Exportar Partido"/>
-              </Properties>
-            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="TabCircun">
@@ -658,12 +715,8 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="InfoCircunscripciones" min="-2" pref="705" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="importarCircun" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="exportarCircun" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="añadirCircun" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="109" max="32767" attributes="0"/>
+                      <Component id="añadirCircun" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="121" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -672,13 +725,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="añadirCircun" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="importarCircun" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="exportarCircun" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="añadirCircun" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="InfoCircunscripciones" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="24" max="32767" attributes="0"/>
@@ -707,16 +754,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="a&#xf1;adirCircunActionPerformed"/>
               </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="importarCircun">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Importar"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="exportarCircun">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Exportar"/>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>
