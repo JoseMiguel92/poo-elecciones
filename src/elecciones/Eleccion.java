@@ -70,6 +70,13 @@ public class Eleccion implements Serializable {
     
     
 //Metodos Publicos
+    public void realizarEleccion(){
+        for(EleccionEnCircunscripcion circunscripcion : eleccionesEnCircunscripcion){
+            circunscripcion.calcularResultados();
+            circunscripcion.calcularListas();
+        }
+    }
+    
     public void imprimirTablaGlobalVotos(){
     
     };

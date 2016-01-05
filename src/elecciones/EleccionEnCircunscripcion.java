@@ -119,21 +119,7 @@ public class EleccionEnCircunscripcion implements Serializable{
             simularResultados();
             aplicarLey(resultadoVotos, escañosTotales);
     };
-    public void aplicarLey(TablaVotos votos, int escañosTotales){
-        double [][] TablaAux = null;
-        TablaVotos votos_copia = new TablaVotos(votos.getTabla_votos());
-        for (int i = 0; i < votos_copia.getTabla_votos().size(); i++) {
-            for (int j = 0; j < escañosTotales; j++) {
-                TablaAux[i][j]=votos_copia.getTabla_votos().get(i).getNumeroVotos()/j;
-            }
-        }
-        
-        for (int j = 0; j < escañosTotales; j++) {
-            int escañosNuevos = this.resultadoEscaños.getTablaEscaños().get(Dhondt.getMaximo(TablaAux, escañosTotales, votos_copia.getTabla_votos().size())).getNumeroEscaños()+1;
-            this.resultadoEscaños.getTablaEscaños().get(Dhondt.getMaximo(TablaAux, escañosTotales, votos_copia.getTabla_votos().size())).setNumeroEscaños(escañosNuevos);
-            }
-        
-    };
+
         
     public void calcularListas(){
         for (int i = 0; i < resultadoEscaños.getTablaEscaños().size(); i++) {
@@ -154,5 +140,19 @@ public class EleccionEnCircunscripcion implements Serializable{
     };
     
 //Metodos Privados
-
+    private void aplicarLey(TablaVotos votos, int escañosTotales){
+        double [][] TablaAux = null;
+        TablaVotos votos_copia = new TablaVotos(votos.getTabla_votos());
+        for (int i = 0; i < votos_copia.getTabla_votos().size(); i++) {
+            for (int j = 0; j < escañosTotales; j++) {
+                TablaAux[i][j]=votos_copia.getTabla_votos().get(i).getNumeroVotos()/j;
+            }
+        }
+        
+        for (int j = 0; j < escañosTotales; j++) {
+            int escañosNuevos = this.resultadoEscaños.getTablaEscaños().get(Dhondt.getMaximo(TablaAux, escañosTotales, votos_copia.getTabla_votos().size())).getNumeroEscaños()+1;
+            this.resultadoEscaños.getTablaEscaños().get(Dhondt.getMaximo(TablaAux, escañosTotales, votos_copia.getTabla_votos().size())).setNumeroEscaños(escañosNuevos);
+            }
+        
+    };
 }
