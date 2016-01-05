@@ -24,6 +24,12 @@ public class TablaEscaños implements Serializable{
     public void setTabla_escaños(ArrayList<ItemEscaños> tabla_escaños) {
         this.tablaEscaños = tabla_escaños;
     }
+
+    @Override
+    public String toString() {
+        return "Resultados: /n" + tablaEscaños + '.';
+    }
+    
     
 
 }

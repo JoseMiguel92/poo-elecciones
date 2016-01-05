@@ -3,6 +3,7 @@ package elecciones;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @autor Raul Martin
@@ -64,6 +65,28 @@ public abstract class FormacionPolitica implements Serializable{
 
     public void setNombresPartidos(ArrayList<String> nombresPartidos) {
         this.nombresPartidos = nombresPartidos;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 97 * hash + Objects.hashCode(this.nombre);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final FormacionPolitica other = (FormacionPolitica) obj;
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        return true;
     }
     
 //Metodos Publicos
