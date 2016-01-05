@@ -121,13 +121,18 @@ public class EleccionEnCircunscripcion implements Serializable{
         }
         
         for (int j = 0; j < escañosTotales; j++) {
-            int escañosNuevos = this.resultadoEscaños.getTabla_votos().get(Dhondt.getMaximo(TablaAux, escañosTotales, votos_copia.getTabla_votos().size())).getNumeroEscaños()+1;
-            this.resultadoEscaños.getTabla_votos().get(Dhondt.getMaximo(TablaAux, escañosTotales, votos_copia.getTabla_votos().size())).setNumeroEscaños(escañosNuevos);
+            int escañosNuevos = this.resultadoEscaños.getTablaEscaños().get(Dhondt.getMaximo(TablaAux, escañosTotales, votos_copia.getTabla_votos().size())).getNumeroEscaños()+1;
+            this.resultadoEscaños.getTablaEscaños().get(Dhondt.getMaximo(TablaAux, escañosTotales, votos_copia.getTabla_votos().size())).setNumeroEscaños(escañosNuevos);
             }
         
     };
         
-    public void calcularListas(TablaEscaños escaños){
+    public void calcularListas(){
+        for (int i = 0; i < resultadoEscaños.getTablaEscaños().size(); i++) {
+            FormacionPolitica partido = resultadoEscaños.getTablaEscaños().get(i).getFormacion();
+            int escaños = resultadoEscaños.getTablaEscaños().get(i).getNumeroEscaños();
+            partido.elaborarListas(escaños);            
+        }
     };
     //OPCIONALES
     public void imprimirTablaVotos(){

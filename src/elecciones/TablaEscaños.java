@@ -11,18 +11,18 @@ import java.util.ArrayList;
 
 public class TablaEscaños implements Serializable{
 //Atributos
-    protected ArrayList<ItemEscaños> tabla_escaños;
+    protected ArrayList<ItemEscaños> tablaEscaños;
 
     public TablaEscaños(ArrayList<ItemEscaños> tabla_escaños) {
-        this.tabla_escaños = tabla_escaños;
+        this.tablaEscaños = tabla_escaños;
     }
     
-    public ArrayList<ItemEscaños> getTabla_votos() {
-        return tabla_escaños;
+    public ArrayList<ItemEscaños> getTablaEscaños() {
+        return tablaEscaños;
     }
 
     public void setTabla_escaños(ArrayList<ItemEscaños> tabla_escaños) {
-        this.tabla_escaños = tabla_escaños;
+        this.tablaEscaños = tabla_escaños;
     }
     
 

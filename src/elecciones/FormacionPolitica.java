@@ -14,7 +14,7 @@ public abstract class FormacionPolitica implements Serializable{
     protected String nombre;
     protected String siglas;
     protected String logo;
-    protected Lista candidatos; 
+    protected ArrayList<Militante> militantes; 
     //protected ArrayList<Votantes> votantes; // Segun el UML los votantes estan unidos con partido politico
 //Contructores
     public FormacionPolitica(String nombre, String siglas, String logo) {
@@ -42,11 +42,11 @@ public abstract class FormacionPolitica implements Serializable{
     public void setLogo(String logo) {
         this.logo = logo;
     }
-    public Lista getCandidatos(){
-        return this.candidatos;
+    public ArrayList<Militante> getMilitantes(){
+        return this.militantes;
     }
-    public void setCandidatos(Lista milis){
-        this.candidatos=milis;
+    public void setMilitantes(ArrayList<Militante> milis){
+        this.militantes=milis;
     }
     /*
     public ArrayList<Votantes> getVotantes(){
@@ -56,8 +56,9 @@ public abstract class FormacionPolitica implements Serializable{
         this.votantes=vots;
     }*/
 //Metodos Publicos
-    public Lista elaborarListas(Eleccion eleccion){
+    public Lista elaborarListas(int escaños){
         Lista lista = null;
+        
         return lista;
     };
 
