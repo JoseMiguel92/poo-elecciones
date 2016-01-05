@@ -31,8 +31,14 @@ public class ItemVotos implements Serializable{
         this.numeroVotos = numeroVotos;
     }
     
+    
 //Metodos Publicos
 
 //Metodos Privados
+
+    @Override
+    public String toString() {
+        return formacion + ", votos=" + numeroVotos + ", ";
+    }
 
 }

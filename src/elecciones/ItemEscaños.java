@@ -36,6 +36,11 @@ public class ItemEscaños implements Serializable{
 
 //Metodos Privados
 
+    @Override
+    public String toString() {
+        return formacion + ", escaños=" + numeroEscaños + ", ";
+    }
+
 
 
 

@@ -13,6 +13,11 @@ public class TablaVotos implements Serializable{
 //Atributos
     protected ArrayList<ItemVotos> tabla_votos;
 
+    @Override
+    public String toString() {
+        return "Resultados: /n" + tabla_votos + '.';
+    }
+
     public TablaVotos(ArrayList<ItemVotos> tabla_votos) {
         this.tabla_votos = tabla_votos;
     }
