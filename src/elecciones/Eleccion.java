@@ -187,11 +187,10 @@ public class Eleccion implements Serializable {
         ArrayList<ItemEscaños> fuerzas = new ArrayList<>();
         if (resultadosTotalEscaños.getTablaEscaños().size()<5){
             return resultadosTotalEscaños.getTablaEscaños();
-         }else{
-            int contadorFuerzas = 0;
-            int numEscañosMayor = 0;
+         }else{        
             int posicion = 0;
             for(int i=0; i<=4;i++){
+                int numEscañosMayor = 0; //actualizacion de Numero de escaños para que encuentre el mayor.
                 for (int j=0; j<resultadosTotalEscaños.getTablaEscaños().size();){
                     if(resultadosTotalEscaños.getTablaEscaños().get(j).getNumeroEscaños()>numEscañosMayor){
                         numEscañosMayor = resultadosTotalEscaños.getTablaEscaños().get(j).getNumeroEscaños();
@@ -200,6 +199,7 @@ public class Eleccion implements Serializable {
                 }
                 // Añadir al nuevo ArrayList la posicion i.
                 fuerzas.add(resultadosTotalEscaños.getTablaEscaños().get(posicion));
+                //borra para poder encontrar el siguiente mayor (hay que clonar resultadosTotalEscaños para no borrar el original, lo he intentado pero no me deja)
                 resultadosTotalEscaños.getTablaEscaños().remove(posicion);             
             }
         }
