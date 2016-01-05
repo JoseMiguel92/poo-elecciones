@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -603,7 +604,17 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAñadirPPActionPerformed
 
     private void añadirCoalicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirCoalicionActionPerformed
-        // TODO add your handling code here:
+        // Obtenemos que filas se han seleccionado
+        int[] filas = jTableFormacionesPoliticas.getSelectedRows();
+        // Si no se ha seleccionado nada, mostramos un error.
+        if(filas.length<2){
+            JOptionPane.showMessageDialog(Cargar, "No se puede crear una coalición con menos de dos partidos.", "Coalición no válida", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        // Por cada fila, añadimos un partido al ArrayList
+        for (int i = 0; i < filas.length; i++) {
+           // FALTA CODIGO
+        }
     }//GEN-LAST:event_añadirCoalicionActionPerformed
 
     private void jButtonAñadirSimpatizanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirSimpatizanteActionPerformed
