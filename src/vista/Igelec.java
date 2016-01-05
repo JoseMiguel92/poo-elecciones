@@ -89,7 +89,7 @@ public class Igelec extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jTextFieldLogoC = new javax.swing.JTextField();
         jButtonAñadirCoalicion = new javax.swing.JButton();
-        jFrameCrearCircunscripcion = new javax.swing.JFrame();
+        jFrame2 = new javax.swing.JFrame();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jTextFieldNombreCircuns = new javax.swing.JTextField();
@@ -97,6 +97,30 @@ public class Igelec extends javax.swing.JFrame {
         jButtonAñadirCircuns = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         jTextFieldParticipacionCircuns = new javax.swing.JTextField();
+        jFrame3 = new javax.swing.JFrame();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jTextFieldNombreCircuns1 = new javax.swing.JTextField();
+        jTextFieldPoblacionCircuns1 = new javax.swing.JTextField();
+        jButtonAñadirCircuns1 = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
+        jTextFieldParticipacionCircuns1 = new javax.swing.JTextField();
+        jFrame4 = new javax.swing.JFrame();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jTextFieldNombreCircuns2 = new javax.swing.JTextField();
+        jTextFieldPoblacionCircuns2 = new javax.swing.JTextField();
+        jButtonAñadirCircuns2 = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
+        jTextFieldParticipacionCircuns2 = new javax.swing.JTextField();
+        jFrame1 = new javax.swing.JFrame();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jTextFieldNombreCircuns3 = new javax.swing.JTextField();
+        jTextFieldPoblacionCircuns3 = new javax.swing.JTextField();
+        jButtonAñadirCircuns3 = new javax.swing.JButton();
+        jLabel23 = new javax.swing.JLabel();
+        jTextFieldParticipacionCircuns3 = new javax.swing.JTextField();
         Cargar = new javax.swing.JTabbedPane();
         TabBienvenido = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -385,45 +409,195 @@ public class Igelec extends javax.swing.JFrame {
 
         jLabel14.setText("Participacion:");
 
-        javax.swing.GroupLayout jFrameCrearCircunscripcionLayout = new javax.swing.GroupLayout(jFrameCrearCircunscripcion.getContentPane());
-        jFrameCrearCircunscripcion.getContentPane().setLayout(jFrameCrearCircunscripcionLayout);
-        jFrameCrearCircunscripcionLayout.setHorizontalGroup(
-            jFrameCrearCircunscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrameCrearCircunscripcionLayout.createSequentialGroup()
-                .addGroup(jFrameCrearCircunscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jFrameCrearCircunscripcionLayout.createSequentialGroup()
+        javax.swing.GroupLayout jFrame2Layout = new javax.swing.GroupLayout(jFrame2.getContentPane());
+        jFrame2.getContentPane().setLayout(jFrame2Layout);
+        jFrame2Layout.setHorizontalGroup(
+            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame2Layout.createSequentialGroup()
+                .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jFrame2Layout.createSequentialGroup()
                         .addGap(34, 34, 34)
-                        .addGroup(jFrameCrearCircunscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel12)
                             .addComponent(jLabel14)
                             .addComponent(jLabel13))
                         .addGap(18, 18, 18)
-                        .addGroup(jFrameCrearCircunscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTextFieldNombreCircuns)
                             .addComponent(jTextFieldPoblacionCircuns)
                             .addComponent(jTextFieldParticipacionCircuns, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)))
-                    .addGroup(jFrameCrearCircunscripcionLayout.createSequentialGroup()
+                    .addGroup(jFrame2Layout.createSequentialGroup()
                         .addGap(161, 161, 161)
                         .addComponent(jButtonAñadirCircuns)))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
-        jFrameCrearCircunscripcionLayout.setVerticalGroup(
-            jFrameCrearCircunscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrameCrearCircunscripcionLayout.createSequentialGroup()
+        jFrame2Layout.setVerticalGroup(
+            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame2Layout.createSequentialGroup()
                 .addGap(43, 43, 43)
-                .addGroup(jFrameCrearCircunscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(jTextFieldNombreCircuns, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jFrameCrearCircunscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(jTextFieldPoblacionCircuns, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jFrameCrearCircunscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel14)
                     .addComponent(jTextFieldParticipacionCircuns, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(jButtonAñadirCircuns)
+                .addGap(25, 25, 25))
+        );
+
+        jLabel15.setText("Nombre de la circunscripcion:");
+
+        jLabel16.setText("Poblacion:");
+
+        jButtonAñadirCircuns1.setText("Añadir");
+
+        jLabel17.setText("Participacion:");
+
+        javax.swing.GroupLayout jFrame3Layout = new javax.swing.GroupLayout(jFrame3.getContentPane());
+        jFrame3.getContentPane().setLayout(jFrame3Layout);
+        jFrame3Layout.setHorizontalGroup(
+            jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame3Layout.createSequentialGroup()
+                .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jFrame3Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel16))
+                        .addGap(18, 18, 18)
+                        .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextFieldNombreCircuns1)
+                            .addComponent(jTextFieldPoblacionCircuns1)
+                            .addComponent(jTextFieldParticipacionCircuns1, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)))
+                    .addGroup(jFrame3Layout.createSequentialGroup()
+                        .addGap(161, 161, 161)
+                        .addComponent(jButtonAñadirCircuns1)))
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
+        jFrame3Layout.setVerticalGroup(
+            jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame3Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(jTextFieldNombreCircuns1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(jTextFieldPoblacionCircuns1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel17)
+                    .addComponent(jTextFieldParticipacionCircuns1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(jButtonAñadirCircuns1)
+                .addGap(25, 25, 25))
+        );
+
+        jLabel18.setText("Nombre de la circunscripcion:");
+
+        jLabel19.setText("Poblacion:");
+
+        jButtonAñadirCircuns2.setText("Añadir");
+
+        jLabel20.setText("Participacion:");
+
+        javax.swing.GroupLayout jFrame4Layout = new javax.swing.GroupLayout(jFrame4.getContentPane());
+        jFrame4.getContentPane().setLayout(jFrame4Layout);
+        jFrame4Layout.setHorizontalGroup(
+            jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame4Layout.createSequentialGroup()
+                .addGroup(jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jFrame4Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addGroup(jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel19))
+                        .addGap(18, 18, 18)
+                        .addGroup(jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextFieldNombreCircuns2)
+                            .addComponent(jTextFieldPoblacionCircuns2)
+                            .addComponent(jTextFieldParticipacionCircuns2, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)))
+                    .addGroup(jFrame4Layout.createSequentialGroup()
+                        .addGap(161, 161, 161)
+                        .addComponent(jButtonAñadirCircuns2)))
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
+        jFrame4Layout.setVerticalGroup(
+            jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame4Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(jTextFieldNombreCircuns2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(jTextFieldPoblacionCircuns2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel20)
+                    .addComponent(jTextFieldParticipacionCircuns2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(jButtonAñadirCircuns2)
+                .addGap(25, 25, 25))
+        );
+
+        jLabel21.setText("Nombre elecciones");
+
+        jLabel22.setText("Participación");
+
+        jButtonAñadirCircuns3.setText("Añadir");
+
+        jLabel23.setText("Participacion:");
+
+        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
+        jFrame1.getContentPane().setLayout(jFrame1Layout);
+        jFrame1Layout.setHorizontalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame1Layout.createSequentialGroup()
+                .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jFrame1Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel21)
+                            .addComponent(jLabel23)
+                            .addComponent(jLabel22))
+                        .addGap(18, 18, 18)
+                        .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextFieldNombreCircuns3)
+                            .addComponent(jTextFieldPoblacionCircuns3)
+                            .addComponent(jTextFieldParticipacionCircuns3, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)))
+                    .addGroup(jFrame1Layout.createSequentialGroup()
+                        .addGap(161, 161, 161)
+                        .addComponent(jButtonAñadirCircuns3)))
+                .addContainerGap(111, Short.MAX_VALUE))
+        );
+        jFrame1Layout.setVerticalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame1Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(jTextFieldNombreCircuns3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(jTextFieldPoblacionCircuns3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel23)
+                    .addComponent(jTextFieldParticipacionCircuns3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(jButtonAñadirCircuns3)
                 .addGap(25, 25, 25))
         );
 
@@ -837,15 +1011,21 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonAñadirCircuns;
+    private javax.swing.JButton jButtonAñadirCircuns1;
+    private javax.swing.JButton jButtonAñadirCircuns2;
+    private javax.swing.JButton jButtonAñadirCircuns3;
     private javax.swing.JButton jButtonAñadirCoalicion;
     private javax.swing.JButton jButtonAñadirPP;
     private javax.swing.JButton jButtonAñadirSPartido;
     private javax.swing.JButton jButtonAñadirSimpatizante;
     private javax.swing.JButton jButtonCargarMilitantes;
     private javax.swing.JButton jButtonCrearEleccion;
+    private javax.swing.JFrame jFrame1;
+    private javax.swing.JFrame jFrame2;
+    private javax.swing.JFrame jFrame3;
+    private javax.swing.JFrame jFrame4;
     private javax.swing.JFrame jFrameAñadirPartido;
     private javax.swing.JFrame jFrameAñadirSimpatizantePartido;
-    private javax.swing.JFrame jFrameCrearCircunscripcion;
     private javax.swing.JFrame jFrameCrearCoalicion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -853,7 +1033,16 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -876,9 +1065,18 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldNombreAñadirS;
     private javax.swing.JTextField jTextFieldNombreC;
     private javax.swing.JTextField jTextFieldNombreCircuns;
+    private javax.swing.JTextField jTextFieldNombreCircuns1;
+    private javax.swing.JTextField jTextFieldNombreCircuns2;
+    private javax.swing.JTextField jTextFieldNombreCircuns3;
     private javax.swing.JTextField jTextFieldNombrePP;
     private javax.swing.JTextField jTextFieldParticipacionCircuns;
+    private javax.swing.JTextField jTextFieldParticipacionCircuns1;
+    private javax.swing.JTextField jTextFieldParticipacionCircuns2;
+    private javax.swing.JTextField jTextFieldParticipacionCircuns3;
     private javax.swing.JTextField jTextFieldPoblacionCircuns;
+    private javax.swing.JTextField jTextFieldPoblacionCircuns1;
+    private javax.swing.JTextField jTextFieldPoblacionCircuns2;
+    private javax.swing.JTextField jTextFieldPoblacionCircuns3;
     private javax.swing.JTextField jTextFieldProfesionS;
     private javax.swing.JTextField jTextFieldSiglasC;
     private javax.swing.JTextField jTextFieldSiglasPP;
