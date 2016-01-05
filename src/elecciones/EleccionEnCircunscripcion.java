@@ -131,7 +131,7 @@ public class EleccionEnCircunscripcion implements Serializable{
         for (int i = 0; i < resultadoEscaños.getTablaEscaños().size(); i++) {
             FormacionPolitica partido = resultadoEscaños.getTablaEscaños().get(i).getFormacion();
             int escaños = resultadoEscaños.getTablaEscaños().get(i).getNumeroEscaños();
-            partido.elaborarListas(escaños);            
+            listasPartidos.add(i, partido.elaborarListas(escaños));
         }
     };
     //OPCIONALES
