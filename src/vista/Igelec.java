@@ -76,12 +76,11 @@ public class Igelec extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTextFieldSiglasS = new javax.swing.JTextField();
         Cargar = new javax.swing.JTabbedPane();
-        TabPersonas = new javax.swing.JPanel();
-        InfoPersonas = new javax.swing.JScrollPane();
-        jTablePersonas = new javax.swing.JTable();
-        añadirPersona = new javax.swing.JButton();
-        importarPersona = new javax.swing.JButton();
-        exportarPersona = new javax.swing.JButton();
+        TabBienvenido = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jButtonCrearEleccion = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         TabFP = new javax.swing.JPanel();
         InfoFormacionesPoliticas = new javax.swing.JScrollPane();
         jTableFormacionesPoliticas = new javax.swing.JTable();
@@ -303,50 +302,52 @@ public class Igelec extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTablePersonas.setModel(new modelos.PersonaTableModel());
-        InfoPersonas.setViewportView(jTablePersonas);
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel8.setText("Bienvenido");
 
-        añadirPersona.setText("Añadir");
-        añadirPersona.addActionListener(new java.awt.event.ActionListener() {
+        jButtonCrearEleccion.setText("Crear Eleccion");
+
+        jButton1.setText("Cargar Datos");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                añadirPersonaActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
-        importarPersona.setText("Importar");
+        jButton2.setText("Ver Historico");
 
-        exportarPersona.setText("Exportar");
-
-        javax.swing.GroupLayout TabPersonasLayout = new javax.swing.GroupLayout(TabPersonas);
-        TabPersonas.setLayout(TabPersonasLayout);
-        TabPersonasLayout.setHorizontalGroup(
-            TabPersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TabPersonasLayout.createSequentialGroup()
+        javax.swing.GroupLayout TabBienvenidoLayout = new javax.swing.GroupLayout(TabBienvenido);
+        TabBienvenido.setLayout(TabBienvenidoLayout);
+        TabBienvenidoLayout.setHorizontalGroup(
+            TabBienvenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TabBienvenidoLayout.createSequentialGroup()
+                .addGroup(TabBienvenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TabBienvenidoLayout.createSequentialGroup()
+                        .addGap(346, 346, 346)
+                        .addComponent(jLabel8))
+                    .addGroup(TabBienvenidoLayout.createSequentialGroup()
+                        .addGap(367, 367, 367)
+                        .addGroup(TabBienvenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonCrearEleccion, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(370, Short.MAX_VALUE))
+        );
+        TabBienvenidoLayout.setVerticalGroup(
+            TabBienvenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TabBienvenidoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(InfoPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 705, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonCrearEleccion)
                 .addGap(18, 18, 18)
-                .addGroup(TabPersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(importarPersona)
-                    .addComponent(exportarPersona)
-                    .addComponent(añadirPersona))
-                .addContainerGap(109, Short.MAX_VALUE))
-        );
-        TabPersonasLayout.setVerticalGroup(
-            TabPersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TabPersonasLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(TabPersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(TabPersonasLayout.createSequentialGroup()
-                        .addComponent(añadirPersona)
-                        .addGap(18, 18, 18)
-                        .addComponent(importarPersona)
-                        .addGap(18, 18, 18)
-                        .addComponent(exportarPersona))
-                    .addComponent(InfoPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addComponent(jButton1)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addContainerGap(216, Short.MAX_VALUE))
         );
 
-        Cargar.addTab("Personas", TabPersonas);
+        Cargar.addTab("Bienvenido", TabBienvenido);
 
         jTableFormacionesPoliticas.setModel(new modelos.PartidoTableModel());
         InfoFormacionesPoliticas.setViewportView(jTableFormacionesPoliticas);
@@ -499,10 +500,6 @@ public class Igelec extends javax.swing.JFrame {
         
     }//GEN-LAST:event_añadirPartidoActionPerformed
 
-    private void añadirPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirPersonaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_añadirPersonaActionPerformed
-
     private void añadirCircunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirCircunActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_añadirCircunActionPerformed
@@ -638,6 +635,10 @@ public class Igelec extends javax.swing.JFrame {
         jTextFieldSiglasS.setText("");
     }//GEN-LAST:event_jButtonAñadirSPartidoActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     //metodo para limpiar cualquier tabla
     public void limpiarTabla(JTable tabla){
          DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
@@ -685,24 +686,23 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JTabbedPane Cargar;
     private javax.swing.JScrollPane InfoCircunscripciones;
     private javax.swing.JScrollPane InfoFormacionesPoliticas;
-    private javax.swing.JScrollPane InfoPersonas;
+    private javax.swing.JPanel TabBienvenido;
     private javax.swing.JPanel TabCircun;
     private javax.swing.JPanel TabFP;
-    private javax.swing.JPanel TabPersonas;
     private javax.swing.JButton añadirCircun;
     private javax.swing.JButton añadirCoalicion;
     private javax.swing.JButton añadirPartido;
-    private javax.swing.JButton añadirPersona;
     private javax.swing.JButton exportarCircun;
     private javax.swing.JButton exportarPartido;
-    private javax.swing.JButton exportarPersona;
     private javax.swing.JButton importarCircun;
     private javax.swing.JButton importarPartido;
-    private javax.swing.JButton importarPersona;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonAñadirPP;
     private javax.swing.JButton jButtonAñadirSPartido;
     private javax.swing.JButton jButtonAñadirSimpatizante;
     private javax.swing.JButton jButtonCargarMilitantes;
+    private javax.swing.JButton jButtonCrearEleccion;
     private javax.swing.JFrame jFrameAñadirPartido;
     private javax.swing.JFrame jFrameAñadirSimpatizantePartido;
     private javax.swing.JLabel jLabel1;
@@ -712,6 +712,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelLogoPP;
     private javax.swing.JLabel jLabelNombrePP;
     private javax.swing.JLabel jLabelSiglasPP;
@@ -719,7 +720,6 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableCircunscripcion;
     private javax.swing.JTable jTableFormacionesPoliticas;
-    private javax.swing.JTable jTablePersonas;
     private javax.swing.JTable jTableVotantesPP;
     private javax.swing.JTextField jTextFieldEdadAñadirS;
     private javax.swing.JTextField jTextFieldGeneroAñadirS;
