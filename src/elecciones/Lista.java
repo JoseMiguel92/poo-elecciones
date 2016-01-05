@@ -14,16 +14,16 @@ import java.util.ArrayList;
 public class Lista implements Serializable{
 //Atributos
     private String descripcion;
-    private ArrayList<Militante> candidatos; // NO BORRAR
+    private ArrayList<Militante> diputados; // NO BORRAR
     private FormacionPolitica formacionPolitica;  // NO BORRAR
     private EleccionEnCircunscripcion eleccionEnCircunscripcion; // NO BORRAR
 
-    public ArrayList<Militante> getCandidatos() {
-        return candidatos;
+    public ArrayList<Militante> getDiputados() {
+        return diputados;
     }
 
-    public void setCandidatos(ArrayList<Militante> candidatos) {
-        this.candidatos = candidatos;
+    public void setDiputados(ArrayList<Militante> diputados) {
+        this.diputados = diputados;
     }
 
     public FormacionPolitica getFormacionPolitica() {
@@ -46,11 +46,11 @@ public class Lista implements Serializable{
 //Contructores
     //Crear lista vacia (evitamos NULLPOINTEREXCEPTION)
     public Lista(){
-        this.candidatos = new ArrayList<Militante>();
+        this.diputados = new ArrayList<Militante>();
     }
     // Crear lista a partir de ArrayList
     public Lista(ArrayList<Militante> lista){
-        this.candidatos = lista;
+        this.diputados = lista;
     }
     // Crear lista a partir de un fichero de texto dado su nombre.
     public Lista(String nombreArchivo) throws IOException{
@@ -63,11 +63,11 @@ public class Lista implements Serializable{
     }
     
     public ArrayList<Militante> getLista_militantes() {
-        return candidatos;
+        return diputados;
     }
 //Metodos Publicos
     public void add(Militante mil) {
-        this.candidatos.add(mil);
+        this.diputados.add(mil);
     }
 //Metodos Privados
 }

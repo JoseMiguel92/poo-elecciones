@@ -2,6 +2,7 @@ package elecciones;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @autor Raul Martin
@@ -58,7 +59,9 @@ public abstract class FormacionPolitica implements Serializable{
 //Metodos Publicos
     public Lista elaborarListas(int escaños){
         Lista lista = null;
+        List<Militante> diputados = militantes.subList(0, escaños);
         
+        lista.setDiputados(diputados);
         return lista;
     };
 
