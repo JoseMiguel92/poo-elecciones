@@ -101,19 +101,19 @@ public class EleccionEnCircunscripcion implements Serializable{
 //    };
     public void simularResultados() throws IllegalArgumentException{       
         int totalVotos = (int) Math.round((this.getPoblacion()*this.participaccion));
-        int numVotos=pedirVotos();
-        if(numVotos==-1){
-            numVotos = (int)(Math.random() * totalVotos);
-        }
-        // Si nVotos mayor a total votos tiramos excepcion
-        if(numVotos>totalVotos) throw new IllegalArgumentException();
         for (int i = 0; i < listasPartidos.size(); i++) {
+            int numVotos=pedirVotos();
+            if(numVotos==-1){
+                numVotos = (int)(Math.random() * totalVotos);
+             }
+            // Si nVotos mayor a total votos tiramos excepcion
+            if(numVotos>totalVotos) throw new IllegalArgumentException();
             FormacionPolitica formacion = listasPartidos.get(i).getFormacionPolitica();
             ItemVotos votospartido = new ItemVotos(formacion,numVotos);
             totalVotos-=numVotos;
             this.resultadoVotos.getTabla_votos().add(votospartido);   
         }
-            this.votosBlanco=totalVotos;
+        this.votosBlanco=totalVotos;
     };
 
     public void calcularResultados(){
