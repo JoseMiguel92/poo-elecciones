@@ -21,10 +21,10 @@ public class EleccionEnCircunscripcion implements Serializable{
     private int votosBlanco;
     
 //Contructores
-    public EleccionEnCircunscripcion(String nombre, int poblacion, int escaños, double participaccion) {
+    public EleccionEnCircunscripcion(String nombre, int poblacion, double participaccion) {
         this.nombre = nombre;
         this.poblacion = poblacion;
-        this.escaños = escaños;
+        this.escaños = Escaños(poblacion);
         this.participaccion = participaccion;
     }
     
@@ -66,6 +66,22 @@ public class EleccionEnCircunscripcion implements Serializable{
             if((escaños%2)==0){
                 escaños++;
             }
+        }
+    }
+    public int Escaños(int poblacion){
+        if (poblacion<25){
+            return 1;
+        }else if(poblacion<101){
+             return 2;
+        }else if(poblacion<201){
+            return 3;
+        }else if (poblacion<301){
+            return 4;
+        }else{
+            int esc = (int) (4+Math.ceil((poblacion-300)/300));
+            if((esc%2)==0){
+                return esc+1;
+            } else return esc;
         }
     }
     public double getParticipaccion() {
