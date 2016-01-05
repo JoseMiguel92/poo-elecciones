@@ -160,6 +160,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="A&#xf1;adir"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jA&#xf1;adirCircunscripcionActionPerformed"/>
+          </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane3">
           <AuxValues>
@@ -324,6 +327,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="A&#xf1;adir Partido"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ja&#xf1;adirPartidoActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -542,9 +548,9 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
@@ -552,17 +558,17 @@
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jTextFieldNombreAñadirS" max="32767" attributes="0"/>
-                              <Component id="jTextFieldEdadAñadirS" max="32767" attributes="0"/>
-                              <Component id="jTextFieldGeneroAñadirS" max="32767" attributes="0"/>
-                              <Component id="jTextFieldProfesionS" max="32767" attributes="0"/>
-                              <Component id="jTextFieldSiglasS" alignment="0" pref="100" max="32767" attributes="0"/>
+                              <Component id="jTextFieldNombreAñadirS" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="jTextFieldEdadAñadirS" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGeneroAñadirS" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="jTextFieldProfesionS" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="jTextFieldSiglasS" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                           <Component id="jButtonAñadirSimpatizante" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -598,9 +604,9 @@
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextFieldSiglasS" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="jButtonAñadirSimpatizante" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="50" max="32767" attributes="0"/>
+                  <EmptySpace pref="49" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

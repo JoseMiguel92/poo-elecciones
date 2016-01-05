@@ -204,6 +204,11 @@ public class Igelec extends javax.swing.JFrame {
         jLabel21.setText("Nombre elecciones");
 
         jAñadirCircunscripcion.setText("Añadir");
+        jAñadirCircunscripcion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jAñadirCircunscripcionActionPerformed(evt);
+            }
+        });
 
         jTablaCircunscripciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -300,6 +305,11 @@ public class Igelec extends javax.swing.JFrame {
         jScrollPane5.setViewportView(jTable2);
 
         jañadirPartido.setText("Añadir Partido");
+        jañadirPartido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jañadirPartidoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jFrame2Layout = new javax.swing.GroupLayout(jFrame2.getContentPane());
         jFrame2.getContentPane().setLayout(jFrame2Layout);
@@ -509,24 +519,24 @@ public class Igelec extends javax.swing.JFrame {
         jFrame4SimpaLayout.setHorizontalGroup(
             jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jFrame4SimpaLayout.createSequentialGroup()
-                .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(26, 26, 26)
+                .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jFrame4SimpaLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
                         .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel7)
                             .addComponent(jLabel6)
                             .addComponent(jLabel5)
                             .addComponent(jLabel4)
                             .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextFieldNombreAñadirS)
-                            .addComponent(jTextFieldEdadAñadirS)
-                            .addComponent(jTextFieldGeneroAñadirS)
-                            .addComponent(jTextFieldProfesionS)
-                            .addComponent(jTextFieldSiglasS, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))
+                            .addComponent(jTextFieldNombreAñadirS, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldEdadAñadirS, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldGeneroAñadirS, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldProfesionS, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldSiglasS, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jFrame4SimpaLayout.createSequentialGroup()
-                        .addGap(112, 112, 112)
+                        .addGap(66, 66, 66)
                         .addComponent(jButtonAñadirSimpatizante)))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
@@ -553,9 +563,9 @@ public class Igelec extends javax.swing.JFrame {
                 .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTextFieldSiglasS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
+                .addGap(30, 30, 30)
                 .addComponent(jButtonAñadirSimpatizante)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         jLabel15.setText("Nombre y Apellidos:");
@@ -851,32 +861,32 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_añadirPartidoMouseClicked
 
     private void jButtonAñadirPPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirPPActionPerformed
-        // TODO add your handling code here:
-        PartidoPolitico nuevoPartido = new PartidoPolitico(jTextFieldNombrePP.getText(), jTextFieldSiglasPP.getText(), jTextFieldLogoPP.getText());
-        nuevoPartido.setMilitantes(militantesAuxiliar);
-        nuevoPartido.setVotantes(votantesAuxiliar);
-        
 
-        formacionesPoliticas.add(nuevoPartido);
-        if (!eleccionActual.getNombresPartidos().contains(nuevoPartido.getNombre())){
-            eleccionActual.getNombresPartidos().add(nuevoPartido.getNombre());
-            System.out.println(eleccionActual.getNombresPartidos().toString());
-                    }
-        
-        
-        //Rellena tabla formaciones politicas
-        DefaultTableModel modelo = (DefaultTableModel) jTableFormacionesPoliticas.getModel();
-        Object[] fila = new Object[]{nuevoPartido.getNombre(),nuevoPartido.getSiglas()};
-        modelo.addRow(fila);
-        
-        
-        //Resetea campos
-        jFrame3.setVisible(false);
-        jTextFieldNombrePP.setText("");
-        jTextFieldLogoPP.setText("");
-        jTextFieldSiglasPP.setText("");
-        
-        System.out.println(formacionesPoliticas.toString());
+//        PartidoPolitico nuevoPartido = new PartidoPolitico(jTextFieldNombrePP.getText(), jTextFieldSiglasPP.getText(), jTextFieldLogoPP.getText());
+//        nuevoPartido.setMilitantes(militantesAuxiliar);
+//        nuevoPartido.setVotantes(votantesAuxiliar);
+//        
+//
+//        formacionesPoliticas.add(nuevoPartido);
+//        if (!eleccionActual.getNombresPartidos().contains(nuevoPartido.getNombre())){
+//            eleccionActual.getNombresPartidos().add(nuevoPartido.getNombre());
+//            System.out.println(eleccionActual.getNombresPartidos().toString());
+//                    }
+//        
+//        
+//        //Rellena tabla formaciones politicas
+//        DefaultTableModel modelo = (DefaultTableModel) jTableFormacionesPoliticas.getModel();
+//        Object[] fila = new Object[]{nuevoPartido.getNombre(),nuevoPartido.getSiglas()};
+//        modelo.addRow(fila);
+//        
+//        
+//        //Resetea campos
+//        jFrame3.setVisible(false);
+//        jTextFieldNombrePP.setText("");
+//        jTextFieldLogoPP.setText("");
+//        jTextFieldSiglasPP.setText("");
+//        
+//        System.out.println(formacionesPoliticas.toString());
         
         
         
@@ -1007,7 +1017,9 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldSiglasCActionPerformed
 
     private void jButtonCrearEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearEleccionActionPerformed
-        // TODO add your handling code here:
+        jFrame1.setLocationRelativeTo(null);
+        jFrame1.setSize(700,400);
+        jFrame1.setVisible(true);
         
     }//GEN-LAST:event_jButtonCrearEleccionActionPerformed
 
@@ -1030,6 +1042,20 @@ public class Igelec extends javax.swing.JFrame {
     private void jTextFieldCarnetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCarnetActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldCarnetActionPerformed
+
+    private void jAñadirCircunscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAñadirCircunscripcionActionPerformed
+        // Ventanita centrada y visible
+        jFrame2.setLocationRelativeTo(null);
+        jFrame2.setSize(700,400);
+        jFrame2.setVisible(true);
+        
+    }//GEN-LAST:event_jAñadirCircunscripcionActionPerformed
+
+    private void jañadirPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jañadirPartidoActionPerformed
+        jFrame3.setLocationRelativeTo(null);
+        jFrame3.setSize(700,400);
+        jFrame3.setVisible(true);
+    }//GEN-LAST:event_jañadirPartidoActionPerformed
 
     //metodo para limpiar cualquier tabla
     public void limpiarTabla(JTable tabla){
