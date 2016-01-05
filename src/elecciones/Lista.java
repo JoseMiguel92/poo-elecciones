@@ -69,5 +69,11 @@ public class Lista implements Serializable{
     public void add(Militante mil) {
         this.diputados.add(mil);
     }
+    
 //Metodos Privados
+
+    @Override
+    public String toString() {
+        return formacionPolitica.getNombre()+ ": "+ diputados + ',';
+    }
 }

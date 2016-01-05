@@ -17,7 +17,8 @@ public class Eleccion implements Serializable {
     protected TablaVotos resultadosTotalVotos;
     protected TablaEscaños resultadosTotalEscaños;
     private ArrayList<EleccionEnCircunscripcion> eleccionesEnCircunscripcion;
-    
+
+   
 
 
     
@@ -27,6 +28,14 @@ public class Eleccion implements Serializable {
     }
     
 //GETs y SETs
+     public ArrayList<EleccionEnCircunscripcion> getEleccionesEnCircunscripcion() {
+        return eleccionesEnCircunscripcion;
+    }
+
+    public void setEleccionesEnCircunscripcion(ArrayList<EleccionEnCircunscripcion> eleccionesEnCircunscripcion) {
+        this.eleccionesEnCircunscripcion = eleccionesEnCircunscripcion;
+    }
+    
     public String getNombre() {
         return nombre;
     }
@@ -123,15 +132,46 @@ public class Eleccion implements Serializable {
         }
     }
     
-    public void imprimirTablaGlobalVotos(){
-        resultadosTotalVotos.toString();
+    public String imprimirTablaGlobalVotos(){
+        return resultadosTotalVotos.toString();
     };
-    public void imprimirTablaGlobalescaños(){
-        resultadosTotalEscaños.toString();
+    public String imprimirTablaGlobalescaños(){
+        return resultadosTotalEscaños.toString();
     };
-    public void imprimirListaElectos(){
+    public String imprimirListaElectos(){
         
+        return crearListaElectos().toString();
     };
+    
+    private ArrayList<Lista> crearListaElectos() {
+        ArrayList<Lista> listaElectos = new ArrayList<>();
+        for (EleccionEnCircunscripcion circuns: eleccionesEnCircunscripcion ) {
+            ArrayList<Lista> x_listasPartidos = circuns.getListasPartidos();
+            for (Lista lista : x_listasPartidos){
+                FormacionPolitica partido = lista.getFormacionPolitica();
+                ArrayList<Militante> militantes = lista.getDiputados();
+                int posicion = damePosicion_Electos(partido,listaElectos);
+                if (posicion == -1){
+                    listaElectos.add(lista);
+                }else{
+                    listaElectos.add(posicion, lista);
+                }
+            }
+        }
+        return listaElectos;
+    }
+    private int damePosicion_Electos(FormacionPolitica partido, ArrayList<Lista> listaElectos ){
+        for (int i=0; i<listaElectos.size(); i++ ){
+            if(listaElectos.get(i).getFormacionPolitica().equals(partido)){
+                return i;
+            }
+        }
+        return -1;
+    }
+    
+    
+    
+    
     public void imprimirMayorias(){
     
     };
