@@ -38,10 +38,11 @@ public class Igelec extends javax.swing.JFrame {
     private ArrayList<Eleccion> historico;
     private ArrayList<EleccionEnCircunscripcion> TotalCircunscripciones = new ArrayList<>();
 
-    // Raul: variables auxiliares
-    Eleccion eleccion;
-    EleccionEnCircunscripcion circunscripcion;
-    PartidoPolitico partido;
+    // Raul: variables auxiliares EN PRUEBAS
+    ArrayList <EleccionEnCircunscripcion> circunscripciones = new ArrayList<>();
+    ArrayList <PartidoPolitico> partidos = new ArrayList<>();
+    ArrayList <Militante> militantes = new ArrayList<>();
+    ArrayList <Simpatizante> simpatizantes = new ArrayList<>();
     /**
      * Creates new form igelec
      */
@@ -1024,7 +1025,6 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldSiglasCActionPerformed
 
     private void jButtonCrearEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearEleccionActionPerformed
-        eleccion = new Eleccion("Sin Nombre");
         jFrame1.setLocationRelativeTo(null);
         jFrame1.setSize(700,400);
         jFrame1.setVisible(true);
@@ -1053,7 +1053,6 @@ public class Igelec extends javax.swing.JFrame {
 
     private void jAñadirCircunscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAñadirCircunscripcionActionPerformed
          // Ventanita centrada y visible
-        circunscripcion = new EleccionEnCircunscripcion("Sin Nombre", 0,0);
         jFrame2.setLocationRelativeTo(null);
         jFrame2.setSize(700,400);
         jFrame2.setVisible(true);
@@ -1061,8 +1060,6 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_jAñadirCircunscripcionActionPerformed
 
     private void jañadirPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jañadirPartidoActionPerformed
-        partido = new PartidoPolitico("Sin nombre","SN","logo.url");
-        
         jFrame3.setLocationRelativeTo(null);
         jFrame3.setSize(700,400);
         jFrame3.setVisible(true);
