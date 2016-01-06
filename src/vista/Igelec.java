@@ -40,7 +40,7 @@ public class Igelec extends javax.swing.JFrame {
 
     // Raul: variables auxiliares EN PRUEBAS
     ArrayList <EleccionEnCircunscripcion> circunscripciones = new ArrayList<>();
-    ArrayList <FormacionPolitica> partidos = new ArrayList<>();
+    ArrayList <FormacionPolitica> formaciones = new ArrayList<>();
     ArrayList <Militante> militantes = new ArrayList<>();
     ArrayList <Votantes> votantes = new ArrayList<>();
     /**
@@ -897,7 +897,7 @@ public class Igelec extends javax.swing.JFrame {
         militantes = new ArrayList<>();
         votantes = new ArrayList<>();
         
-        // Añadimos el partido creado a la tabla de partidos en circunscripciones
+        // Añadimos el partido creado a la tabla de formaciones en circunscripciones
         DefaultTableModel modeloPartidos = (DefaultTableModel) jTablePP.getModel();
         modeloPartidos.addRow(new Object[]{
                 jTextFieldNombrePP.getText(),
@@ -905,8 +905,8 @@ public class Igelec extends javax.swing.JFrame {
                 "Partido"
         });
         
-        // Añadimos el partido a la lista temporal de partidos.
-        partidos.add(partido);
+        // Añadimos el partido a la lista temporal de formaciones.
+        formaciones.add(partido);
         
         // Resetamos todos los campos del formulario
         jTextFieldNombrePP.setText("");
@@ -1088,38 +1088,38 @@ public class Igelec extends javax.swing.JFrame {
     private void jButtonAñadirCircunsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirCircunsActionPerformed
 
         // Crea el partido político
-        EleccionEnCircunscripcion eleccion = new EleccionEnCircunscripcion(
+        EleccionEnCircunscripcion circunscripcion = new EleccionEnCircunscripcion(
                 jTextFieldNombreCircuns.getText(),
                 Integer.parseInt(jTextFieldPoblacionCircuns.getText()),
                 Double.parseDouble(jTextFieldParticipacionCircuns.getText())
         );
                
-        // Asignamos los objetos temporales militantes y votantes creados hasta ahora al partido
-        eleccion.set .setMilitantes(militantes);
-        // PENDIENTE, AÑADIR SIMPATIZANTES
-        // Creamos un nuevo conjunto vacío de militantes y votantes temporal
-        militantes = new ArrayList<>();
-        votantes = new ArrayList<>();
+        // Asignamos las formaciones creadas anteriormente a la circunscripcion
+        circunscripcion.setFormaciones(formaciones); 
         
-        // Añadimos el partido creado a la tabla de partidos en circunscripciones
-        DefaultTableModel modeloPartidos = (DefaultTableModel) jTablePP.getModel();
-        modeloPartidos.addRow(new Object[]{
-                jTextFieldNombrePP.getText(),
-                jTextFieldSiglasPP.getText(),
-                "Partido"
+        // Creamos un nuevo conjunto temporal de partidos
+        formaciones = new ArrayList<>();
+        
+        // Añadimos la circunscripcion creada a la tabla en elecciones
+        DefaultTableModel modeloCircunscripcion = (DefaultTableModel) jTablaCircunscripciones.getModel();
+        modeloCircunscripcion.addRow(new Object[]{
+                jTextFieldNombreCircuns.getText(),
+                Integer.parseInt(jTextFieldPoblacionCircuns.getText()),
+                Double.parseDouble(jTextFieldParticipacionCircuns.getText()),
+                circunscripcion.getEscaños()
         });
         
-        // Añadimos el partido a la lista temporal de partidos.
-        partidos.add(partido);
+        // Añadimos la circunscripcion creada a la lista temporal de circunscripciones
+        circunscripciones.add(circunscripcion);
         
         // Resetamos todos los campos del formulario
-        jTextFieldNombrePP.setText("");
-        jTextFieldSiglasPP.setText("");
-        jTextFieldLogoPP.setText("");
+        jTextFieldNombreCircuns.setText("");
+        jTextFieldPoblacionCircuns.setText("");
+        jTextFieldParticipacionCircuns.setText("");
         
         // Resetamos la tabla
-        DefaultTableModel modeloVot = (DefaultTableModel) jTableVotantesPP.getModel();
-        modeloVot.setRowCount(0);
+        DefaultTableModel modeloPart = (DefaultTableModel) jTablePP.getModel();
+        modeloPart.setRowCount(0);
         
         // Cerramos la ventana
         jFrame2.dispose();        // TODO add your handling code here:
