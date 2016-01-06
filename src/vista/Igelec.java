@@ -43,6 +43,7 @@ public class Igelec extends javax.swing.JFrame {
     ArrayList <FormacionPolitica> formaciones = new ArrayList<>();
     ArrayList <Militante> militantes = new ArrayList<>();
     ArrayList <Votantes> votantes = new ArrayList<>();
+    Eleccion eleccion;
     /**
      * Creates new form igelec
      */
@@ -1080,11 +1081,34 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCrearEleccionActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        if(circunscripciones!=null && circunscripciones.size()>0){
+            if(jNombreEleccion.getText()==""){
+            
+                eleccion = new Eleccion(jNombreEleccion.getText());
+            
+                // Calculamos la participacion y los escaños en las elecciones
+                int nCircun = circunscripciones.size();
+                int escaños = 0;
+                double participacion = 0;
+                for(EleccionEnCircunscripcion circun : circunscripciones){
+                    participacion+=circun.getParticipacion();
+                    escaños+=circun.getEscaños();
+                }
+                participacion/=nCircun;
+                eleccion.setParticipacion(participacion);
+                eleccion.setEscaños(escaños);
 
+                // Cerrar ventana
+                jFrame1.dispose();
+                
+            } else {
+                JOptionPane.showMessageDialog(jFrame1, "No se pueden crear elecciones sin nombre");
+            }
+            
+        } else {
+            JOptionPane.showMessageDialog(jFrame1, "No se puede crear una eleccion sin circunscripcion");
+        }
         
-        
-        // Cerrar ventana
-        jFrame1.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButtonAñadirCircunsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirCircunsActionPerformed
