@@ -958,7 +958,6 @@ public class Igelec extends javax.swing.JFrame {
         if(filas.length<2){
             JOptionPane.showMessageDialog(Cargar, "No se puede crear una coalición con menos de dos partidos.", "Coalición no válida", JOptionPane.ERROR_MESSAGE);
         }
-        
         // Por cada fila, añadimos un partido al ArrayList
         for (int i = 0; i < filas.length; i++) {
            // FALTA CODIGO
@@ -1019,7 +1018,6 @@ public class Igelec extends javax.swing.JFrame {
                     );
                     militantes.add(mil);
                     votantes.add(mil);
-                    
                     
                     // Lo añadimos a la tabla
                     DefaultTableModel modelo = (DefaultTableModel) jTableVotantesPP.getModel();
@@ -1082,7 +1080,11 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCrearEleccionActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+
+        
+        
+        // Cerrar ventana
+        jFrame1.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButtonAñadirCircunsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirCircunsActionPerformed

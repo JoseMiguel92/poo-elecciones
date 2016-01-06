@@ -22,7 +22,6 @@ public class PartidoPolitico extends FormacionPolitica implements Serializable{
     public void setVotantes(ArrayList<Votantes> votantes) {
         this.votantes = votantes;
     }
-
     
     public ArrayList<Militante> getMilitantes() {
         return militantes;

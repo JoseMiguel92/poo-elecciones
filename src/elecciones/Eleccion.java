@@ -18,8 +18,6 @@ public class Eleccion implements Serializable {
     protected TablaEscaños resultadosTotalEscaños;
     private ArrayList<EleccionEnCircunscripcion> eleccionesEnCircunscripcion;
 
-   
-
 //Contructores
     public Eleccion(String nombre) {
         this.nombre = nombre;
