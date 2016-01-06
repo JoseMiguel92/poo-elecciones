@@ -846,18 +846,18 @@ public class Igelec extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void añadirPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirPartidoActionPerformed
-        // TODO add your handling code here:
-        jFrame3.setLocationRelativeTo(null);
-        jFrame3.setSize(400, 400);
-        jFrame3.setVisible(true);
-       
-        /*
-        DefaultTableModel modelo = (DefaultTableModel) jTableVotantesPP.getModel();
-        while(modelo.getRowCount() > 0) modelo.removeRow(0);      */
-        
-        limpiarTabla(jTableVotantesPP);
-         militantesAuxiliar = new ArrayList<>();
-         votantesAuxiliar = new ArrayList<>();
+//        // TODO add your handling code here:
+//        jFrame3.setLocationRelativeTo(null);
+//        jFrame3.setSize(400, 400);
+//        jFrame3.setVisible(true);
+//       
+//        /*
+//        DefaultTableModel modelo = (DefaultTableModel) jTableVotantesPP.getModel();
+//        while(modelo.getRowCount() > 0) modelo.removeRow(0);      */
+//        
+//        limpiarTabla(jTableVotantesPP);
+//         militantesAuxiliar = new ArrayList<>();
+//         votantesAuxiliar = new ArrayList<>();
         
         
         
@@ -873,6 +873,52 @@ public class Igelec extends javax.swing.JFrame {
 
     private void jButtonAñadirPPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirPPActionPerformed
 
+        // Crea el partido político
+        PartidoPolitico partido = new PartidoPolitico(
+                jTextFieldNombrePP.getText(),
+                jTextFieldSiglasPP.getText(),
+                jTextFieldLogoPP.getText()
+        );
+        
+        // Setea el campo Siglas de todos los militantes al valor introducido en el partido
+        for(Militante mil:militantes){
+            mil.setSiglasPartido(jTextFieldSiglasPP.getText());
+        }
+        // Setea el campo Siglas de todos los simpatizantes..
+        for(Simpatizante simpa:simpatizantes){
+            simpa.setSiglasPartido(jTextFieldSiglasPP.getText());
+        }
+               
+        // Asignamos los objetos temporales militantes y simpatizantes creados hasta ahora al partido
+        partido.setMilitantes(militantes);
+        // PENDIENTE, AÑADIR SIMPATIZANTES
+        // Creamos un nuevo conjunto vacío de militantes y simpatizantes temporal
+        militantes = new ArrayList<>();
+        simpatizantes = new ArrayList<>();
+        
+        // Añadimos el partido creado a la tabla de partidos en circunscripciones
+        DefaultTableModel modeloPartidos = (DefaultTableModel) jTablePP.getModel();
+        modeloPartidos.addRow(new Object[]{
+                jTextFieldNombrePP.getText(),
+                jTextFieldSiglasPP.getText(),
+                "Partido"
+        });
+        
+        // Añadimos el partido a la lista temporal de partidos.
+        partidos.add(partido);
+        
+        // Resetamos todos los campos del formulario
+        jTextFieldNombrePP.setText("");
+        jTextFieldSiglasPP.setText("");
+        jTextFieldLogoPP.setText("");
+        
+        // Resetamos la tabla
+        DefaultTableModel modeloVot = (DefaultTableModel) jTableVotantesPP.getModel();
+        modeloVot.setRowCount(0);
+        
+        // Cerramos la ventana
+        jFrame3.dispose();
+        
 //        PartidoPolitico nuevoPartido = new PartidoPolitico(jTextFieldNombrePP.getText(), jTextFieldSiglasPP.getText(), jTextFieldLogoPP.getText());
 //        nuevoPartido.setMilitantes(militantesAuxiliar);
 //        nuevoPartido.setVotantes(votantesAuxiliar);
