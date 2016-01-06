@@ -1178,37 +1178,56 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldNombreAñadirS1ActionPerformed
 
     private void jButtonAñadirMilitanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirMilitanteActionPerformed
-        // Creamos un nuevo MILITANTE basandonos en los datos que nos han proporcionado
-        Militante mil = new Militante(
-            jTextFieldNombreAñadirS1.getText(),
-            Integer.parseInt(jTextFieldEdadAñadirS1.getText()),
-            jTextFieldGeneroAñadirS1.getText(),
-            jTextFieldProfesionS1.getText(),
-            jTextFieldCuota.getText(),
-            jTextFieldCarnet.getText()
-        );
-        // Lo añadimos a la lista de militantes y a la lista de votantes
-        militantes.add(mil);
-        votantes.add(mil);
-        // Lo añadimos a la tabla tambien
-        DefaultTableModel modelo = (DefaultTableModel) jTableVotantesPP.getModel();
-        modelo.addRow(new Object[]{
-            jTextFieldNombreAñadirS1.getText(),
-            Integer.parseInt(jTextFieldEdadAñadirS1.getText()),
-            jTextFieldGeneroAñadirS1.getText(),
-            jTextFieldProfesionS1.getText(),
-            "Militante"
-        });
-        // Reseteamos campos
-        jTextFieldNombreAñadirS1.setText("");
-        jTextFieldEdadAñadirS1.setText("");
-        jTextFieldGeneroAñadirS1.setText("");
-        jTextFieldProfesionS1.setText("");
-        jTextFieldCuota.setText("");
-        jTextFieldCarnet.setText("");
+        if(jTextFieldNombreAñadirS1.getText().equals("")||
+                jTextFieldEdadAñadirS1.getText().equals("")||
+                jTextFieldGeneroAñadirS1.getText().equals("")||
+                jTextFieldProfesionS1.getText().equals("")||
+                jTextFieldCuota.getText().equals("")||
+                jTextFieldCarnet.getText().equals("")){
+            
+            JOptionPane.showMessageDialog(jFrame4Simpa, "Debes rellenar todos los campos", "Campos no válidos", JOptionPane.ERROR_MESSAGE);
+        } else {
+            try {
+                   // Creamos un nuevo MILITANTE basandonos en los datos que nos han proporcionado
+                Militante mil = new Militante(
+                    jTextFieldNombreAñadirS1.getText(),
+                    Integer.parseInt(jTextFieldEdadAñadirS1.getText()),
+                    jTextFieldGeneroAñadirS1.getText(),
+                    jTextFieldProfesionS1.getText(),
+                    jTextFieldCuota.getText(),
+                    jTextFieldCarnet.getText()
+                );
+                // Lo añadimos a la lista de militantes y a la lista de votantes
+                militantes.add(mil);
+                votantes.add(mil);
+                // Lo añadimos a la tabla tambien
+                DefaultTableModel modelo = (DefaultTableModel) jTableVotantesPP.getModel();
+                modelo.addRow(new Object[]{
+                    jTextFieldNombreAñadirS1.getText(),
+                    Integer.parseInt(jTextFieldEdadAñadirS1.getText()),
+                    jTextFieldGeneroAñadirS1.getText(),
+                    jTextFieldProfesionS1.getText(),
+                    "Militante"
+                });
+                // Reseteamos campos
+                jTextFieldNombreAñadirS1.setText("");
+                jTextFieldEdadAñadirS1.setText("");
+                jTextFieldGeneroAñadirS1.setText("");
+                jTextFieldProfesionS1.setText("");
+                jTextFieldCuota.setText("");
+                jTextFieldCarnet.setText("");
+
+                // Ocultamos ventana
+                jFrame4Mili.dispose();
+            } catch (NumberFormatException e){
+                JOptionPane.showMessageDialog(jFrame4Simpa, jTextFieldEdadAñadirS1.getText()+" no parece ser un entero válido", "Campos no válidos", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+
+
+    
+
         
-        // Ocultamos ventana
-        jFrame4Mili.dispose();
     }//GEN-LAST:event_jButtonAñadirMilitanteActionPerformed
 
     private void jTextFieldCarnetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCarnetActionPerformed
