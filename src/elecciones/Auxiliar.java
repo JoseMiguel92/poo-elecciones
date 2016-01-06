@@ -1,4 +1,3 @@
-
 package elecciones;
 
 import java.io.*;
