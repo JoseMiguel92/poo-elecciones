@@ -124,8 +124,6 @@ public class Igelec extends javax.swing.JFrame {
         jTextFieldProfesionS1 = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
         jButtonAñadirMilitante = new javax.swing.JButton();
-        jLabel24 = new javax.swing.JLabel();
-        jTextFieldSiglasS1 = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         jTextFieldCuota = new javax.swing.JTextField();
         jTextFieldCarnet = new javax.swing.JTextField();
@@ -612,8 +610,6 @@ public class Igelec extends javax.swing.JFrame {
             }
         });
 
-        jLabel24.setText("Siglas");
-
         jLabel25.setText("Cuota");
 
         jTextFieldCarnet.addActionListener(new java.awt.event.ActionListener() {
@@ -631,28 +627,28 @@ public class Igelec extends javax.swing.JFrame {
             .addGroup(jFrame4MiliLayout.createSequentialGroup()
                 .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jFrame4MiliLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel17)
-                            .addComponent(jLabel16)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel24)
-                            .addComponent(jLabel23)
-                            .addComponent(jLabel25)
-                            .addComponent(jLabel26))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextFieldNombreAñadirS1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(jTextFieldEdadAñadirS1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(jTextFieldGeneroAñadirS1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(jTextFieldProfesionS1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(jTextFieldSiglasS1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(jTextFieldCuota)
-                            .addComponent(jTextFieldCarnet)))
+                        .addGap(108, 108, 108)
+                        .addComponent(jButtonAñadirMilitante))
                     .addGroup(jFrame4MiliLayout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addComponent(jButtonAñadirMilitante)))
-                .addContainerGap(68, Short.MAX_VALUE))
+                        .addGap(26, 26, 26)
+                        .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16)
+                            .addGroup(jFrame4MiliLayout.createSequentialGroup()
+                                .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel17)
+                                    .addComponent(jLabel23)
+                                    .addComponent(jLabel25)
+                                    .addComponent(jLabel26))
+                                .addGap(18, 18, 18)
+                                .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldEdadAñadirS1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldNombreAñadirS1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldGeneroAñadirS1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldProfesionS1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldCuota, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldCarnet, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         jFrame4MiliLayout.setVerticalGroup(
             jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -673,10 +669,6 @@ public class Igelec extends javax.swing.JFrame {
                 .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldProfesionS1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel23))
-                .addGap(12, 12, 12)
-                .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel24)
-                    .addComponent(jTextFieldSiglasS1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldCuota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -685,9 +677,9 @@ public class Igelec extends javax.swing.JFrame {
                 .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldCarnet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel26))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addGap(44, 44, 44)
                 .addComponent(jButtonAñadirMilitante)
-                .addGap(35, 35, 35))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1070,7 +1062,6 @@ public class Igelec extends javax.swing.JFrame {
             Integer.parseInt(jTextFieldEdadAñadirS1.getText()),
             jTextFieldGeneroAñadirS1.getText(),
             jTextFieldProfesionS1.getText(),
-            jTextFieldSiglasS1.getText(),
             jTextFieldCuota.getText(),
             jTextFieldCarnet.getText()
         ));
@@ -1081,7 +1072,6 @@ public class Igelec extends javax.swing.JFrame {
             Integer.parseInt(jTextFieldEdadAñadirS1.getText()),
             jTextFieldGeneroAñadirS1.getText(),
             jTextFieldProfesionS1.getText(),
-            jTextFieldSiglasS1.getText(),
             "Militante"
         });
         // Reseteamos campos
@@ -1089,7 +1079,6 @@ public class Igelec extends javax.swing.JFrame {
         jTextFieldEdadAñadirS1.setText("");
         jTextFieldGeneroAñadirS1.setText("");
         jTextFieldProfesionS1.setText("");
-        jTextFieldSiglasS1.setText("");
         jTextFieldCuota.setText("");
         jTextFieldCarnet.setText("");
         
@@ -1207,7 +1196,6 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
@@ -1250,7 +1238,6 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldSiglasC;
     private javax.swing.JTextField jTextFieldSiglasPP;
     private javax.swing.JTextField jTextFieldSiglasS;
-    private javax.swing.JTextField jTextFieldSiglasS1;
     private javax.swing.JButton jañadirPartido;
     private javax.swing.JTextArea salidaTexto;
     // End of variables declaration//GEN-END:variables

@@ -19,6 +19,12 @@ public class Militante extends Votantes implements Serializable{
         this.cuota = cuota;
         this.carnet = carnet;
     }
+    public Militante(String nombreApellidos, int edad, String profesion, String genero, String cuota, String carnet) {
+        super(nombreApellidos, edad, profesion, genero);
+        this.cuota = cuota;
+        this.carnet = carnet;
+    }
+    
     public Militante(String nombreApellidos){
         super(nombreApellidos);
     }
