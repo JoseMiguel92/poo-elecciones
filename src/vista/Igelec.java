@@ -995,16 +995,6 @@ public class Igelec extends javax.swing.JFrame {
             }
             
         }
-           for(Militante i: militantesAuxiliar){
-            votantesAuxiliar.add(i);
-        }
-        
-        DefaultTableModel modelo = (DefaultTableModel) jTableVotantesPP.getModel();
-        for(Votantes i : votantesAuxiliar){
-            Object[] fila = new Object[]{i.getNombreApellidos(),i.getEdad(),i.getProfesion(),i.getGenero(),i.getSiglasPartido()};
-            modelo.addRow(fila);
-        }
-        
     }//GEN-LAST:event_jButtonCargarMilitantesActionPerformed
 
     private void jTextFieldNombreAñadirSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreAñadirSActionPerformed
