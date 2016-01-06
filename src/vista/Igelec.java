@@ -966,31 +966,44 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_añadirCoalicionActionPerformed
 
     private void jButtonAñadirSimpatizanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirSimpatizanteActionPerformed
-        // Creamos un nuevo SIMPATIZANTE basandonos en los datos que nos han proporcionado
-        votantes.add(new Simpatizante(
-            jTextFieldNombreAñadirS.getText(),
-            Integer.parseInt(jTextFieldEdadAñadirS.getText()),
-            jTextFieldGeneroAñadirS.getText(),
-            jTextFieldProfesionS.getText()
-        ));
-        // Lo añadimos a la tabla tambien
-        DefaultTableModel modelo = (DefaultTableModel) jTableVotantesPP.getModel();
-        modelo.addRow(new Object[]{
-            jTextFieldNombreAñadirS.getText(),
-            Integer.parseInt(jTextFieldEdadAñadirS.getText()),
-            jTextFieldGeneroAñadirS.getText(),
-            jTextFieldProfesionS.getText(),
-            "Simpatizante"
-        });
-        // Reseteamos campos
-        jTextFieldNombreAñadirS.setText("");
-        jTextFieldEdadAñadirS.setText("");
-        jTextFieldGeneroAñadirS.setText("");
-        jTextFieldProfesionS.setText("");
+        if(jTextFieldNombreAñadirS.getText().equals("")||
+                jTextFieldEdadAñadirS.getText().equals("")||
+                jTextFieldGeneroAñadirS.getText().equals("")||
+                jTextFieldProfesionS.getText().equals("")){
+            
+            JOptionPane.showMessageDialog(jFrame4Simpa, "Debes rellenar todos los campos", "Campos no válidos", JOptionPane.ERROR_MESSAGE);
+        } else {
+            try {
+                    // Creamos un nuevo SIMPATIZANTE basandonos en los datos que nos han proporcionado
+                    votantes.add(new Simpatizante(
+                    jTextFieldNombreAñadirS.getText(),
+                    Integer.parseInt(jTextFieldEdadAñadirS.getText()),
+                    jTextFieldGeneroAñadirS.getText(),
+                    jTextFieldProfesionS.getText()
+                ));
+                // Lo añadimos a la tabla tambien
+                DefaultTableModel modelo = (DefaultTableModel) jTableVotantesPP.getModel();
+                modelo.addRow(new Object[]{
+                    jTextFieldNombreAñadirS.getText(),
+                    Integer.parseInt(jTextFieldEdadAñadirS.getText()),
+                    jTextFieldGeneroAñadirS.getText(),
+                    jTextFieldProfesionS.getText(),
+                    "Simpatizante"
+                });
+                // Reseteamos campos
+                jTextFieldNombreAñadirS.setText("");
+                jTextFieldEdadAñadirS.setText("");
+                jTextFieldGeneroAñadirS.setText("");
+                jTextFieldProfesionS.setText("");
 
-        
-        // Ocultamos ventana
-        jFrame4Simpa.dispose();;
+                // Ocultamos ventana
+                jFrame4Simpa.dispose();
+            } catch (NumberFormatException e){
+                JOptionPane.showMessageDialog(jFrame4Simpa, jTextFieldEdadAñadirS.getText()+" no parece ser un entero válido", "Campos no válidos", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+
+
     }//GEN-LAST:event_jButtonAñadirSimpatizanteActionPerformed
 
     private void jButtonCargarMilitantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarMilitantesActionPerformed
