@@ -77,6 +77,7 @@ public class Igelec extends javax.swing.JFrame {
         jTablaCircunscripciones = new javax.swing.JTable();
         jLabel22 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
+        jLabelError = new javax.swing.JLabel();
         jFrame2 = new javax.swing.JFrame();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -241,6 +242,9 @@ public class Igelec extends javax.swing.JFrame {
             }
         });
 
+        jLabelError.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabelError.setForeground(new java.awt.Color(255, 51, 51));
+
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
         jFrame1Layout.setHorizontalGroup(
@@ -254,7 +258,9 @@ public class Igelec extends javax.swing.JFrame {
                                 .addGap(45, 45, 45)
                                 .addComponent(jLabel21)
                                 .addGap(49, 49, 49)
-                                .addComponent(jNombreEleccion, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jNombreEleccion, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabelError))
                             .addGroup(jFrame1Layout.createSequentialGroup()
                                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -271,7 +277,8 @@ public class Igelec extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jNombreEleccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel21))
+                    .addComponent(jLabel21)
+                    .addComponent(jLabelError, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addComponent(jLabel22)
                 .addGap(18, 18, 18)
@@ -1090,7 +1097,7 @@ public class Igelec extends javax.swing.JFrame {
         jFrame1.setLocationRelativeTo(null);
         jFrame1.setSize(700,400);
         jFrame1.setVisible(true);
-        
+        jButton3.setEnabled(false);
     }//GEN-LAST:event_jButtonCrearEleccionActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -1114,6 +1121,7 @@ public class Igelec extends javax.swing.JFrame {
                 jFrame1.dispose();
                 
             } else {
+                jLabelError.setText("!?");
                 JOptionPane.showMessageDialog(jFrame1, "No se pueden crear elecciones sin nombre");
             }
             
@@ -1161,6 +1169,8 @@ public class Igelec extends javax.swing.JFrame {
         
         // Cerramos la ventana
         jFrame2.dispose();        // TODO add your handling code here:
+        
+        jButton3.setEnabled(true);
     }//GEN-LAST:event_jButtonAñadirCircunsActionPerformed
 
     private void jTextFieldNombreAñadirS1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreAñadirS1ActionPerformed
@@ -1319,6 +1329,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelError;
     private javax.swing.JLabel jLabelLogoPP;
     private javax.swing.JLabel jLabelNombrePP;
     private javax.swing.JLabel jLabelSiglasPP;
