@@ -949,41 +949,49 @@ public class Igelec extends javax.swing.JFrame {
     private void jButtonCargarMilitantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarMilitantesActionPerformed
         // TODO add your handling code here:
         JFileChooser fileChooser = new JFileChooser();
-        int archivo = fileChooser.showOpenDialog(this); //Se abre la ventana para seleccionar archivo a cargar.
-        if (archivo == JFileChooser.APPROVE_OPTION){
-            File fichero = fileChooser.getSelectedFile(); //Se crea una variable con el fichero
-            String entrada = fichero.getPath();//Se recoge la ruta del fichero
-            
-            
+        int opcion = fileChooser.showOpenDialog(this); //Se abre la ventana para seleccionar archivo a cargar.
+        if (opcion == JFileChooser.APPROVE_OPTION){
+            // Creamos un String con la ruta del archivo seleccionado
+            String archivo = fileChooser.getSelectedFile().getPath(); 
+            // Intentamos abrirlo
             try{
-               
-                BufferedReader inFile = new BufferedReader (new FileReader(entrada));
+                BufferedReader inFile = new BufferedReader (new FileReader(archivo));
                 String inputLine;
                 
                 while ((inputLine = inFile.readLine())!=null){
-                    String[] AtributosMilitante = inputLine.split(":");
-                    String nomApe = AtributosMilitante[0];
-                    int edad = Integer.parseInt(AtributosMilitante[1]);
-                    String prof = AtributosMilitante[2];
-                    String gen = AtributosMilitante[3];
-                    String siglas = AtributosMilitante[4];
-                    String cuota = AtributosMilitante[5];
-                    String carnet = AtributosMilitante[6];
+                    String[] atrmil = inputLine.split(":");
+                    // Igual que con los campos, añadimos a la lista un nuevo militantes
+                    // con las propiedades del txt
+                    militantes.add(new Militante(
+                            atrmil[0],                      // Nombre
+                            Integer.parseInt(atrmil[1]),    // Edad
+                            atrmil[2],                      // Profesión
+                            atrmil[3],                      // Género
+                            atrmil[4],                      // Cuota
+                            atrmil[5]                       // Carnet
+                    ));
                     
-                    Militante m = new Militante(nomApe,edad,prof,gen,siglas,cuota,carnet);
-                    militantesAuxiliar.add(m);    
-        
-            }
-            }catch(FileNotFoundException e){
-                e.printStackTrace();
+                    // Lo añadimos a la tabla
+                    DefaultTableModel modelo = (DefaultTableModel) jTableVotantesPP.getModel();
+                    modelo.addRow(new Object[]{
+                        atrmil[0],
+                        Integer.parseInt(atrmil[1]),
+                        atrmil[3],
+                        atrmil[2],
+                        "Militante"
+                    });
+                }
                 
+            } catch(FileNotFoundException e){
+                e.printStackTrace();
                 
             } catch (IOException ex) {
                 Logger.getLogger(Igelec.class.getName()).log(Level.SEVERE, null, ex);
+                
             } catch (ArrayIndexOutOfBoundsException e2){
                 e2.printStackTrace();
                 System.out.println("Los datos del fichero no son validos");
-                    
+
             }
             
         }
