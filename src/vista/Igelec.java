@@ -42,7 +42,7 @@ public class Igelec extends javax.swing.JFrame {
     ArrayList <EleccionEnCircunscripcion> circunscripciones = new ArrayList<>();
     ArrayList <PartidoPolitico> partidos = new ArrayList<>();
     ArrayList <Militante> militantes = new ArrayList<>();
-    ArrayList <Simpatizante> simpatizantes = new ArrayList<>();
+    ArrayList <Votantes> votantes = new ArrayList<>();
     /**
      * Creates new form igelec
      */
@@ -881,20 +881,21 @@ public class Igelec extends javax.swing.JFrame {
         );
         
         // Setea el campo Siglas de todos los militantes al valor introducido en el partido
-        for(Militante mil:militantes){
-            mil.setSiglasPartido(jTextFieldSiglasPP.getText());
-        }
-        // Setea el campo Siglas de todos los simpatizantes..
-        for(Simpatizante simpa:simpatizantes){
-            simpa.setSiglasPartido(jTextFieldSiglasPP.getText());
+        // NO NECESARIO LO HACE A TRAVES DE VOTANTES
+        //for(Militante mil:militantes){
+        //    mil.setSiglasPartido(jTextFieldSiglasPP.getText());
+        //}
+        // Setea el campo Siglas de todos los votantes
+        for(Votantes vot:votantes){
+            vot.setSiglasPartido(jTextFieldSiglasPP.getText());
         }
                
-        // Asignamos los objetos temporales militantes y simpatizantes creados hasta ahora al partido
+        // Asignamos los objetos temporales militantes y votantes creados hasta ahora al partido
         partido.setMilitantes(militantes);
         // PENDIENTE, AÑADIR SIMPATIZANTES
-        // Creamos un nuevo conjunto vacío de militantes y simpatizantes temporal
+        // Creamos un nuevo conjunto vacío de militantes y votantes temporal
         militantes = new ArrayList<>();
-        simpatizantes = new ArrayList<>();
+        votantes = new ArrayList<>();
         
         // Añadimos el partido creado a la tabla de partidos en circunscripciones
         DefaultTableModel modeloPartidos = (DefaultTableModel) jTablePP.getModel();
@@ -966,7 +967,7 @@ public class Igelec extends javax.swing.JFrame {
 
     private void jButtonAñadirSimpatizanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirSimpatizanteActionPerformed
         // Creamos un nuevo SIMPATIZANTE basandonos en los datos que nos han proporcionado
-        simpatizantes.add(new Simpatizante(
+        votantes.add(new Simpatizante(
             jTextFieldNombreAñadirS.getText(),
             Integer.parseInt(jTextFieldEdadAñadirS.getText()),
             jTextFieldGeneroAñadirS.getText(),
@@ -1008,14 +1009,17 @@ public class Igelec extends javax.swing.JFrame {
                     String[] atrmil = inputLine.split(":");
                     // Igual que con los campos, añadimos a la lista un nuevo militantes
                     // con las propiedades del txt
-                    militantes.add(new Militante(
+                    Militante mil = new Militante(
                             atrmil[0],                      // Nombre
                             Integer.parseInt(atrmil[1]),    // Edad
                             atrmil[2],                      // Profesión
                             atrmil[3],                      // Género
                             atrmil[4],                      // Cuota
                             atrmil[5]                       // Carnet
-                    ));
+                    );
+                    militantes.add(mil);
+                    votantes.add(mil);
+                    
                     
                     // Lo añadimos a la tabla
                     DefaultTableModel modelo = (DefaultTableModel) jTableVotantesPP.getModel();
@@ -1091,14 +1095,17 @@ public class Igelec extends javax.swing.JFrame {
 
     private void jButtonAñadirMilitanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirMilitanteActionPerformed
         // Creamos un nuevo MILITANTE basandonos en los datos que nos han proporcionado
-        militantes.add(new Militante(
+        Militante mil = new Militante(
             jTextFieldNombreAñadirS1.getText(),
             Integer.parseInt(jTextFieldEdadAñadirS1.getText()),
             jTextFieldGeneroAñadirS1.getText(),
             jTextFieldProfesionS1.getText(),
             jTextFieldCuota.getText(),
             jTextFieldCarnet.getText()
-        ));
+        );
+        // Lo añadimos a la lista de militantes y a la lista de votantes
+        militantes.add(mil);
+        votantes.add(mil);
         // Lo añadimos a la tabla tambien
         DefaultTableModel modelo = (DefaultTableModel) jTableVotantesPP.getModel();
         modelo.addRow(new Object[]{
