@@ -409,11 +409,11 @@ public class Igelec extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nombre Apellidos", "Edad", "Genero", "Profesion", "Siglas", "Tipo"
+                "Nombre Apellidos", "Edad", "Genero", "Profesion", "Tipo"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
