@@ -1082,8 +1082,7 @@ public class Igelec extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         if(circunscripciones!=null && circunscripciones.size()>0){
-            if(jNombreEleccion.getText()==""){
-            
+            if(jNombreEleccion.getText().equals("")){
                 eleccion = new Eleccion(jNombreEleccion.getText());
             
                 // Calculamos la participacion y los escaños en las elecciones
