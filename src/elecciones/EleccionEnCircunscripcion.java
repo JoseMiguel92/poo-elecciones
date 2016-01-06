@@ -22,6 +22,7 @@ public class EleccionEnCircunscripcion implements Serializable{
     protected TablaEscaños resultadoEscaños;
     private ArrayList<Lista> listasPartidos;
     private int votosBlanco;
+    protected ArrayList<FormacionPolitica> formaciones;
     
 //Contructores
     public EleccionEnCircunscripcion(String nombre, int poblacion, double participacion) {
@@ -36,6 +37,12 @@ public class EleccionEnCircunscripcion implements Serializable{
     }
 
 //GETs y SETs
+    public void setFormaciones(ArrayList<FormacionPolitica> formaciones){
+        this.formaciones = formaciones;
+    }
+    public ArrayList<FormacionPolitica> getFormaciones(){
+        return this.formaciones;
+    }
     public void setListasPartidos(ArrayList<Lista> listasPartidos) {    
         this.listasPartidos = listasPartidos;
     }

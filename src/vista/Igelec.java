@@ -40,7 +40,7 @@ public class Igelec extends javax.swing.JFrame {
 
     // Raul: variables auxiliares EN PRUEBAS
     ArrayList <EleccionEnCircunscripcion> circunscripciones = new ArrayList<>();
-    ArrayList <PartidoPolitico> partidos = new ArrayList<>();
+    ArrayList <FormacionPolitica> partidos = new ArrayList<>();
     ArrayList <Militante> militantes = new ArrayList<>();
     ArrayList <Votantes> votantes = new ArrayList<>();
     /**
@@ -1086,7 +1086,43 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButtonAñadirCircunsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirCircunsActionPerformed
-        // TODO add your handling code here:
+
+        // Crea el partido político
+        EleccionEnCircunscripcion eleccion = new EleccionEnCircunscripcion(
+                jTextFieldNombreCircuns.getText(),
+                Integer.parseInt(jTextFieldPoblacionCircuns.getText()),
+                Double.parseDouble(jTextFieldParticipacionCircuns.getText())
+        );
+               
+        // Asignamos los objetos temporales militantes y votantes creados hasta ahora al partido
+        eleccion.set .setMilitantes(militantes);
+        // PENDIENTE, AÑADIR SIMPATIZANTES
+        // Creamos un nuevo conjunto vacío de militantes y votantes temporal
+        militantes = new ArrayList<>();
+        votantes = new ArrayList<>();
+        
+        // Añadimos el partido creado a la tabla de partidos en circunscripciones
+        DefaultTableModel modeloPartidos = (DefaultTableModel) jTablePP.getModel();
+        modeloPartidos.addRow(new Object[]{
+                jTextFieldNombrePP.getText(),
+                jTextFieldSiglasPP.getText(),
+                "Partido"
+        });
+        
+        // Añadimos el partido a la lista temporal de partidos.
+        partidos.add(partido);
+        
+        // Resetamos todos los campos del formulario
+        jTextFieldNombrePP.setText("");
+        jTextFieldSiglasPP.setText("");
+        jTextFieldLogoPP.setText("");
+        
+        // Resetamos la tabla
+        DefaultTableModel modeloVot = (DefaultTableModel) jTableVotantesPP.getModel();
+        modeloVot.setRowCount(0);
+        
+        // Cerramos la ventana
+        jFrame2.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAñadirCircunsActionPerformed
 
     private void jTextFieldNombreAñadirS1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreAñadirS1ActionPerformed
