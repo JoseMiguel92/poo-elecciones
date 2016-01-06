@@ -170,37 +170,49 @@ public class Eleccion implements Serializable {
     
     
     
-    public void imprimirMayorias(){
-        if (resultadosTotalEscaños.getTablaEscaños().size()<5){
-            for(ItemEscaños partido : resultadosTotalEscaños.getTablaEscaños()){
-                if(partido.getNumeroEscaños()>(escaños/2)){
-                    partido.getFormacion().toString();
-                }else{
-                    
-                }
+//    public void imprimirMayorias(){
+//        if (resultadosTotalEscaños.getTablaEscaños().size()<5){
+//            for(ItemEscaños partido : resultadosTotalEscaños.getTablaEscaños()){
+//                if(partido.getNumeroEscaños()>(escaños/2)){
+//                    partido.getFormacion().toString();
+//                }else{
+//                    
+//                }
+//            }
+//        }
+//       
+//    };
+    
+    public void imprimirMayorias(ArrayList<ItemEscaños> cuatroPartidos){
+        for(ItemEscaños partido: cuatroPartidos){
+            if(partido.getNumeroEscaños()>(escaños/2)){
+                partido.getFormacion().toString();
+            }else{
+                cuatroPartidos.sort(null);
             }
         }
-       
-    };
+        
+    }
     
     private ArrayList<ItemEscaños> cuatroFuerzas(){
+        ArrayList<ItemEscaños> copia = (ArrayList) resultadosTotalEscaños.getTablaEscaños().clone(); 
         ArrayList<ItemEscaños> fuerzas = new ArrayList<>();
-        if (resultadosTotalEscaños.getTablaEscaños().size()<5){
-            return resultadosTotalEscaños.getTablaEscaños();
+        if (copia.size()<5){
+            return copia;
          }else{        
             int posicion = 0;
             for(int i=0; i<=4;i++){
                 int numEscañosMayor = 0; //actualizacion de Numero de escaños para que encuentre el mayor.
-                for (int j=0; j<resultadosTotalEscaños.getTablaEscaños().size();){
-                    if(resultadosTotalEscaños.getTablaEscaños().get(j).getNumeroEscaños()>numEscañosMayor){
-                        numEscañosMayor = resultadosTotalEscaños.getTablaEscaños().get(j).getNumeroEscaños();
+                for (int j=0; j<copia.size();){
+                    if(copia.get(j).getNumeroEscaños()>numEscañosMayor){
+                        numEscañosMayor = copia.get(j).getNumeroEscaños();
                         posicion = j;
                     }
                 }
                 // Añadir al nuevo ArrayList la posicion i.
-                fuerzas.add(resultadosTotalEscaños.getTablaEscaños().get(posicion));
+                fuerzas.add(copia.get(posicion));
                 //borra para poder encontrar el siguiente mayor (hay que clonar resultadosTotalEscaños para no borrar el original, lo he intentado pero no me deja)
-                resultadosTotalEscaños.getTablaEscaños().remove(posicion);             
+                copia.remove(posicion);             
             }
         }
         return fuerzas;
