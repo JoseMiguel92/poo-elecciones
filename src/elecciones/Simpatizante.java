@@ -14,6 +14,10 @@ public class Simpatizante extends Votantes implements Serializable{
     public Simpatizante(String nombreApellido, int edad, String profesion, String genero, String siglasPartido) {
         super(nombreApellido, edad, profesion, genero, siglasPartido);
     }
+    
+    public Simpatizante(String nombreApellido, int edad, String profesion, String genero) {
+        super(nombreApellido, edad, profesion, genero);
+    }
     public Simpatizante(String nombreApellido){
         super(nombreApellido);
     }

@@ -1,2 +1,2 @@
-﻿Pablo Garcia:18:Minero:H:PP:100:666D
-Pepito Garcia:20:Ganadero:H:PODEMOS:1000:658D
+﻿Pablo Garcia:18:Minero:H:100:666D
+Pepito Garcia:20:Ganadero:H:1000:658D

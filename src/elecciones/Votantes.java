@@ -29,6 +29,12 @@ public abstract class Votantes implements Serializable{
         this.genero = genero;
         this.siglasPartido = siglasPartido;
     }
+    public Votantes(String nombreApellidos, int edad, String profesion, String genero){
+        this.nombreApellidos = nombreApellidos;
+        this.edad = edad;
+        this.profesion = profesion;
+        this.genero = genero;
+    }
     
 //GETs y SETs
     public String getNombreApellidos() {

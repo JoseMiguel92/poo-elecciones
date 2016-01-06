@@ -40,9 +40,9 @@ public class Igelec extends javax.swing.JFrame {
 
     // Raul: variables auxiliares EN PRUEBAS
     ArrayList <EleccionEnCircunscripcion> circunscripciones = new ArrayList<>();
-    ArrayList <PartidoPolitico> partidos = new ArrayList<>();
+    ArrayList <FormacionPolitica> formaciones = new ArrayList<>();
     ArrayList <Militante> militantes = new ArrayList<>();
-    ArrayList <Simpatizante> simpatizantes = new ArrayList<>();
+    ArrayList <Votantes> votantes = new ArrayList<>();
     /**
      * Creates new form igelec
      */
@@ -112,8 +112,6 @@ public class Igelec extends javax.swing.JFrame {
         jTextFieldProfesionS = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jButtonAñadirSimpatizante = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jTextFieldSiglasS = new javax.swing.JTextField();
         jFrame4Mili = new javax.swing.JFrame();
         jLabel15 = new javax.swing.JLabel();
         jTextFieldNombreAñadirS1 = new javax.swing.JTextField();
@@ -124,8 +122,6 @@ public class Igelec extends javax.swing.JFrame {
         jTextFieldProfesionS1 = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
         jButtonAñadirMilitante = new javax.swing.JButton();
-        jLabel24 = new javax.swing.JLabel();
-        jTextFieldSiglasS1 = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         jTextFieldCuota = new javax.swing.JTextField();
         jTextFieldCarnet = new javax.swing.JTextField();
@@ -210,7 +206,7 @@ public class Igelec extends javax.swing.JFrame {
 
         jLabel21.setText("Nombre elecciones");
 
-        jAñadirCircunscripcion.setText("Añadir");
+        jAñadirCircunscripcion.setText("Añadir Circunscripción");
         jAñadirCircunscripcion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jAñadirCircunscripcionActionPerformed(evt);
@@ -275,19 +271,18 @@ public class Igelec extends javax.swing.JFrame {
                 .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jNombreEleccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel21))
+                .addGap(54, 54, 54)
+                .addComponent(jLabel22)
+                .addGap(18, 18, 18)
                 .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jFrame1Layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(jLabel22)
-                        .addGap(18, 18, 18)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3)
-                        .addContainerGap(58, Short.MAX_VALUE))
+                        .addGap(18, 18, 18))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrame1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jAñadirCircunscripcion)
-                        .addGap(158, 158, 158))))
+                        .addComponent(jAñadirCircunscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52)))
+                .addComponent(jButton3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel12.setText("Nombre de la circunscripcion:");
@@ -376,7 +371,9 @@ public class Igelec extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jañadirPartido))
+                    .addGroup(jFrame2Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jañadirPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(52, 52, 52)
                 .addComponent(jButtonAñadirCircuns)
                 .addGap(25, 25, 25))
@@ -411,11 +408,11 @@ public class Igelec extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nombre Apellidos", "Edad", "Genero", "Profesion", "Siglas", "Tipo"
+                "Nombre Apellidos", "Edad", "Género", "Profesión", "Tipo"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -535,8 +532,6 @@ public class Igelec extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Siglas");
-
         javax.swing.GroupLayout jFrame4SimpaLayout = new javax.swing.GroupLayout(jFrame4Simpa.getContentPane());
         jFrame4Simpa.getContentPane().setLayout(jFrame4SimpaLayout);
         jFrame4SimpaLayout.setHorizontalGroup(
@@ -549,19 +544,17 @@ public class Igelec extends javax.swing.JFrame {
                             .addComponent(jLabel7)
                             .addComponent(jLabel6)
                             .addComponent(jLabel5)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel2))
+                            .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTextFieldNombreAñadirS, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextFieldEdadAñadirS, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextFieldGeneroAñadirS, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldProfesionS, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldSiglasS, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jTextFieldProfesionS, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jFrame4SimpaLayout.createSequentialGroup()
                         .addGap(66, 66, 66)
                         .addComponent(jButtonAñadirSimpatizante)))
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         jFrame4SimpaLayout.setVerticalGroup(
             jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -582,13 +575,9 @@ public class Igelec extends javax.swing.JFrame {
                 .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jTextFieldProfesionS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jFrame4SimpaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextFieldSiglasS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                .addGap(46, 46, 46)
                 .addComponent(jButtonAñadirSimpatizante)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         jLabel15.setText("Nombre y Apellidos:");
@@ -612,8 +601,6 @@ public class Igelec extends javax.swing.JFrame {
             }
         });
 
-        jLabel24.setText("Siglas");
-
         jLabel25.setText("Cuota");
 
         jTextFieldCarnet.addActionListener(new java.awt.event.ActionListener() {
@@ -631,28 +618,28 @@ public class Igelec extends javax.swing.JFrame {
             .addGroup(jFrame4MiliLayout.createSequentialGroup()
                 .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jFrame4MiliLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel17)
-                            .addComponent(jLabel16)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel24)
-                            .addComponent(jLabel23)
-                            .addComponent(jLabel25)
-                            .addComponent(jLabel26))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextFieldNombreAñadirS1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(jTextFieldEdadAñadirS1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(jTextFieldGeneroAñadirS1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(jTextFieldProfesionS1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(jTextFieldSiglasS1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(jTextFieldCuota)
-                            .addComponent(jTextFieldCarnet)))
+                        .addGap(108, 108, 108)
+                        .addComponent(jButtonAñadirMilitante))
                     .addGroup(jFrame4MiliLayout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addComponent(jButtonAñadirMilitante)))
-                .addContainerGap(68, Short.MAX_VALUE))
+                        .addGap(26, 26, 26)
+                        .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16)
+                            .addGroup(jFrame4MiliLayout.createSequentialGroup()
+                                .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel17)
+                                    .addComponent(jLabel23)
+                                    .addComponent(jLabel25)
+                                    .addComponent(jLabel26))
+                                .addGap(18, 18, 18)
+                                .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldEdadAñadirS1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldNombreAñadirS1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldGeneroAñadirS1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldProfesionS1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldCuota, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldCarnet, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         jFrame4MiliLayout.setVerticalGroup(
             jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -673,10 +660,6 @@ public class Igelec extends javax.swing.JFrame {
                 .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldProfesionS1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel23))
-                .addGap(12, 12, 12)
-                .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel24)
-                    .addComponent(jTextFieldSiglasS1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldCuota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -685,9 +668,9 @@ public class Igelec extends javax.swing.JFrame {
                 .addGroup(jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldCarnet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel26))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addGap(44, 44, 44)
                 .addComponent(jButtonAñadirMilitante)
-                .addGap(35, 35, 35))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -863,18 +846,18 @@ public class Igelec extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void añadirPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirPartidoActionPerformed
-        // TODO add your handling code here:
-        jFrame3.setLocationRelativeTo(null);
-        jFrame3.setSize(400, 400);
-        jFrame3.setVisible(true);
-       
-        /*
-        DefaultTableModel modelo = (DefaultTableModel) jTableVotantesPP.getModel();
-        while(modelo.getRowCount() > 0) modelo.removeRow(0);      */
-        
-        limpiarTabla(jTableVotantesPP);
-         militantesAuxiliar = new ArrayList<>();
-         votantesAuxiliar = new ArrayList<>();
+//        // TODO add your handling code here:
+//        jFrame3.setLocationRelativeTo(null);
+//        jFrame3.setSize(400, 400);
+//        jFrame3.setVisible(true);
+//       
+//        /*
+//        DefaultTableModel modelo = (DefaultTableModel) jTableVotantesPP.getModel();
+//        while(modelo.getRowCount() > 0) modelo.removeRow(0);      */
+//        
+//        limpiarTabla(jTableVotantesPP);
+//         militantesAuxiliar = new ArrayList<>();
+//         votantesAuxiliar = new ArrayList<>();
         
         
         
@@ -890,6 +873,53 @@ public class Igelec extends javax.swing.JFrame {
 
     private void jButtonAñadirPPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirPPActionPerformed
 
+        // Crea el partido político
+        PartidoPolitico partido = new PartidoPolitico(
+                jTextFieldNombrePP.getText(),
+                jTextFieldSiglasPP.getText(),
+                jTextFieldLogoPP.getText()
+        );
+        
+        // Setea el campo Siglas de todos los militantes al valor introducido en el partido
+        // NO NECESARIO LO HACE A TRAVES DE VOTANTES
+        //for(Militante mil:militantes){
+        //    mil.setSiglasPartido(jTextFieldSiglasPP.getText());
+        //}
+        // Setea el campo Siglas de todos los votantes
+        for(Votantes vot:votantes){
+            vot.setSiglasPartido(jTextFieldSiglasPP.getText());
+        }
+               
+        // Asignamos los objetos temporales militantes y votantes creados hasta ahora al partido
+        partido.setMilitantes(militantes);
+        // PENDIENTE, AÑADIR SIMPATIZANTES
+        // Creamos un nuevo conjunto vacío de militantes y votantes temporal
+        militantes = new ArrayList<>();
+        votantes = new ArrayList<>();
+        
+        // Añadimos el partido creado a la tabla de formaciones en circunscripciones
+        DefaultTableModel modeloPartidos = (DefaultTableModel) jTablePP.getModel();
+        modeloPartidos.addRow(new Object[]{
+                jTextFieldNombrePP.getText(),
+                jTextFieldSiglasPP.getText(),
+                "Partido"
+        });
+        
+        // Añadimos el partido a la lista temporal de formaciones.
+        formaciones.add(partido);
+        
+        // Resetamos todos los campos del formulario
+        jTextFieldNombrePP.setText("");
+        jTextFieldSiglasPP.setText("");
+        jTextFieldLogoPP.setText("");
+        
+        // Resetamos la tabla
+        DefaultTableModel modeloVot = (DefaultTableModel) jTableVotantesPP.getModel();
+        modeloVot.setRowCount(0);
+        
+        // Cerramos la ventana
+        jFrame3.dispose();
+        
 //        PartidoPolitico nuevoPartido = new PartidoPolitico(jTextFieldNombrePP.getText(), jTextFieldSiglasPP.getText(), jTextFieldLogoPP.getText());
 //        nuevoPartido.setMilitantes(militantesAuxiliar);
 //        nuevoPartido.setVotantes(votantesAuxiliar);
@@ -936,84 +966,85 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_añadirCoalicionActionPerformed
 
     private void jButtonAñadirSimpatizanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirSimpatizanteActionPerformed
-        // TODO add your handling code here:
-        String nom = jTextFieldNombreAñadirS.getText();
-        int edad = Integer.parseInt(jTextFieldEdadAñadirS.getText());
-        String prof = jTextFieldProfesionS.getText();
-        String g = jTextFieldGeneroAñadirS.getText();
-        String siglas = jTextFieldSiglasS.getText();
-        Simpatizante simpatizanteAuxiliar = new Simpatizante(nom,edad,prof,g,siglas);
-        
-        votantesAuxiliar.add(simpatizanteAuxiliar);
-        limpiarTabla(jTableVotantesPP);
-        
+        // Creamos un nuevo SIMPATIZANTE basandonos en los datos que nos han proporcionado
+        votantes.add(new Simpatizante(
+            jTextFieldNombreAñadirS.getText(),
+            Integer.parseInt(jTextFieldEdadAñadirS.getText()),
+            jTextFieldGeneroAñadirS.getText(),
+            jTextFieldProfesionS.getText()
+        ));
+        // Lo añadimos a la tabla tambien
         DefaultTableModel modelo = (DefaultTableModel) jTableVotantesPP.getModel();
-        for(Votantes i : votantesAuxiliar){
-            Object[] fila = new Object[]{i.getNombreApellidos(),i.getEdad(),i.getProfesion(),i.getGenero(),i.getSiglasPartido()};
-            modelo.addRow(fila);
-        }
-        
-        
-        
-        jFrame4Simpa.setVisible(false);
+        modelo.addRow(new Object[]{
+            jTextFieldNombreAñadirS.getText(),
+            Integer.parseInt(jTextFieldEdadAñadirS.getText()),
+            jTextFieldGeneroAñadirS.getText(),
+            jTextFieldProfesionS.getText(),
+            "Simpatizante"
+        });
+        // Reseteamos campos
         jTextFieldNombreAñadirS.setText("");
-        jTextFieldEdadAñadirS.setText("");        
-        jTextFieldProfesionS.setText("");
+        jTextFieldEdadAñadirS.setText("");
         jTextFieldGeneroAñadirS.setText("");
-        jTextFieldSiglasS.setText("");
+        jTextFieldProfesionS.setText("");
+
+        
+        // Ocultamos ventana
+        jFrame4Simpa.dispose();;
     }//GEN-LAST:event_jButtonAñadirSimpatizanteActionPerformed
 
     private void jButtonCargarMilitantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarMilitantesActionPerformed
         // TODO add your handling code here:
         JFileChooser fileChooser = new JFileChooser();
-        int archivo = fileChooser.showOpenDialog(this); //Se abre la ventana para seleccionar archivo a cargar.
-        if (archivo == JFileChooser.APPROVE_OPTION){
-            File fichero = fileChooser.getSelectedFile(); //Se crea una variable con el fichero
-            String entrada = fichero.getPath();//Se recoge la ruta del fichero
-            
-            
+        int opcion = fileChooser.showOpenDialog(this); //Se abre la ventana para seleccionar archivo a cargar.
+        if (opcion == JFileChooser.APPROVE_OPTION){
+            // Creamos un String con la ruta del archivo seleccionado
+            String archivo = fileChooser.getSelectedFile().getPath(); 
+            // Intentamos abrirlo
             try{
-               
-                BufferedReader inFile = new BufferedReader (new FileReader(entrada));
+                BufferedReader inFile = new BufferedReader (new FileReader(archivo));
                 String inputLine;
                 
                 while ((inputLine = inFile.readLine())!=null){
-                    String[] AtributosMilitante = inputLine.split(":");
-                    String nomApe = AtributosMilitante[0];
-                    int edad = Integer.parseInt(AtributosMilitante[1]);
-                    String prof = AtributosMilitante[2];
-                    String gen = AtributosMilitante[3];
-                    String siglas = AtributosMilitante[4];
-                    String cuota = AtributosMilitante[5];
-                    String carnet = AtributosMilitante[6];
+                    String[] atrmil = inputLine.split(":");
+                    // Igual que con los campos, añadimos a la lista un nuevo militantes
+                    // con las propiedades del txt
+                    Militante mil = new Militante(
+                            atrmil[0],                      // Nombre
+                            Integer.parseInt(atrmil[1]),    // Edad
+                            atrmil[2],                      // Profesión
+                            atrmil[3],                      // Género
+                            atrmil[4],                      // Cuota
+                            atrmil[5]                       // Carnet
+                    );
+                    militantes.add(mil);
+                    votantes.add(mil);
                     
-                    Militante m = new Militante(nomApe,edad,prof,gen,siglas,cuota,carnet);
-                    militantesAuxiliar.add(m);    
-        
-            }
-            }catch(FileNotFoundException e){
-                e.printStackTrace();
+                    
+                    // Lo añadimos a la tabla
+                    DefaultTableModel modelo = (DefaultTableModel) jTableVotantesPP.getModel();
+                    modelo.addRow(new Object[]{
+                        atrmil[0],
+                        Integer.parseInt(atrmil[1]),
+                        atrmil[3],
+                        atrmil[2],
+                        "Militante"
+                    });
+                }
                 
+            } catch(FileNotFoundException e){
+                e.printStackTrace();
                 
             } catch (IOException ex) {
                 Logger.getLogger(Igelec.class.getName()).log(Level.SEVERE, null, ex);
+                
             } catch (ArrayIndexOutOfBoundsException e2){
                 e2.printStackTrace();
                 System.out.println("Los datos del fichero no son validos");
-                    
+
             }
             
         }
-           for(Militante i: militantesAuxiliar){
-            votantesAuxiliar.add(i);
-        }
-        
-        DefaultTableModel modelo = (DefaultTableModel) jTableVotantesPP.getModel();
-        for(Votantes i : votantesAuxiliar){
-            Object[] fila = new Object[]{i.getNombreApellidos(),i.getEdad(),i.getProfesion(),i.getGenero(),i.getSiglasPartido()};
-            modelo.addRow(fila);
-        }
-        
     }//GEN-LAST:event_jButtonCargarMilitantesActionPerformed
 
     private void jTextFieldNombreAñadirSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreAñadirSActionPerformed
@@ -1029,7 +1060,6 @@ public class Igelec extends javax.swing.JFrame {
         jTextFieldEdadAñadirS.setText("");
         jTextFieldProfesionS.setText("");
         jTextFieldGeneroAñadirS.setText("");
-        jTextFieldSiglasS.setText("");
     }//GEN-LAST:event_jButtonAñadirSPartidoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -1056,7 +1086,43 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButtonAñadirCircunsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirCircunsActionPerformed
-        // TODO add your handling code here:
+
+        // Crea el partido político
+        EleccionEnCircunscripcion circunscripcion = new EleccionEnCircunscripcion(
+                jTextFieldNombreCircuns.getText(),
+                Integer.parseInt(jTextFieldPoblacionCircuns.getText()),
+                Double.parseDouble(jTextFieldParticipacionCircuns.getText())
+        );
+               
+        // Asignamos las formaciones creadas anteriormente a la circunscripcion
+        circunscripcion.setFormaciones(formaciones); 
+        
+        // Creamos un nuevo conjunto temporal de partidos
+        formaciones = new ArrayList<>();
+        
+        // Añadimos la circunscripcion creada a la tabla en elecciones
+        DefaultTableModel modeloCircunscripcion = (DefaultTableModel) jTablaCircunscripciones.getModel();
+        modeloCircunscripcion.addRow(new Object[]{
+                jTextFieldNombreCircuns.getText(),
+                Integer.parseInt(jTextFieldPoblacionCircuns.getText()),
+                Double.parseDouble(jTextFieldParticipacionCircuns.getText()),
+                circunscripcion.getEscaños()
+        });
+        
+        // Añadimos la circunscripcion creada a la lista temporal de circunscripciones
+        circunscripciones.add(circunscripcion);
+        
+        // Resetamos todos los campos del formulario
+        jTextFieldNombreCircuns.setText("");
+        jTextFieldPoblacionCircuns.setText("");
+        jTextFieldParticipacionCircuns.setText("");
+        
+        // Resetamos la tabla
+        DefaultTableModel modeloPart = (DefaultTableModel) jTablePP.getModel();
+        modeloPart.setRowCount(0);
+        
+        // Cerramos la ventana
+        jFrame2.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAñadirCircunsActionPerformed
 
     private void jTextFieldNombreAñadirS1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreAñadirS1ActionPerformed
@@ -1065,15 +1131,17 @@ public class Igelec extends javax.swing.JFrame {
 
     private void jButtonAñadirMilitanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirMilitanteActionPerformed
         // Creamos un nuevo MILITANTE basandonos en los datos que nos han proporcionado
-        militantes.add(new Militante(
+        Militante mil = new Militante(
             jTextFieldNombreAñadirS1.getText(),
             Integer.parseInt(jTextFieldEdadAñadirS1.getText()),
             jTextFieldGeneroAñadirS1.getText(),
             jTextFieldProfesionS1.getText(),
-            jTextFieldSiglasS1.getText(),
             jTextFieldCuota.getText(),
             jTextFieldCarnet.getText()
-        ));
+        );
+        // Lo añadimos a la lista de militantes y a la lista de votantes
+        militantes.add(mil);
+        votantes.add(mil);
         // Lo añadimos a la tabla tambien
         DefaultTableModel modelo = (DefaultTableModel) jTableVotantesPP.getModel();
         modelo.addRow(new Object[]{
@@ -1081,7 +1149,6 @@ public class Igelec extends javax.swing.JFrame {
             Integer.parseInt(jTextFieldEdadAñadirS1.getText()),
             jTextFieldGeneroAñadirS1.getText(),
             jTextFieldProfesionS1.getText(),
-            jTextFieldSiglasS1.getText(),
             "Militante"
         });
         // Reseteamos campos
@@ -1089,7 +1156,6 @@ public class Igelec extends javax.swing.JFrame {
         jTextFieldEdadAñadirS1.setText("");
         jTextFieldGeneroAñadirS1.setText("");
         jTextFieldProfesionS1.setText("");
-        jTextFieldSiglasS1.setText("");
         jTextFieldCuota.setText("");
         jTextFieldCarnet.setText("");
         
@@ -1203,11 +1269,9 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
@@ -1249,8 +1313,6 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldProfesionS1;
     private javax.swing.JTextField jTextFieldSiglasC;
     private javax.swing.JTextField jTextFieldSiglasPP;
-    private javax.swing.JTextField jTextFieldSiglasS;
-    private javax.swing.JTextField jTextFieldSiglasS1;
     private javax.swing.JButton jañadirPartido;
     private javax.swing.JTextArea salidaTexto;
     // End of variables declaration//GEN-END:variables
