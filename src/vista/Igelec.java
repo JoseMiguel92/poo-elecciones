@@ -62,14 +62,6 @@ public class Igelec extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jFrameCrearCoalicion = new javax.swing.JFrame();
-        jLabel9 = new javax.swing.JLabel();
-        jTextFieldNombreC = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jTextFieldSiglasC = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        jTextFieldLogoC = new javax.swing.JTextField();
-        jButtonAñadirCoalicion = new javax.swing.JButton();
         jFrame1 = new javax.swing.JFrame();
         jLabel21 = new javax.swing.JLabel();
         jNombreEleccion = new javax.swing.JTextField();
@@ -150,76 +142,8 @@ public class Igelec extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        TabCircun = new javax.swing.JPanel();
-        InfoCircunscripciones = new javax.swing.JScrollPane();
-        jTableCircunscripcion = new javax.swing.JTable();
-        añadirCircun = new javax.swing.JButton();
-        TabFP = new javax.swing.JPanel();
-        InfoFormacionesPoliticas = new javax.swing.JScrollPane();
-        jTableFormacionesPoliticas = new javax.swing.JTable();
-        añadirPartido = new javax.swing.JButton();
-        añadirCoalicion = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         salidaTexto = new javax.swing.JTextArea();
-
-        jLabel9.setText("Nombre Coalicion:");
-
-        jTextFieldNombreC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldNombreCActionPerformed(evt);
-            }
-        });
-
-        jLabel10.setText("Siglas Coalcion:");
-
-        jTextFieldSiglasC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldSiglasCActionPerformed(evt);
-            }
-        });
-
-        jLabel11.setText("Logo Coalicion:");
-
-        jButtonAñadirCoalicion.setText("Añadir");
-
-        javax.swing.GroupLayout jFrameCrearCoalicionLayout = new javax.swing.GroupLayout(jFrameCrearCoalicion.getContentPane());
-        jFrameCrearCoalicion.getContentPane().setLayout(jFrameCrearCoalicionLayout);
-        jFrameCrearCoalicionLayout.setHorizontalGroup(
-            jFrameCrearCoalicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrameCrearCoalicionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jFrameCrearCoalicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel9))
-                .addGap(18, 18, 18)
-                .addGroup(jFrameCrearCoalicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jFrameCrearCoalicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextFieldNombreC)
-                        .addComponent(jTextFieldSiglasC)
-                        .addComponent(jTextFieldLogoC, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))
-                    .addComponent(jButtonAñadirCoalicion, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(66, Short.MAX_VALUE))
-        );
-        jFrameCrearCoalicionLayout.setVerticalGroup(
-            jFrameCrearCoalicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrameCrearCoalicionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jFrameCrearCoalicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jTextFieldNombreC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jFrameCrearCoalicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jTextFieldSiglasC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jFrameCrearCoalicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(jTextFieldLogoC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addComponent(jButtonAñadirCoalicion)
-                .addContainerGap(53, Short.MAX_VALUE))
-        );
 
         jLabel21.setText("Nombre elecciones");
 
@@ -383,7 +307,7 @@ public class Igelec extends javax.swing.JFrame {
                                 .addComponent(jLabel12)
                                 .addGap(36, 36, 36)
                                 .addComponent(jTextFieldNombreCircuns, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jFrame2Layout.setVerticalGroup(
             jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -400,7 +324,7 @@ public class Igelec extends javax.swing.JFrame {
                 .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldParticipacionCircuns, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jFrame2Layout.createSequentialGroup()
@@ -706,13 +630,13 @@ public class Igelec extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel2.setText("Datos Coalicion:");
+        jLabel2.setText("Datos Coalición:");
 
-        jLabel18.setText("Nombre Coalicion:");
+        jLabel18.setText("Nombre Coalición:");
 
-        jLabel19.setText("Siglas Coalicion:");
+        jLabel19.setText("Siglas Coalición:");
 
-        jLabel20.setText("Logo Colalicion:");
+        jLabel20.setText("Logo Coalición:");
 
         jButtonAñadirCoali.setText("Añadir Coalicion");
         jButtonAñadirCoali.addActionListener(new java.awt.event.ActionListener() {
@@ -868,93 +792,6 @@ public class Igelec extends javax.swing.JFrame {
 
         Cargar.addTab("Bienvenido", TabBienvenido);
 
-        jTableCircunscripcion.setModel(new modelos.CircunscripcionTableModel());
-        InfoCircunscripciones.setViewportView(jTableCircunscripcion);
-
-        añadirCircun.setText("Añadir");
-        añadirCircun.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                añadirCircunActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout TabCircunLayout = new javax.swing.GroupLayout(TabCircun);
-        TabCircun.setLayout(TabCircunLayout);
-        TabCircunLayout.setHorizontalGroup(
-            TabCircunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TabCircunLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(InfoCircunscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 705, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(añadirCircun)
-                .addContainerGap(240, Short.MAX_VALUE))
-        );
-        TabCircunLayout.setVerticalGroup(
-            TabCircunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TabCircunLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(TabCircunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(añadirCircun)
-                    .addComponent(InfoCircunscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-
-        Cargar.addTab("Circunscripciones", TabCircun);
-
-        jTableFormacionesPoliticas.setModel(new modelos.PartidoTableModel());
-        InfoFormacionesPoliticas.setViewportView(jTableFormacionesPoliticas);
-        if (jTableFormacionesPoliticas.getColumnModel().getColumnCount() > 0) {
-            jTableFormacionesPoliticas.getColumnModel().getColumn(0).setResizable(false);
-            jTableFormacionesPoliticas.getColumnModel().getColumn(1).setResizable(false);
-        }
-
-        añadirPartido.setText("Añadir Partido Político");
-        añadirPartido.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                añadirPartidoMouseClicked(evt);
-            }
-        });
-        añadirPartido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                añadirPartidoActionPerformed(evt);
-            }
-        });
-
-        añadirCoalicion.setText("Crear Coalición");
-        añadirCoalicion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                añadirCoalicionActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout TabFPLayout = new javax.swing.GroupLayout(TabFP);
-        TabFP.setLayout(TabFPLayout);
-        TabFPLayout.setHorizontalGroup(
-            TabFPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TabFPLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(InfoFormacionesPoliticas, javax.swing.GroupLayout.PREFERRED_SIZE, 705, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(TabFPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(añadirCoalicion)
-                    .addComponent(añadirPartido))
-                .addContainerGap(133, Short.MAX_VALUE))
-        );
-        TabFPLayout.setVerticalGroup(
-            TabFPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TabFPLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(TabFPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(TabFPLayout.createSequentialGroup()
-                        .addComponent(añadirPartido)
-                        .addGap(18, 18, 18)
-                        .addComponent(añadirCoalicion))
-                    .addComponent(InfoFormacionesPoliticas, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-
-        Cargar.addTab("Formaciones Políticas", TabFP);
-
         salidaTexto.setEditable(false);
         salidaTexto.setColumns(20);
         salidaTexto.setRows(5);
@@ -980,32 +817,6 @@ public class Igelec extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void añadirPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirPartidoActionPerformed
-//        // TODO add your handling code here:
-//        jFrame3.setLocationRelativeTo(null);
-//        jFrame3.setSize(400, 400);
-//        jFrame3.setVisible(true);
-//       
-//        /*
-//        DefaultTableModel modelo = (DefaultTableModel) jTableVotantesPP.getModel();
-//        while(modelo.getRowCount() > 0) modelo.removeRow(0);      */
-//        
-//        limpiarTabla(jTableVotantesPP);
-//         militantesAuxiliar = new ArrayList<>();
-//         votantesAuxiliar = new ArrayList<>();
-        
-        
-        
-    }//GEN-LAST:event_añadirPartidoActionPerformed
-
-    private void añadirCircunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirCircunActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_añadirCircunActionPerformed
-
-    private void añadirPartidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_añadirPartidoMouseClicked
-        //jPanelAñadirPartido.setVisible(true);
-    }//GEN-LAST:event_añadirPartidoMouseClicked
 
     private void jButtonAñadirPPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirPPActionPerformed
         if(militantes==null||votantes==null||militantes.size()<2){
@@ -1095,20 +906,6 @@ public class Igelec extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButtonAñadirPPActionPerformed
-
-    private void añadirCoalicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirCoalicionActionPerformed
-        // Obtenemos que filas se han seleccionado
-        int[] filas = jTableFormacionesPoliticas.getSelectedRows();
-        // Si no se ha seleccionado nada, mostramos un error.
-        if(filas.length<2){
-            JOptionPane.showMessageDialog(Cargar, "No se puede crear una coalición con menos de dos partidos.", "Coalición no válida", JOptionPane.ERROR_MESSAGE);
-        }
-        // Por cada fila, añadimos un partido al ArrayList
-        for (int i = 0; i < filas.length; i++) {
-           // FALTA CODIGO
-            
-        }
-    }//GEN-LAST:event_añadirCoalicionActionPerformed
 
     private void jButtonAñadirSimpatizanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirSimpatizanteActionPerformed
         if(jTextFieldNombreAñadirS.getText().equals("")||
@@ -1222,14 +1019,6 @@ public class Igelec extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jTextFieldNombreCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreCActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldNombreCActionPerformed
-
-    private void jTextFieldSiglasCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSiglasCActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldSiglasCActionPerformed
 
     private void jButtonCrearEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearEleccionActionPerformed
         jFrame1.setLocationRelativeTo(null);
@@ -1424,38 +1213,64 @@ public class Igelec extends javax.swing.JFrame {
             //Añado al array de los partidos de la coalicion el partido que se encuentra en la posicion que indica el array de enteros de las filas seleccionadas.
             //Asi para cada posicion del array de enteros.
             }
-        }else
-        {
+            for (FormacionPolitica f: formacionesParaCoalicion){
+            formaciones.remove(f);
+            
+            }
+            //Creamos la nueva coalicion
+            Coalicion coalicionNueva = new Coalicion(
+                jTextFieldNombreCoali.getText(),
+                jTextFieldSiglasCoali.getText(),
+                jTextFieldLogoCoali.getText(),
+                formacionesParaCoalicion
+            );
+            //Añadimos la nueva coalicion        
+            formaciones.add(coalicionNueva);              
+            // Resetear tabla y repintarla
+            DefaultTableModel modeloTablaPP = (DefaultTableModel) jTablePP.getModel();
+            modeloTablaPP.setRowCount(0);
+            
+            for(FormacionPolitica form: formaciones){
+                modeloTablaPP.addRow(new Object[]{
+                    form.getNombre(),
+                    form.getSiglas(),
+                    (form instanceof PartidoPolitico)?"Partido Político":"Coalición"
+                });
+            
+            jFrame3Coalicion.dispose();
+        }
+    } else {
             JOptionPane.showMessageDialog(jFrame3Coalicion,
                 "Debe seleccionar los partidos de la coalicion",
                 "Error de seleccion",
             JOptionPane.ERROR_MESSAGE);
         }
-        for (FormacionPolitica f: formacionesParaCoalicion){
-            formaciones.remove(f);
-        }
-        //coalicionNueva.setMilitantes(militantesCoalicion);
-        //Creamos la nueva coalicion
-        Coalicion coalicionNueva = new Coalicion(
-                jTextFieldNombreCoali.getText(),
-                jTextFieldSiglasCoali.getText(),
-                jTextFieldLogoCoali.getText(),
-                formacionesParaCoalicion
-        );
-        //Añadimos la nueva coalicion        
-        formaciones.add(coalicionNueva);       
+
+     
     }//GEN-LAST:event_jButtonAñadirCoaliActionPerformed
 
     private void jButtonCrearCoalicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearCoalicionActionPerformed
-        jFrame3Coalicion.setLocationRelativeTo(null);
-        jFrame3Coalicion.setSize(700,400);
-        jFrame3Coalicion.setVisible(true);
-        limpiarTabla(jTablePartidosDisponibles);
-        DefaultTableModel modelo = (DefaultTableModel) jTablePartidosDisponibles.getModel();
-        
-        for(FormacionPolitica forma: formaciones){
-            Object[] fila = new Object[]{forma.getNombre(), forma.getSiglas()};
-            modelo.addRow(fila);
+        if(formaciones.size()<2){
+            JOptionPane.showMessageDialog(jFrame2,
+                "Tienes que haber mínimo dos partidos para crear la coalición",
+                "Datos insuficientes",
+            JOptionPane.ERROR_MESSAGE);
+        } else {
+            
+            DefaultTableModel modelo = (DefaultTableModel) jTablePartidosDisponibles.getModel();
+            // Reiniciamos la tabla
+            modelo.setRowCount(0);
+            
+            for(FormacionPolitica forma: formaciones){
+                modelo.addRow(new Object[] {
+                    forma.getNombre(),
+                    forma.getSiglas()
+                });
+            }
+            
+            jFrame3Coalicion.setLocationRelativeTo(null);
+            jFrame3Coalicion.setSize(700,400);
+            jFrame3Coalicion.setVisible(true);
         }
     }//GEN-LAST:event_jButtonCrearCoalicionActionPerformed
 
@@ -1504,14 +1319,7 @@ public class Igelec extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane Cargar;
-    private javax.swing.JScrollPane InfoCircunscripciones;
-    private javax.swing.JScrollPane InfoFormacionesPoliticas;
     private javax.swing.JPanel TabBienvenido;
-    private javax.swing.JPanel TabCircun;
-    private javax.swing.JPanel TabFP;
-    private javax.swing.JButton añadirCircun;
-    private javax.swing.JButton añadirCoalicion;
-    private javax.swing.JButton añadirPartido;
     private javax.swing.JButton jAñadirCircunscripcion;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -1519,7 +1327,6 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButtonAñadirCircuns;
     private javax.swing.JButton jButtonAñadirCoali;
-    private javax.swing.JButton jButtonAñadirCoalicion;
     private javax.swing.JButton jButtonAñadirMilitante;
     private javax.swing.JButton jButtonAñadirPP;
     private javax.swing.JButton jButtonAñadirSPartido;
@@ -1534,10 +1341,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JFrame jFrame3Coalicion;
     private javax.swing.JFrame jFrame4Mili;
     private javax.swing.JFrame jFrame4Simpa;
-    private javax.swing.JFrame jFrameCrearCoalicion;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -1561,7 +1365,6 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelError;
     private javax.swing.JLabel jLabelLogoPP;
     private javax.swing.JLabel jLabelNombrePP;
@@ -1573,8 +1376,6 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTable jTablaCircunscripciones;
-    private javax.swing.JTable jTableCircunscripcion;
-    private javax.swing.JTable jTableFormacionesPoliticas;
     private javax.swing.JTable jTablePP;
     private javax.swing.JTable jTablePartidosDisponibles;
     private javax.swing.JTable jTableVotantesPP;
@@ -1584,12 +1385,10 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldEdadAñadirS1;
     private javax.swing.JTextField jTextFieldGeneroAñadirS;
     private javax.swing.JTextField jTextFieldGeneroAñadirS1;
-    private javax.swing.JTextField jTextFieldLogoC;
     private javax.swing.JTextField jTextFieldLogoCoali;
     private javax.swing.JTextField jTextFieldLogoPP;
     private javax.swing.JTextField jTextFieldNombreAñadirS;
     private javax.swing.JTextField jTextFieldNombreAñadirS1;
-    private javax.swing.JTextField jTextFieldNombreC;
     private javax.swing.JTextField jTextFieldNombreCircuns;
     private javax.swing.JTextField jTextFieldNombreCoali;
     private javax.swing.JTextField jTextFieldNombrePP;
@@ -1597,7 +1396,6 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldPoblacionCircuns;
     private javax.swing.JTextField jTextFieldProfesionS;
     private javax.swing.JTextField jTextFieldProfesionS1;
-    private javax.swing.JTextField jTextFieldSiglasC;
     private javax.swing.JTextField jTextFieldSiglasCoali;
     private javax.swing.JTextField jTextFieldSiglasPP;
     private javax.swing.JButton jañadirPartido;
