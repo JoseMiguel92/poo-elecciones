@@ -9,8 +9,16 @@ import java.util.ArrayList;
 
 public class PartidoPolitico extends FormacionPolitica implements Serializable{
     
-    String[] pregMil = {"Pregunta Militante 1", "Pregunta Militante 2", "Pregunta Militante 3"};
-    String[] pregSimp = {"Pregunta Simpatizante 1", "Pregunta Simpatizante 2", "Pregunta Simpatizante 3"};
+    String[] pregMil = {
+        "En su conjunto, ¿cómo calificaría Ud. la gestión que h a realizado el Gobierno del PP durante estos últimos cuatro años: muy buena, buena, regular, mala o muy mala?",
+        "¿Cree que si hubiera estado el PSOE al frente del Gobierno lo habría hecho mejor, igual o peor?",
+        "¿Cómo calificaría Ud. la actuación política que ha desarrollado el PSOE en la oposición en estos cuatro años: muy buena, buena, regular, mala o muy mala?"
+    };
+    String[] pregSimp = {
+        "¿diría Ud. que, en líneas generales, la política le interesa: mucho, bastante, poco o nada?",
+        "En  general,  ¿con  qué  frecuencia  habla  Ud.  de  política  con  sus amigos/as, familiares o compañeros/as de trabajo...?",
+        "Refiriéndonos  ahora  a  la situación  política general  de  España, ¿cómo la calificaría Ud.: muy buena, buena, regular, mala o muy mala?"
+    };
     
     private ArrayList<Votantes> votantes;
     private ArrayList<Militante> militantes; // utilizo nombre de militantes para mayor claridad
