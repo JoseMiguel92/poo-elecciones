@@ -89,6 +89,7 @@ public class Igelec extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         jTablePP = new javax.swing.JTable();
         jañadirPartido = new javax.swing.JButton();
+        jButtonCrearCoalicion = new javax.swing.JButton();
         jFrame3 = new javax.swing.JFrame();
         jButtonAñadirPP = new javax.swing.JButton();
         jLabelNombrePP = new javax.swing.JLabel();
@@ -128,6 +129,19 @@ public class Igelec extends javax.swing.JFrame {
         jTextFieldCuota = new javax.swing.JTextField();
         jTextFieldCarnet = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
+        jFrame3Coalicion = new javax.swing.JFrame();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jTextFieldNombreCoali = new javax.swing.JTextField();
+        jTextFieldSiglasCoali = new javax.swing.JTextField();
+        jTextFieldLogoCoali = new javax.swing.JTextField();
+        jButtonAñadirCoali = new javax.swing.JButton();
+        jLabel24 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTablePartidosDisponibles = new javax.swing.JTable();
+        jLabel28 = new javax.swing.JLabel();
         Cargar = new javax.swing.JTabbedPane();
         TabBienvenido = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -331,6 +345,13 @@ public class Igelec extends javax.swing.JFrame {
             }
         });
 
+        jButtonCrearCoalicion.setText("Crear Coalicion");
+        jButtonCrearCoalicion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCrearCoalicionActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jFrame2Layout = new javax.swing.GroupLayout(jFrame2.getContentPane());
         jFrame2.getContentPane().setLayout(jFrame2Layout);
         jFrame2Layout.setHorizontalGroup(
@@ -354,12 +375,14 @@ public class Igelec extends javax.swing.JFrame {
                             .addGroup(jFrame2Layout.createSequentialGroup()
                                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jañadirPartido))
+                                .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jañadirPartido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButtonCrearCoalicion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(jFrame2Layout.createSequentialGroup()
                                 .addComponent(jLabel12)
                                 .addGap(36, 36, 36)
                                 .addComponent(jTextFieldNombreCircuns, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         jFrame2Layout.setVerticalGroup(
             jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -380,8 +403,9 @@ public class Igelec extends javax.swing.JFrame {
                 .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jFrame2Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jañadirPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jañadirPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButtonCrearCoalicion, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(52, 52, 52)
                 .addComponent(jButtonAñadirCircuns)
                 .addGap(25, 25, 25))
@@ -681,6 +705,109 @@ public class Igelec extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel2.setText("Datos Coalicion:");
+
+        jLabel18.setText("Nombre Coalicion:");
+
+        jLabel19.setText("Siglas Coalicion:");
+
+        jLabel20.setText("Logo Colalicion:");
+
+        jButtonAñadirCoali.setText("Añadir Coalicion");
+        jButtonAñadirCoali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAñadirCoaliActionPerformed(evt);
+            }
+        });
+
+        jLabel24.setText("Partidos disponibles:");
+
+        jTablePartidosDisponibles.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Nombre", "Siglas"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane6.setViewportView(jTablePartidosDisponibles);
+        if (jTablePartidosDisponibles.getColumnModel().getColumnCount() > 0) {
+            jTablePartidosDisponibles.getColumnModel().getColumn(0).setResizable(false);
+            jTablePartidosDisponibles.getColumnModel().getColumn(1).setResizable(false);
+        }
+
+        jLabel28.setText("Seleccione los partidos.");
+
+        javax.swing.GroupLayout jFrame3CoalicionLayout = new javax.swing.GroupLayout(jFrame3Coalicion.getContentPane());
+        jFrame3Coalicion.getContentPane().setLayout(jFrame3CoalicionLayout);
+        jFrame3CoalicionLayout.setHorizontalGroup(
+            jFrame3CoalicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame3CoalicionLayout.createSequentialGroup()
+                .addGroup(jFrame3CoalicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jFrame3CoalicionLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(jFrame3CoalicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addGroup(jFrame3CoalicionLayout.createSequentialGroup()
+                                .addGroup(jFrame3CoalicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel18)
+                                    .addComponent(jLabel19)
+                                    .addComponent(jLabel20)
+                                    .addComponent(jLabel28))
+                                .addGap(18, 18, 18)
+                                .addGroup(jFrame3CoalicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextFieldNombreCoali)
+                                    .addComponent(jTextFieldSiglasCoali)
+                                    .addComponent(jTextFieldLogoCoali, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)))))
+                    .addGroup(jFrame3CoalicionLayout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(jButtonAñadirCoali, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addGroup(jFrame3CoalicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel24)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        jFrame3CoalicionLayout.setVerticalGroup(
+            jFrame3CoalicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame3CoalicionLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(jFrame3CoalicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel24))
+                .addGap(18, 18, 18)
+                .addGroup(jFrame3CoalicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jFrame3CoalicionLayout.createSequentialGroup()
+                        .addGroup(jFrame3CoalicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel18)
+                            .addComponent(jTextFieldNombreCoali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jFrame3CoalicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel19)
+                            .addComponent(jTextFieldSiglasCoali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jFrame3CoalicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel20)
+                            .addComponent(jTextFieldLogoCoali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel28)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonAñadirCoali))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
@@ -978,6 +1105,7 @@ public class Igelec extends javax.swing.JFrame {
         // Por cada fila, añadimos un partido al ArrayList
         for (int i = 0; i < filas.length; i++) {
            // FALTA CODIGO
+            
         }
     }//GEN-LAST:event_añadirCoalicionActionPerformed
 
@@ -1284,6 +1412,50 @@ public class Igelec extends javax.swing.JFrame {
         jFrame4Mili.setVisible(true);
     }//GEN-LAST:event_jButtonLanzarAñadirMilitanteActionPerformed
 
+    private void jButtonAñadirCoaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirCoaliActionPerformed
+        ArrayList<Militante> militantesCoalicion = new ArrayList<Militante>();
+        ArrayList<FormacionPolitica> formacionesParaCoalicion = new ArrayList<FormacionPolitica>();
+        
+        if(jTablePartidosDisponibles.getRowCount()>1){
+            int[] partidosSeleccionados = jTablePartidosDisponibles.getSelectedRows();
+            for (int i = 0; i < partidosSeleccionados.length ; i++) {
+            formacionesParaCoalicion.add(formaciones.get(partidosSeleccionados[i]));
+            //Añado al array de los partidos de la coalicion el partido que se encuentra en la posicion que indica el array de enteros de las filas seleccionadas.
+            //Asi para cada posicion del array de enteros.
+            }
+        }else
+        {
+            //OptionPane.showMessageDialog(jFrame3Coalicion, "Debe seleccionar los partidos de la coalicion");
+        }
+        
+
+        for (int i = 0; i < formacionesParaCoalicion.size(); i++) {
+//            militantesCoalicion.add(formacionesParaCoalicion.get(i).getMilitantes().subList(0, (formacionesParaCoalicion.get(i).getMilitantes().size()/formacionesParaCoalicion.size())));
+        
+        }
+        //coalicionNueva.setMilitantes(militantesCoalicion);
+        //Creamos la nueva coalicion
+        PartidoPolitico coalicionNueva = new PartidoPolitico(
+        jTextFieldNombreCoali.getText(),jTextFieldSiglasCoali.getText(),jTextFieldLogoCoali.getText());
+        //Añadimos la nueva coalicion
+                
+        formaciones.add(coalicionNueva);
+        
+    }//GEN-LAST:event_jButtonAñadirCoaliActionPerformed
+
+    private void jButtonCrearCoalicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearCoalicionActionPerformed
+        jFrame3Coalicion.setLocationRelativeTo(null);
+        jFrame3Coalicion.setSize(700,400);
+        jFrame3Coalicion.setVisible(true);
+        limpiarTabla(jTablePartidosDisponibles);
+        DefaultTableModel modelo = (DefaultTableModel) jTablePartidosDisponibles.getModel();
+        
+        for(FormacionPolitica forma: formaciones){
+            Object[] fila = new Object[]{forma.getNombre(), forma.getSiglas()};
+            modelo.addRow(fila);
+        }
+    }//GEN-LAST:event_jButtonCrearCoalicionActionPerformed
+
     //metodo para limpiar cualquier tabla
     public void limpiarTabla(JTable tabla){
          DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
@@ -1343,17 +1515,20 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButtonAñadirCircuns;
+    private javax.swing.JButton jButtonAñadirCoali;
     private javax.swing.JButton jButtonAñadirCoalicion;
     private javax.swing.JButton jButtonAñadirMilitante;
     private javax.swing.JButton jButtonAñadirPP;
     private javax.swing.JButton jButtonAñadirSPartido;
     private javax.swing.JButton jButtonAñadirSimpatizante;
     private javax.swing.JButton jButtonCargarMilitantes;
+    private javax.swing.JButton jButtonCrearCoalicion;
     private javax.swing.JButton jButtonCrearEleccion;
     private javax.swing.JButton jButtonLanzarAñadirMilitante;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JFrame jFrame3;
+    private javax.swing.JFrame jFrame3Coalicion;
     private javax.swing.JFrame jFrame4Mili;
     private javax.swing.JFrame jFrame4Simpa;
     private javax.swing.JFrame jFrameCrearCoalicion;
@@ -1366,11 +1541,17 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1387,10 +1568,12 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTable jTablaCircunscripciones;
     private javax.swing.JTable jTableCircunscripcion;
     private javax.swing.JTable jTableFormacionesPoliticas;
     private javax.swing.JTable jTablePP;
+    private javax.swing.JTable jTablePartidosDisponibles;
     private javax.swing.JTable jTableVotantesPP;
     private javax.swing.JTextField jTextFieldCarnet;
     private javax.swing.JTextField jTextFieldCuota;
@@ -1399,17 +1582,20 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldGeneroAñadirS;
     private javax.swing.JTextField jTextFieldGeneroAñadirS1;
     private javax.swing.JTextField jTextFieldLogoC;
+    private javax.swing.JTextField jTextFieldLogoCoali;
     private javax.swing.JTextField jTextFieldLogoPP;
     private javax.swing.JTextField jTextFieldNombreAñadirS;
     private javax.swing.JTextField jTextFieldNombreAñadirS1;
     private javax.swing.JTextField jTextFieldNombreC;
     private javax.swing.JTextField jTextFieldNombreCircuns;
+    private javax.swing.JTextField jTextFieldNombreCoali;
     private javax.swing.JTextField jTextFieldNombrePP;
     private javax.swing.JTextField jTextFieldParticipacionCircuns;
     private javax.swing.JTextField jTextFieldPoblacionCircuns;
     private javax.swing.JTextField jTextFieldProfesionS;
     private javax.swing.JTextField jTextFieldProfesionS1;
     private javax.swing.JTextField jTextFieldSiglasC;
+    private javax.swing.JTextField jTextFieldSiglasCoali;
     private javax.swing.JTextField jTextFieldSiglasPP;
     private javax.swing.JButton jañadirPartido;
     private javax.swing.JTextArea salidaTexto;
