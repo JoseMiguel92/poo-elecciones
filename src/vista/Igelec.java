@@ -647,7 +647,7 @@ public class Igelec extends javax.swing.JFrame {
                                     .addComponent(jTextFieldProfesionS1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextFieldCuota, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextFieldCarnet, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         jFrame4MiliLayout.setVerticalGroup(
             jFrame4MiliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -880,53 +880,62 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_añadirPartidoMouseClicked
 
     private void jButtonAñadirPPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirPPActionPerformed
+        if(militantes==null||votantes==null||militantes.size()<2){
+            JOptionPane.showMessageDialog(jFrame3, "Por favor, introduce al menos 2 Militantes y 1 Simpatizante",
+                    "Datos insuficientes", JOptionPane.WARNING_MESSAGE);
+        } else if(jTextFieldNombrePP.getText().equals("")||
+                jTextFieldSiglasPP.getText().equals("")||
+                jTextFieldLogoPP.getText().equals("")){
+            JOptionPane.showMessageDialog(jFrame3, "Todos los campos son obligatorios",
+                    "Campos no válidos", JOptionPane.ERROR_MESSAGE);
+        } else {
+            // Crea el partido político
+            PartidoPolitico partido = new PartidoPolitico(
+                    jTextFieldNombrePP.getText(),
+                    jTextFieldSiglasPP.getText(),
+                    jTextFieldLogoPP.getText()
+            );
 
-        // Crea el partido político
-        PartidoPolitico partido = new PartidoPolitico(
-                jTextFieldNombrePP.getText(),
-                jTextFieldSiglasPP.getText(),
-                jTextFieldLogoPP.getText()
-        );
-        
-        // Setea el campo Siglas de todos los militantes al valor introducido en el partido
-        // NO NECESARIO LO HACE A TRAVES DE VOTANTES
-        //for(Militante mil:militantes){
-        //    mil.setSiglasPartido(jTextFieldSiglasPP.getText());
-        //}
-        // Setea el campo Siglas de todos los votantes
-        for(Votantes vot:votantes){
-            vot.setSiglasPartido(jTextFieldSiglasPP.getText());
+            // Setea el campo Siglas de todos los militantes al valor introducido en el partido
+            // NO NECESARIO LO HACE A TRAVES DE VOTANTES
+            //for(Militante mil:militantes){
+            //    mil.setSiglasPartido(jTextFieldSiglasPP.getText());
+            //}
+            // Setea el campo Siglas de todos los votantes
+            for(Votantes vot:votantes){
+                vot.setSiglasPartido(jTextFieldSiglasPP.getText());
+            }
+
+            // Asignamos los objetos temporales militantes y votantes creados hasta ahora al partido
+            partido.setMilitantes(militantes);
+            // PENDIENTE, AÑADIR SIMPATIZANTES
+            // Creamos un nuevo conjunto vacío de militantes y votantes temporal
+            militantes = new ArrayList<>();
+            votantes = new ArrayList<>();
+
+            // Añadimos el partido creado a la tabla de formaciones en circunscripciones
+            DefaultTableModel modeloPartidos = (DefaultTableModel) jTablePP.getModel();
+            modeloPartidos.addRow(new Object[]{
+                    jTextFieldNombrePP.getText(),
+                    jTextFieldSiglasPP.getText(),
+                    "Partido"
+            });
+
+            // Añadimos el partido a la lista temporal de formaciones.
+            formaciones.add(partido);
+
+            // Resetamos todos los campos del formulario
+            jTextFieldNombrePP.setText("");
+            jTextFieldSiglasPP.setText("");
+            jTextFieldLogoPP.setText("");
+
+            // Resetamos la tabla
+            DefaultTableModel modeloVot = (DefaultTableModel) jTableVotantesPP.getModel();
+            modeloVot.setRowCount(0);
+
+            // Cerramos la ventana
+            jFrame3.dispose();
         }
-               
-        // Asignamos los objetos temporales militantes y votantes creados hasta ahora al partido
-        partido.setMilitantes(militantes);
-        // PENDIENTE, AÑADIR SIMPATIZANTES
-        // Creamos un nuevo conjunto vacío de militantes y votantes temporal
-        militantes = new ArrayList<>();
-        votantes = new ArrayList<>();
-        
-        // Añadimos el partido creado a la tabla de formaciones en circunscripciones
-        DefaultTableModel modeloPartidos = (DefaultTableModel) jTablePP.getModel();
-        modeloPartidos.addRow(new Object[]{
-                jTextFieldNombrePP.getText(),
-                jTextFieldSiglasPP.getText(),
-                "Partido"
-        });
-        
-        // Añadimos el partido a la lista temporal de formaciones.
-        formaciones.add(partido);
-        
-        // Resetamos todos los campos del formulario
-        jTextFieldNombrePP.setText("");
-        jTextFieldSiglasPP.setText("");
-        jTextFieldLogoPP.setText("");
-        
-        // Resetamos la tabla
-        DefaultTableModel modeloVot = (DefaultTableModel) jTableVotantesPP.getModel();
-        modeloVot.setRowCount(0);
-        
-        // Cerramos la ventana
-        jFrame3.dispose();
         
 //        PartidoPolitico nuevoPartido = new PartidoPolitico(jTextFieldNombrePP.getText(), jTextFieldSiglasPP.getText(), jTextFieldLogoPP.getText());
 //        nuevoPartido.setMilitantes(militantesAuxiliar);
@@ -1185,7 +1194,7 @@ public class Igelec extends javax.swing.JFrame {
                 jTextFieldCuota.getText().equals("")||
                 jTextFieldCarnet.getText().equals("")){
             
-            JOptionPane.showMessageDialog(jFrame4Simpa, "Debes rellenar todos los campos", "Campos no válidos", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(jFrame4Mili, "Debes rellenar todos los campos", "Campos no válidos", JOptionPane.ERROR_MESSAGE);
         } else {
             try {
                    // Creamos un nuevo MILITANTE basandonos en los datos que nos han proporcionado
@@ -1200,7 +1209,7 @@ public class Igelec extends javax.swing.JFrame {
                 // Lo añadimos a la lista de militantes y a la lista de votantes
                 militantes.add(mil);
                 votantes.add(mil);
-                // Lo añadimos a la tabla tambien
+                // Lo añadimos a la tabla tambien (a través del modelo de la tabla)
                 DefaultTableModel modelo = (DefaultTableModel) jTableVotantesPP.getModel();
                 modelo.addRow(new Object[]{
                     jTextFieldNombreAñadirS1.getText(),
@@ -1219,6 +1228,8 @@ public class Igelec extends javax.swing.JFrame {
 
                 // Ocultamos ventana
                 jFrame4Mili.dispose();
+                
+            // Por si la edad no era un entero válido
             } catch (NumberFormatException e){
                 JOptionPane.showMessageDialog(jFrame4Simpa, jTextFieldEdadAñadirS1.getText()+" no parece ser un entero válido", "Campos no válidos", JOptionPane.ERROR_MESSAGE);
             }
