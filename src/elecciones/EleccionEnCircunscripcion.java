@@ -63,16 +63,24 @@ public class EleccionEnCircunscripcion implements Serializable{
         return escaños;
     }
     public void setEscaños(int poblacion) {
-        if (poblacion<25){
-            escaños=1;
-        } else if (poblacion<101){
-            escaños=2;
-        } else if (poblacion<201){
-            escaños=3;
-        } else if (poblacion<301){
-            escaños=4;
+        if (poblacion<251){
+            escaños=5;
+        } else if (poblacion<1001){
+            escaños=7;
+        } else if (poblacion<2001){
+            escaños=9;
+        } else if (poblacion<5001){
+            escaños=11;
+        } else if (poblacion<10001){
+            escaños=13;
+        } else if (poblacion<20001){
+            escaños=17;
+        } else if (poblacion<50001){
+            escaños=21;
+        } else if (poblacion<100001){
+            escaños=25;
         } else {
-            escaños=(int) (4+Math.ceil((poblacion-300)/300));
+            escaños=(int) (25+Math.ceil((poblacion-100000)/100000));
             if((escaños%2)==0){
                 escaños++;
             }
