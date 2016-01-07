@@ -5,6 +5,7 @@
  */
 package vista;
 
+import elecciones.Coalicion;
 import elecciones.Eleccion;
 import elecciones.EleccionEnCircunscripcion;
 import elecciones.FormacionPolitica;
@@ -1416,31 +1417,33 @@ public class Igelec extends javax.swing.JFrame {
         ArrayList<Militante> militantesCoalicion = new ArrayList<Militante>();
         ArrayList<FormacionPolitica> formacionesParaCoalicion = new ArrayList<FormacionPolitica>();
         
-        if(jTablePartidosDisponibles.getRowCount()>1){
+        if(jTablePartidosDisponibles.getSelectedRowCount()>1){
             int[] partidosSeleccionados = jTablePartidosDisponibles.getSelectedRows();
             for (int i = 0; i < partidosSeleccionados.length ; i++) {
-            formacionesParaCoalicion.add(formaciones.get(partidosSeleccionados[i]));
+                formacionesParaCoalicion.add(formaciones.get(partidosSeleccionados[i]));
             //Añado al array de los partidos de la coalicion el partido que se encuentra en la posicion que indica el array de enteros de las filas seleccionadas.
             //Asi para cada posicion del array de enteros.
             }
         }else
         {
-            //OptionPane.showMessageDialog(jFrame3Coalicion, "Debe seleccionar los partidos de la coalicion");
+            JOptionPane.showMessageDialog(jFrame3Coalicion,
+                "Debe seleccionar los partidos de la coalicion",
+                "Error de seleccion",
+            JOptionPane.ERROR_MESSAGE);
         }
-        
-
-        for (int i = 0; i < formacionesParaCoalicion.size(); i++) {
-//            militantesCoalicion.add(formacionesParaCoalicion.get(i).getMilitantes().subList(0, (formacionesParaCoalicion.get(i).getMilitantes().size()/formacionesParaCoalicion.size())));
-        
+        for (FormacionPolitica f: formacionesParaCoalicion){
+            formaciones.remove(f);
         }
         //coalicionNueva.setMilitantes(militantesCoalicion);
         //Creamos la nueva coalicion
-        PartidoPolitico coalicionNueva = new PartidoPolitico(
-        jTextFieldNombreCoali.getText(),jTextFieldSiglasCoali.getText(),jTextFieldLogoCoali.getText());
-        //Añadimos la nueva coalicion
-                
-        formaciones.add(coalicionNueva);
-        
+        Coalicion coalicionNueva = new Coalicion(
+                jTextFieldNombreCoali.getText(),
+                jTextFieldSiglasCoali.getText(),
+                jTextFieldLogoCoali.getText(),
+                formacionesParaCoalicion
+        );
+        //Añadimos la nueva coalicion        
+        formaciones.add(coalicionNueva);       
     }//GEN-LAST:event_jButtonAñadirCoaliActionPerformed
 
     private void jButtonCrearCoalicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearCoalicionActionPerformed

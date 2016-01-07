@@ -8,7 +8,7 @@ import java.util.List;
  * @autor Daniel Oliver
  */
 public class Coalicion extends FormacionPolitica implements Serializable{
-    private ArrayList<PartidoPolitico> partidosCoalicion;
+    private ArrayList<FormacionPolitica> partidosCoalicion;
 
     
 //Contructores
@@ -16,7 +16,7 @@ public class Coalicion extends FormacionPolitica implements Serializable{
         super(nombre,siglas,logo);
     }
     
-    public Coalicion(String nombre, String siglas, String logo, ArrayList<PartidoPolitico> partidos){
+    public Coalicion(String nombre, String siglas, String logo, ArrayList<FormacionPolitica> partidos){
         super(nombre,siglas,logo);
         this.partidosCoalicion = partidos;
         
@@ -24,7 +24,7 @@ public class Coalicion extends FormacionPolitica implements Serializable{
         militantes = new ArrayList<Militante>();
         
         int numPartidos = partidos.size();
-        for (PartidoPolitico partido : partidos){
+        for (FormacionPolitica partido : partidos){
             int nMilis = partido.getMilitantes().size();
             List<Militante> milis = partido.getMilitantes().subList(0, nMilis*(1/numPartidos));
             
@@ -33,10 +33,10 @@ public class Coalicion extends FormacionPolitica implements Serializable{
         
     }
 //GETs y SETs
-    public ArrayList<PartidoPolitico> getCoalicion_partidos() {
+    public ArrayList<FormacionPolitica> getCoalicion_partidos() {
         return partidosCoalicion;
     }
-    public void setCoalicion_partidos(ArrayList<PartidoPolitico> coalicion_partidos) {
+    public void setCoalicion_partidos(ArrayList<FormacionPolitica> coalicion_partidos) {
         this.partidosCoalicion = coalicion_partidos;
     }
     
@@ -46,7 +46,7 @@ public class Coalicion extends FormacionPolitica implements Serializable{
         
         // Lista de todos los partidos que forman la coalición
         StringBuilder partidos = new StringBuilder();
-        for (PartidoPolitico p : partidosCoalicion){
+        for (FormacionPolitica p : partidosCoalicion){
             partidos.append(p.getNombre());
             partidos.append(";");
         }
