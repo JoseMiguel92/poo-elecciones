@@ -25,7 +25,7 @@ public class Dhondt implements Serializable{
 			}
 		  }
 		}
-	dTable[i][j] = 0.0; // zero the highest element for next run
+	dTable[i][j] = 0.0; 
 	return j;
 	}
 

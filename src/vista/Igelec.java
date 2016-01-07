@@ -16,9 +16,11 @@ import elecciones.Simpatizante;
 import elecciones.Votantes;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -139,9 +141,10 @@ public class Igelec extends javax.swing.JFrame {
         TabBienvenido = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jButtonCrearEleccion = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jCargarEleccion = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jLimpiarTexto = new javax.swing.JButton();
+        acciones = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         salidaTexto = new javax.swing.JTextArea();
 
@@ -745,16 +748,21 @@ public class Igelec extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Cargar Datos");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jCargarEleccion.setText("Cargar Datos");
+        jCargarEleccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jCargarEleccionActionPerformed(evt);
             }
         });
 
         jButton2.setText("Ver Historico");
 
-        jButton4.setText("Guardar Datos");
+        jLimpiarTexto.setText("Limpiar");
+        jLimpiarTexto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jLimpiarTextoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout TabBienvenidoLayout = new javax.swing.GroupLayout(TabBienvenido);
         TabBienvenido.setLayout(TabBienvenidoLayout);
@@ -768,10 +776,12 @@ public class Igelec extends javax.swing.JFrame {
                     .addGroup(TabBienvenidoLayout.createSequentialGroup()
                         .addGap(375, 375, 375)
                         .addGroup(TabBienvenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                            .addComponent(jCargarEleccion, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
                             .addComponent(jButtonCrearEleccion, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)))
+                    .addGroup(TabBienvenidoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLimpiarTexto)))
                 .addContainerGap(460, Short.MAX_VALUE))
         );
         TabBienvenidoLayout.setVerticalGroup(
@@ -782,15 +792,28 @@ public class Igelec extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButtonCrearEleccion)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addGap(18, 18, 18)
-                .addComponent(jButton4)
-                .addGap(18, 18, 18)
+                .addComponent(jCargarEleccion)
+                .addGap(65, 65, 65)
                 .addComponent(jButton2)
-                .addContainerGap(135, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addComponent(jLimpiarTexto)
+                .addContainerGap())
         );
 
         Cargar.addTab("Bienvenido", TabBienvenido);
+
+        javax.swing.GroupLayout accionesLayout = new javax.swing.GroupLayout(acciones);
+        acciones.setLayout(accionesLayout);
+        accionesLayout.setHorizontalGroup(
+            accionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1031, Short.MAX_VALUE)
+        );
+        accionesLayout.setVerticalGroup(
+            accionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 378, Short.MAX_VALUE)
+        );
+
+        Cargar.addTab("Acciones", acciones);
 
         salidaTexto.setEditable(false);
         salidaTexto.setColumns(20);
@@ -1016,9 +1039,52 @@ public class Igelec extends javax.swing.JFrame {
         jTextFieldGeneroAñadirS.setText("");
     }//GEN-LAST:event_jButtonAñadirSPartidoActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jCargarEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCargarEleccionActionPerformed
+        // Si ya hay una eleccion creada, advertimos de la pérdida de datos.
+        if(eleccion!=null){
+            int n = JOptionPane.showConfirmDialog(
+            TabBienvenido,
+            "ADVERTENCIA: Si cargas una elección borraras los datos \nde la elección actual. ¿Deseas continuar?",
+            "PELIGRO PELIGRO PELIGRO",
+            JOptionPane.YES_NO_OPTION);
+            if(n!=0){
+                // Si no dice que quiere continuar, nos vamos
+                salidaTexto.append("\nCarga de elección cancelada por el usuario");
+                return;
+            } else {
+                salidaTexto.append("\nForzando la carga de elección desde disco, se eliminarán los datos actuales");
+            }
+        }
+
+        JFileChooser chooser = new JFileChooser();
+        int returnVal = chooser.showOpenDialog(TabBienvenido);
+        if(returnVal == JFileChooser.APPROVE_OPTION) {
+            salidaTexto.append("\nArchivo elegido: " + chooser.getSelectedFile().getName());
+            File archivo = chooser.getSelectedFile();
+
+            try{
+                ObjectInputStream entrada = new ObjectInputStream(new FileInputStream(archivo));
+                eleccion = (Eleccion) entrada.readObject();
+
+            } catch (IOException e){
+                salidaTexto.append("\nHa ocurrido un error al intentar abrir el archivo: "+e.getLocalizedMessage());
+
+            } catch (ClassNotFoundException e){
+                salidaTexto.append("\nClase no válida (¿Archivo corrupto?)");
+
+            } catch(ClassCastException e){
+                salidaTexto.append("\nEl archivo no era una elección válida (¿Archivo corrupto?)");
+            } catch(Exception e){
+                e.getLocalizedMessage();
+                salidaTexto.append("\nError indefinido al intentar abrir el archivo");
+            }
+
+
+        } else {
+            salidaTexto.append("Importación de elecciones cancelada por el usuario.");
+              
+        }
+    }//GEN-LAST:event_jCargarEleccionActionPerformed
 
     private void jButtonCrearEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearEleccionActionPerformed
         jFrame1.setLocationRelativeTo(null);
@@ -1274,6 +1340,10 @@ public class Igelec extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonCrearCoalicionActionPerformed
 
+    private void jLimpiarTextoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLimpiarTextoActionPerformed
+        salidaTexto.setText("");
+    }//GEN-LAST:event_jLimpiarTextoActionPerformed
+
     //metodo para limpiar cualquier tabla
     public void limpiarTabla(JTable tabla){
          DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
@@ -1320,11 +1390,10 @@ public class Igelec extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane Cargar;
     private javax.swing.JPanel TabBienvenido;
+    private javax.swing.JPanel acciones;
     private javax.swing.JButton jAñadirCircunscripcion;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButtonAñadirCircuns;
     private javax.swing.JButton jButtonAñadirCoali;
     private javax.swing.JButton jButtonAñadirMilitante;
@@ -1335,6 +1404,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JButton jButtonCrearCoalicion;
     private javax.swing.JButton jButtonCrearEleccion;
     private javax.swing.JButton jButtonLanzarAñadirMilitante;
+    private javax.swing.JButton jCargarEleccion;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JFrame jFrame3;
@@ -1369,6 +1439,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelLogoPP;
     private javax.swing.JLabel jLabelNombrePP;
     private javax.swing.JLabel jLabelSiglasPP;
+    private javax.swing.JButton jLimpiarTexto;
     private javax.swing.JTextField jNombreEleccion;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
