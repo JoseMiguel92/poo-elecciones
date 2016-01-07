@@ -145,6 +145,8 @@ public class Igelec extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLimpiarTexto = new javax.swing.JButton();
         acciones = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         salidaTexto = new javax.swing.JTextArea();
 
@@ -774,14 +776,14 @@ public class Igelec extends javax.swing.JFrame {
                         .addGap(346, 346, 346)
                         .addComponent(jLabel8))
                     .addGroup(TabBienvenidoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLimpiarTexto))
+                    .addGroup(TabBienvenidoLayout.createSequentialGroup()
                         .addGap(375, 375, 375)
                         .addGroup(TabBienvenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jCargarEleccion, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
                             .addComponent(jButtonCrearEleccion, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)))
-                    .addGroup(TabBienvenidoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLimpiarTexto)))
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE))))
                 .addContainerGap(460, Short.MAX_VALUE))
         );
         TabBienvenidoLayout.setVerticalGroup(
@@ -793,24 +795,43 @@ public class Igelec extends javax.swing.JFrame {
                 .addComponent(jButtonCrearEleccion)
                 .addGap(18, 18, 18)
                 .addComponent(jCargarEleccion)
-                .addGap(65, 65, 65)
+                .addGap(48, 48, 48)
                 .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
                 .addComponent(jLimpiarTexto)
                 .addContainerGap())
         );
 
         Cargar.addTab("Bienvenido", TabBienvenido);
 
+        jLabel9.setText("Guardar datos de la elección actual al disco duro");
+
+        jButton4.setText("Guardar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout accionesLayout = new javax.swing.GroupLayout(acciones);
         acciones.setLayout(accionesLayout);
         accionesLayout.setHorizontalGroup(
             accionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1031, Short.MAX_VALUE)
+            .addGroup(accionesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9)
+                .addGap(45, 45, 45)
+                .addComponent(jButton4)
+                .addContainerGap(574, Short.MAX_VALUE))
         );
         accionesLayout.setVerticalGroup(
             accionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 378, Short.MAX_VALUE)
+            .addGroup(accionesLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(accionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jButton4))
+                .addContainerGap(314, Short.MAX_VALUE))
         );
 
         Cargar.addTab("Acciones", acciones);
@@ -1065,7 +1086,7 @@ public class Igelec extends javax.swing.JFrame {
             try{
                 ObjectInputStream entrada = new ObjectInputStream(new FileInputStream(archivo));
                 eleccion = (Eleccion) entrada.readObject();
-
+                entrada.close();
             } catch (IOException e){
                 salidaTexto.append("\nHa ocurrido un error al intentar abrir el archivo: "+e.getLocalizedMessage());
 
@@ -1344,6 +1365,28 @@ public class Igelec extends javax.swing.JFrame {
         salidaTexto.setText("");
     }//GEN-LAST:event_jLimpiarTextoActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // BOTON PARA GUARDAR ELECCIONES AL DISCO DURO
+        if(eleccion==null){
+            JOptionPane.showMessageDialog(acciones,
+                "Para poder guardar una elección tienes que crearla primero.",
+                "No hay elección",
+            JOptionPane.ERROR_MESSAGE);
+            salidaTexto.append("Guardado cancelado: No se puede guardar, no hay una elección creada.");
+        }
+        JFileChooser chooser=new JFileChooser();
+        if(chooser.showOpenDialog(acciones)!=JFileChooser.APPROVE_OPTION){
+            salidaTexto.append("Guardado cancelado por el usuario");
+            return;
+        }
+        try{
+            // CASI HECHO
+            
+        } catch () {
+            
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     //metodo para limpiar cualquier tabla
     public void limpiarTabla(JTable tabla){
          DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
@@ -1394,6 +1437,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JButton jAñadirCircunscripcion;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButtonAñadirCircuns;
     private javax.swing.JButton jButtonAñadirCoali;
     private javax.swing.JButton jButtonAñadirMilitante;
@@ -1435,6 +1479,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelError;
     private javax.swing.JLabel jLabelLogoPP;
     private javax.swing.JLabel jLabelNombrePP;
