@@ -304,7 +304,7 @@ public class Igelec extends javax.swing.JFrame {
             }
         });
 
-        jLabel14.setText("Participacion:");
+        jLabel14.setText("Participacion (Entre 0 y 1):");
 
         jTablePP.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -347,8 +347,8 @@ public class Igelec extends javax.swing.JFrame {
                                 .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel13)
                                     .addComponent(jLabel14))
-                                .addGap(148, 148, 148)
-                                .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGap(64, 64, 64)
+                                .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jTextFieldPoblacionCircuns, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextFieldParticipacionCircuns, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jFrame2Layout.createSequentialGroup()
@@ -359,7 +359,7 @@ public class Igelec extends javax.swing.JFrame {
                                 .addComponent(jLabel12)
                                 .addGap(36, 36, 36)
                                 .addComponent(jTextFieldNombreCircuns, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         jFrame2Layout.setVerticalGroup(
             jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
