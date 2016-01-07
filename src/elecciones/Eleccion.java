@@ -135,7 +135,6 @@ public class Eleccion implements Serializable {
         return resultadosTotalEscaños.toString();
     };
     public String imprimirListaElectos(){
-        
         return crearListaElectos().toString();
     };
     

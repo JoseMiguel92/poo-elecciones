@@ -74,6 +74,6 @@ public class Lista implements Serializable{
 
     @Override
     public String toString() {
-        return formacionPolitica.getNombre()+ ": "+ diputados + ',';
+        return formacionPolitica.getNombre()+ ": "+ diputados + ','+ circunscripcionPertenece.getNombre() ;
     }
 }
