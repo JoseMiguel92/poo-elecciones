@@ -30,6 +30,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import elecciones.*;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStreamWriter;
 import java.util.Arrays;
 
 /**
@@ -1686,25 +1689,30 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_jLimpiarTextoActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-//        // BOTON PARA GUARDAR ELECCIONES AL DISCO DURO
-//        if(eleccion==null){
-//            JOptionPane.showMessageDialog(acciones,
-//                "Para poder guardar una elección tienes que crearla primero.",
-//                "No hay elección",
-//            JOptionPane.ERROR_MESSAGE);
-//            salidaTexto.append("Guardado cancelado: No se puede guardar, no hay una elección creada.");
-//        }
-//        JFileChooser chooser=new JFileChooser();
-//        if(chooser.showOpenDialog(acciones)!=JFileChooser.APPROVE_OPTION){
-//            salidaTexto.append("Guardado cancelado por el usuario");
-//            return;
-//        }
-//        try{
-//            // CASI HECHO
-//            
-//        } catch () {
-//            
-//        }
+        // BOTON PARA GUARDAR ELECCIONES AL DISCO DURO
+        if(eleccion==null){
+            JOptionPane.showMessageDialog(acciones,
+                "Para poder guardar una elección tienes que crearla primero.",
+                "No hay elección",
+            JOptionPane.ERROR_MESSAGE);
+            salidaTexto.append("\nGuardado cancelado: No se puede guardar, no hay una elección creada.");
+        }
+        JFileChooser chooser=new JFileChooser();
+        int opcion = chooser.showOpenDialog(acciones);
+        if(opcion!=JFileChooser.APPROVE_OPTION){
+            salidaTexto.append("\nGuardado cancelado por el usuario");
+            return;
+        } 
+        try{
+            salidaTexto.append("\nGuardando como archivo binario: "+chooser.getSelectedFile());
+            ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(chooser.getSelectedFile()));
+            salida.writeObject(eleccion);
+            salida.close();
+            salidaTexto.append("\nGuardado completado");
+            
+        } catch (IOException e) {
+            salidaTexto.append("\nHa ocurrido un error al intentar guardar el archivo. Prueba a seleccionar otra carpeta");
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButtonSimularEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSimularEleccionActionPerformed
