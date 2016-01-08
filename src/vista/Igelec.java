@@ -1319,7 +1319,7 @@ public class Igelec extends javax.swing.JFrame {
                 String inputLine;
                 
                 while ((inputLine = inFile.readLine())!=null){
-                    String[] atrmil = inputLine.split(":");
+                    String[] atrmil = inputLine.split(";");
                     // Igual que con los campos, añadimos a la lista un nuevo militantes
                     // con las propiedades del txt
                     Militante mil = new Militante(
