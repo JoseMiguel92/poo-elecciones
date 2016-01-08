@@ -922,10 +922,7 @@ public class Igelec extends javax.swing.JFrame {
 
         jTableImpresionElectos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "Nombre", "Partido", "Circunscripcion"
@@ -1075,7 +1072,7 @@ public class Igelec extends javax.swing.JFrame {
                 .addComponent(jCargarEleccion)
                 .addGap(48, 48, 48)
                 .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 194, Short.MAX_VALUE)
                 .addComponent(jLimpiarTexto)
                 .addContainerGap())
         );
@@ -1348,7 +1345,7 @@ public class Igelec extends javax.swing.JFrame {
                 String inputLine;
                 
                 while ((inputLine = inFile.readLine())!=null){
-                    String[] atrmil = inputLine.split(":");
+                    String[] atrmil = inputLine.split(";");
                     // Igual que con los campos, añadimos a la lista un nuevo militantes
                     // con las propiedades del txt
                     Militante mil = new Militante(
@@ -1391,7 +1388,7 @@ public class Igelec extends javax.swing.JFrame {
 
     private void jButtonAñadirSPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirSPartidoActionPerformed
         // TODO add your handling code here:
-        jFrame4Simpa.setLocationRelativeTo(null);
+        jFrame4Simpa.setLocationRelativeTo(Cargar);
         jFrame4Simpa.setSize(400, 400);
         jFrame4Simpa.setVisible(true);
         jTextFieldNombreAñadirS.setText("");
@@ -1449,7 +1446,7 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_jCargarEleccionActionPerformed
 
     private void jButtonCrearEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearEleccionActionPerformed
-        jFrame1.setLocationRelativeTo(null);
+        jFrame1.setLocationRelativeTo(Cargar);
         jFrame1.setSize(700,400);
         jFrame1.setVisible(true);
         jButton3.setEnabled(false);
@@ -1645,20 +1642,20 @@ public class Igelec extends javax.swing.JFrame {
 
     private void jAñadirCircunscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAñadirCircunscripcionActionPerformed
          // Ventanita centrada y visible
-        jFrame2.setLocationRelativeTo(null);
+        jFrame2.setLocationRelativeTo(Cargar);
         jFrame2.setSize(700,400);
         jFrame2.setVisible(true);
         
     }//GEN-LAST:event_jAñadirCircunscripcionActionPerformed
 
     private void jañadirPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jañadirPartidoActionPerformed
-        jFrame3.setLocationRelativeTo(null);
+        jFrame3.setLocationRelativeTo(Cargar);
         jFrame3.setSize(700,400);
         jFrame3.setVisible(true);
     }//GEN-LAST:event_jañadirPartidoActionPerformed
 
     private void jButtonLanzarAñadirMilitanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLanzarAñadirMilitanteActionPerformed
-        jFrame4Mili.setLocationRelativeTo(null);
+        jFrame4Mili.setLocationRelativeTo(Cargar);
         jFrame4Mili.setSize(700,400);
         jFrame4Mili.setVisible(true);
     }//GEN-LAST:event_jButtonLanzarAñadirMilitanteActionPerformed
@@ -1729,7 +1726,7 @@ public class Igelec extends javax.swing.JFrame {
                 });
             }
             
-            jFrame3Coalicion.setLocationRelativeTo(null);
+            jFrame3Coalicion.setLocationRelativeTo(Cargar);
             jFrame3Coalicion.setSize(700,400);
             jFrame3Coalicion.setVisible(true);
         }
@@ -1799,7 +1796,7 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSimularEleccionActionPerformed
 
     private void jButtonVerDetalleEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerDetalleEleccionActionPerformed
-        jFrameDetalleEleccion.setLocationRelativeTo(null);
+        jFrameDetalleEleccion.setLocationRelativeTo(Cargar);
         jFrameDetalleEleccion.setSize(700,550);
         jFrameDetalleEleccion.setVisible(true);
     }//GEN-LAST:event_jButtonVerDetalleEleccionActionPerformed
@@ -1814,7 +1811,7 @@ public class Igelec extends javax.swing.JFrame {
         
         ArrayList<Lista> listaEleccion = historico.get(jTableHistorico.getSelectedRow()).imrpimirListaElectos();
         
-        jFrameImpresionElectos.setLocationRelativeTo(null);
+        jFrameImpresionElectos.setLocationRelativeTo(Cargar);
         jFrameImpresionElectos.setSize(700,400);
         jFrameImpresionElectos.setVisible(true);
         
@@ -1845,6 +1842,7 @@ public class Igelec extends javax.swing.JFrame {
 
     private void jButtonImprimirMayoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonImprimirMayoriasActionPerformed
         StringBuilder mayorias = historico.get(jTableHistorico.getSelectedRow()).imprimirMayorias();
+        jTextAreaImpresionMayorias.setText(mayorias.toString());
     }//GEN-LAST:event_jButtonImprimirMayoriasActionPerformed
 
     private void jButtonEnviarEncuestasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarEncuestasActionPerformed
