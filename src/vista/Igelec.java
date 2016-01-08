@@ -1444,7 +1444,7 @@ public class Igelec extends javax.swing.JFrame {
                     participacion+=circun.getParticipacion();
                     escaños+=circun.getEscaños();
                 }
-//                participacion/=nCircun;
+                participacion/=nCircun;
                 eleccion.setParticipacion(participacion);
                 eleccion.setEscaños(escaños);
                 historico.add(eleccion);
