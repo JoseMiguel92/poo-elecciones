@@ -39,14 +39,7 @@ import java.util.Arrays;
  *
  * @author Josemi
  */
-public class Igelec extends javax.swing.JFrame {
-    
-    private ArrayList<FormacionPolitica> formacionesPoliticas = new ArrayList<>();
-    private ArrayList<Militante> militantesAuxiliar;
-    private ArrayList<Votantes> votantesAuxiliar;
-    
-    private ArrayList<EleccionEnCircunscripcion> TotalCircunscripciones = new ArrayList<>();
-    
+public class Igelec extends javax.swing.JFrame {    
 
     // Raul: variables auxiliares EN PRUEBAS
     ArrayList <EleccionEnCircunscripcion> circunscripciones = new ArrayList<>();
@@ -1348,13 +1341,10 @@ public class Igelec extends javax.swing.JFrame {
                 }
                 
             } catch(FileNotFoundException e){
-                e.printStackTrace();
-                
             } catch (IOException ex) {
                 Logger.getLogger(Igelec.class.getName()).log(Level.SEVERE, null, ex);
                 
             } catch (ArrayIndexOutOfBoundsException e2){
-                e2.printStackTrace();
                 System.out.println("Los datos del fichero no son validos");
 
             }
