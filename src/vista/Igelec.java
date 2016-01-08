@@ -1492,7 +1492,30 @@ public class Igelec extends javax.swing.JFrame {
                 );
 
                 // Asignamos las formaciones creadas anteriormente a la circunscripcion
-                circunscripcion.setFormaciones(formaciones); 
+                circunscripcion.setFormaciones(formaciones);
+                
+                    for(FormacionPolitica f: formaciones){
+                        
+                        ArrayList<Militante> temporal = new ArrayList<>();
+                        try{
+                            for (int i = 0; i < circunscripcion.getEscaños(); i++) {
+                                temporal.add(f.getMilitantes().get(i));
+                            }
+                        } catch (IndexOutOfBoundsException e){
+                            JOptionPane.showMessageDialog(jFrame2, "No hay suficientes militantes para rellenar la lista",
+                            "Datos insuficientes", JOptionPane.WARNING_MESSAGE);
+                        }
+
+                        circunscripcion.getListasPartidos().add(new Lista(
+                                temporal,
+                                f,
+                                circunscripcion,
+                                f.getNombre()+" "+circunscripcion.getNombre()
+                        ));
+                    }
+
+  
+
 
                 // Creamos un nuevo conjunto temporal de partidos
                 formaciones = new ArrayList<>();

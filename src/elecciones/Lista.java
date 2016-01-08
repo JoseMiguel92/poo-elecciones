@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class Lista implements Serializable{
 //Atributos
-    private String descripcion;
+    private String descripcion = "Descripción por defecto";
     private ArrayList<Militante> diputados; // NO BORRAR
     private FormacionPolitica formacionPolitica;  // NO BORRAR
     private EleccionEnCircunscripcion circunscripcionPertenece; // NO BORRAR
@@ -51,6 +51,15 @@ public class Lista implements Serializable{
     // Crear lista a partir de ArrayList
     public Lista(ArrayList<Militante> lista){
         this.diputados = lista;
+    }
+    // Crear la lista pasando todo
+    public Lista(ArrayList<Militante> lista, FormacionPolitica f,EleccionEnCircunscripcion e, String d) {
+        // Comprobamos que la lista sea tan grande como los escaños
+        this.circunscripcionPertenece = e;
+        this.diputados = lista;
+        
+        this.formacionPolitica = f;
+        this.descripcion = d;
     }
     // Crear lista a partir de un fichero de texto dado su nombre.
     public Lista(String nombreArchivo) throws IOException{
