@@ -134,27 +134,27 @@ public class Eleccion implements Serializable {
     public String imprimirTablaGlobalescaños(){
         return resultadosTotalEscaños.toString();
     };
-    public String imprimirListaElectos(){
-        return crearListaElectos().toString();
-    };
     
-    private ArrayList<Lista> crearListaElectos() {
+    public ArrayList<Lista> imrpimirListaElectos() {
         ArrayList<Lista> listaElectos = new ArrayList<>();
         for (EleccionEnCircunscripcion circuns: eleccionesEnCircunscripcion ) {
             ArrayList<Lista> x_listasPartidos = circuns.getListasPartidos();
             for (Lista lista : x_listasPartidos){
-                FormacionPolitica partido = lista.getFormacionPolitica();
-                ArrayList<Militante> militantes = lista.getDiputados();
-                int posicion = damePosicion_Electos(partido,listaElectos);
-                if (posicion == -1){
-                    listaElectos.add(lista);
-                }else{
-                    listaElectos.add(posicion, lista);
-                }
+                listaElectos.add(lista);
+//                FormacionPolitica partido = lista.getFormacionPolitica();
+//                ArrayList<Militante> militantes = lista.getDiputados();
+//                int posicion = damePosicion_Electos(partido,listaElectos);
+//                if (posicion == -1){
+//                    listaElectos.add(lista);
+//                }else{
+//                    listaElectos.get(posicion).getDiputados().addAll(militantes);
+//                }
             }
         }
         return listaElectos;
     }
+    
+    
     private int damePosicion_Electos(FormacionPolitica partido, ArrayList<Lista> listaElectos ){
         for (int i=0; i<listaElectos.size(); i++ ){
             if(listaElectos.get(i).getFormacionPolitica().equals(partido)){

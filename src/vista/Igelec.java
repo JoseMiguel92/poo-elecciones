@@ -5,15 +5,16 @@
  */
 package vista;
 
-import elecciones.Coalicion;
-import elecciones.Eleccion;
-import elecciones.EleccionEnCircunscripcion;
-import elecciones.FormacionPolitica;
-import elecciones.Historico;
-import elecciones.Militante;
-import elecciones.PartidoPolitico;
-import elecciones.Simpatizante;
-import elecciones.Votantes;
+//import elecciones.Coalicion;
+//import elecciones.Eleccion;
+//import elecciones.EleccionEnCircunscripcion;
+//import elecciones.FormacionPolitica;
+//import elecciones.Historico;
+//import elecciones.Lista;
+//import elecciones.Militante;
+//import elecciones.PartidoPolitico;
+//import elecciones.Simpatizante;
+//import elecciones.Votantes;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,6 +29,8 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import elecciones.*;
+import java.util.Arrays;
 
 /**
  *
@@ -38,8 +41,9 @@ public class Igelec extends javax.swing.JFrame {
     private ArrayList<FormacionPolitica> formacionesPoliticas = new ArrayList<>();
     private ArrayList<Militante> militantesAuxiliar;
     private ArrayList<Votantes> votantesAuxiliar;
-    private ArrayList<Eleccion> historico;
+    
     private ArrayList<EleccionEnCircunscripcion> TotalCircunscripciones = new ArrayList<>();
+    
 
     // Raul: variables auxiliares EN PRUEBAS
     ArrayList <EleccionEnCircunscripcion> circunscripciones = new ArrayList<>();
@@ -47,6 +51,7 @@ public class Igelec extends javax.swing.JFrame {
     ArrayList <Militante> militantes = new ArrayList<>();
     ArrayList <Votantes> votantes = new ArrayList<>();
     Eleccion eleccion;
+    ArrayList<Eleccion> historico = new ArrayList<Eleccion>();
     /**
      * Creates new form igelec
      */
@@ -152,6 +157,10 @@ public class Igelec extends javax.swing.JFrame {
         jScrollPane8 = new javax.swing.JScrollPane();
         jTableImpresionElectos = new javax.swing.JTable();
         jButtonVolverImpresionElectos = new javax.swing.JButton();
+        jFrameImpresionMayorias = new javax.swing.JFrame();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTextAreaImpresionMayorias = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
         Cargar = new javax.swing.JTabbedPane();
         TabBienvenido = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -760,6 +769,8 @@ public class Igelec extends javax.swing.JFrame {
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
+        jFrameDetalleEleccion.setResizable(false);
+
         jTableMuestraPartidos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -795,6 +806,11 @@ public class Igelec extends javax.swing.JFrame {
         });
 
         jButtonImprimirMayorias.setText("Imprimir Mayorias");
+        jButtonImprimirMayorias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonImprimirMayoriasActionPerformed(evt);
+            }
+        });
 
         jButtonEvolucion.setText("Evolucion");
 
@@ -812,6 +828,11 @@ public class Igelec extends javax.swing.JFrame {
         jLabelParticipacion.setText("....");
 
         jButtonEnviarEncuestas.setText("Enviar Encuestas");
+        jButtonEnviarEncuestas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEnviarEncuestasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jFrameDetalleEleccionLayout = new javax.swing.GroupLayout(jFrameDetalleEleccion.getContentPane());
         jFrameDetalleEleccion.getContentPane().setLayout(jFrameDetalleEleccionLayout);
@@ -928,6 +949,40 @@ public class Igelec extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
+        jTextAreaImpresionMayorias.setColumns(20);
+        jTextAreaImpresionMayorias.setRows(5);
+        jScrollPane9.setViewportView(jTextAreaImpresionMayorias);
+
+        jButton1.setText("Volver");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jFrameImpresionMayoriasLayout = new javax.swing.GroupLayout(jFrameImpresionMayorias.getContentPane());
+        jFrameImpresionMayorias.getContentPane().setLayout(jFrameImpresionMayoriasLayout);
+        jFrameImpresionMayoriasLayout.setHorizontalGroup(
+            jFrameImpresionMayoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrameImpresionMayoriasLayout.createSequentialGroup()
+                .addGap(235, 235, 235)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameImpresionMayoriasLayout.createSequentialGroup()
+                .addContainerGap(38, Short.MAX_VALUE)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
+        );
+        jFrameImpresionMayoriasLayout.setVerticalGroup(
+            jFrameImpresionMayoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrameImpresionMayoriasLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
@@ -1019,10 +1074,7 @@ public class Igelec extends javax.swing.JFrame {
 
         jTableHistorico.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
+
             },
             new String [] {
                 "Elecciones"
@@ -1395,6 +1447,12 @@ public class Igelec extends javax.swing.JFrame {
                 participacion/=nCircun;
                 eleccion.setParticipacion(participacion);
                 eleccion.setEscaños(escaños);
+                historico.add(eleccion);
+                DefaultTableModel modeloHistorico = (DefaultTableModel) jTableHistorico.getModel();
+                modeloHistorico.addRow(new Object[]{
+                        eleccion.getNombre()
+                });
+                
 
                 // Cerrar ventana
                 jFrame1.dispose();
@@ -1631,25 +1689,25 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_jLimpiarTextoActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // BOTON PARA GUARDAR ELECCIONES AL DISCO DURO
-        if(eleccion==null){
-            JOptionPane.showMessageDialog(acciones,
-                "Para poder guardar una elección tienes que crearla primero.",
-                "No hay elección",
-            JOptionPane.ERROR_MESSAGE);
-            salidaTexto.append("Guardado cancelado: No se puede guardar, no hay una elección creada.");
-        }
-        JFileChooser chooser=new JFileChooser();
-        if(chooser.showOpenDialog(acciones)!=JFileChooser.APPROVE_OPTION){
-            salidaTexto.append("Guardado cancelado por el usuario");
-            return;
-        }
-        try{
-            // CASI HECHO
-            
-        } catch () {
-            
-        }
+//        // BOTON PARA GUARDAR ELECCIONES AL DISCO DURO
+//        if(eleccion==null){
+//            JOptionPane.showMessageDialog(acciones,
+//                "Para poder guardar una elección tienes que crearla primero.",
+//                "No hay elección",
+//            JOptionPane.ERROR_MESSAGE);
+//            salidaTexto.append("Guardado cancelado: No se puede guardar, no hay una elección creada.");
+//        }
+//        JFileChooser chooser=new JFileChooser();
+//        if(chooser.showOpenDialog(acciones)!=JFileChooser.APPROVE_OPTION){
+//            salidaTexto.append("Guardado cancelado por el usuario");
+//            return;
+//        }
+//        try{
+//            // CASI HECHO
+//            
+//        } catch () {
+//            
+//        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButtonSimularEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSimularEleccionActionPerformed
@@ -1657,7 +1715,9 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSimularEleccionActionPerformed
 
     private void jButtonVerDetalleEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerDetalleEleccionActionPerformed
-        // TODO add your handling code here:
+        jFrameDetalleEleccion.setLocationRelativeTo(null);
+        jFrameDetalleEleccion.setSize(700,550);
+        jFrameDetalleEleccion.setVisible(true);
     }//GEN-LAST:event_jButtonVerDetalleEleccionActionPerformed
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
@@ -1665,16 +1725,52 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVolverActionPerformed
 
     private void jButtonImprimirListaElectosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonImprimirListaElectosActionPerformed
-        // TODO add your handling code here:
+        
+        // llamar a crear Lista Electos.
+        
+        ArrayList<Lista> listaEleccion = historico.get(jTableHistorico.getSelectedRow()).imrpimirListaElectos();
+        
+        jFrameImpresionElectos.setLocationRelativeTo(null);
+        jFrameImpresionElectos.setSize(700,400);
+        jFrameImpresionElectos.setVisible(true);
+        
+        DefaultTableModel modeloPartidos = (DefaultTableModel) jTableImpresionElectos.getModel();
+        for(Lista listaCircuns: listaEleccion){ 
+            for(Militante diputado: listaCircuns.getDiputados()){
+                    modeloPartidos.addRow(new Object[]{
+                    diputado.getNombreApellidos(),
+                    listaCircuns.getFormacionPolitica().getNombre(),
+                    listaCircuns.getCircunscripcionPertenece().getNombre()
+            }
+                    );
+                            };
+        };
     }//GEN-LAST:event_jButtonImprimirListaElectosActionPerformed
 
     private void jButtonVolverImpresionElectosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverImpresionElectosActionPerformed
-        // TODO add your handling code here:
+        jFrameImpresionElectos.dispose();
     }//GEN-LAST:event_jButtonVolverImpresionElectosActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        jFrameImpresionMayorias.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButtonImprimirMayoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonImprimirMayoriasActionPerformed
+        StringBuilder mayorias = historico.get(jTableHistorico.getSelectedRow()).imprimirMayorias();
+    }//GEN-LAST:event_jButtonImprimirMayoriasActionPerformed
+
+    private void jButtonEnviarEncuestasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarEncuestasActionPerformed
+        PartidoPolitico x = new PartidoPolitico((PartidoPolitico) formaciones.get(jTableMuestraPartidos.getSelectedRow()));    
+        x.lanzarEncuestas();
+        JOptionPane.showMessageDialog(null,
+                Arrays.toString(x.getPregMil())+Arrays.toString(x.getPregSimp()),
+                "Encuentas enviadas",
+            JOptionPane.OK_OPTION);
+    }//GEN-LAST:event_jButtonEnviarEncuestasActionPerformed
 
     //metodo para limpiar cualquier tabla
     public void limpiarTabla(JTable tabla){
@@ -1724,6 +1820,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JPanel TabBienvenido;
     private javax.swing.JPanel acciones;
     private javax.swing.JButton jAñadirCircunscripcion;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1754,6 +1851,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JFrame jFrame4Simpa;
     private javax.swing.JFrame jFrameDetalleEleccion;
     private javax.swing.JFrame jFrameImpresionElectos;
+    private javax.swing.JFrame jFrameImpresionMayorias;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1799,6 +1897,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTable jTablaCircunscripciones;
     private javax.swing.JTable jTableHistorico;
     private javax.swing.JTable jTableImpresionElectos;
@@ -1806,6 +1905,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JTable jTablePP;
     private javax.swing.JTable jTablePartidosDisponibles;
     private javax.swing.JTable jTableVotantesPP;
+    private javax.swing.JTextArea jTextAreaImpresionMayorias;
     private javax.swing.JTextField jTextFieldCarnet;
     private javax.swing.JTextField jTextFieldCuota;
     private javax.swing.JTextField jTextFieldEdadAñadirS;
