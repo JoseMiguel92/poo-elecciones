@@ -1780,17 +1780,17 @@ public class Igelec extends javax.swing.JFrame {
         Eleccion x = historico.get(seleccion);
         x.realizarEleccion(votosManuales);
         int totalVotos= 0 ;
-        for(ItemVotos x1 : x.getResultadosTotalVotos().getTabla_votos()){
+        for(ItemVotos x1 : x.getResultadosTotalVotos()){
             totalVotos+=x1.getNumeroVotos();
         }
         DefaultTableModel muestraPartidos = (DefaultTableModel) jTableMuestraPartidos.getModel();
-        for (int i = 0; i < x.getResultadosTotalEscaños().getTablaEscaños().size(); i++) {
-            FormacionPolitica partido = x.getResultadosTotalEscaños().getTablaEscaños().get(i).getFormacion();
+        for (int i = 0; i < x.getResultadosTotalEscaños().size(); i++) {
+            FormacionPolitica partido = x.getResultadosTotalEscaños().get(i).getFormacion();
             muestraPartidos.addRow(new Object[]{
                 partido.getNombre(),
-                x.getResultadosTotalVotos().getTabla_votos().get(i).getNumeroVotos(),
-                (x.getResultadosTotalVotos().getTabla_votos().get(i).getNumeroVotos()*100)/totalVotos,
-                x.getResultadosTotalEscaños().getTablaEscaños().get(i).getNumeroEscaños()
+                x.getResultadosTotalVotos().get(i).getNumeroVotos(),
+                (x.getResultadosTotalVotos().get(i).getNumeroVotos()*100)/totalVotos,
+                x.getResultadosTotalEscaños().get(i).getNumeroEscaños()
             });
         }
     }//GEN-LAST:event_jButtonSimularEleccionActionPerformed

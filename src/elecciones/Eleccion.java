@@ -14,16 +14,16 @@ public class Eleccion implements Serializable {
     protected String nombre;
     protected double participacion;
     protected int escaños;
-    protected TablaVotos resultadosTotalVotos;
-    protected TablaEscaños resultadosTotalEscaños;
+    protected ArrayList<ItemVotos> resultadosTotalVotos = new ArrayList<>();
+    protected ArrayList<ItemEscaños> resultadosTotalEscaños = new ArrayList<>();
     private ArrayList<EleccionEnCircunscripcion> eleccionesEnCircunscripcion;
 
 //Contructores
     public Eleccion(String nombre) {
         this.nombre = nombre;
         this.eleccionesEnCircunscripcion = new ArrayList<>();
-        resultadosTotalVotos = new TablaVotos();
-        resultadosTotalEscaños = new TablaEscaños();
+        resultadosTotalVotos = new ArrayList<ItemVotos>();
+        resultadosTotalEscaños = new ArrayList<ItemEscaños>();
     }
     
     public Eleccion(Eleccion e1){
@@ -58,18 +58,18 @@ public class Eleccion implements Serializable {
     public void setEscaños(int escaños) {
         this.escaños = escaños;
     }
-    public TablaVotos getResultadosTotalVotos() {
+    public ArrayList<ItemVotos> getResultadosTotalVotos() {
         return resultadosTotalVotos;
     }
     public void setResultadosTotalVotos() {
         for (EleccionEnCircunscripcion circuns: eleccionesEnCircunscripcion ) {
-            ArrayList<ItemVotos> x_tablaVotos = circuns.getResultadoVotos().getTabla_votos();
+            ArrayList<ItemVotos> x_tablaVotos = circuns.getResultadoVotos();
             for (ItemVotos vots_itemVotos : x_tablaVotos){
                 FormacionPolitica partido = vots_itemVotos.getFormacion();
                 int votos = vots_itemVotos.getNumeroVotos();
                 int posicion = damePosicion_votos(partido);
                 if (posicion == -1){
-                    resultadosTotalVotos.getTabla_votos().add(vots_itemVotos);
+                    resultadosTotalVotos.add(vots_itemVotos);
                 }else{
                     x_tablaVotos.get(posicion).setNumeroVotos(x_tablaVotos.get(posicion).getNumeroVotos()+votos);
                 }
@@ -77,8 +77,8 @@ public class Eleccion implements Serializable {
         }
     }
     private int damePosicion_votos(FormacionPolitica partido){
-        for (int i=0; i<resultadosTotalVotos.getTabla_votos().size(); i++ ){
-            if(resultadosTotalVotos.getTabla_votos().get(i).getFormacion().equals(partido)){
+        for (int i=0; i<resultadosTotalVotos.size(); i++ ){
+            if(resultadosTotalVotos.get(i).getFormacion().equals(partido)){
                 return i;
             }
         }
@@ -87,13 +87,13 @@ public class Eleccion implements Serializable {
     
         public void setResultadosTotalEscaños() {
         for (EleccionEnCircunscripcion circuns: eleccionesEnCircunscripcion ) {
-            ArrayList<ItemEscaños> x_tablaEscaños = circuns.getResultadoEscaños().getTablaEscaños();
+            ArrayList<ItemEscaños> x_tablaEscaños = circuns.getResultadoEscaños();
             for (ItemEscaños escaños_itemEscaños : x_tablaEscaños){
                 FormacionPolitica partido = escaños_itemEscaños.getFormacion();
                 int escaños = escaños_itemEscaños.getNumeroEscaños();
                 int posicion = damePosicion_escaños(partido);
                 if (posicion == -1){
-                    resultadosTotalEscaños.getTablaEscaños().add(escaños_itemEscaños);
+                    resultadosTotalEscaños.add(escaños_itemEscaños);
                 }else{
                     x_tablaEscaños.get(posicion).setNumeroEscaños(x_tablaEscaños.get(posicion).getNumeroEscaños()+escaños);
                 }
@@ -101,8 +101,8 @@ public class Eleccion implements Serializable {
         }
     }
     private int damePosicion_escaños(FormacionPolitica partido){
-        for (int i=0; i<resultadosTotalEscaños.getTablaEscaños().size(); i++ ){
-            if(resultadosTotalEscaños.getTablaEscaños().get(i).getFormacion().equals(partido)){
+        for (int i=0; i<resultadosTotalEscaños.size(); i++ ){
+            if(resultadosTotalEscaños.get(i).getFormacion().equals(partido)){
                 return i;
             }
         }
@@ -119,10 +119,10 @@ public class Eleccion implements Serializable {
 //        }
 //        return true;
 //    }
-    public TablaEscaños getResultadosTotalEscaños() {
+    public ArrayList<ItemEscaños> getResultadosTotalEscaños() {
         return resultadosTotalEscaños;
     }
-    public void setResultadosTotalEscaños(TablaEscaños resultadosTotalEscaños) {
+    public void setResultadosTotalEscaños(ArrayList<ItemEscaños> resultadosTotalEscaños) {
         this.resultadosTotalEscaños = resultadosTotalEscaños;
     }
     
@@ -263,7 +263,7 @@ public class Eleccion implements Serializable {
     
    
     private ArrayList<ItemEscaños> cuatroFuerzas(){
-        ArrayList<ItemEscaños> copia = (ArrayList) resultadosTotalEscaños.getTablaEscaños().clone(); 
+        ArrayList<ItemEscaños> copia = (ArrayList) resultadosTotalEscaños.clone(); 
         ArrayList<ItemEscaños> fuerzas = new ArrayList<>();
         if (copia.size()<5){
             return copia;
