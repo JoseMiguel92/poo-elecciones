@@ -129,9 +129,9 @@ public class Eleccion implements Serializable {
     
     
 //Metodos Publicos
-    public void realizarEleccion(){
+    public void realizarEleccion(boolean votosManuales){
         for(EleccionEnCircunscripcion circunscripcion : eleccionesEnCircunscripcion){
-            circunscripcion.calcularResultados();// DEVUELVE LOS ESCAÑOS DE CADA PÀRTIDO POR CIRCUNSCRIPCION
+            circunscripcion.calcularResultados(votosManuales);// DEVUELVE LOS ESCAÑOS DE CADA PÀRTIDO POR CIRCUNSCRIPCION
             circunscripcion.calcularListas();
         }
     }

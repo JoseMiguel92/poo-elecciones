@@ -3,6 +3,7 @@ package elecciones;
 import java.io.Serializable;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import vista.Igelec;
 
 /**
  * @autor Raul Martin
@@ -20,7 +21,7 @@ public class EleccionEnCircunscripcion implements Serializable{
     protected double participacion;
     protected TablaVotos resultadoVotos;
     protected TablaEscaños resultadoEscaños;
-    private ArrayList<Lista> listasPartidos;
+    private ArrayList<Lista> listasPartidos = new ArrayList<>();
     private int votosBlanco;
     protected ArrayList<FormacionPolitica> formaciones;
     
@@ -133,10 +134,10 @@ public class EleccionEnCircunscripcion implements Serializable{
 //        }
 //            this.votosBlanco=totalVotos;
 //    };
-    public void simularResultados() throws IllegalArgumentException{       
+    public void simularResultados(boolean votosManuales) throws IllegalArgumentException{       
         int totalVotos = (int) Math.round((this.getPoblacion()*this.participacion));
         for (int i = 0; i < listasPartidos.size(); i++) {
-            int numVotos=pedirVotos();
+            int numVotos=Igelec.pedirVotos(votosManuales);
             if(numVotos==-1){
                 numVotos = (int)(Math.random() * totalVotos);
              }
@@ -150,10 +151,10 @@ public class EleccionEnCircunscripcion implements Serializable{
         this.votosBlanco=totalVotos;
     };
 
-    public void calcularResultados(){
+    public void calcularResultados(boolean votosManuales){
            //Coger this.resultadoVotos
             int escañosTotales = this.getEscaños();
-            simularResultados();//DEVUELVE resultadoVotos
+            simularResultados(votosManuales);//DEVUELVE resultadoVotos
             
             aplicarLey(resultadoVotos, escañosTotales);
     };
@@ -193,11 +194,4 @@ public class EleccionEnCircunscripcion implements Serializable{
         
     };
     
-    private int pedirVotos(){
-        int numVotos=0;
-        if (true){//ELEGIR O NO POR INTERFAZ
-            //numVotos=LO QUE DIGA LA INTERFAZ
-        }else numVotos=-1;//SI DA QUE NO SE INICIA A -1
-        return numVotos;
-    }
 }

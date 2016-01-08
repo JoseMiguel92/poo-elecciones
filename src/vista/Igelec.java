@@ -48,12 +48,38 @@ public class Igelec extends javax.swing.JFrame {
     ArrayList <Votantes> votantes = new ArrayList<>();
     Eleccion eleccion;
     ArrayList<Eleccion> historico = new ArrayList<Eleccion>();
+    boolean votosManuales = false;
     /**
      * Creates new form igelec
      */
+
     public Igelec() {
         initComponents();
         this.setLocationRelativeTo(null);
+    }
+    public static int pedirVotos(boolean votosManuales){
+        int numVotos=-1;
+        if (votosManuales){//ELEGIR O NO POR INTERFAZ
+            String s = (String)JOptionPane.showInputDialog(
+                    // No se si va a funcionar
+                    null,
+                    "Introduce el numero de votos:\n",
+                    "Dame votos",
+                    JOptionPane.PLAIN_MESSAGE,
+                    null,
+                    null,
+                    "Votos: ");
+            try{
+                numVotos = Integer.parseInt(s);
+                if (numVotos<0) return -1;
+                return numVotos;
+            } catch (NumberFormatException e){
+                // Si falla al parsear devuelve -1
+                return -1;
+            }
+             
+        }
+        return -1;
     }
     public void actualizarTablaHistorico(){
         
@@ -1501,7 +1527,7 @@ public class Igelec extends javax.swing.JFrame {
                                 temporal.add(f.getMilitantes().get(i));
                             }
                         } catch (IndexOutOfBoundsException e){
-                            JOptionPane.showMessageDialog(jFrame2, "No hay suficientes militantes para rellenar la lista",
+                            JOptionPane.showMessageDialog(jFrame2, "No hay suficientes militantes para rellenar la lista en el partido "+f.getNombre(),
                             "Datos insuficientes", JOptionPane.WARNING_MESSAGE);
                         }
 
@@ -1742,9 +1768,7 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButtonSimularEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSimularEleccionActionPerformed
-//        Eleccion x = new Eleccion(historico.get(jTableHistorico.getSelectedRow()));
-//        x.setEleccionesEnCircunscripcion(historico.get(jTableHistorico.getSelectedRow()).getEleccionesEnCircunscripcion());
-//        x.realizarEleccion();
+
         int seleccion = jTableHistorico.getSelectedRow();
         if(seleccion==-1){
             JOptionPane.showMessageDialog(acciones,
@@ -1753,8 +1777,11 @@ public class Igelec extends javax.swing.JFrame {
             JOptionPane.ERROR_MESSAGE);
             return;
         }
+        int opcion = JOptionPane.showConfirmDialog(acciones, "¿Deseas introducir los votos a mano?");
+        // Si elige si, los votos los pedirá a mano, si cancela o cualquier otra cosa, los votos serán calculados aleatoriamente
+        votosManuales = (opcion==JOptionPane.OK_OPTION)?true:false;
         Eleccion x = historico.get(seleccion);
-        x.realizarEleccion();
+        x.realizarEleccion(votosManuales);
         int totalVotos= 0 ;
         for(ItemVotos x1 : x.getResultadosTotalVotos().getTabla_votos()){
             totalVotos+=x1.getNumeroVotos();
@@ -1823,8 +1850,9 @@ public class Igelec extends javax.swing.JFrame {
     private void jButtonEnviarEncuestasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarEncuestasActionPerformed
         PartidoPolitico x = new PartidoPolitico((PartidoPolitico) formaciones.get(jTableMuestraPartidos.getSelectedRow()));    
         x.lanzarEncuestas();
-        JOptionPane.showMessageDialog(null,
-                Arrays.toString(x.getPregMil())+Arrays.toString(x.getPregSimp()),
+        JOptionPane.showMessageDialog(jFrameDetalleEleccion,
+                "Encuesta para militantes: \n"+Arrays.toString(x.getPregMil())+
+                "\nEncuesta para simpatizantes: \n" +Arrays.toString(x.getPregSimp()),
                 "Encuentas enviadas",
             JOptionPane.OK_OPTION);
     }//GEN-LAST:event_jButtonEnviarEncuestasActionPerformed
