@@ -19,8 +19,8 @@ public class EleccionEnCircunscripcion implements Serializable{
     protected int poblacion;
     protected int escaños;
     protected double participacion;
-    protected TablaVotos resultadoVotos;
-    protected TablaEscaños resultadoEscaños;
+    protected TablaVotos resultadoVotos = new TablaVotos();
+    protected TablaEscaños resultadoEscaños = new TablaEscaños();
     private ArrayList<Lista> listasPartidos = new ArrayList<>();
     private int votosBlanco;
     protected ArrayList<FormacionPolitica> formaciones;
