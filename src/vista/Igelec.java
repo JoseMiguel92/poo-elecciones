@@ -1398,10 +1398,9 @@ public class Igelec extends javax.swing.JFrame {
             File archivo = chooser.getSelectedFile();
 
             try{
-                ObjectInputStream entrada = new ObjectInputStream(new FileInputStream(archivo));
-                eleccion = (Eleccion) entrada.readObject();
-                entrada.close();
-                historico.add(eleccion);
+                try (ObjectInputStream entrada = new ObjectInputStream(new FileInputStream(archivo))) {
+                    historico = (ArrayList<Eleccion>) entrada.readObject();
+                }
                 actualizarTablaHistorico();
             } catch (IOException e){
                 salidaTexto.append("\nHa ocurrido un error al intentar abrir el archivo: "+e.getLocalizedMessage());
@@ -1715,7 +1714,7 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_jLimpiarTextoActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // BOTON PARA GUARDAR ELECCIONES AL DISCO DURO
+        // BOTON PARA GUARDAR HISTÓRICO AL DISCO DURO
         if(eleccion==null){
             JOptionPane.showMessageDialog(acciones,
                 "Para poder guardar una elección tienes que crearla primero.",
@@ -1733,7 +1732,7 @@ public class Igelec extends javax.swing.JFrame {
         try{
             salidaTexto.append("\nGuardando como archivo binario: "+chooser.getSelectedFile());
             try (ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(chooser.getSelectedFile()))) {
-                salida.writeObject(eleccion);
+                salida.writeObject(historico);
             }
             salidaTexto.append("\nGuardado completado");
             
