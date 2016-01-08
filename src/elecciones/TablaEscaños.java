@@ -16,6 +16,9 @@ public class TablaEscaños implements Serializable{
     public TablaEscaños(ArrayList<ItemEscaños> tabla_escaños) {
         this.tablaEscaños = tabla_escaños;
     }
+    public TablaEscaños() {
+        this.tablaEscaños = new ArrayList();
+    }
     
     public ArrayList<ItemEscaños> getTablaEscaños() {
         return tablaEscaños;

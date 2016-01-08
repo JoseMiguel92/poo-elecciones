@@ -1441,7 +1441,7 @@ public class Igelec extends javax.swing.JFrame {
                     participacion+=circun.getParticipacion();
                     escaños+=circun.getEscaños();
                 }
-                participacion/=nCircun;
+//                participacion/=nCircun;
                 eleccion.setParticipacion(participacion);
                 eleccion.setEscaños(escaños);
                 historico.add(eleccion);
@@ -1708,7 +1708,10 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButtonSimularEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSimularEleccionActionPerformed
-        Eleccion x = new Eleccion(historico.get(jTableHistorico.getSelectedRow()));
+//        Eleccion x = new Eleccion(historico.get(jTableHistorico.getSelectedRow()));
+//        x.setEleccionesEnCircunscripcion(historico.get(jTableHistorico.getSelectedRow()).getEleccionesEnCircunscripcion());
+//        x.realizarEleccion();
+        Eleccion x = historico.get(jTableHistorico.getSelectedRow());
         x.realizarEleccion();
         int totalVotos= 0 ;
         for(ItemVotos x1 : x.getResultadosTotalVotos().getTabla_votos()){

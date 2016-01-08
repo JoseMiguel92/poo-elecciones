@@ -19,6 +19,7 @@ public class TablaVotos implements Serializable{
     }
 
     public TablaVotos(ArrayList<ItemVotos> tabla_votos) {
+        this.tabla_votos = new ArrayList<>();
         this.tabla_votos = tabla_votos;
     }
     
