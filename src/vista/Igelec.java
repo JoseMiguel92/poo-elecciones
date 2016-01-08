@@ -773,10 +773,7 @@ public class Igelec extends javax.swing.JFrame {
 
         jTableMuestraPartidos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Partido", "Votos", "Porcentaje", "Escaños"
@@ -1711,7 +1708,22 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButtonSimularEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSimularEleccionActionPerformed
-        // TODO add your handling code here:
+        Eleccion x = new Eleccion(historico.get(jTableHistorico.getSelectedRow()));
+        x.realizarEleccion();
+        int totalVotos= 0 ;
+        for(ItemVotos x1 : x.getResultadosTotalVotos().getTabla_votos()){
+            totalVotos+=x1.getNumeroVotos();
+        }
+        DefaultTableModel muestraPartidos = (DefaultTableModel) jTableMuestraPartidos.getModel();
+        for (int i = 0; i < x.getResultadosTotalEscaños().getTablaEscaños().size(); i++) {
+            FormacionPolitica partido = x.getResultadosTotalEscaños().getTablaEscaños().get(i).getFormacion();
+            muestraPartidos.addRow(new Object[]{
+                partido.getNombre(),
+                x.getResultadosTotalVotos().getTabla_votos().get(i).getNumeroVotos(),
+                (x.getResultadosTotalVotos().getTabla_votos().get(i).getNumeroVotos()*100)/totalVotos,
+                x.getResultadosTotalEscaños().getTablaEscaños().get(i).getNumeroEscaños()
+            });
+        }
     }//GEN-LAST:event_jButtonSimularEleccionActionPerformed
 
     private void jButtonVerDetalleEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerDetalleEleccionActionPerformed

@@ -23,6 +23,10 @@ public class Eleccion implements Serializable {
         this.nombre = nombre;
     }
     
+    public Eleccion(Eleccion e1){
+        this(e1.getNombre());
+    }
+    
 //GETs y SETs
      public ArrayList<EleccionEnCircunscripcion> getEleccionesEnCircunscripcion() {
         return eleccionesEnCircunscripcion;
