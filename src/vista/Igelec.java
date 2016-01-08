@@ -1686,6 +1686,7 @@ public class Igelec extends javax.swing.JFrame {
                 "No hay elección",
             JOptionPane.ERROR_MESSAGE);
             salidaTexto.append("\nGuardado cancelado: No se puede guardar, no hay una elección creada.");
+            return;
         }
         JFileChooser chooser=new JFileChooser();
         int opcion = chooser.showOpenDialog(acciones);
