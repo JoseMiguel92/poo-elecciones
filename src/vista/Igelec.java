@@ -39,14 +39,7 @@ import java.util.Arrays;
  *
  * @author Josemi
  */
-public class Igelec extends javax.swing.JFrame {
-    
-    private ArrayList<FormacionPolitica> formacionesPoliticas = new ArrayList<>();
-    private ArrayList<Militante> militantesAuxiliar;
-    private ArrayList<Votantes> votantesAuxiliar;
-    
-    private ArrayList<EleccionEnCircunscripcion> TotalCircunscripciones = new ArrayList<>();
-    
+public class Igelec extends javax.swing.JFrame {    
 
     // Raul: variables auxiliares EN PRUEBAS
     ArrayList <EleccionEnCircunscripcion> circunscripciones = new ArrayList<>();
@@ -62,7 +55,16 @@ public class Igelec extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
-
+    public void actualizarTablaHistorico(){
+        
+        DefaultTableModel modeloHistorico = (DefaultTableModel) jTableHistorico.getModel();
+        for(Eleccion e:historico){
+                modeloHistorico.addRow(new Object[]{
+                        eleccion.getNombre(),
+                        eleccion.getParticipacion()
+                });
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -1077,21 +1079,19 @@ public class Igelec extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Elecciones"
+                "Elecciones", "Participación"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false
+                false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
+        jTableHistorico.getTableHeader().setReorderingAllowed(false);
         jScrollPane4.setViewportView(jTableHistorico);
-        if (jTableHistorico.getColumnModel().getColumnCount() > 0) {
-            jTableHistorico.getColumnModel().getColumn(0).setResizable(false);
-        }
 
         jLabel11.setText("Historico");
 
@@ -1348,13 +1348,10 @@ public class Igelec extends javax.swing.JFrame {
                 }
                 
             } catch(FileNotFoundException e){
-                e.printStackTrace();
-                
             } catch (IOException ex) {
                 Logger.getLogger(Igelec.class.getName()).log(Level.SEVERE, null, ex);
                 
             } catch (ArrayIndexOutOfBoundsException e2){
-                e2.printStackTrace();
                 System.out.println("Los datos del fichero no son validos");
 
             }
@@ -1404,6 +1401,8 @@ public class Igelec extends javax.swing.JFrame {
                 ObjectInputStream entrada = new ObjectInputStream(new FileInputStream(archivo));
                 eleccion = (Eleccion) entrada.readObject();
                 entrada.close();
+                historico.add(eleccion);
+                actualizarTablaHistorico();
             } catch (IOException e){
                 salidaTexto.append("\nHa ocurrido un error al intentar abrir el archivo: "+e.getLocalizedMessage());
 
@@ -1447,12 +1446,16 @@ public class Igelec extends javax.swing.JFrame {
                 participacion/=nCircun;
                 eleccion.setParticipacion(participacion);
                 eleccion.setEscaños(escaños);
-                historico.add(eleccion);
-                DefaultTableModel modeloHistorico = (DefaultTableModel) jTableHistorico.getModel();
-                modeloHistorico.addRow(new Object[]{
-                        eleccion.getNombre()
-                });
                 
+                // Seteamos circunscripciones
+                eleccion.setEleccionesEnCircunscripcion(circunscripciones);
+                // Resetamos las circunscripciones temporales
+                circunscripciones = new ArrayList<>();
+                
+                historico.add(eleccion);
+                
+                // Actualizamos tabla historico
+                actualizarTablaHistorico();
 
                 // Cerrar ventana
                 jFrame1.dispose();
@@ -1696,18 +1699,19 @@ public class Igelec extends javax.swing.JFrame {
                 "No hay elección",
             JOptionPane.ERROR_MESSAGE);
             salidaTexto.append("\nGuardado cancelado: No se puede guardar, no hay una elección creada.");
+            return;
         }
         JFileChooser chooser=new JFileChooser();
-        int opcion = chooser.showOpenDialog(acciones);
+        int opcion = chooser.showSaveDialog(acciones);
         if(opcion!=JFileChooser.APPROVE_OPTION){
             salidaTexto.append("\nGuardado cancelado por el usuario");
             return;
         } 
         try{
             salidaTexto.append("\nGuardando como archivo binario: "+chooser.getSelectedFile());
-            ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(chooser.getSelectedFile()));
-            salida.writeObject(eleccion);
-            salida.close();
+            try (ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(chooser.getSelectedFile()))) {
+                salida.writeObject(eleccion);
+            }
             salidaTexto.append("\nGuardado completado");
             
         } catch (IOException e) {
@@ -1719,7 +1723,15 @@ public class Igelec extends javax.swing.JFrame {
 //        Eleccion x = new Eleccion(historico.get(jTableHistorico.getSelectedRow()));
 //        x.setEleccionesEnCircunscripcion(historico.get(jTableHistorico.getSelectedRow()).getEleccionesEnCircunscripcion());
 //        x.realizarEleccion();
-        Eleccion x = historico.get(jTableHistorico.getSelectedRow());
+        int seleccion = jTableHistorico.getSelectedRow();
+        if(seleccion==-1){
+            JOptionPane.showMessageDialog(acciones,
+                "No has marcado ninguna elección.",
+                "No hay elección",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        Eleccion x = historico.get(seleccion);
         x.realizarEleccion();
         int totalVotos= 0 ;
         for(ItemVotos x1 : x.getResultadosTotalVotos().getTabla_votos()){
