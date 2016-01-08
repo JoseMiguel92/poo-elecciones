@@ -16,9 +16,9 @@ public abstract class FormacionPolitica implements Serializable{
     protected String nombre;
     protected String siglas;
     protected String logo;
-    protected ArrayList<Militante> militantes; 
+    protected ArrayList<Militante> militantes = new ArrayList<>(); 
     //protected ArrayList<Votantes> votantes; // Segun el UML los votantes estan unidos con partido politico.
-    private ArrayList<String> nombresPartidos =new ArrayList<>();
+    private ArrayList<String> nombresPartidos = new ArrayList<>();
 //Contructores
     public FormacionPolitica(String nombre, String siglas, String logo) {
         this.nombre = nombre;

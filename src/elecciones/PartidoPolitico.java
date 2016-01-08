@@ -20,8 +20,8 @@ public class PartidoPolitico extends FormacionPolitica implements Serializable{
         "Refiriéndonos  ahora  a  la situación  política general  de  España, ¿cómo la calificaría Ud.: muy buena, buena, regular, mala o muy mala?"
     };
     
-    private ArrayList<Votantes> votantes;
-    private ArrayList<Militante> militantes; // utilizo nombre de militantes para mayor claridad
+    private ArrayList<Votantes> votantes = new ArrayList<>();
+    private ArrayList<Militante> militantes = new ArrayList<>(); // utilizo nombre de militantes para mayor claridad
 
     public ArrayList<Votantes> getVotantes() {
         return votantes;

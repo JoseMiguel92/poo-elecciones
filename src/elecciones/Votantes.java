@@ -11,11 +11,11 @@ import java.io.Serializable;
 
 public abstract class Votantes implements Serializable{
 //Atributos
-    protected String nombreApellidos;
+    protected String nombreApellidos = "Sin definir";
     protected int edad;
-    protected String profesion;
-    protected String genero;
-    protected String siglasPartido;
+    protected String profesion= "Sin definir";
+    protected String genero= "Sin definir";
+    protected String siglasPartido= "Sin definir";
     protected String[] encuesta;
 
 //Contructores

@@ -15,7 +15,7 @@ import vista.Igelec;
 
 public class EleccionEnCircunscripcion implements Serializable{
 //Atributos
-    protected String nombre;
+    protected String nombre = "Sin Nombre";
     protected int poblacion;
     protected int escaños;
     protected double participacion;
@@ -23,7 +23,7 @@ public class EleccionEnCircunscripcion implements Serializable{
     protected ArrayList<ItemEscaños> resultadoEscaños = new ArrayList<>();
     private ArrayList<Lista> listasPartidos = new ArrayList<>();
     private int votosBlanco;
-    protected ArrayList<FormacionPolitica> formaciones;
+    protected ArrayList<FormacionPolitica> formaciones = new ArrayList<>();
     
 //Contructores
     public EleccionEnCircunscripcion(String nombre, int poblacion, double participacion) {

@@ -8,7 +8,7 @@ import java.util.List;
  * @autor Daniel Oliver
  */
 public class Coalicion extends FormacionPolitica implements Serializable{
-    private ArrayList<FormacionPolitica> partidosCoalicion;
+    private ArrayList<FormacionPolitica> partidosCoalicion = new ArrayList<>();
 
     
 //Contructores

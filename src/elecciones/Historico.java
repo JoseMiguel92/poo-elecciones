@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class Historico implements Serializable{
 //Atributos
-    private ArrayList<Eleccion> historia_elecciones;
+    private ArrayList<Eleccion> historia_elecciones = new ArrayList<>();
 //Contructores
 
     public Historico(ArrayList<Eleccion> historia_elecciones) {

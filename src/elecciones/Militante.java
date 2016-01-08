@@ -10,8 +10,8 @@ import java.io.Serializable;
 
 public class Militante extends Votantes implements Serializable{
 //Atributos
-    protected String cuota;
-    protected String carnet;
+    protected String cuota = "Sin definir";
+    protected String carnet = "Sin definir";
     
 //Contructores
     public Militante(String nombreApellidos, int edad, String profesion, String genero, String siglasPartido,String cuota, String carnet) {

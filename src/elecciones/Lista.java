@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Lista implements Serializable{
 //Atributos
     private String descripcion = "Descripción por defecto";
-    private ArrayList<Militante> diputados; // NO BORRAR
+    private ArrayList<Militante> diputados = new ArrayList<>(); // NO BORRAR
     private FormacionPolitica formacionPolitica;  // NO BORRAR
     private EleccionEnCircunscripcion circunscripcionPertenece; // NO BORRAR
 

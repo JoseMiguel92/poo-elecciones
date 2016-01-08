@@ -11,12 +11,12 @@ import java.util.ArrayList;
 
 public class Eleccion implements Serializable {
 //Atributos
-    protected String nombre;
+    protected String nombre = "Sin nombre";
     protected double participacion;
     protected int escaños;
     protected ArrayList<ItemVotos> resultadosTotalVotos = new ArrayList<>();
     protected ArrayList<ItemEscaños> resultadosTotalEscaños = new ArrayList<>();
-    private ArrayList<EleccionEnCircunscripcion> eleccionesEnCircunscripcion;
+    private ArrayList<EleccionEnCircunscripcion> eleccionesEnCircunscripcion = new ArrayList<>();
 
 //Contructores
     public Eleccion(String nombre) {
