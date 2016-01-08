@@ -189,7 +189,7 @@ public class EleccionEnCircunscripcion implements Serializable{
     
 //Metodos Privados
     private void aplicarLey(TablaVotos votos, int escañosTotales){
-        double [][] TablaAux = null;
+        double [][] TablaAux = new double[][];
         TablaVotos votos_copia = new TablaVotos(votos.getTabla_votos());
         for (int i = 0; i < votos_copia.getTabla_votos().size(); i++) {
             for (int j = 0; j < escañosTotales; j++) {
