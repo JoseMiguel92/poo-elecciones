@@ -1436,7 +1436,9 @@ public class Igelec extends javax.swing.JFrame {
             } catch(Exception e){
                 e.getLocalizedMessage();
                 salidaTexto.append("\nError indefinido al intentar abrir el archivo");
-            }
+                salidaTexto.append(e.getMessage());
+                salidaTexto.append(e.toString());
+            } 
 
 
         } else {

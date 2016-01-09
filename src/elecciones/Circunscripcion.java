@@ -197,21 +197,28 @@ public class Circunscripcion implements Serializable{
     
 //Metodos Privados
     private void aplicarLey(ArrayList<ItemVotos> votos, int escañosTotales){
-        ArrayList<ItemVotos> votos_copia = new ArrayList<>(votos);
-        double [][] TablaAux = new double[votos_copia.size()][escañosTotales];
-        for (int i = 0; i < votos_copia.size(); i++) {
+        ArrayList<ItemEscaños> escañoTemporal = new ArrayList<>();
+        for(ItemVotos f: votos){
+            escañoTemporal.add(new ItemEscaños(f.getFormacion(),0));
+        }
+        double [][] TablaAux = new double[votos.size()][escañosTotales];
+        for (int i = 0; i < votos.size(); i++) {
             for (int j = 0; j < escañosTotales; j++) {
-                TablaAux[i][j]=votos_copia.get(i).getNumeroVotos()/(j+1);
-                
+                TablaAux[i][j]=votos.get(i).getNumeroVotos()/(j+1); 
             }
         }
         
         for (int j = 0; j < escañosTotales; j++) {
-            int partido = Dhondt.getMaximo(TablaAux, escañosTotales, votos_copia.size());
-            int escañosNuevos = this.resultadoEscaños.get(partido).getNumeroEscaños()+1;
-            this.resultadoEscaños.get(partido).setNumeroEscaños(escañosNuevos);
+            int partido = Dhondt.getMaximo(TablaAux, escañosTotales, votos.size());
+            escañoTemporal
+                    .get(partido)
+                    .setNumeroEscaños(escañoTemporal
+                            .get(partido)
+                            .getNumeroEscaños()+1);
+//            int escañosNuevos = this.resultadoEscaños.get(partido).getNumeroEscaños()+1;
+//            this.resultadoEscaños.get(partido).setNumeroEscaños(escañosNuevos);
             }
-        
+        this.resultadoEscaños = escañoTemporal;
     };
     
 }
