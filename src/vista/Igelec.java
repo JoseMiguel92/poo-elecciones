@@ -182,7 +182,6 @@ public class Igelec extends javax.swing.JFrame {
         jButtonImprimirMayorias = new javax.swing.JButton();
         jButtonEvolucion = new javax.swing.JButton();
         jButtonVolver = new javax.swing.JButton();
-        jLabelNombreEleccionA = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabelParticipacion = new javax.swing.JLabel();
         jButtonEnviarEncuestas = new javax.swing.JButton();
@@ -817,6 +816,7 @@ public class Igelec extends javax.swing.JFrame {
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
+        jFrameDetalleEleccion.setMinimumSize(new java.awt.Dimension(608, 424));
         jFrameDetalleEleccion.setResizable(false);
 
         jTableMuestraPartidos.setModel(new javax.swing.table.DefaultTableModel(
@@ -866,8 +866,6 @@ public class Igelec extends javax.swing.JFrame {
             }
         });
 
-        jLabelNombreEleccionA.setText("....");
-
         jLabel29.setText("Participacion:");
 
         jLabelParticipacion.setText("....");
@@ -884,47 +882,42 @@ public class Igelec extends javax.swing.JFrame {
         jFrameDetalleEleccionLayout.setHorizontalGroup(
             jFrameDetalleEleccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jFrameDetalleEleccionLayout.createSequentialGroup()
+                .addGap(112, 112, 112)
                 .addGroup(jFrameDetalleEleccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jFrameDetalleEleccionLayout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addGroup(jFrameDetalleEleccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jFrameDetalleEleccionLayout.createSequentialGroup()
-                                .addComponent(jLabel29)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabelParticipacion, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jFrameDetalleEleccionLayout.createSequentialGroup()
-                                .addGap(55, 55, 55)
-                                .addGroup(jFrameDetalleEleccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButtonEvolucion, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButtonImprimirListaElectos))
-                                .addGap(86, 86, 86)
-                                .addGroup(jFrameDetalleEleccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButtonImprimirMayorias, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
-                                    .addComponent(jButtonEnviarEncuestas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(jFrameDetalleEleccionLayout.createSequentialGroup()
-                                .addGap(215, 215, 215)
-                                .addComponent(jButtonVolver))))
+                        .addGroup(jFrameDetalleEleccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButtonEvolucion, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonImprimirListaElectos))
+                        .addGap(86, 86, 86)
+                        .addGroup(jFrameDetalleEleccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButtonImprimirMayorias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonEnviarEncuestas, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jFrameDetalleEleccionLayout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addGroup(jFrameDetalleEleccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jFrameDetalleEleccionLayout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addComponent(jLabelNombreEleccionA)))))
-                .addContainerGap(33, Short.MAX_VALUE))
+                        .addGap(160, 160, 160)
+                        .addComponent(jButtonVolver)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameDetalleEleccionLayout.createSequentialGroup()
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addGroup(jFrameDetalleEleccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jFrameDetalleEleccionLayout.createSequentialGroup()
+                        .addComponent(jLabel29)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabelParticipacion, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameDetalleEleccionLayout.createSequentialGroup()
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26))))
         );
         jFrameDetalleEleccionLayout.setVerticalGroup(
             jFrameDetalleEleccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jFrameDetalleEleccionLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabelNombreEleccionA)
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jFrameDetalleEleccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jFrameDetalleEleccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel29)
                     .addComponent(jLabelParticipacion))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGap(36, 36, 36)
                 .addGroup(jFrameDetalleEleccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonImprimirListaElectos)
                     .addComponent(jButtonImprimirMayorias))
@@ -934,10 +927,12 @@ public class Igelec extends javax.swing.JFrame {
                     .addComponent(jButtonEnviarEncuestas))
                 .addGap(18, 18, 18)
                 .addComponent(jButtonVolver)
-                .addGap(30, 30, 30))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jFrameImpresionElectos.setTitle("Lista de electos");
+        jFrameImpresionElectos.setMinimumSize(new java.awt.Dimension(620, 439));
+        jFrameImpresionElectos.setResizable(false);
 
         jTableImpresionElectos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -976,12 +971,12 @@ public class Igelec extends javax.swing.JFrame {
             .addGroup(jFrameImpresionElectosLayout.createSequentialGroup()
                 .addGroup(jFrameImpresionElectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jFrameImpresionElectosLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jFrameImpresionElectosLayout.createSequentialGroup()
                         .addGap(255, 255, 255)
-                        .addComponent(jButtonVolverImpresionElectos)))
-                .addContainerGap(34, Short.MAX_VALUE))
+                        .addComponent(jButtonVolverImpresionElectos))
+                    .addGroup(jFrameImpresionElectosLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         jFrameImpresionElectosLayout.setVerticalGroup(
             jFrameImpresionElectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -994,6 +989,8 @@ public class Igelec extends javax.swing.JFrame {
         );
 
         jFrameImpresionMayorias.setTitle("Mayorías");
+        jFrameImpresionMayorias.setMinimumSize(new java.awt.Dimension(562, 408));
+        jFrameImpresionMayorias.setResizable(false);
 
         jTextAreaImpresionMayorias.setColumns(20);
         jTextAreaImpresionMayorias.setRows(5);
@@ -1113,18 +1110,19 @@ public class Igelec extends javax.swing.JFrame {
             .addGroup(TabBienvenidoLayout.createSequentialGroup()
                 .addGroup(TabBienvenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(TabBienvenidoLayout.createSequentialGroup()
-                        .addGap(346, 346, 346)
-                        .addComponent(jLabel8))
-                    .addGroup(TabBienvenidoLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLimpiarTexto))
                     .addGroup(TabBienvenidoLayout.createSequentialGroup()
-                        .addGap(375, 375, 375)
-                        .addGroup(TabBienvenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jCargarEleccion, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                            .addComponent(jButtonCrearEleccion, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE))))
-                .addContainerGap(485, Short.MAX_VALUE))
+                        .addGap(410, 410, 410)
+                        .addGroup(TabBienvenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
+                            .addGroup(TabBienvenidoLayout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addGroup(TabBienvenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jCargarEleccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButtonCrearEleccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(518, Short.MAX_VALUE))
         );
         TabBienvenidoLayout.setVerticalGroup(
             TabBienvenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1207,7 +1205,7 @@ public class Igelec extends javax.swing.JFrame {
                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonSimularEleccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonVerDetalleEleccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 204, Short.MAX_VALUE)
                 .addGroup(accionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -2044,7 +2042,6 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelError;
     private javax.swing.JLabel jLabelLogoPP;
-    private javax.swing.JLabel jLabelNombreEleccionA;
     private javax.swing.JLabel jLabelNombrePP;
     private javax.swing.JLabel jLabelParticipacion;
     private javax.swing.JLabel jLabelSiglasPP;
