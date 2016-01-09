@@ -21,14 +21,6 @@ public class Eleccion implements Serializable {
 //Contructores
     public Eleccion(String nombre) {
         this.nombre = nombre;
-        this.eleccionesEnCircunscripcion = new ArrayList<>();
-        resultadosTotalVotos = new ArrayList<ItemVotos>();
-        resultadosTotalEscaños = new ArrayList<ItemEscaños>();
-    }
-    
-    public Eleccion(Eleccion e1){
-        this(e1.getNombre());
-        this.eleccionesEnCircunscripcion = new ArrayList<>();
     }
     
 //GETs y SETs
