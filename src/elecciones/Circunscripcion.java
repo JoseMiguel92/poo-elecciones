@@ -13,7 +13,7 @@ import vista.Igelec;
 
 
 
-public class EleccionEnCircunscripcion implements Serializable{
+public class Circunscripcion implements Serializable{
 //Atributos
     protected String nombre = "Sin Nombre";
     protected int poblacion;
@@ -26,7 +26,7 @@ public class EleccionEnCircunscripcion implements Serializable{
     protected ArrayList<FormacionPolitica> formaciones = new ArrayList<>();
     
 //Contructores
-    public EleccionEnCircunscripcion(String nombre, int poblacion, double participacion) {
+    public Circunscripcion(String nombre, int poblacion, double participacion) {
         this.nombre = nombre;
         this.poblacion = poblacion;
         this.escaños = Escaños(poblacion);
@@ -200,8 +200,8 @@ public class EleccionEnCircunscripcion implements Serializable{
         ArrayList<ItemVotos> votos_copia = new ArrayList<>(votos);
         double [][] TablaAux = new double[votos_copia.size()][escañosTotales];
         for (int i = 0; i < votos_copia.size(); i++) {
-            for (int j = 0; j < escañosTotales; j++) {
-                TablaAux[i][j]=votos_copia.get(i).getNumeroVotos()/(j+1);
+            for (int j = 1; j <= escañosTotales; j++) {
+                TablaAux[i][j]=votos_copia.get(i).getNumeroVotos()/j;
                 
             }
         }
