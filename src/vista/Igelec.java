@@ -1934,6 +1934,14 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonImprimirMayoriasActionPerformed
 
     private void jButtonEnviarEncuestasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarEncuestasActionPerformed
+        int seleccion = jTableMuestraPartidos.getSelectedRow();
+        if(seleccion==-1){
+            JOptionPane.showMessageDialog(acciones,
+                "No has marcado ninguna elección.",
+                "No hay elección",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         PartidoPolitico x = new PartidoPolitico((PartidoPolitico) formaciones.get(jTableMuestraPartidos.getSelectedRow()));    
         x.lanzarEncuestas();
         JOptionPane.showMessageDialog(jFrameDetalleEleccion,
