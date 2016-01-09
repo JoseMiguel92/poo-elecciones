@@ -1589,61 +1589,63 @@ public class Igelec extends javax.swing.JFrame {
                     for(FormacionPolitica f: formaciones){
                         
                         ArrayList<Militante> temporal = new ArrayList<>();
-                        try{
+                       
                             for (int i = 0; i < circunscripcion.getEscaños(); i++) {
                                 temporal.add(f.getMilitantes().get(i));
                             }
-                        } catch (IndexOutOfBoundsException e){
-                            JOptionPane.showMessageDialog(jFrame2, "No hay suficientes militantes para rellenar la lista en el partido "+f.getNombre(),
-                            "Datos insuficientes", JOptionPane.WARNING_MESSAGE);
-                        }
+                            
+                            
+                                circunscripcion.getListasPartidos().add(new Lista(
+                                        temporal,
+                                        f,
+                                        circunscripcion.getNombre(),
+                                        f.getNombre()+" "+circunscripcion.getNombre()
+                                ));
+                            
 
-                        circunscripcion.getListasPartidos().add(new Lista(
-                                temporal,
-                                f,
-                                circunscripcion.getNombre(),
-                                f.getNombre()+" "+circunscripcion.getNombre()
-                        ));
+
+
+
+                        // Creamos un nuevo conjunto temporal de partidos
+                        formaciones = new ArrayList<>();
+
+                        // Añadimos la circunscripcion creada a la tabla en elecciones
+                        DefaultTableModel modeloCircunscripcion = (DefaultTableModel) jTablaCircunscripciones.getModel();
+                        modeloCircunscripcion.addRow(new Object[]{
+                                jTextFieldNombreCircuns.getText(),
+                                Integer.parseInt(jTextFieldPoblacionCircuns.getText()),
+                                participacion,
+                                circunscripcion.getEscaños()
+                        });
+
+                        // Añadimos la circunscripcion creada a la lista temporal de circunscripciones
+                        circunscripciones.add(circunscripcion);
+
+                        // Resetamos todos los campos del formulario
+                        jTextFieldNombreCircuns.setText("");
+                        jTextFieldPoblacionCircuns.setText("");
+                        jTextFieldParticipacionCircuns.setText("");
+
+                        // Resetamos la tabla
+                        DefaultTableModel modeloPart = (DefaultTableModel) jTablePP.getModel();
+                        modeloPart.setRowCount(0);
+
+                        // Cerramos la ventana
+                        jFrame2.dispose();        // TODO add your handling code here:
+
+                        jButton3.setEnabled(true);
                     }
 
-  
-
-
-                // Creamos un nuevo conjunto temporal de partidos
-                formaciones = new ArrayList<>();
-
-                // Añadimos la circunscripcion creada a la tabla en elecciones
-                DefaultTableModel modeloCircunscripcion = (DefaultTableModel) jTablaCircunscripciones.getModel();
-                modeloCircunscripcion.addRow(new Object[]{
-                        jTextFieldNombreCircuns.getText(),
-                        Integer.parseInt(jTextFieldPoblacionCircuns.getText()),
-                        participacion,
-                        circunscripcion.getEscaños()
-                });
-
-                // Añadimos la circunscripcion creada a la lista temporal de circunscripciones
-                circunscripciones.add(circunscripcion);
-
-                // Resetamos todos los campos del formulario
-                jTextFieldNombreCircuns.setText("");
-                jTextFieldPoblacionCircuns.setText("");
-                jTextFieldParticipacionCircuns.setText("");
-
-                // Resetamos la tabla
-                DefaultTableModel modeloPart = (DefaultTableModel) jTablePP.getModel();
-                modeloPart.setRowCount(0);
-
-                // Cerramos la ventana
-                jFrame2.dispose();        // TODO add your handling code here:
-
-                jButton3.setEnabled(true);
             } catch (NumberFormatException e){
                 JOptionPane.showMessageDialog(jFrame3, "Introduce numeros validos porfavor",
                     "Datos no válidos", JOptionPane.ERROR_MESSAGE);
             } catch (IllegalArgumentException e){
                 JOptionPane.showMessageDialog(jFrame3, "La participación debe ser mayor a 0 y menor o igual a 1",
                     "Datos no válidos", JOptionPane.ERROR_MESSAGE);
-            }
+            } catch (IndexOutOfBoundsException e){
+                            JOptionPane.showMessageDialog(jFrame2, "No hay suficientes militantes para rellenar la lista de algún partido",
+                            "Datos insuficientes", JOptionPane.WARNING_MESSAGE);
+                        }
         }
     }//GEN-LAST:event_jButtonAñadirCircunsActionPerformed
 
