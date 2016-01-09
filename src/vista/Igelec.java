@@ -1937,7 +1937,7 @@ public class Igelec extends javax.swing.JFrame {
     private void jButtonEnviarEncuestasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarEncuestasActionPerformed
         int seleccion = jTableMuestraPartidos.getSelectedRow();
         if(seleccion==-1){
-            JOptionPane.showMessageDialog(acciones,
+            JOptionPane.showMessageDialog(jFrameDetalleEleccion,
                 "No has marcado ningún partido.",
                 "Error de seleción",
             JOptionPane.ERROR_MESSAGE);
