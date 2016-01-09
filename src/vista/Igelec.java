@@ -1601,7 +1601,7 @@ public class Igelec extends javax.swing.JFrame {
                                         circunscripcion.getNombre(),
                                         f.getNombre()+" "+circunscripcion.getNombre()
                                 ));
-                            
+                    }  
 
 
 
@@ -1634,7 +1634,7 @@ public class Igelec extends javax.swing.JFrame {
                         jFrame2.dispose();        // TODO add your handling code here:
 
                         jButton3.setEnabled(true);
-                    }
+                    
 
             } catch (NumberFormatException e){
                 JOptionPane.showMessageDialog(jFrame3, "Introduce numeros validos porfavor",
