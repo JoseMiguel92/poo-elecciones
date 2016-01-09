@@ -200,8 +200,8 @@ public class Circunscripcion implements Serializable{
         ArrayList<ItemVotos> votos_copia = new ArrayList<>(votos);
         double [][] TablaAux = new double[votos_copia.size()][escañosTotales];
         for (int i = 0; i < votos_copia.size(); i++) {
-            for (int j = 1; j <= escañosTotales; j++) {
-                TablaAux[i][j]=votos_copia.get(i).getNumeroVotos()/j;
+            for (int j = 0; j < escañosTotales; j++) {
+                TablaAux[i][j]=votos_copia.get(i).getNumeroVotos()/(j+1);
                 
             }
         }
