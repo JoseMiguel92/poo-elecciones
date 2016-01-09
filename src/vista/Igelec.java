@@ -197,7 +197,6 @@ public class Igelec extends javax.swing.JFrame {
         jScrollPane10 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel30 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         Cargar = new javax.swing.JTabbedPane();
         TabBienvenido = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -1044,27 +1043,22 @@ public class Igelec extends javax.swing.JFrame {
         });
         jScrollPane10.setViewportView(jTable1);
 
-        jLabel30.setText("jLabel30");
-
-        jLabel9.setText("Guardar datos de la elección actual al disco duro");
+        jLabel30.setText("sin texto");
 
         javax.swing.GroupLayout jEvolucionPartidoLayout = new javax.swing.GroupLayout(jEvolucionPartido.getContentPane());
         jEvolucionPartido.getContentPane().setLayout(jEvolucionPartidoLayout);
         jEvolucionPartidoLayout.setHorizontalGroup(
             jEvolucionPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jEvolucionPartidoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
             .addGroup(jEvolucionPartidoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel30)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jEvolucionPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jEvolucionPartidoLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel9)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(jEvolucionPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jEvolucionPartidoLayout.createSequentialGroup()
+                        .addComponent(jLabel30)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jEvolucionPartidoLayout.createSequentialGroup()
+                        .addGap(0, 36, Short.MAX_VALUE)
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jEvolucionPartidoLayout.setVerticalGroup(
             jEvolucionPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1074,11 +1068,6 @@ public class Igelec extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(88, Short.MAX_VALUE))
-            .addGroup(jEvolucionPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jEvolucionPartidoLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel9)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -2053,7 +2042,6 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelError;
     private javax.swing.JLabel jLabelLogoPP;
     private javax.swing.JLabel jLabelNombrePP;
