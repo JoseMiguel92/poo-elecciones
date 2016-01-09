@@ -1626,6 +1626,7 @@ public class Igelec extends javax.swing.JFrame {
 
                         // Añadimos la circunscripcion creada a la lista temporal de circunscripciones
                         circunscripciones.add(circunscripcion);
+                        historico.get(jTableHistorico.getSelectedRow()).setEleccionesEnCircunscripcion(circunscripciones);
 
                         // Resetamos todos los campos del formulario
                         jTextFieldNombreCircuns.setText("");
