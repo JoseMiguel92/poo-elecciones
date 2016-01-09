@@ -36,9 +36,17 @@ public class EleccionEnCircunscripcion implements Serializable{
     public ArrayList<Lista> getListasPartidos() {
         return listasPartidos;
     }
+    
+    public int getVotosBlanco(){
+        return votosBlanco;
+    }
 
 //GETs y SETs
-    public void setFormaciones(ArrayList<FormacionPolitica> formaciones){
+    public void setVotosBlanco(int votosBlanco) {
+        this.votosBlanco = votosBlanco;
+    }
+
+    public void setFormaciones(ArrayList<FormacionPolitica> formaciones) {
         this.formaciones = formaciones;
     }
     public ArrayList<FormacionPolitica> getFormaciones(){
@@ -155,7 +163,6 @@ public class EleccionEnCircunscripcion implements Serializable{
             if(numVotos>totalVotos) throw new IllegalArgumentException();
             FormacionPolitica formacion = listasPartidos.get(i).getFormacionPolitica();
             ItemVotos votospartido = new ItemVotos(formacion,numVotos);
-            totalVotos-=numVotos;
             this.resultadoVotos.add(votospartido);   
         }
         this.votosBlanco=totalVotos;
@@ -163,6 +170,7 @@ public class EleccionEnCircunscripcion implements Serializable{
 
     public void calcularResultados(boolean votosManuales){
            //Coger this.resultadoVotos
+        
             int escañosTotales = this.getEscaños();
             simularResultados(votosManuales);//DEVUELVE resultadoVotos
             
@@ -189,17 +197,19 @@ public class EleccionEnCircunscripcion implements Serializable{
     
 //Metodos Privados
     private void aplicarLey(ArrayList<ItemVotos> votos, int escañosTotales){
-        ArrayList<ItemVotos> votos_copia = new ArrayList<ItemVotos>(votos);
+        ArrayList<ItemVotos> votos_copia = new ArrayList<>(votos);
         double [][] TablaAux = new double[votos_copia.size()][escañosTotales];
         for (int i = 0; i < votos_copia.size(); i++) {
-            for (int j = 1; j < escañosTotales; j++) {
+            for (int j = 1; j <= escañosTotales; j++) {
                 TablaAux[i][j]=votos_copia.get(i).getNumeroVotos()/j;
+                
             }
         }
         
         for (int j = 0; j < escañosTotales; j++) {
-            int escañosNuevos = this.resultadoEscaños.get(Dhondt.getMaximo(TablaAux, escañosTotales, votos_copia.size())).getNumeroEscaños()+1;
-            this.resultadoEscaños.get(Dhondt.getMaximo(TablaAux, escañosTotales, votos_copia.size())).setNumeroEscaños(escañosNuevos);
+            int partido = Dhondt.getMaximo(TablaAux, escañosTotales, votos_copia.size());
+            int escañosNuevos = this.resultadoEscaños.get(partido).getNumeroEscaños()+1;
+            this.resultadoEscaños.get(partido).setNumeroEscaños(escañosNuevos);
             }
         
     };
