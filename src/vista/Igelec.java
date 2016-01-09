@@ -1531,7 +1531,7 @@ public class Igelec extends javax.swing.JFrame {
                         circunscripcion.getListasPartidos().add(new Lista(
                                 temporal,
                                 f,
-                                circunscripcion,
+                                circunscripcion.getNombre(),
                                 f.getNombre()+" "+circunscripcion.getNombre()
                         ));
                     }
@@ -1821,7 +1821,7 @@ public class Igelec extends javax.swing.JFrame {
                     modeloPartidos.addRow(new Object[]{
                     diputado.getNombreApellidos(),
                     listaCircuns.getFormacionPolitica().getNombre(),
-                    listaCircuns.getCircunscripcionPertenece().getNombre()
+                    listaCircuns.getCircunscripcionPertenece()
             }
                     );
                             };

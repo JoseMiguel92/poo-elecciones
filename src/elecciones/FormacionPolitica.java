@@ -93,7 +93,7 @@ public abstract class FormacionPolitica implements Serializable{
     public Lista elaborarListas(int escaños){
         Lista lista = new Lista();
         List<Militante> dipu = militantes.subList(0, escaños);
-        ArrayList<Militante> diputados = null;
+        ArrayList<Militante> diputados = new ArrayList<>();
         diputados.addAll(dipu);
         lista.setDiputados(diputados);
         lista.setFormacionPolitica(this);        
