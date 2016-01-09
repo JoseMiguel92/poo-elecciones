@@ -16,7 +16,7 @@ public class Lista implements Serializable{
     private String descripcion = "Descripción por defecto";
     private ArrayList<Militante> diputados = new ArrayList<>(); // NO BORRAR
     private FormacionPolitica formacionPolitica;  // NO BORRAR
-    private EleccionEnCircunscripcion circunscripcionPertenece; // NO BORRAR
+    private Circunscripcion circunscripcionPertenece; // NO BORRAR
 
     public ArrayList<Militante> getDiputados() {
         return diputados;
@@ -34,11 +34,11 @@ public class Lista implements Serializable{
         this.formacionPolitica = formacionPolitica;
     }
 
-    public EleccionEnCircunscripcion getCircunscripcionPertenece() {
+    public Circunscripcion getCircunscripcionPertenece() {
         return circunscripcionPertenece;
     }
 
-    public void setCircunscripcionPertenece(EleccionEnCircunscripcion eleccionEnCircunscripcion) {
+    public void setCircunscripcionPertenece(Circunscripcion eleccionEnCircunscripcion) {
         this.circunscripcionPertenece = eleccionEnCircunscripcion;
     }
 
@@ -53,7 +53,7 @@ public class Lista implements Serializable{
         this.diputados = lista;
     }
     // Crear la lista pasando todo
-    public Lista(ArrayList<Militante> lista, FormacionPolitica f,EleccionEnCircunscripcion e, String d) {
+    public Lista(ArrayList<Militante> lista, FormacionPolitica f,Circunscripcion e, String d) {
         // Comprobamos que la lista sea tan grande como los escaños
         this.circunscripcionPertenece = e;
         this.diputados = lista;

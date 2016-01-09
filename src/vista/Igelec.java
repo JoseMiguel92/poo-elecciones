@@ -7,7 +7,7 @@ package vista;
 
 //import elecciones.Coalicion;
 //import elecciones.Eleccion;
-//import elecciones.EleccionEnCircunscripcion;
+//import elecciones.Circunscripcion;
 //import elecciones.FormacionPolitica;
 //import elecciones.Historico;
 //import elecciones.Lista;
@@ -42,7 +42,7 @@ import java.util.Arrays;
 public class Igelec extends javax.swing.JFrame {    
 
     // Raul: variables auxiliares EN PRUEBAS
-    ArrayList <EleccionEnCircunscripcion> circunscripciones = new ArrayList<>();
+    ArrayList <Circunscripcion> circunscripciones = new ArrayList<>();
     ArrayList <FormacionPolitica> formaciones = new ArrayList<>();
     ArrayList <Militante> militantes = new ArrayList<>();
     ArrayList <Votantes> votantes = new ArrayList<>();
@@ -1461,7 +1461,7 @@ public class Igelec extends javax.swing.JFrame {
                 int nCircun = circunscripciones.size();
                 int escaños = 0;
                 double participacion = 0;
-                for(EleccionEnCircunscripcion circun : circunscripciones){
+                for(Circunscripcion circun : circunscripciones){
                     participacion+=circun.getParticipacion();
                     escaños+=circun.getEscaños();
                 }
@@ -1507,7 +1507,7 @@ public class Igelec extends javax.swing.JFrame {
                 double participacion = Double.parseDouble(jTextFieldParticipacionCircuns.getText());
                 if(participacion>1||participacion<=0) throw new IllegalArgumentException();
                 // Crea el partido político
-                EleccionEnCircunscripcion circunscripcion = new EleccionEnCircunscripcion(
+                Circunscripcion circunscripcion = new Circunscripcion(
                         jTextFieldNombreCircuns.getText(),
                         Integer.parseInt(jTextFieldPoblacionCircuns.getText()),
                         participacion

@@ -16,7 +16,7 @@ public class Eleccion implements Serializable {
     protected int escaños;
     protected ArrayList<ItemVotos> resultadosTotalVotos = new ArrayList<>();
     protected ArrayList<ItemEscaños> resultadosTotalEscaños = new ArrayList<>();
-    private ArrayList<EleccionEnCircunscripcion> eleccionesEnCircunscripcion = new ArrayList<>();
+    private ArrayList<Circunscripcion> eleccionesEnCircunscripcion = new ArrayList<>();
 
 //Contructores
     public Eleccion(String nombre) {
@@ -24,11 +24,11 @@ public class Eleccion implements Serializable {
     }
     
 //GETs y SETs
-     public ArrayList<EleccionEnCircunscripcion> getEleccionesEnCircunscripcion() {
+     public ArrayList<Circunscripcion> getEleccionesEnCircunscripcion() {
         return eleccionesEnCircunscripcion;
     }
 
-    public void setEleccionesEnCircunscripcion(ArrayList<EleccionEnCircunscripcion> eleccionesEnCircunscripcion) {
+    public void setEleccionesEnCircunscripcion(ArrayList<Circunscripcion> eleccionesEnCircunscripcion) {
         this.eleccionesEnCircunscripcion = eleccionesEnCircunscripcion;
     }
     
@@ -54,7 +54,7 @@ public class Eleccion implements Serializable {
         return resultadosTotalVotos;
     }
     public void setResultadosTotalVotos() {
-        for (EleccionEnCircunscripcion circuns: eleccionesEnCircunscripcion ) {
+        for (Circunscripcion circuns: eleccionesEnCircunscripcion ) {
             ArrayList<ItemVotos> x_tablaVotos = circuns.getResultadoVotos();
             for (ItemVotos vots_itemVotos : x_tablaVotos){
                 FormacionPolitica partido = vots_itemVotos.getFormacion();
@@ -78,7 +78,7 @@ public class Eleccion implements Serializable {
     }
     
         public void setResultadosTotalEscaños() {
-        for (EleccionEnCircunscripcion circuns: eleccionesEnCircunscripcion ) {
+        for (Circunscripcion circuns: eleccionesEnCircunscripcion ) {
             ArrayList<ItemEscaños> x_tablaEscaños = circuns.getResultadoEscaños();
             for (ItemEscaños escaños_itemEscaños : x_tablaEscaños){
                 FormacionPolitica partido = escaños_itemEscaños.getFormacion();
@@ -122,7 +122,7 @@ public class Eleccion implements Serializable {
     
 //Metodos Publicos
     public void realizarEleccion(boolean votosManuales){
-        for(EleccionEnCircunscripcion circunscripcion : eleccionesEnCircunscripcion){
+        for(Circunscripcion circunscripcion : eleccionesEnCircunscripcion){
             circunscripcion.calcularResultados(votosManuales);// DEVUELVE LOS ESCAÑOS DE CADA PÀRTIDO POR CIRCUNSCRIPCION
             circunscripcion.calcularListas();
         }
@@ -137,7 +137,7 @@ public class Eleccion implements Serializable {
     
     public ArrayList<Lista> imrpimirListaElectos() {
         ArrayList<Lista> listaElectos = new ArrayList<>();
-        for (EleccionEnCircunscripcion circuns: eleccionesEnCircunscripcion ) {
+        for (Circunscripcion circuns: eleccionesEnCircunscripcion ) {
             ArrayList<Lista> x_listasPartidos = circuns.getListasPartidos();
             for (Lista lista : x_listasPartidos){
                 listaElectos.add(lista);
