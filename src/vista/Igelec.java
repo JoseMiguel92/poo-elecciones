@@ -1231,6 +1231,7 @@ public class Igelec extends javax.swing.JFrame {
 
             // Asignamos los objetos temporales militantes y votantes creados hasta ahora al partido
             partido.setMilitantes(militantes);
+            partido.setVotantes(votantes);
             // PENDIENTE, AÑADIR SIMPATIZANTES
             // Creamos un nuevo conjunto vacío de militantes y votantes temporal
             militantes = new ArrayList<>();
@@ -1399,7 +1400,7 @@ public class Igelec extends javax.swing.JFrame {
 
     private void jCargarEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCargarEleccionActionPerformed
         // Si ya hay una eleccion creada, advertimos de la pérdida de datos.
-        if(eleccion!=null){
+        if(historico!=null){
             int n = JOptionPane.showConfirmDialog(
             TabBienvenido,
             "ADVERTENCIA: Si cargas una elección borraras los datos \nde la elección actual. ¿Deseas continuar?",
@@ -1422,7 +1423,7 @@ public class Igelec extends javax.swing.JFrame {
 
             try{
                 try (ObjectInputStream entrada = new ObjectInputStream(new FileInputStream(archivo))) {
-                    historico = (ArrayList<Eleccion>) entrada.readObject();
+                    historico = (Eleccion[]) entrada.readObject();
                 }
                 actualizarTablaHistorico();
             } catch (IOException e){
@@ -1533,7 +1534,7 @@ public class Igelec extends javax.swing.JFrame {
                         circunscripcion.getListasPartidos().add(new Lista(
                                 temporal,
                                 f,
-                                circunscripcion,
+                                circunscripcion.getNombre(),
                                 f.getNombre()+" "+circunscripcion.getNombre()
                         ));
                     }
@@ -1740,12 +1741,12 @@ public class Igelec extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // BOTON PARA GUARDAR HISTÓRICO AL DISCO DURO
-        if(eleccion==null){
+        if(historico==null||historico.size()<1){
             JOptionPane.showMessageDialog(acciones,
-                "Para poder guardar una elección tienes que crearla primero.",
-                "No hay elección",
+                "Para poder guardar el histórico tienes que crear una elección primero primero.",
+                "No hay elecciones",
             JOptionPane.ERROR_MESSAGE);
-            salidaTexto.append("\nGuardado cancelado: No se puede guardar, no hay una elección creada.");
+            salidaTexto.append("\nGuardado cancelado: No se puede guardar, no hay al menos una elección creada.");
             return;
         }
         JFileChooser chooser=new JFileChooser();
@@ -1823,7 +1824,7 @@ public class Igelec extends javax.swing.JFrame {
                     modeloPartidos.addRow(new Object[]{
                     diputado.getNombreApellidos(),
                     listaCircuns.getFormacionPolitica().getNombre(),
-                    listaCircuns.getCircunscripcionPertenece().getNombre()
+                    listaCircuns.getCircunscripcionPertenece()
             }
                     );
                             };
