@@ -908,7 +908,7 @@ public class Igelec extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jFrameDetalleEleccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jFrameDetalleEleccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel29)
                     .addComponent(jLabelParticipacion))
                 .addGap(36, 36, 36)
@@ -924,9 +924,9 @@ public class Igelec extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jFrameImpresionElectos.setMinimumSize(new java.awt.Dimension(620, 439));
-
         jFrameImpresionElectos.setTitle("Lista de electos");
+        jFrameImpresionElectos.setMinimumSize(new java.awt.Dimension(620, 439));
+        jFrameImpresionElectos.setResizable(false);
 
         jTableImpresionElectos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -965,12 +965,12 @@ public class Igelec extends javax.swing.JFrame {
             .addGroup(jFrameImpresionElectosLayout.createSequentialGroup()
                 .addGroup(jFrameImpresionElectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jFrameImpresionElectosLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jFrameImpresionElectosLayout.createSequentialGroup()
                         .addGap(255, 255, 255)
-                        .addComponent(jButtonVolverImpresionElectos)))
-                .addContainerGap(34, Short.MAX_VALUE))
+                        .addComponent(jButtonVolverImpresionElectos))
+                    .addGroup(jFrameImpresionElectosLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         jFrameImpresionElectosLayout.setVerticalGroup(
             jFrameImpresionElectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -982,9 +982,9 @@ public class Igelec extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
-        jFrameImpresionMayorias.setMinimumSize(new java.awt.Dimension(562, 408));
-
         jFrameImpresionMayorias.setTitle("Mayorías");
+        jFrameImpresionMayorias.setMinimumSize(new java.awt.Dimension(562, 408));
+        jFrameImpresionMayorias.setResizable(false);
 
         jTextAreaImpresionMayorias.setColumns(20);
         jTextAreaImpresionMayorias.setRows(5);
@@ -1814,7 +1814,7 @@ public class Igelec extends javax.swing.JFrame {
 
     private void jButtonVerDetalleEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerDetalleEleccionActionPerformed
         jFrameDetalleEleccion.setLocationRelativeTo(Cargar);
-        jFrameDetalleEleccion.setSize(608,424);
+        jFrameDetalleEleccion.setSize(608,460);
         jFrameDetalleEleccion.setTitle(historico.get(jTableHistorico.getSelectedRow()).getNombre());
         jLabelParticipacion.setText(Double.toString(historico.get(jTableHistorico.getSelectedRow()).getParticipacion()*100)+" %");
         jFrameDetalleEleccion.setVisible(true);
@@ -1832,7 +1832,7 @@ public class Igelec extends javax.swing.JFrame {
         ArrayList<Lista> listaEleccion = historico.get(jTableHistorico.getSelectedRow()).imrpimirListaElectos();
         
         jFrameImpresionElectos.setLocationRelativeTo(Cargar);
-        jFrameImpresionElectos.setSize(700,550);
+        jFrameImpresionElectos.setSize(620,455);
         jFrameImpresionElectos.setVisible(true);
         
         
@@ -1864,7 +1864,7 @@ public class Igelec extends javax.swing.JFrame {
         StringBuilder mayorias = historico.get(jTableHistorico.getSelectedRow()).imprimirMayorias();
         jTextAreaImpresionMayorias.setText(mayorias.toString());
         jFrameImpresionMayorias.setLocationRelativeTo(Cargar);
-        jFrameImpresionMayorias.setSize(700,550);
+        jFrameImpresionMayorias.setSize(562, 408);
         jFrameImpresionMayorias.setVisible(true);
     }//GEN-LAST:event_jButtonImprimirMayoriasActionPerformed
 
