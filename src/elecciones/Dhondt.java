@@ -26,6 +26,5 @@ public class Dhondt implements Serializable{
             }
             tabla[filaMaxima][colMaxima]=0.0;
             return filaMaxima;
- 
         }
 }
