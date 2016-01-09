@@ -711,6 +711,7 @@ public class Igelec extends javax.swing.JFrame {
         );
 
         jFrame3Coalicion.setTitle("Crear Coalición");
+        jFrame3Coalicion.setResizable(false);
 
         jLabel2.setText("Datos Coalición:");
 
@@ -1796,7 +1797,7 @@ public class Igelec extends javax.swing.JFrame {
             }
             
             jFrame3Coalicion.setLocationRelativeTo(Cargar);
-            jFrame3Coalicion.setSize(700,400);
+            jFrame3Coalicion.setSize(824, 323);
             jFrame3Coalicion.setVisible(true);
         }
     }//GEN-LAST:event_jButtonCrearCoalicionActionPerformed
@@ -1923,6 +1924,14 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonImprimirMayoriasActionPerformed
 
     private void jButtonEnviarEncuestasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarEncuestasActionPerformed
+        int seleccion = jTableMuestraPartidos.getSelectedRow();
+        if(seleccion==-1){
+            JOptionPane.showMessageDialog(acciones,
+                "No has marcado ninguna elección.",
+                "No hay elección",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         PartidoPolitico x = new PartidoPolitico((PartidoPolitico) formaciones.get(jTableMuestraPartidos.getSelectedRow()));    
         x.lanzarEncuestas();
         JOptionPane.showMessageDialog(jFrameDetalleEleccion,
