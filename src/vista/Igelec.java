@@ -1870,7 +1870,9 @@ public class Igelec extends javax.swing.JFrame {
 
     private void jButtonVerDetalleEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerDetalleEleccionActionPerformed
         jFrameDetalleEleccion.setLocationRelativeTo(Cargar);
-        jFrameDetalleEleccion.setSize(700,550);
+        jFrameDetalleEleccion.setSize(608,424);
+        jFrameDetalleEleccion.setTitle(historico.get(jTableHistorico.getSelectedRow()).getNombre());
+        jLabelParticipacion.setText(Double.toString(historico.get(jTableHistorico.getSelectedRow()).getParticipacion()*100) + " %");
         jFrameDetalleEleccion.setVisible(true);
     }//GEN-LAST:event_jButtonVerDetalleEleccionActionPerformed
 
