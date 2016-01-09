@@ -255,7 +255,7 @@ public class Eleccion implements Serializable {
     
    
     private ArrayList<ItemEscaños> cuatroFuerzas(){
-        ArrayList<ItemEscaños> copia = (ArrayList) resultadosTotalEscaños.clone(); 
+        ArrayList<ItemEscaños> copia = new ArrayList<>(resultadosTotalEscaños); 
         ArrayList<ItemEscaños> fuerzas = new ArrayList<>();
         if (copia.size()<5){
             return copia;

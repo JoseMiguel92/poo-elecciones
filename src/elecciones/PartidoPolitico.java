@@ -77,7 +77,7 @@ public class PartidoPolitico extends FormacionPolitica implements Serializable{
     @Override
     public Lista elaborarListas(int escaños){
         Lista lista = new Lista();
-        ArrayList<Militante> diputados = new ArrayList<>(militantes.subList(0, escaños-1));
+        ArrayList<Militante> diputados = new ArrayList<>(militantes.subList(0, escaños));
 //        ArrayList<Militante> diputados = new ArrayList<>();
 //        diputados.addAll(dipu);
         lista.setDiputados(diputados);

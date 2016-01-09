@@ -1423,7 +1423,7 @@ public class Igelec extends javax.swing.JFrame {
 
             try{
                 try (ObjectInputStream entrada = new ObjectInputStream(new FileInputStream(archivo))) {
-                    historico = (Eleccion[]) entrada.readObject();
+                    historico = (ArrayList<Eleccion>) entrada.readObject();
                 }
                 actualizarTablaHistorico();
             } catch (IOException e){
