@@ -58,18 +58,18 @@ public class Igelec extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
-    public static int pedirVotos(boolean votosManuales){
+    public static int pedirVotos(boolean votosManuales, String nombrePartido){
         int numVotos=-1;
         if (votosManuales){//ELEGIR O NO POR INTERFAZ
             String s = (String)JOptionPane.showInputDialog(
                     // No se si va a funcionar
                     null,
-                    "Introduce el numero de votos:\n",
+                    "Introduce el numero de votos para "+nombrePartido,
                     "Dame votos",
                     JOptionPane.PLAIN_MESSAGE,
                     null,
                     null,
-                    "Votos: ");
+                    "");
             try{
                 numVotos = Integer.parseInt(s);
                 if (numVotos<0) return -1;
@@ -720,6 +720,12 @@ public class Igelec extends javax.swing.JFrame {
         jLabel19.setText("Siglas Coalición:");
 
         jLabel20.setText("Logo Coalición:");
+
+        jTextFieldNombreCoali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNombreCoaliActionPerformed(evt);
+            }
+        });
 
         jButtonAñadirCoali.setText("Añadir Coalicion");
         jButtonAñadirCoali.addActionListener(new java.awt.event.ActionListener() {
@@ -1797,6 +1803,9 @@ public class Igelec extends javax.swing.JFrame {
                     forma.getSiglas()
                 });
             }
+            jTextFieldSiglasCoali.setText("");
+            jTextFieldNombreCoali.setText("");
+            jTextFieldLogoCoali.setText("");
             
             jFrame3Coalicion.setLocationRelativeTo(Cargar);
             jFrame3Coalicion.setSize(824, 400);
@@ -1849,21 +1858,21 @@ public class Igelec extends javax.swing.JFrame {
         int opcion = JOptionPane.showConfirmDialog(acciones, "¿Deseas introducir los votos a mano?");
         // Si elige si, los votos los pedirá a mano, si cancela o cualquier otra cosa, los votos serán calculados aleatoriamente
         votosManuales = (opcion==JOptionPane.OK_OPTION)?true:false;
-        Eleccion x = historico.get(seleccion);
-        x.realizarEleccion(votosManuales);
+        eleccion = historico.get(seleccion);
+        eleccion.realizarEleccion(votosManuales);
         int totalVotos= 0 ;
-        for(ItemVotos x1 : x.getResultadosTotalVotos()){
+        for(ItemVotos x1 : eleccion.getResultadosTotalVotos()){
             totalVotos+=x1.getNumeroVotos();
         }
         DefaultTableModel muestraPartidos = (DefaultTableModel) jTableMuestraPartidos.getModel();
         muestraPartidos.setRowCount(0);
-        for (int i = 0; i < x.getResultadosTotalEscaños().size(); i++) {
-            FormacionPolitica partido = x.getResultadosTotalEscaños().get(i).getFormacion();
+        for (int i = 0; i < eleccion.getResultadosTotalEscaños().size(); i++) {
+            FormacionPolitica partido = eleccion.getResultadosTotalEscaños().get(i).getFormacion();
             muestraPartidos.addRow(new Object[]{
                 partido.getNombre(),
-                x.getResultadosTotalVotos().get(i).getNumeroVotos(),
-                (x.getResultadosTotalVotos().get(i).getNumeroVotos()*100)/totalVotos,
-                x.getResultadosTotalEscaños().get(i).getNumeroEscaños()
+                eleccion.getResultadosTotalVotos().get(i).getNumeroVotos(),
+                (eleccion.getResultadosTotalVotos().get(i).getNumeroVotos()*100)/totalVotos,
+                eleccion.getResultadosTotalEscaños().get(i).getNumeroEscaños()
             });
         }
     }//GEN-LAST:event_jButtonSimularEleccionActionPerformed
@@ -1934,14 +1943,32 @@ public class Igelec extends javax.swing.JFrame {
             JOptionPane.ERROR_MESSAGE);
             return;
         }
-        PartidoPolitico x = new PartidoPolitico((PartidoPolitico) formaciones.get(jTableMuestraPartidos.getSelectedRow()));    
-        x.lanzarEncuestas();
-        JOptionPane.showMessageDialog(jFrameDetalleEleccion,
-                "Encuesta para militantes: \n"+Arrays.toString(x.getPregMil())+
-                "\nEncuesta para simpatizantes: \n" +Arrays.toString(x.getPregSimp()),
-                "Encuentas enviadas",
-            JOptionPane.OK_OPTION);
+       FormacionPolitica f1 = eleccion.getResultadosTotalEscaños().get(seleccion).getFormacion();
+        if (f1 instanceof PartidoPolitico){
+            PartidoPolitico f2 = (PartidoPolitico) f1; 
+            f2.lanzarEncuestas();
+            salidaTexto.append(
+                "\nEncuesta para militantes: \n"+Arrays.toString(f2.getPregMil())+
+                "\nEncuesta para simpatizantes: \n" +Arrays.toString(f2.getPregSimp())+
+                "\n"
+            );
+            JOptionPane.showMessageDialog(jFrameDetalleEleccion,
+                "Se están enviando las encuestas");
+        }
+        else{
+            JOptionPane.showMessageDialog(acciones,
+                "Las Encuestas deben ser enviadas en un Partido Politico.",
+                "No se enviaran las encuestas",
+            JOptionPane.ERROR_MESSAGE);
+        }
+//        PartidoPolitico x = new PartidoPolitico((PartidoPolitico) formaciones.get(jTableMuestraPartidos.getSelectedRow()));    
+//        x.lanzarEncuestas();
+        
     }//GEN-LAST:event_jButtonEnviarEncuestasActionPerformed
+
+    private void jTextFieldNombreCoaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreCoaliActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNombreCoaliActionPerformed
 
     //metodo para limpiar cualquier tabla
     public void limpiarTabla(JTable tabla){

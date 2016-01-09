@@ -155,12 +155,12 @@ public class Circunscripcion implements Serializable{
         int totalVotos = (int) Math.round((this.getPoblacion()*this.participacion));
         
         for (int i = 0; i < listasPartidos.size(); i++) {
-            int numVotos=Igelec.pedirVotos(votosManuales);
-            if(numVotos==-1){
+            int numVotos=Igelec.pedirVotos(votosManuales,listasPartidos.get(i).getFormacionPolitica().getNombre());
+            if(numVotos==-1||numVotos>totalVotos){
                 numVotos = (int)(Math.random() * totalVotos);
              }
             // Si nVotos mayor a total votos tiramos excepcion
-            if(numVotos>totalVotos) throw new IllegalArgumentException();
+//            if(numVotos>totalVotos) throw new IllegalArgumentException();
             FormacionPolitica formacion = listasPartidos.get(i).getFormacionPolitica();
             ItemVotos votospartido = new ItemVotos(formacion,numVotos);
             this.resultadoVotos.add(votospartido);   
