@@ -313,7 +313,7 @@ public class Eleccion implements Serializable {
             return copia;
          }else{        
             int posicion = 0;
-            for(int i=0; i<=4;i++){
+            for(int i=0; i<4;i++){
                 int numEscañosMayor = 0; //actualizacion de Numero de escaños para que encuentre el mayor.
                 for (int j=0; j<copia.size();j++){
                     if(copia.get(j).getNumeroEscaños()>numEscañosMayor){
