@@ -212,6 +212,8 @@ public class Igelec extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         salidaTexto = new javax.swing.JTextArea();
 
+        jFrame1.setTitle("Crear nueva elección");
+
         jLabel21.setText("Nombre elecciones");
 
         jAñadirCircunscripcion.setText("Añadir Circunscripción");
@@ -298,6 +300,8 @@ public class Igelec extends javax.swing.JFrame {
                 .addComponent(jButton3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jFrame2.setTitle("Añadir Circunscripción");
 
         jLabel12.setText("Nombre de la circunscripcion:");
 
@@ -403,6 +407,7 @@ public class Igelec extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
+        jFrame3.setTitle("Añadir Partido Político");
         jFrame3.setMinimumSize(new java.awt.Dimension(911, 550));
         jFrame3.setResizable(false);
         jFrame3.setSize(new java.awt.Dimension(911, 530));
@@ -535,6 +540,8 @@ public class Igelec extends javax.swing.JFrame {
                         .addGap(46, 46, 46))))
         );
 
+        jFrame4Simpa.setTitle("Añadir simpatizante");
+
         jLabel4.setText("Nombre y Apellidos:");
 
         jTextFieldNombreAñadirS.addActionListener(new java.awt.event.ActionListener() {
@@ -603,6 +610,8 @@ public class Igelec extends javax.swing.JFrame {
                 .addComponent(jButtonAñadirSimpatizante)
                 .addContainerGap(34, Short.MAX_VALUE))
         );
+
+        jFrame4Mili.setTitle("Añadir Militante");
 
         jLabel15.setText("Nombre y Apellidos:");
 
@@ -696,6 +705,8 @@ public class Igelec extends javax.swing.JFrame {
                 .addComponent(jButtonAñadirMilitante)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jFrame3Coalicion.setTitle("Crear Coalición");
 
         jLabel2.setText("Datos Coalición:");
 
@@ -920,6 +931,8 @@ public class Igelec extends javax.swing.JFrame {
                 .addGap(30, 30, 30))
         );
 
+        jFrameImpresionElectos.setTitle("Lista de electos");
+
         jTableImpresionElectos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -974,6 +987,8 @@ public class Igelec extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
+        jFrameImpresionMayorias.setTitle("Mayorías");
+
         jTextAreaImpresionMayorias.setColumns(20);
         jTextAreaImpresionMayorias.setRows(5);
         jScrollPane9.setViewportView(jTextAreaImpresionMayorias);
@@ -1009,6 +1024,7 @@ public class Igelec extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Interfaz práctica elecciones");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel8.setText("Bienvenido");
@@ -1059,7 +1075,7 @@ public class Igelec extends javax.swing.JFrame {
                             .addComponent(jCargarEleccion, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
                             .addComponent(jButtonCrearEleccion, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE))))
-                .addContainerGap(555, Short.MAX_VALUE))
+                .addContainerGap(485, Short.MAX_VALUE))
         );
         TabBienvenidoLayout.setVerticalGroup(
             TabBienvenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1142,7 +1158,7 @@ public class Igelec extends javax.swing.JFrame {
                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonSimularEleccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonVerDetalleEleccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(accionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1179,22 +1195,22 @@ public class Igelec extends javax.swing.JFrame {
         salidaTexto.setEditable(false);
         salidaTexto.setColumns(20);
         salidaTexto.setRows(5);
-        salidaTexto.setText("-- Información --");
+        salidaTexto.setText("Creado por:\n - Daniel Oliver Gallego\n - Jose Miguel García Benayas\n - Raúl Martín Santamaría\n\n-- Información --\n\n");
         jScrollPane2.setViewportView(salidaTexto);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1134, Short.MAX_VALUE)
-            .addComponent(Cargar, javax.swing.GroupLayout.DEFAULT_SIZE, 1134, Short.MAX_VALUE)
+            .addComponent(jScrollPane2)
+            .addComponent(Cargar)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Cargar, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
         );
 
         Cargar.getAccessibleContext().setAccessibleName("Pestañas");

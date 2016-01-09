@@ -3,6 +3,9 @@
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Container class="javax.swing.JFrame" name="jFrame1">
+      <Properties>
+        <Property name="title" type="java.lang.String" value="Crear nueva elecci&#xf3;n"/>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -155,6 +158,9 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="jFrame2">
+      <Properties>
+        <Property name="title" type="java.lang.String" value="A&#xf1;adir Circunscripci&#xf3;n"/>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -325,6 +331,7 @@
     </Container>
     <Container class="javax.swing.JFrame" name="jFrame3">
       <Properties>
+        <Property name="title" type="java.lang.String" value="A&#xf1;adir Partido Pol&#xed;tico"/>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[911, 550]"/>
         </Property>
@@ -548,6 +555,9 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="jFrame4Simpa">
+      <Properties>
+        <Property name="title" type="java.lang.String" value="A&#xf1;adir simpatizante"/>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -652,6 +662,9 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="jFrame4Mili">
+      <Properties>
+        <Property name="title" type="java.lang.String" value="A&#xf1;adir Militante"/>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -791,6 +804,9 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="jFrame3Coalicion">
+      <Properties>
+        <Property name="title" type="java.lang.String" value="Crear Coalici&#xf3;n"/>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -1135,6 +1151,9 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="jFrameImpresionElectos">
+      <Properties>
+        <Property name="title" type="java.lang.String" value="Lista de electos"/>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -1220,6 +1239,9 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="jFrameImpresionMayorias">
+      <Properties>
+        <Property name="title" type="java.lang.String" value="Mayor&#xed;as"/>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -1277,6 +1299,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="Interfaz pr&#xe1;ctica elecciones"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -1297,8 +1320,8 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane2" pref="1134" max="32767" attributes="0"/>
-          <Component id="Cargar" pref="1134" max="32767" attributes="0"/>
+          <Component id="jScrollPane2" max="32767" attributes="0"/>
+          <Component id="Cargar" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -1306,7 +1329,7 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="Cargar" min="-2" pref="415" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane2" pref="123" max="32767" attributes="0"/>
+              <Component id="jScrollPane2" pref="130" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -1350,7 +1373,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="555" max="32767" attributes="0"/>
+                      <EmptySpace pref="485" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1440,7 +1463,7 @@
                           <Component id="jButtonSimularEleccion" max="32767" attributes="0"/>
                           <Component id="jButtonVerDetalleEleccion" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="82" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
@@ -1580,7 +1603,7 @@
             <Property name="editable" type="boolean" value="false"/>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="-- Informaci&#xf3;n --"/>
+            <Property name="text" type="java.lang.String" value="Creado por:&#xa; - Daniel Oliver Gallego&#xa; - Jose Miguel Garc&#xed;a Benayas&#xa; - Ra&#xfa;l Mart&#xed;n Santamar&#xed;a&#xa;&#xa;-- Informaci&#xf3;n --&#xa;&#xa;"/>
           </Properties>
         </Component>
       </SubComponents>
