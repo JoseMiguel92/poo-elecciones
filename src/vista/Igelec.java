@@ -1811,14 +1811,15 @@ public class Igelec extends javax.swing.JFrame {
     private void jButtonImprimirListaElectosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonImprimirListaElectosActionPerformed
         
         // llamar a crear Lista Electos.
-        
+        DefaultTableModel modeloPartidos = (DefaultTableModel) jTableImpresionElectos.getModel();
+        modeloPartidos.setRowCount(0);
         ArrayList<Lista> listaEleccion = historico.get(jTableHistorico.getSelectedRow()).imrpimirListaElectos();
         
         jFrameImpresionElectos.setLocationRelativeTo(Cargar);
         jFrameImpresionElectos.setSize(700,400);
         jFrameImpresionElectos.setVisible(true);
         
-        DefaultTableModel modeloPartidos = (DefaultTableModel) jTableImpresionElectos.getModel();
+        
         for(Lista listaCircuns: listaEleccion){ 
             for(Militante diputado: listaCircuns.getDiputados()){
                     modeloPartidos.addRow(new Object[]{
