@@ -179,6 +179,7 @@ public class Circunscripcion implements Serializable{
 
         
     public void calcularListas(){
+        listasPartidos = new ArrayList<>();
         for (int i = 0; i < resultadoEscaños.size(); i++) {
             FormacionPolitica partido = resultadoEscaños.get(i).getFormacion();
             int escaños = resultadoEscaños.get(i).getNumeroEscaños();
