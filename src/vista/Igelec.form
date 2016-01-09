@@ -806,6 +806,7 @@
     <Container class="javax.swing.JFrame" name="jFrame3Coalicion">
       <Properties>
         <Property name="title" type="java.lang.String" value="Crear Coalici&#xf3;n"/>
+        <Property name="resizable" type="boolean" value="false"/>
       </Properties>
 
       <Layout>
