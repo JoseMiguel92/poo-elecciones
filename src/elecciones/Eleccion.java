@@ -103,9 +103,9 @@ public class Eleccion implements Serializable {
     
     
     
-//    private boolean noEsta(FormacionPolitica partido){
+//    private boolean noEsta(FormacionPolitica formacion){
 //        for (ItemVotos vots_aux: resultadosTotalVotos.getTabla_votos()){
-//            if (partido.equals(vots_aux.getFormacion() ) ){
+//            if (formacion.equals(vots_aux.getFormacion() ) ){
 //               return false;
 //            }
 //        }
@@ -144,9 +144,9 @@ public class Eleccion implements Serializable {
             ArrayList<Lista> x_listasPartidos = circuns.getListasPartidos();
             for (Lista lista : x_listasPartidos){
                 listaElectos.add(lista);
-//                FormacionPolitica partido = lista.getFormacionPolitica();
+//                FormacionPolitica formacion = lista.getFormacionPolitica();
 //                ArrayList<Militante> militantes = lista.getDiputados();
-//                int posicion = damePosicion_Electos(partido,listaElectos);
+//                int posicion = damePosicion_Electos(formacion,listaElectos);
 //                if (posicion == -1){
 //                    listaElectos.add(lista);
 //                }else{
@@ -172,9 +172,9 @@ public class Eleccion implements Serializable {
     
 //    public void imprimirMayorias(){
 //        if (resultadosTotalEscaños.getTablaEscaños().size()<5){
-//            for(ItemEscaños partido : resultadosTotalEscaños.getTablaEscaños()){
-//                if(partido.getNumeroEscaños()>(escaños/2)){
-//                    partido.getFormacion().toString();
+//            for(ItemEscaños formacion : resultadosTotalEscaños.getTablaEscaños()){
+//                if(formacion.getNumeroEscaños()>(escaños/2)){
+//                    formacion.getFormacion().toString();
 //                }else{
 //                    
 //                }
@@ -185,120 +185,121 @@ public class Eleccion implements Serializable {
     
     public StringBuilder imprimirMayorias(){
         StringBuilder mayorias = new StringBuilder();
-        ArrayList<ItemEscaños> cuatroPartidos = cuatroFuerzas();
-        for(ItemEscaños partido: cuatroPartidos){
-            if(partido.getNumeroEscaños()>(escaños/2)){
-               mayorias.append(partido.getFormacion().getNombre()).append(" ").append(partido.getNumeroEscaños()).append("\n");
+        ArrayList<ItemEscaños> cuatroFormaciones = cuatroFuerzas();
+        for(ItemEscaños formacion: cuatroFormaciones){
+            if(formacion.getNumeroEscaños()>(escaños/2)){
+               mayorias.append(formacion.getFormacion().getNombre()).append(" ").append(formacion.getNumeroEscaños()).append("\n");
+               return mayorias;
             }
         }
-        switch(cuatroPartidos.size()){
+        switch(cuatroFormaciones.size()){
             case 2:
-                    if(cuatroPartidos.get(0).getNumeroEscaños() + cuatroPartidos.get(1).getNumeroEscaños()>(escaños/2)){
-                    mayorias.append(cuatroPartidos.get(0).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(0).getNumeroEscaños()).append(" + ")
-                    .append(cuatroPartidos.get(1).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(1).getNumeroEscaños()).append(" ")
-                    .append(" = ").append(cuatroPartidos.get(0).getNumeroEscaños() + cuatroPartidos.get(1).getNumeroEscaños())
+                    if(cuatroFormaciones.get(0).getNumeroEscaños() + cuatroFormaciones.get(1).getNumeroEscaños()>(escaños/2)){
+                    mayorias.append(cuatroFormaciones.get(0).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(0).getNumeroEscaños()).append(" + ")
+                    .append(cuatroFormaciones.get(1).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(1).getNumeroEscaños()).append(" ")
+                    .append(" = ").append(cuatroFormaciones.get(0).getNumeroEscaños() + cuatroFormaciones.get(1).getNumeroEscaños())
                     .append("\n");
-                    };
+                    }
                     break;
             case 3:
-                    if(cuatroPartidos.get(0).getNumeroEscaños() + cuatroPartidos.get(1).getNumeroEscaños()>(escaños/2)){
-                    mayorias.append(cuatroPartidos.get(0).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(0).getNumeroEscaños()).append(" + ")
-                    .append(cuatroPartidos.get(1).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(1).getNumeroEscaños()).append(" ")
-                    .append(" = ").append(cuatroPartidos.get(0).getNumeroEscaños() + cuatroPartidos.get(1).getNumeroEscaños())
+                    if(cuatroFormaciones.get(0).getNumeroEscaños() + cuatroFormaciones.get(1).getNumeroEscaños()>(escaños/2)){
+                    mayorias.append(cuatroFormaciones.get(0).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(0).getNumeroEscaños()).append(" + ")
+                    .append(cuatroFormaciones.get(1).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(1).getNumeroEscaños()).append(" ")
+                    .append(" = ").append(cuatroFormaciones.get(0).getNumeroEscaños() + cuatroFormaciones.get(1).getNumeroEscaños())
                     .append("\n");
-                    };
-                    if(cuatroPartidos.get(0).getNumeroEscaños() + cuatroPartidos.get(2).getNumeroEscaños()>(escaños/2)){
-                        mayorias.append(cuatroPartidos.get(0).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(0).getNumeroEscaños()).append(" + ")
-                        .append(cuatroPartidos.get(2).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(2).getNumeroEscaños()).append(" ")
-                                .append(" = ").append(cuatroPartidos.get(0).getNumeroEscaños() + cuatroPartidos.get(2).getNumeroEscaños())
+                    }
+                    if(cuatroFormaciones.get(0).getNumeroEscaños() + cuatroFormaciones.get(2).getNumeroEscaños()>(escaños/2)){
+                        mayorias.append(cuatroFormaciones.get(0).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(0).getNumeroEscaños()).append(" + ")
+                        .append(cuatroFormaciones.get(2).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(2).getNumeroEscaños()).append(" ")
+                                .append(" = ").append(cuatroFormaciones.get(0).getNumeroEscaños() + cuatroFormaciones.get(2).getNumeroEscaños())
                                 .append("\n");
-                    };
-                    if(cuatroPartidos.get(1).getNumeroEscaños() + cuatroPartidos.get(2).getNumeroEscaños()>(escaños/2)){
-                        mayorias.append(cuatroPartidos.get(1).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(1).getNumeroEscaños()).append(" + ")
-                        .append(cuatroPartidos.get(2).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(2).getNumeroEscaños()).append(" ")
-                               .append(" = ").append(cuatroPartidos.get(1).getNumeroEscaños() + cuatroPartidos.get(2).getNumeroEscaños()) 
+                    }
+                    if(cuatroFormaciones.get(1).getNumeroEscaños() + cuatroFormaciones.get(2).getNumeroEscaños()>(escaños/2)){
+                        mayorias.append(cuatroFormaciones.get(1).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(1).getNumeroEscaños()).append(" + ")
+                        .append(cuatroFormaciones.get(2).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(2).getNumeroEscaños()).append(" ")
+                               .append(" = ").append(cuatroFormaciones.get(1).getNumeroEscaños() + cuatroFormaciones.get(2).getNumeroEscaños()) 
                                 .append("\n");
-                    };
-                    if(cuatroPartidos.get(0).getNumeroEscaños() + cuatroPartidos.get(1).getNumeroEscaños() + cuatroPartidos.get(2).getNumeroEscaños()>(escaños/2)){
-                        mayorias.append(cuatroPartidos.get(0).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(0).getNumeroEscaños()).append(" + ")
-                        .append(cuatroPartidos.get(1).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(1).getNumeroEscaños()).append(" + ")
-                        .append(cuatroPartidos.get(2).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(2).getNumeroEscaños()).append(" ")
-                                .append(" = ").append(cuatroPartidos.get(0).getNumeroEscaños() + cuatroPartidos.get(1).getNumeroEscaños()+ cuatroPartidos.get(2).getNumeroEscaños())
+                    }
+                    if(cuatroFormaciones.get(0).getNumeroEscaños() + cuatroFormaciones.get(1).getNumeroEscaños() + cuatroFormaciones.get(2).getNumeroEscaños()>(escaños/2)){
+                        mayorias.append(cuatroFormaciones.get(0).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(0).getNumeroEscaños()).append(" + ")
+                        .append(cuatroFormaciones.get(1).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(1).getNumeroEscaños()).append(" + ")
+                        .append(cuatroFormaciones.get(2).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(2).getNumeroEscaños()).append(" ")
+                                .append(" = ").append(cuatroFormaciones.get(0).getNumeroEscaños() + cuatroFormaciones.get(1).getNumeroEscaños()+ cuatroFormaciones.get(2).getNumeroEscaños())
                                 .append("\n");
-                    };
+                    }
                     break;
             case 4:
-                    if(cuatroPartidos.get(0).getNumeroEscaños() + cuatroPartidos.get(1).getNumeroEscaños()>(escaños/2)){
-                    mayorias.append(cuatroPartidos.get(0).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(0).getNumeroEscaños()).append(" + ")
-                    .append(cuatroPartidos.get(1).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(1).getNumeroEscaños()).append(" ")
-                            .append(" = ").append(cuatroPartidos.get(0).getNumeroEscaños() + cuatroPartidos.get(1).getNumeroEscaños())
+                    if(cuatroFormaciones.get(0).getNumeroEscaños() + cuatroFormaciones.get(1).getNumeroEscaños()>(escaños/2)){
+                    mayorias.append(cuatroFormaciones.get(0).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(0).getNumeroEscaños()).append(" + ")
+                    .append(cuatroFormaciones.get(1).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(1).getNumeroEscaños()).append(" ")
+                            .append(" = ").append(cuatroFormaciones.get(0).getNumeroEscaños() + cuatroFormaciones.get(1).getNumeroEscaños())
                             .append("\n");
-                    };
-                    if(cuatroPartidos.get(0).getNumeroEscaños() + cuatroPartidos.get(2).getNumeroEscaños()>(escaños/2)){
-                        mayorias.append(cuatroPartidos.get(0).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(0).getNumeroEscaños()).append(" + ")
-                        .append(cuatroPartidos.get(2).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(2).getNumeroEscaños()).append(" ")
-                                .append(" = ").append(cuatroPartidos.get(0).getNumeroEscaños() + cuatroPartidos.get(2).getNumeroEscaños()).append("\n");
-                    };
-                    if(cuatroPartidos.get(0).getNumeroEscaños() + cuatroPartidos.get(3).getNumeroEscaños()>(escaños/2)){
-                        mayorias.append(cuatroPartidos.get(0).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(0).getNumeroEscaños()).append(" + ")
-                        .append(cuatroPartidos.get(3).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(3).getNumeroEscaños()).append(" ")
-                                .append(" = ").append(cuatroPartidos.get(0).getNumeroEscaños() + cuatroPartidos.get(3).getNumeroEscaños()).append("\n");
-                    };
-                    if(cuatroPartidos.get(1).getNumeroEscaños() + cuatroPartidos.get(2).getNumeroEscaños()>(escaños/2)){
-                        mayorias.append(cuatroPartidos.get(1).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(1).getNumeroEscaños()).append(" + ")
-                        .append(cuatroPartidos.get(2).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(2).getNumeroEscaños()).append(" ")
-                                .append(" = ").append(cuatroPartidos.get(1).getNumeroEscaños() + cuatroPartidos.get(2).getNumeroEscaños())
+                    }
+                    if(cuatroFormaciones.get(0).getNumeroEscaños() + cuatroFormaciones.get(2).getNumeroEscaños()>(escaños/2)){
+                        mayorias.append(cuatroFormaciones.get(0).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(0).getNumeroEscaños()).append(" + ")
+                        .append(cuatroFormaciones.get(2).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(2).getNumeroEscaños()).append(" ")
+                                .append(" = ").append(cuatroFormaciones.get(0).getNumeroEscaños() + cuatroFormaciones.get(2).getNumeroEscaños()).append("\n");
+                    }
+                    if(cuatroFormaciones.get(0).getNumeroEscaños() + cuatroFormaciones.get(3).getNumeroEscaños()>(escaños/2)){
+                        mayorias.append(cuatroFormaciones.get(0).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(0).getNumeroEscaños()).append(" + ")
+                        .append(cuatroFormaciones.get(3).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(3).getNumeroEscaños()).append(" ")
+                                .append(" = ").append(cuatroFormaciones.get(0).getNumeroEscaños() + cuatroFormaciones.get(3).getNumeroEscaños()).append("\n");
+                    }
+                    if(cuatroFormaciones.get(1).getNumeroEscaños() + cuatroFormaciones.get(2).getNumeroEscaños()>(escaños/2)){
+                        mayorias.append(cuatroFormaciones.get(1).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(1).getNumeroEscaños()).append(" + ")
+                        .append(cuatroFormaciones.get(2).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(2).getNumeroEscaños()).append(" ")
+                                .append(" = ").append(cuatroFormaciones.get(1).getNumeroEscaños() + cuatroFormaciones.get(2).getNumeroEscaños())
                                 .append("\n");
-                    };
-                    if(cuatroPartidos.get(1).getNumeroEscaños() + cuatroPartidos.get(3).getNumeroEscaños()>(escaños/2)){
-                        mayorias.append(cuatroPartidos.get(1).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(1).getNumeroEscaños()).append(" + ")
-                        .append(cuatroPartidos.get(3).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(3).getNumeroEscaños()).append(" ")
-                                .append(" = ").append(cuatroPartidos.get(1).getNumeroEscaños() + cuatroPartidos.get(3).getNumeroEscaños())
+                    }
+                    if(cuatroFormaciones.get(1).getNumeroEscaños() + cuatroFormaciones.get(3).getNumeroEscaños()>(escaños/2)){
+                        mayorias.append(cuatroFormaciones.get(1).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(1).getNumeroEscaños()).append(" + ")
+                        .append(cuatroFormaciones.get(3).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(3).getNumeroEscaños()).append(" ")
+                                .append(" = ").append(cuatroFormaciones.get(1).getNumeroEscaños() + cuatroFormaciones.get(3).getNumeroEscaños())
                                 .append("\n");
-                    };
-                    if(cuatroPartidos.get(2).getNumeroEscaños() + cuatroPartidos.get(3).getNumeroEscaños()>(escaños/2)){
-                        mayorias.append(cuatroPartidos.get(2).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(2).getNumeroEscaños()).append(" + ")
-                        .append(cuatroPartidos.get(3).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(3).getNumeroEscaños()).append(" ")
-                                .append(" = ").append(cuatroPartidos.get(2).getNumeroEscaños() + cuatroPartidos.get(3).getNumeroEscaños())
+                    }
+                    if(cuatroFormaciones.get(2).getNumeroEscaños() + cuatroFormaciones.get(3).getNumeroEscaños()>(escaños/2)){
+                        mayorias.append(cuatroFormaciones.get(2).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(2).getNumeroEscaños()).append(" + ")
+                        .append(cuatroFormaciones.get(3).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(3).getNumeroEscaños()).append(" ")
+                                .append(" = ").append(cuatroFormaciones.get(2).getNumeroEscaños() + cuatroFormaciones.get(3).getNumeroEscaños())
                                 .append("\n");
-                    };
-                    if(cuatroPartidos.get(0).getNumeroEscaños() + cuatroPartidos.get(1).getNumeroEscaños() + cuatroPartidos.get(2).getNumeroEscaños()>(escaños/2)){
-                        mayorias.append(cuatroPartidos.get(0).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(0).getNumeroEscaños()).append(" + ")
-                        .append(cuatroPartidos.get(1).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(1).getNumeroEscaños()).append(" + ")
-                        .append(cuatroPartidos.get(2).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(2).getNumeroEscaños()).append(" ")
-                                .append(" = ").append(cuatroPartidos.get(0).getNumeroEscaños() + cuatroPartidos.get(1).getNumeroEscaños()+ cuatroPartidos.get(2).getNumeroEscaños())
+                    }
+                    if(cuatroFormaciones.get(0).getNumeroEscaños() + cuatroFormaciones.get(1).getNumeroEscaños() + cuatroFormaciones.get(2).getNumeroEscaños()>(escaños/2)){
+                        mayorias.append(cuatroFormaciones.get(0).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(0).getNumeroEscaños()).append(" + ")
+                        .append(cuatroFormaciones.get(1).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(1).getNumeroEscaños()).append(" + ")
+                        .append(cuatroFormaciones.get(2).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(2).getNumeroEscaños()).append(" ")
+                                .append(" = ").append(cuatroFormaciones.get(0).getNumeroEscaños() + cuatroFormaciones.get(1).getNumeroEscaños()+ cuatroFormaciones.get(2).getNumeroEscaños())
                                 .append("\n");
-                    };
-                    if(cuatroPartidos.get(0).getNumeroEscaños() + cuatroPartidos.get(1).getNumeroEscaños() + cuatroPartidos.get(3).getNumeroEscaños()>(escaños/2)){
-                        mayorias.append(cuatroPartidos.get(0).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(0).getNumeroEscaños()).append(" + ")
-                        .append(cuatroPartidos.get(1).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(1).getNumeroEscaños()).append(" + ")
-                        .append(cuatroPartidos.get(3).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(3).getNumeroEscaños()).append(" ")
-                                .append(" = ").append(cuatroPartidos.get(0).getNumeroEscaños() + cuatroPartidos.get(1).getNumeroEscaños()+ cuatroPartidos.get(3).getNumeroEscaños())
+                    }
+                    if(cuatroFormaciones.get(0).getNumeroEscaños() + cuatroFormaciones.get(1).getNumeroEscaños() + cuatroFormaciones.get(3).getNumeroEscaños()>(escaños/2)){
+                        mayorias.append(cuatroFormaciones.get(0).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(0).getNumeroEscaños()).append(" + ")
+                        .append(cuatroFormaciones.get(1).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(1).getNumeroEscaños()).append(" + ")
+                        .append(cuatroFormaciones.get(3).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(3).getNumeroEscaños()).append(" ")
+                                .append(" = ").append(cuatroFormaciones.get(0).getNumeroEscaños() + cuatroFormaciones.get(1).getNumeroEscaños()+ cuatroFormaciones.get(3).getNumeroEscaños())
                                 .append("\n");
-                    };
-                    if(cuatroPartidos.get(0).getNumeroEscaños() + cuatroPartidos.get(2).getNumeroEscaños() + cuatroPartidos.get(3).getNumeroEscaños()>(escaños/2)){
-                        mayorias.append(cuatroPartidos.get(0).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(0).getNumeroEscaños()).append(" + ")
-                        .append(cuatroPartidos.get(2).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(2).getNumeroEscaños()).append(" + ")
-                        .append(cuatroPartidos.get(3).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(3).getNumeroEscaños()).append(" ")
-                                .append(" = ").append(cuatroPartidos.get(0).getNumeroEscaños() + cuatroPartidos.get(2).getNumeroEscaños()+ cuatroPartidos.get(3).getNumeroEscaños())
+                    }
+                    if(cuatroFormaciones.get(0).getNumeroEscaños() + cuatroFormaciones.get(2).getNumeroEscaños() + cuatroFormaciones.get(3).getNumeroEscaños()>(escaños/2)){
+                        mayorias.append(cuatroFormaciones.get(0).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(0).getNumeroEscaños()).append(" + ")
+                        .append(cuatroFormaciones.get(2).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(2).getNumeroEscaños()).append(" + ")
+                        .append(cuatroFormaciones.get(3).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(3).getNumeroEscaños()).append(" ")
+                                .append(" = ").append(cuatroFormaciones.get(0).getNumeroEscaños() + cuatroFormaciones.get(2).getNumeroEscaños()+ cuatroFormaciones.get(3).getNumeroEscaños())
                                 .append("\n");
-                    };
-                    if(cuatroPartidos.get(1).getNumeroEscaños() + cuatroPartidos.get(2).getNumeroEscaños() + cuatroPartidos.get(3).getNumeroEscaños()>(escaños/2)){
-                        mayorias.append(cuatroPartidos.get(1).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(1).getNumeroEscaños()).append(" + ")
-                        .append(cuatroPartidos.get(2).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(2).getNumeroEscaños()).append(" + ")
-                        .append(cuatroPartidos.get(3).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(3).getNumeroEscaños()).append(" ")
-                                .append(" = ").append(cuatroPartidos.get(1).getNumeroEscaños() + cuatroPartidos.get(2).getNumeroEscaños()+ cuatroPartidos.get(3).getNumeroEscaños())
+                    }
+                    if(cuatroFormaciones.get(1).getNumeroEscaños() + cuatroFormaciones.get(2).getNumeroEscaños() + cuatroFormaciones.get(3).getNumeroEscaños()>(escaños/2)){
+                        mayorias.append(cuatroFormaciones.get(1).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(1).getNumeroEscaños()).append(" + ")
+                        .append(cuatroFormaciones.get(2).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(2).getNumeroEscaños()).append(" + ")
+                        .append(cuatroFormaciones.get(3).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(3).getNumeroEscaños()).append(" ")
+                                .append(" = ").append(cuatroFormaciones.get(1).getNumeroEscaños() + cuatroFormaciones.get(2).getNumeroEscaños()+ cuatroFormaciones.get(3).getNumeroEscaños())
                                 .append("\n");
-                    };
-                    if(cuatroPartidos.get(0).getNumeroEscaños() + cuatroPartidos.get(1).getNumeroEscaños() + cuatroPartidos.get(2).getNumeroEscaños()
-                            + cuatroPartidos.get(3).getNumeroEscaños()>(escaños/2)){
-                        mayorias.append(cuatroPartidos.get(0).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(0).getNumeroEscaños()).append(" + ")
-                        .append(cuatroPartidos.get(1).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(1).getNumeroEscaños()).append(" + ")
-                        .append(cuatroPartidos.get(2).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(2).getNumeroEscaños()).append(" + ")
-                        .append(cuatroPartidos.get(3).getFormacion().getNombre()).append(" ").append(cuatroPartidos.get(3).getNumeroEscaños()).append(" ")
-                                .append(" = ").append(cuatroPartidos.get(0).getNumeroEscaños() + cuatroPartidos.get(1).getNumeroEscaños()+ cuatroPartidos.get(2).getNumeroEscaños()+ cuatroPartidos.get(3).getNumeroEscaños())
+                    }
+                    if(cuatroFormaciones.get(0).getNumeroEscaños() + cuatroFormaciones.get(1).getNumeroEscaños() + cuatroFormaciones.get(2).getNumeroEscaños()
+                            + cuatroFormaciones.get(3).getNumeroEscaños()>(escaños/2)){
+                        mayorias.append(cuatroFormaciones.get(0).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(0).getNumeroEscaños()).append(" + ")
+                        .append(cuatroFormaciones.get(1).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(1).getNumeroEscaños()).append(" + ")
+                        .append(cuatroFormaciones.get(2).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(2).getNumeroEscaños()).append(" + ")
+                        .append(cuatroFormaciones.get(3).getFormacion().getNombre()).append(" ").append(cuatroFormaciones.get(3).getNumeroEscaños()).append(" ")
+                                .append(" = ").append(cuatroFormaciones.get(0).getNumeroEscaños() + cuatroFormaciones.get(1).getNumeroEscaños()+ cuatroFormaciones.get(2).getNumeroEscaños()+ cuatroFormaciones.get(3).getNumeroEscaños())
                                 .append("\n");
-                    };
+                    }
                     break;
         };
         return mayorias;
@@ -314,7 +315,7 @@ public class Eleccion implements Serializable {
             int posicion = 0;
             for(int i=0; i<=4;i++){
                 int numEscañosMayor = 0; //actualizacion de Numero de escaños para que encuentre el mayor.
-                for (int j=0; j<copia.size();){
+                for (int j=0; j<copia.size();j++){
                     if(copia.get(j).getNumeroEscaños()>numEscañosMayor){
                         numEscañosMayor = copia.get(j).getNumeroEscaños();
                         posicion = j;
@@ -325,8 +326,9 @@ public class Eleccion implements Serializable {
                 //borra para poder encontrar el siguiente mayor (hay que clonar resultadosTotalEscaños para no borrar el original, lo he intentado pero no me deja)
                 copia.remove(posicion);             
             }
+            return fuerzas;
         }
-        return fuerzas;
+        
     }
 
 }

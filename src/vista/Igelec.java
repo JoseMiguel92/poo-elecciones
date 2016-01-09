@@ -1938,8 +1938,8 @@ public class Igelec extends javax.swing.JFrame {
         int seleccion = jTableMuestraPartidos.getSelectedRow();
         if(seleccion==-1){
             JOptionPane.showMessageDialog(acciones,
-                "No has marcado ninguna elección.",
-                "No hay elección",
+                "No has marcado ningún partido.",
+                "Error de seleción",
             JOptionPane.ERROR_MESSAGE);
             return;
         }
