@@ -1864,6 +1864,7 @@ public class Igelec extends javax.swing.JFrame {
             totalVotos+=x1.getNumeroVotos();
         }
         DefaultTableModel muestraPartidos = (DefaultTableModel) jTableMuestraPartidos.getModel();
+        muestraPartidos.setRowCount(0);
         for (int i = 0; i < x.getResultadosTotalEscaños().size(); i++) {
             FormacionPolitica partido = x.getResultadosTotalEscaños().get(i).getFormacion();
             muestraPartidos.addRow(new Object[]{
