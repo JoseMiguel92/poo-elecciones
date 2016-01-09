@@ -82,12 +82,12 @@ public class Eleccion implements Serializable {
             ArrayList<ItemEscaños> x_tablaEscaños = circuns.getResultadoEscaños();
             for (ItemEscaños escaños_itemEscaños : x_tablaEscaños){
                 FormacionPolitica partido = escaños_itemEscaños.getFormacion();
-                int escaños = escaños_itemEscaños.getNumeroEscaños();
+                int escañosTemporal = escaños_itemEscaños.getNumeroEscaños();
                 int posicion = damePosicion_escaños(partido);
                 if (posicion == -1){
                     resultadosTotalEscaños.add(escaños_itemEscaños);
                 }else{
-                    x_tablaEscaños.get(posicion).setNumeroEscaños(x_tablaEscaños.get(posicion).getNumeroEscaños()+escaños);
+                    resultadosTotalEscaños.get(posicion).setNumeroEscaños(resultadosTotalEscaños.get(posicion).getNumeroEscaños()+escañosTemporal);
                 }
             }
         }
