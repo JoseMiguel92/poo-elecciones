@@ -1059,7 +1059,7 @@ public class Igelec extends javax.swing.JFrame {
                             .addComponent(jCargarEleccion, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
                             .addComponent(jButtonCrearEleccion, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE))))
-                .addContainerGap(460, Short.MAX_VALUE))
+                .addContainerGap(555, Short.MAX_VALUE))
         );
         TabBienvenidoLayout.setVerticalGroup(
             TabBienvenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1186,8 +1186,8 @@ public class Igelec extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Cargar)
-            .addComponent(jScrollPane2)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1134, Short.MAX_VALUE)
+            .addComponent(Cargar, javax.swing.GroupLayout.DEFAULT_SIZE, 1134, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1743,7 +1743,7 @@ public class Igelec extends javax.swing.JFrame {
         // BOTON PARA GUARDAR HISTÓRICO AL DISCO DURO
         if(historico==null||historico.size()<1){
             JOptionPane.showMessageDialog(acciones,
-                "Para poder guardar el histórico tienes que crear una elección primero primero.",
+                "Para poder guardar el histórico tienes que crear una elección primero.",
                 "No hay elecciones",
             JOptionPane.ERROR_MESSAGE);
             salidaTexto.append("\nGuardado cancelado: No se puede guardar, no hay al menos una elección creada.");
