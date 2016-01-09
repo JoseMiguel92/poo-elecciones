@@ -54,6 +54,7 @@ public class Eleccion implements Serializable {
         return resultadosTotalVotos;
     }
     public void setResultadosTotalVotos() {
+        this.resultadosTotalVotos = new ArrayList<>();
         for (Circunscripcion circuns: eleccionesEnCircunscripcion ) {
             ArrayList<ItemVotos> x_tablaVotos = circuns.getResultadoVotos();
             for (ItemVotos vots_itemVotos : x_tablaVotos){
@@ -63,7 +64,7 @@ public class Eleccion implements Serializable {
                 if (posicion == -1){
                     resultadosTotalVotos.add(vots_itemVotos);
                 }else{
-                    x_tablaVotos.get(posicion).setNumeroVotos(x_tablaVotos.get(posicion).getNumeroVotos()+votos);
+                    resultadosTotalVotos.get(posicion).setNumeroVotos(resultadosTotalVotos.get(posicion).getNumeroVotos()+votos);
                 }
             }
         }
@@ -78,6 +79,7 @@ public class Eleccion implements Serializable {
     }
     
         public void setResultadosTotalEscaños() {
+            this.resultadosTotalEscaños = new ArrayList<>();
         for (Circunscripcion circuns: eleccionesEnCircunscripcion ) {
             ArrayList<ItemEscaños> x_tablaEscaños = circuns.getResultadoEscaños();
             for (ItemEscaños escaños_itemEscaños : x_tablaEscaños){

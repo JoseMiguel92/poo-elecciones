@@ -58,14 +58,14 @@ public class Igelec extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
-    public static int pedirVotos(boolean votosManuales, String nombrePartido){
+    public static int pedirVotos(boolean votosManuales, String nombrePartido,String circunsPertenece){
         int numVotos=-1;
         if (votosManuales){//ELEGIR O NO POR INTERFAZ
             String s = (String)JOptionPane.showInputDialog(
                     // No se si va a funcionar
                     null,
                     "Introduce el numero de votos para "+nombrePartido,
-                    "Dame votos",
+                    "Circunscripción "+circunsPertenece,
                     JOptionPane.PLAIN_MESSAGE,
                     null,
                     null,
@@ -89,7 +89,7 @@ public class Igelec extends javax.swing.JFrame {
         for(Eleccion e:historico){
                 modeloHistorico.addRow(new Object[]{
                         e.getNombre(),
-                        e.getParticipacion()
+                        (String.format("%.2f",e.getParticipacion()*100))
                 });
         }
     }
@@ -1870,7 +1870,8 @@ public class Igelec extends javax.swing.JFrame {
             JOptionPane.ERROR_MESSAGE);
             return;
         }
-        int opcion = JOptionPane.showConfirmDialog(acciones, "¿Deseas introducir los votos a mano?");
+        int opcion = JOptionPane.showConfirmDialog(acciones, 
+                "¿Deseas introducir los votos a mano?");
         // Si elige si, los votos los pedirá a mano, si cancela o cualquier otra cosa, los votos serán calculados aleatoriamente
         votosManuales = opcion==JOptionPane.OK_OPTION;
         eleccion = historico.get(seleccion);

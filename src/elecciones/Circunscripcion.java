@@ -155,7 +155,7 @@ public class Circunscripcion implements Serializable{
         int totalVotos = (int) Math.round((this.getPoblacion()*this.participacion));
         
         for (int i = 0; i < listasPartidos.size(); i++) {
-            int numVotos=Igelec.pedirVotos(votosManuales,listasPartidos.get(i).getFormacionPolitica().getNombre());
+            int numVotos=Igelec.pedirVotos(votosManuales,listasPartidos.get(i).getFormacionPolitica().getNombre(),listasPartidos.get(i).getCircunscripcionPertenece());
             if(numVotos==-1||numVotos>totalVotos){
                 numVotos = (int)(Math.random() * totalVotos);
              }
