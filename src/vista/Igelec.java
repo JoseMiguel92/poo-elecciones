@@ -197,6 +197,7 @@ public class Igelec extends javax.swing.JFrame {
         jScrollPane10 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel30 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         Cargar = new javax.swing.JTabbedPane();
         TabBienvenido = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -205,7 +206,6 @@ public class Igelec extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLimpiarTexto = new javax.swing.JButton();
         acciones = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jButtonSimularEleccion = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
@@ -1046,6 +1046,8 @@ public class Igelec extends javax.swing.JFrame {
 
         jLabel30.setText("jLabel30");
 
+        jLabel9.setText("Guardar datos de la elección actual al disco duro");
+
         javax.swing.GroupLayout jEvolucionPartidoLayout = new javax.swing.GroupLayout(jEvolucionPartido.getContentPane());
         jEvolucionPartido.getContentPane().setLayout(jEvolucionPartidoLayout);
         jEvolucionPartidoLayout.setHorizontalGroup(
@@ -1058,6 +1060,11 @@ public class Igelec extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel30)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jEvolucionPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jEvolucionPartidoLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel9)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jEvolucionPartidoLayout.setVerticalGroup(
             jEvolucionPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1067,6 +1074,11 @@ public class Igelec extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(88, Short.MAX_VALUE))
+            .addGroup(jEvolucionPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jEvolucionPartidoLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel9)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1142,8 +1154,6 @@ public class Igelec extends javax.swing.JFrame {
 
         Cargar.addTab("Bienvenido", TabBienvenido);
 
-        jLabel9.setText("Guardar datos de la elección actual al disco duro");
-
         jButton4.setText("Guardar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1195,9 +1205,8 @@ public class Igelec extends javax.swing.JFrame {
         accionesLayout.setHorizontalGroup(
             accionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(accionesLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(114, 114, 114)
                 .addGroup(accionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel9)
                     .addComponent(jLabel10)
                     .addComponent(jLabel27))
                 .addGap(54, 54, 54)
@@ -1225,9 +1234,7 @@ public class Igelec extends javax.swing.JFrame {
                             .addComponent(jButtonVerDetalleEleccion)
                             .addComponent(jLabel27))
                         .addGap(33, 33, 33)
-                        .addGroup(accionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton4)
-                            .addComponent(jLabel9))
+                        .addComponent(jButton4)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, accionesLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1870,7 +1877,7 @@ public class Igelec extends javax.swing.JFrame {
 
     private void jButtonVerDetalleEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerDetalleEleccionActionPerformed
         jFrameDetalleEleccion.setLocationRelativeTo(Cargar);
-        jFrameDetalleEleccion.setSize(608,424);
+        jFrameDetalleEleccion.setSize(608,460);
         jFrameDetalleEleccion.setTitle(historico.get(jTableHistorico.getSelectedRow()).getNombre());
         jLabelParticipacion.setText(Double.toString(historico.get(jTableHistorico.getSelectedRow()).getParticipacion()*100) + " %");
         jFrameDetalleEleccion.setVisible(true);
@@ -1888,7 +1895,7 @@ public class Igelec extends javax.swing.JFrame {
         ArrayList<Lista> listaEleccion = historico.get(jTableHistorico.getSelectedRow()).imrpimirListaElectos();
         
         jFrameImpresionElectos.setLocationRelativeTo(Cargar);
-        jFrameImpresionElectos.setSize(700,400);
+        jFrameImpresionElectos.setSize(620,460);
         jFrameImpresionElectos.setVisible(true);
         
         
@@ -1918,6 +1925,10 @@ public class Igelec extends javax.swing.JFrame {
 
     private void jButtonImprimirMayoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonImprimirMayoriasActionPerformed
         StringBuilder mayorias = historico.get(jTableHistorico.getSelectedRow()).imprimirMayorias();
+        jFrameImpresionMayorias.setLocationRelativeTo(Cargar);
+        jFrameImpresionMayorias.setTitle("Lista de Mayorias Absolutas");
+        jFrameImpresionMayorias.setSize(562, 413);
+        jFrameImpresionMayorias.setVisible(true);
         jTextAreaImpresionMayorias.setText(mayorias.toString());
     }//GEN-LAST:event_jButtonImprimirMayoriasActionPerformed
 
