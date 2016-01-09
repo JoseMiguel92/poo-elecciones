@@ -209,7 +209,8 @@ public class Circunscripcion implements Serializable{
         }
         
         for (int j = 0; j < escañosTotales; j++) {
-            int partido = Dhondt.getMaximo(TablaAux, escañosTotales, votos.size());
+//            int partido = Dhondt.getMaximo(TablaAux, escañosTotales, votos.size());
+            int partido = Dhondt.getMaximo(TablaAux,escañosTotales,votos.size());
             escañoTemporal
                     .get(partido)
                     .setNumeroEscaños(escañoTemporal
