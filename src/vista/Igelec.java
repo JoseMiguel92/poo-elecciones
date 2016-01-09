@@ -34,6 +34,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStreamWriter;
 import java.util.Arrays;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -84,6 +85,7 @@ public class Igelec extends javax.swing.JFrame {
     public void actualizarTablaHistorico(){
         
         DefaultTableModel modeloHistorico = (DefaultTableModel) jTableHistorico.getModel();
+        modeloHistorico.setRowCount(0);
         for(Eleccion e:historico){
                 modeloHistorico.addRow(new Object[]{
                         e.getNombre(),
@@ -192,6 +194,10 @@ public class Igelec extends javax.swing.JFrame {
         jScrollPane9 = new javax.swing.JScrollPane();
         jTextAreaImpresionMayorias = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
+        jEvolucionPartido = new javax.swing.JDialog();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel30 = new javax.swing.JLabel();
         Cargar = new javax.swing.JTabbedPane();
         TabBienvenido = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -1023,6 +1029,49 @@ public class Igelec extends javax.swing.JFrame {
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Elecciones", "Escaños Obtenidos"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane10.setViewportView(jTable1);
+
+        jLabel30.setText("jLabel30");
+
+        javax.swing.GroupLayout jEvolucionPartidoLayout = new javax.swing.GroupLayout(jEvolucionPartido.getContentPane());
+        jEvolucionPartido.getContentPane().setLayout(jEvolucionPartidoLayout);
+        jEvolucionPartidoLayout.setHorizontalGroup(
+            jEvolucionPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jEvolucionPartidoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(jEvolucionPartidoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel30)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jEvolucionPartidoLayout.setVerticalGroup(
+            jEvolucionPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jEvolucionPartidoLayout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addComponent(jLabel30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(88, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Interfaz práctica elecciones");
 
@@ -1495,6 +1544,13 @@ public class Igelec extends javax.swing.JFrame {
                 
                 historico.add(eleccion);
                 
+                //Limpiar tabla de circunscripciones
+                DefaultTableModel modeloTablaCircuns = (DefaultTableModel) jTablaCircunscripciones.getModel();
+                modeloTablaCircuns.setRowCount(0);
+                
+                // Limpiamos campos
+                jNombreEleccion.setText("");
+                
                 // Actualizamos tabla historico
                 actualizarTablaHistorico();
 
@@ -1946,6 +2002,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JButton jButtonVolver;
     private javax.swing.JButton jButtonVolverImpresionElectos;
     private javax.swing.JButton jCargarEleccion;
+    private javax.swing.JDialog jEvolucionPartido;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JFrame jFrame3;
@@ -1978,6 +2035,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1993,6 +2051,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JButton jLimpiarTexto;
     private javax.swing.JTextField jNombreEleccion;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -2002,6 +2061,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTable jTablaCircunscripciones;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTableHistorico;
     private javax.swing.JTable jTableImpresionElectos;
     private javax.swing.JTable jTableMuestraPartidos;
