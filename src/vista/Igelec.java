@@ -1799,7 +1799,7 @@ public class Igelec extends javax.swing.JFrame {
             }
             
             jFrame3Coalicion.setLocationRelativeTo(Cargar);
-            jFrame3Coalicion.setSize(824, 323);
+            jFrame3Coalicion.setSize(824, 400);
             jFrame3Coalicion.setVisible(true);
         }
     }//GEN-LAST:event_jButtonCrearCoalicionActionPerformed
