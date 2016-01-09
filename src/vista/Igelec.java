@@ -86,8 +86,8 @@ public class Igelec extends javax.swing.JFrame {
         DefaultTableModel modeloHistorico = (DefaultTableModel) jTableHistorico.getModel();
         for(Eleccion e:historico){
                 modeloHistorico.addRow(new Object[]{
-                        eleccion.getNombre(),
-                        eleccion.getParticipacion()
+                        e.getNombre(),
+                        e.getParticipacion()
                 });
         }
     }
@@ -1400,7 +1400,7 @@ public class Igelec extends javax.swing.JFrame {
 
     private void jCargarEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCargarEleccionActionPerformed
         // Si ya hay una eleccion creada, advertimos de la pérdida de datos.
-        if(historico!=null){
+        if(historico.size()>=1){
             int n = JOptionPane.showConfirmDialog(
             TabBienvenido,
             "ADVERTENCIA: Si cargas una elección borraras los datos \nde la elección actual. ¿Deseas continuar?",
@@ -1435,7 +1435,7 @@ public class Igelec extends javax.swing.JFrame {
             } catch(ClassCastException e){
                 salidaTexto.append("\nEl archivo no era una elección válida (¿Archivo corrupto?)");
             } catch(Exception e){
-                e.getLocalizedMessage();
+                e.printStackTrace();
                 salidaTexto.append("\nError indefinido al intentar abrir el archivo");
                 salidaTexto.append(e.getMessage());
                 salidaTexto.append(e.toString());
