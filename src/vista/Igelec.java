@@ -2003,7 +2003,7 @@ public class Igelec extends javax.swing.JFrame {
         
         FormacionPolitica f1 = eleccion.getResultadosTotalEscaños().get(seleccion).getFormacion();
         int posicion = eleccion.damePosicion_escaños(f1);
-        jFrameEvo.setTitle("Evolucion de: "+eleccion.getNombre());
+        jFrameEvo.setTitle("Evolucion de: "+ f1.getNombre());
         for(Eleccion eleccion: historico){
                     tablaEvo.addRow(new Object[]{
                     eleccion.getNombre(),
