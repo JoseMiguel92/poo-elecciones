@@ -1886,21 +1886,6 @@ public class Igelec extends javax.swing.JFrame {
         votosManuales = opcion==JOptionPane.OK_OPTION;
         eleccion = historico.get(seleccion);
         eleccion.realizarEleccion(votosManuales);
-//        int totalVotoss = 0 ;
-//        for(ItemVotos x1 : eleccion.getResultadosTotalVotos()){
-//            totalVotoss+=x1.getNumeroVotos();
-//        }
-//        DefaultTableModel muestraPartidos = (DefaultTableModel) jTableMuestraPartidos.getModel();
-//        muestraPartidos.setRowCount(0);
-//        for (int i = 0; i < eleccion.getResultadosTotalEscaños().size(); i++) {
-//            FormacionPolitica partido = eleccion.getResultadosTotalEscaños().get(i).getFormacion();
-//            muestraPartidos.addRow(new Object[]{
-//                partido.getNombre(),
-//                eleccion.getResultadosTotalVotos().get(i).getNumeroVotos(),
-//                (eleccion.getResultadosTotalVotos().get(i).getNumeroVotos()*100)/totalVotoss,
-//                eleccion.getResultadosTotalEscaños().get(i).getNumeroEscaños()
-//            });
-//        }
     }//GEN-LAST:event_jButtonSimularEleccionActionPerformed
 
     private void jButtonVerDetalleEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerDetalleEleccionActionPerformed
@@ -1915,7 +1900,16 @@ public class Igelec extends javax.swing.JFrame {
             JOptionPane.ERROR_MESSAGE);
             return;
         }
+
         eleccion = historico.get(seleccion);
+        // Si la elección no se ha simulado primero, damos error
+        if(eleccion.getResultadosTotalVotos().size()<1||eleccion.getResultadosTotalEscaños().size()<1){
+            JOptionPane.showMessageDialog(acciones,
+                "Tienes que simular una elección antes de poder mostrar sus datos.",
+                "Elección no válida",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
         int totalVotoss = 0;
         for(ItemVotos x1 : eleccion.getResultadosTotalVotos()){
