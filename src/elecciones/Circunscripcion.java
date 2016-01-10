@@ -139,18 +139,6 @@ public class Circunscripcion implements Serializable{
         this.resultadoEscaños = resultadoEscaños;
     }
     
-//Metodos Publicos
-//    public void simularResultados(){
-//        int totalVotos = (int) Math.round(this.getPoblacion()*this.participacion);
-//        for (int i = 0; i < listasPartidos.size(); i++) {
-//            FormacionPolitica formacion = listasPartidos.get(i).getFormacionPolitica();
-//            int numVotos = (int)(Math.random() * totalVotos);
-//            ItemVotos a1 = new ItemVotos(formacion,numVotos);
-//            totalVotos-=numVotos;
-//            this.resultadoVotos.getTabla_votos().add(a1);   
-//        }
-//            this.votosBlanco=totalVotos;
-//    };
     public void simularResultados(boolean votosManuales) throws IllegalArgumentException{       
         int totalVotos = (int) Math.round((this.getPoblacion()*this.participacion));
         this.resultadoVotos = new ArrayList<>();
@@ -159,8 +147,6 @@ public class Circunscripcion implements Serializable{
             if(numVotos==-1||numVotos>totalVotos){
                 numVotos = (int)(Math.random() * totalVotos);
              }
-            // Si nVotos mayor a total votos tiramos excepcion
-//            if(numVotos>totalVotos) throw new IllegalArgumentException();
             FormacionPolitica formacion = listasPartidos.get(i).getFormacionPolitica();
             ItemVotos votospartido = new ItemVotos(formacion,numVotos);
             this.resultadoVotos.add(votospartido);
@@ -210,15 +196,12 @@ public class Circunscripcion implements Serializable{
         }
         
         for (int j = 0; j < escañosTotales; j++) {
-//            int partido = Dhondt.getMaximo(TablaAux, escañosTotales, votos.size());
             int partido = Dhondt.getMaximo(TablaAux,votos.size(),escañosTotales);
             escañoTemporal
                     .get(partido)
                     .setNumeroEscaños(escañoTemporal
                             .get(partido)
                             .getNumeroEscaños()+1);
-//            int escañosNuevos = this.resultadoEscaños.get(partido).getNumeroEscaños()+1;
-//            this.resultadoEscaños.get(partido).setNumeroEscaños(escañosNuevos);
             }
         this.resultadoEscaños = escañoTemporal;
     };

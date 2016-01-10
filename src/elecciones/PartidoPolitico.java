@@ -43,7 +43,6 @@ public class PartidoPolitico extends FormacionPolitica implements Serializable{
 //Contructores
     public PartidoPolitico(String nombre, String siglas, String logo) {
         super(nombre, siglas, logo);
-        // comentado para pruebas candidatos = new Lista(); //Array con los militantes que iran en la lista.
         votantes = new ArrayList<>(); //Todos los votantes de este partido, militantes y simpatizantes, "censo".
         militantes = new ArrayList<> ();  // lista deMilitantes del partido
     }
@@ -78,8 +77,6 @@ public class PartidoPolitico extends FormacionPolitica implements Serializable{
     public Lista elaborarListas(int escaños){
         Lista lista = new Lista();
         ArrayList<Militante> diputados = new ArrayList<>(militantes.subList(0, escaños));
-//        ArrayList<Militante> diputados = new ArrayList<>();
-//        diputados.addAll(dipu);
         lista.setDiputados(diputados);
         lista.setFormacionPolitica(this);        
         return lista;

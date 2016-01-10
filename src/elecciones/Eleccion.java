@@ -106,14 +106,6 @@ public class Eleccion implements Serializable {
     
     
     
-//    private boolean noEsta(FormacionPolitica formacion){
-//        for (ItemVotos vots_aux: resultadosTotalVotos.getTabla_votos()){
-//            if (formacion.equals(vots_aux.getFormacion() ) ){
-//               return false;
-//            }
-//        }
-//        return true;
-//    }
     public ArrayList<ItemEscaños> getResultadosTotalEscaños() {
         return resultadosTotalEscaños;
     }
@@ -148,14 +140,6 @@ public class Eleccion implements Serializable {
             ArrayList<Lista> x_listasPartidos = circuns.getListasPartidos();
             for (Lista lista : x_listasPartidos){
                 listaElectos.add(lista);
-//                FormacionPolitica formacion = lista.getFormacionPolitica();
-//                ArrayList<Militante> militantes = lista.getDiputados();
-//                int posicion = damePosicion_Electos(formacion,listaElectos);
-//                if (posicion == -1){
-//                    listaElectos.add(lista);
-//                }else{
-//                    listaElectos.get(posicion).getDiputados().addAll(militantes);
-//                }
             }
         }
         return listaElectos;
@@ -171,21 +155,6 @@ public class Eleccion implements Serializable {
         return -1;
     }
     
-    
-    
-    
-//    public void imprimirMayorias(){
-//        if (resultadosTotalEscaños.getTablaEscaños().size()<5){
-//            for(ItemEscaños formacion : resultadosTotalEscaños.getTablaEscaños()){
-//                if(formacion.getNumeroEscaños()>(escaños/2)){
-//                    formacion.getFormacion().toString();
-//                }else{
-//                    
-//                }
-//            }
-//        }
-//       
-//    };
     
     public StringBuilder imprimirMayorias(){
         StringBuilder mayorias = new StringBuilder();

@@ -1309,11 +1309,6 @@ public class Igelec extends javax.swing.JFrame {
                     jTextFieldLogoPP.getText()
             );
 
-            // Setea el campo Siglas de todos los militantes al valor introducido en el partido
-            // NO NECESARIO LO HACE A TRAVES DE VOTANTES
-            //for(Militante mil:militantes){
-            //    mil.setSiglasPartido(jTextFieldSiglasPP.getText());
-            //}
             // Setea el campo Siglas de todos los votantes
             for(Votantes vot:votantes){
                 vot.setSiglasPartido(jTextFieldSiglasPP.getText());
@@ -1349,37 +1344,7 @@ public class Igelec extends javax.swing.JFrame {
 
             // Cerramos la ventana
             jFrame3.dispose();
-        }
-        
-//        PartidoPolitico nuevoPartido = new PartidoPolitico(jTextFieldNombrePP.getText(), jTextFieldSiglasPP.getText(), jTextFieldLogoPP.getText());
-//        nuevoPartido.setMilitantes(militantesAuxiliar);
-//        nuevoPartido.setVotantes(votantesAuxiliar);
-//        
-//
-//        formacionesPoliticas.add(nuevoPartido);
-//        if (!eleccionActual.getNombresPartidos().contains(nuevoPartido.getNombre())){
-//            eleccionActual.getNombresPartidos().add(nuevoPartido.getNombre());
-//            System.out.println(eleccionActual.getNombresPartidos().toString());
-//                    }
-//        
-//        
-//        //Rellena tabla formaciones politicas
-//        DefaultTableModel modelo = (DefaultTableModel) jTableFormacionesPoliticas.getModel();
-//        Object[] fila = new Object[]{nuevoPartido.getNombre(),nuevoPartido.getSiglas()};
-//        modelo.addRow(fila);
-//        
-//        
-//        //Resetea campos
-//        jFrame3.setVisible(false);
-//        jTextFieldNombrePP.setText("");
-//        jTextFieldLogoPP.setText("");
-//        jTextFieldSiglasPP.setText("");
-//        
-//        System.out.println(formacionesPoliticas.toString());
-        
-        
-        
-        
+        }   
     }//GEN-LAST:event_jButtonAñadirPPActionPerformed
 
     private void jButtonAñadirSimpatizanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirSimpatizanteActionPerformed
@@ -2008,9 +1973,6 @@ public class Igelec extends javax.swing.JFrame {
                 "No se enviaran las encuestas",
             JOptionPane.ERROR_MESSAGE);
         }
-//        PartidoPolitico x = new PartidoPolitico((PartidoPolitico) formaciones.get(jTableMuestraPartidos.getSelectedRow()));    
-//        x.lanzarEncuestas();
-        
     }//GEN-LAST:event_jButtonEnviarEncuestasActionPerformed
 
     private void jTextFieldNombreCoaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreCoaliActionPerformed

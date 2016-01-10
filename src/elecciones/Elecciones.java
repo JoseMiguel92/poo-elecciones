@@ -19,9 +19,9 @@ public class Elecciones implements Serializable{
 
     
     public static void main(String[] args) throws IOException {
-        // No tengo ni idea lo que significa Igelec
+        // Creamos la ventana principal de la aplicación
         Igelec app = new Igelec();
-        // Lanzamos
+        // La hacemos visible
         app.setVisible(true);
            
     };

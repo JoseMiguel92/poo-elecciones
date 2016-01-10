@@ -27,10 +27,8 @@ public class Coalicion extends FormacionPolitica implements Serializable{
 
         for (FormacionPolitica partido : partidos){
             int nMilis = partido.getMilitantes().size();
-            // List<Militante> milis = partido.getMilitantes().subList(0, nMilis*(1/numPartidos));
             ArrayList<Militante> prueba = new ArrayList<>(partido.getMilitantes().subList(0, (int) Math.round((nMilis*(1/numPartidos)))));
             this.militantes.addAll(prueba);
-            //this.militantes.addAll(milis);
         }
         
     }

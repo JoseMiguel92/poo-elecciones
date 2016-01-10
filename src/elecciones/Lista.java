@@ -54,8 +54,6 @@ public class Lista implements Serializable{
     }
     // Crear la lista pasando todo
     public Lista(ArrayList<Militante> lista, FormacionPolitica f,String nombre, String d) {
-        // Comprobamos que la lista sea tan grande como los escaños
-        // this.circunscripcionPertenece = e;
         this.diputados = lista;
         this.circunscripcionPertenece = nombre;
         this.formacionPolitica = f;
