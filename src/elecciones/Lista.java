@@ -61,11 +61,6 @@ public class Lista implements Serializable{
         this.formacionPolitica = f;
         this.descripcion = d;
     }
-    // Crear lista a partir de un fichero de texto dado su nombre.
-    public Lista(String nombreArchivo) throws IOException{
-        
-        this(Auxiliar.CargarLista(nombreArchivo));
-    }
 //GETs y SETs
     public void setDescripcion (String d1){
         this.descripcion = d1;
