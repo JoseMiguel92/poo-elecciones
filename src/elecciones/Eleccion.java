@@ -69,7 +69,7 @@ public class Eleccion implements Serializable {
             }
         }
     }
-    private int damePosicion_votos(FormacionPolitica partido){
+    public int damePosicion_votos(FormacionPolitica partido){
         for (int i=0; i<resultadosTotalVotos.size(); i++ ){
             if(resultadosTotalVotos.get(i).getFormacion().equals(partido)){
                 return i;
@@ -94,7 +94,7 @@ public class Eleccion implements Serializable {
             }
         }
     }
-    private int damePosicion_escaños(FormacionPolitica partido){
+    public int damePosicion_escaños(FormacionPolitica partido){
         for (int i=0; i<resultadosTotalEscaños.size(); i++ ){
             if(resultadosTotalEscaños.get(i).getFormacion().equals(partido)){
                 return i;

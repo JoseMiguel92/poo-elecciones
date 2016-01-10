@@ -196,9 +196,10 @@ public class Igelec extends javax.swing.JFrame {
         jTextAreaImpresionMayorias = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         jEvolucionPartido = new javax.swing.JDialog();
+        jFrameEvo = new javax.swing.JFrame();
         jScrollPane10 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jLabel30 = new javax.swing.JLabel();
+        jTableEvolucion = new javax.swing.JTable();
+        jButtonEvolucionVolver = new javax.swing.JButton();
         Cargar = new javax.swing.JTabbedPane();
         TabBienvenido = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -866,6 +867,11 @@ public class Igelec extends javax.swing.JFrame {
         });
 
         jButtonEvolucion.setText("Evolucion");
+        jButtonEvolucion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEvolucionActionPerformed(evt);
+            }
+        });
 
         jButtonVolver.setText("Volver");
         jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -1046,7 +1052,20 @@ public class Igelec extends javax.swing.JFrame {
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        javax.swing.GroupLayout jEvolucionPartidoLayout = new javax.swing.GroupLayout(jEvolucionPartido.getContentPane());
+        jEvolucionPartido.getContentPane().setLayout(jEvolucionPartidoLayout);
+        jEvolucionPartidoLayout.setHorizontalGroup(
+            jEvolucionPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 352, Short.MAX_VALUE)
+        );
+        jEvolucionPartidoLayout.setVerticalGroup(
+            jEvolucionPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 366, Short.MAX_VALUE)
+        );
+
+        jFrameEvo.setResizable(false);
+
+        jTableEvolucion.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -1062,33 +1081,36 @@ public class Igelec extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane10.setViewportView(jTable1);
+        jScrollPane10.setViewportView(jTableEvolucion);
 
-        jLabel30.setText("sin texto");
+        jButtonEvolucionVolver.setText("Volver");
+        jButtonEvolucionVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEvolucionVolverActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jEvolucionPartidoLayout = new javax.swing.GroupLayout(jEvolucionPartido.getContentPane());
-        jEvolucionPartido.getContentPane().setLayout(jEvolucionPartidoLayout);
-        jEvolucionPartidoLayout.setHorizontalGroup(
-            jEvolucionPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jEvolucionPartidoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jEvolucionPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jEvolucionPartidoLayout.createSequentialGroup()
-                        .addComponent(jLabel30)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jEvolucionPartidoLayout.createSequentialGroup()
-                        .addGap(0, 36, Short.MAX_VALUE)
-                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+        javax.swing.GroupLayout jFrameEvoLayout = new javax.swing.GroupLayout(jFrameEvo.getContentPane());
+        jFrameEvo.getContentPane().setLayout(jFrameEvoLayout);
+        jFrameEvoLayout.setHorizontalGroup(
+            jFrameEvoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameEvoLayout.createSequentialGroup()
+                .addContainerGap(30, Short.MAX_VALUE)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
+            .addGroup(jFrameEvoLayout.createSequentialGroup()
+                .addGap(147, 147, 147)
+                .addComponent(jButtonEvolucionVolver)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jEvolucionPartidoLayout.setVerticalGroup(
-            jEvolucionPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jEvolucionPartidoLayout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addComponent(jLabel30)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(88, Short.MAX_VALUE))
+        jFrameEvoLayout.setVerticalGroup(
+            jFrameEvoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrameEvoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonEvolucionVolver)
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1876,21 +1898,21 @@ public class Igelec extends javax.swing.JFrame {
         votosManuales = opcion==JOptionPane.OK_OPTION;
         eleccion = historico.get(seleccion);
         eleccion.realizarEleccion(votosManuales);
-        int totalVotoss = 0 ;
-        for(ItemVotos x1 : eleccion.getResultadosTotalVotos()){
-            totalVotoss+=x1.getNumeroVotos();
-        }
-        DefaultTableModel muestraPartidos = (DefaultTableModel) jTableMuestraPartidos.getModel();
-        muestraPartidos.setRowCount(0);
-        for (int i = 0; i < eleccion.getResultadosTotalEscaños().size(); i++) {
-            FormacionPolitica partido = eleccion.getResultadosTotalEscaños().get(i).getFormacion();
-            muestraPartidos.addRow(new Object[]{
-                partido.getNombre(),
-                eleccion.getResultadosTotalVotos().get(i).getNumeroVotos(),
-                (eleccion.getResultadosTotalVotos().get(i).getNumeroVotos()*100)/totalVotoss,
-                eleccion.getResultadosTotalEscaños().get(i).getNumeroEscaños()
-            });
-        }
+//        int totalVotoss = 0 ;
+//        for(ItemVotos x1 : eleccion.getResultadosTotalVotos()){
+//            totalVotoss+=x1.getNumeroVotos();
+//        }
+//        DefaultTableModel muestraPartidos = (DefaultTableModel) jTableMuestraPartidos.getModel();
+//        muestraPartidos.setRowCount(0);
+//        for (int i = 0; i < eleccion.getResultadosTotalEscaños().size(); i++) {
+//            FormacionPolitica partido = eleccion.getResultadosTotalEscaños().get(i).getFormacion();
+//            muestraPartidos.addRow(new Object[]{
+//                partido.getNombre(),
+//                eleccion.getResultadosTotalVotos().get(i).getNumeroVotos(),
+//                (eleccion.getResultadosTotalVotos().get(i).getNumeroVotos()*100)/totalVotoss,
+//                eleccion.getResultadosTotalEscaños().get(i).getNumeroEscaños()
+//            });
+//        }
     }//GEN-LAST:event_jButtonSimularEleccionActionPerformed
 
     private void jButtonVerDetalleEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerDetalleEleccionActionPerformed
@@ -1950,7 +1972,7 @@ public class Igelec extends javax.swing.JFrame {
                     diputado.getNombreApellidos(),
                     listaCircuns.getFormacionPolitica().getNombre(),
                     listaCircuns.getCircunscripcionPertenece()
-            }
+                }
                     );
                             };
         };
@@ -2012,6 +2034,40 @@ public class Igelec extends javax.swing.JFrame {
     private void jTextFieldNombreCoaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreCoaliActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldNombreCoaliActionPerformed
+
+    private void jButtonEvolucionVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEvolucionVolverActionPerformed
+        jFrameEvo.dispose();
+    }//GEN-LAST:event_jButtonEvolucionVolverActionPerformed
+
+    private void jButtonEvolucionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEvolucionActionPerformed
+        DefaultTableModel tablaEvo = (DefaultTableModel) jTableEvolucion.getModel();
+        tablaEvo.setRowCount(0);
+        
+        jFrameEvo.setLocationRelativeTo(Cargar);
+        
+        jFrameEvo.setSize(369,373);
+        jFrameEvo.setVisible(true);
+        
+        int seleccion = jTableMuestraPartidos.getSelectedRow();
+        if(seleccion==-1){
+            JOptionPane.showMessageDialog(jFrameDetalleEleccion,
+                "No has marcado ningún partido.",
+                "Error de seleción",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        FormacionPolitica f1 = eleccion.getResultadosTotalEscaños().get(seleccion).getFormacion();
+        int posicion = eleccion.damePosicion_escaños(f1);
+        jFrameEvo.setTitle("Evolucion de: "+eleccion.getNombre());
+        for(Eleccion eleccion: historico){
+                    tablaEvo.addRow(new Object[]{
+                    eleccion.getNombre(),
+                    eleccion.getResultadosTotalEscaños().get(posicion).getNumeroEscaños()
+                    }
+                );
+        };
+        
+    }//GEN-LAST:event_jButtonEvolucionActionPerformed
 
     //metodo para limpiar cualquier tabla
     public void limpiarTabla(JTable tabla){
@@ -2076,6 +2132,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JButton jButtonCrearEleccion;
     private javax.swing.JButton jButtonEnviarEncuestas;
     private javax.swing.JButton jButtonEvolucion;
+    private javax.swing.JButton jButtonEvolucionVolver;
     private javax.swing.JButton jButtonImprimirListaElectos;
     private javax.swing.JButton jButtonImprimirMayorias;
     private javax.swing.JButton jButtonLanzarAñadirMilitante;
@@ -2092,6 +2149,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JFrame jFrame4Mili;
     private javax.swing.JFrame jFrame4Simpa;
     private javax.swing.JFrame jFrameDetalleEleccion;
+    private javax.swing.JFrame jFrameEvo;
     private javax.swing.JFrame jFrameImpresionElectos;
     private javax.swing.JFrame jFrameImpresionMayorias;
     private javax.swing.JLabel jLabel1;
@@ -2117,7 +2175,6 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -2143,7 +2200,7 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTable jTablaCircunscripciones;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTableEvolucion;
     private javax.swing.JTable jTableHistorico;
     private javax.swing.JTable jTableImpresionElectos;
     private javax.swing.JTable jTableMuestraPartidos;
