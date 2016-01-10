@@ -1846,7 +1846,7 @@ public class Igelec extends javax.swing.JFrame {
     private void jButtonVerDetalleEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerDetalleEleccionActionPerformed
         jFrameDetalleEleccion.setLocationRelativeTo(Cargar);
         jFrameDetalleEleccion.setSize(676, 451);
-        
+        jFrameDetalleEleccion.setVisible(true);
         int seleccion = jTableHistorico.getSelectedRow();
         if(seleccion==-1){
             JOptionPane.showMessageDialog(acciones,
