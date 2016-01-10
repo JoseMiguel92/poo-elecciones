@@ -1662,6 +1662,7 @@ public class Igelec extends javax.swing.JFrame {
             try {
                 int edad = Integer.parseInt(jTextFieldEdadAñadirS1.getText());
                 if (edad<18){
+                    JOptionPane.showMessageDialog(jFrame4Mili, "Todos los militates deben ser mayores de edad", "Edad no válida", JOptionPane.ERROR_MESSAGE);
                     return;
                 };
                    // Creamos un nuevo MILITANTE basandonos en los datos que nos han proporcionado
@@ -1860,7 +1861,7 @@ public class Igelec extends javax.swing.JFrame {
     private void jButtonVerDetalleEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerDetalleEleccionActionPerformed
         jFrameDetalleEleccion.setLocationRelativeTo(Cargar);
         jFrameDetalleEleccion.setSize(676, 451);
-        jFrameDetalleEleccion.setVisible(true);
+        
         int seleccion = jTableHistorico.getSelectedRow();
         if(seleccion==-1){
             JOptionPane.showMessageDialog(acciones,
@@ -1895,6 +1896,7 @@ public class Igelec extends javax.swing.JFrame {
                 eleccion.getResultadosTotalEscaños().get(i).getNumeroEscaños()
             });
         }
+        jFrameDetalleEleccion.setVisible(true);
         jFrameDetalleEleccion.setTitle(historico.get(seleccion).getNombre());
         jLabelEscañosMostrarEleccion.setText(Integer.toString(historico.get(seleccion).getEscaños()));
         jLabelParticipacion.setText(String.format("%.2f",historico.get(jTableHistorico.getSelectedRow()).getParticipacion()*100) + " %");
