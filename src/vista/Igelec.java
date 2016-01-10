@@ -1929,7 +1929,7 @@ public class Igelec extends javax.swing.JFrame {
         }
         eleccion = historico.get(seleccion);
 
-        int totalVotoss = 0 ;
+        int totalVotoss = 0;
         for(ItemVotos x1 : eleccion.getResultadosTotalVotos()){
             totalVotoss+=x1.getNumeroVotos();
         }
@@ -2040,13 +2040,6 @@ public class Igelec extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEvolucionVolverActionPerformed
 
     private void jButtonEvolucionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEvolucionActionPerformed
-        DefaultTableModel tablaEvo = (DefaultTableModel) jTableEvolucion.getModel();
-        tablaEvo.setRowCount(0);
-        
-        jFrameEvo.setLocationRelativeTo(Cargar);
-        
-        jFrameEvo.setSize(369,373);
-        jFrameEvo.setVisible(true);
         
         int seleccion = jTableMuestraPartidos.getSelectedRow();
         if(seleccion==-1){
@@ -2056,6 +2049,14 @@ public class Igelec extends javax.swing.JFrame {
             JOptionPane.ERROR_MESSAGE);
             return;
         }
+        DefaultTableModel tablaEvo = (DefaultTableModel) jTableEvolucion.getModel();
+        tablaEvo.setRowCount(0);
+        
+        jFrameEvo.setLocationRelativeTo(Cargar);
+        
+        jFrameEvo.setSize(369,373);
+        jFrameEvo.setVisible(true);
+        
         FormacionPolitica f1 = eleccion.getResultadosTotalEscaños().get(seleccion).getFormacion();
         int posicion = eleccion.damePosicion_escaños(f1);
         jFrameEvo.setTitle("Evolucion de: "+eleccion.getNombre());
