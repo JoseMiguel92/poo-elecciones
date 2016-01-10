@@ -1445,7 +1445,7 @@ public class Igelec extends javax.swing.JFrame {
     private void jButtonAñadirSPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirSPartidoActionPerformed
         // TODO add your handling code here:
         jFrame4Simpa.setLocationRelativeTo(Cargar);
-        jFrame4Simpa.setSize(275, 280);
+        jFrame4Simpa.setSize(300, 280);
         jFrame4Simpa.setVisible(true);
         jTextFieldNombreAñadirS.setText("");
         jTextFieldEdadAñadirS.setText("");
@@ -1724,7 +1724,7 @@ public class Igelec extends javax.swing.JFrame {
 
     private void jButtonLanzarAñadirMilitanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLanzarAñadirMilitanteActionPerformed
         jFrame4Mili.setLocationRelativeTo(Cargar);
-        jFrame4Mili.setSize(273, 334);
+        jFrame4Mili.setSize(300, 334);
         jFrame4Mili.setVisible(true);
     }//GEN-LAST:event_jButtonLanzarAñadirMilitanteActionPerformed
 
