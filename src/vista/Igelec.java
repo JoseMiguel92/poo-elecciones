@@ -195,7 +195,6 @@ public class Igelec extends javax.swing.JFrame {
         jScrollPane9 = new javax.swing.JScrollPane();
         jTextAreaImpresionMayorias = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
-        jEvolucionPartido = new javax.swing.JDialog();
         jFrameEvo = new javax.swing.JFrame();
         jScrollPane10 = new javax.swing.JScrollPane();
         jTableEvolucion = new javax.swing.JTable();
@@ -1050,17 +1049,6 @@ public class Igelec extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
                 .addContainerGap(33, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jEvolucionPartidoLayout = new javax.swing.GroupLayout(jEvolucionPartido.getContentPane());
-        jEvolucionPartido.getContentPane().setLayout(jEvolucionPartidoLayout);
-        jEvolucionPartidoLayout.setHorizontalGroup(
-            jEvolucionPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 352, Short.MAX_VALUE)
-        );
-        jEvolucionPartidoLayout.setVerticalGroup(
-            jEvolucionPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 366, Short.MAX_VALUE)
         );
 
         jFrameEvo.setResizable(false);
@@ -2142,7 +2130,6 @@ public class Igelec extends javax.swing.JFrame {
     private javax.swing.JButton jButtonVolver;
     private javax.swing.JButton jButtonVolverImpresionElectos;
     private javax.swing.JButton jCargarEleccion;
-    private javax.swing.JDialog jEvolucionPartido;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JFrame jFrame3;
