@@ -120,6 +120,7 @@ public class Circunscripcion implements Serializable{
         }
         return escaños;
     }
+    
     public double getParticipacion() {
         return participacion;
     }

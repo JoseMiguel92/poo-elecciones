@@ -18,6 +18,7 @@ public class Eleccion implements Serializable {
     protected ArrayList<ItemEscaños> resultadosTotalEscaños = new ArrayList<>();
     private ArrayList<Circunscripcion> eleccionesEnCircunscripcion = new ArrayList<>();
     private static final long serialVersionUID = -1187279578359299039L;
+    private int votosTotalBlanco;
 
 //Contructores
     public Eleccion(String nombre) {
@@ -32,6 +33,16 @@ public class Eleccion implements Serializable {
     public void setEleccionesEnCircunscripcion(ArrayList<Circunscripcion> eleccionesEnCircunscripcion) {
         this.eleccionesEnCircunscripcion = eleccionesEnCircunscripcion;
     }
+
+    public int getVotosTotalBlanco() {
+        return votosTotalBlanco;
+    }
+
+    public void setVotosTotalBlanco(int votosTotalBlanco) {
+        this.votosTotalBlanco = votosTotalBlanco;
+    }
+    
+    
     
     public String getNombre() {
         return nombre;
@@ -58,6 +69,7 @@ public class Eleccion implements Serializable {
         this.resultadosTotalVotos = new ArrayList<>();
         for (Circunscripcion circuns: eleccionesEnCircunscripcion ) {
             ArrayList<ItemVotos> x_tablaVotos = circuns.getResultadoVotos();
+            this.setVotosTotalBlanco(this.getVotosTotalBlanco()+circuns.getVotosBlanco());
             for (ItemVotos vots_itemVotos : x_tablaVotos){
                 FormacionPolitica partido = vots_itemVotos.getFormacion();
                 int votos = vots_itemVotos.getNumeroVotos();
