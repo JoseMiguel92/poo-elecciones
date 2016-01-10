@@ -153,7 +153,7 @@ public class Circunscripcion implements Serializable{
 //    };
     public void simularResultados(boolean votosManuales) throws IllegalArgumentException{       
         int totalVotos = (int) Math.round((this.getPoblacion()*this.participacion));
-        
+        this.resultadoVotos = new ArrayList<>();
         for (int i = 0; i < listasPartidos.size(); i++) {
             int numVotos=Igelec.pedirVotos(votosManuales,listasPartidos.get(i).getFormacionPolitica().getNombre(),listasPartidos.get(i).getCircunscripcionPertenece());
             if(numVotos==-1||numVotos>totalVotos){
@@ -163,7 +163,7 @@ public class Circunscripcion implements Serializable{
 //            if(numVotos>totalVotos) throw new IllegalArgumentException();
             FormacionPolitica formacion = listasPartidos.get(i).getFormacionPolitica();
             ItemVotos votospartido = new ItemVotos(formacion,numVotos);
-            this.resultadoVotos.add(votospartido);   
+            this.resultadoVotos.add(votospartido);
         }
         this.votosBlanco=totalVotos;
     };

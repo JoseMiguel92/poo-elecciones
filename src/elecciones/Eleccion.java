@@ -132,6 +132,7 @@ public class Eleccion implements Serializable {
         }
         this.setResultadosTotalEscaños();
         this.setResultadosTotalVotos();
+        this.imprimirTablaGlobalVotos();
     }
     
     public String imprimirTablaGlobalVotos(){
