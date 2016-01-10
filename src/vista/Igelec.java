@@ -563,6 +563,12 @@ public class Igelec extends javax.swing.JFrame {
 
         jLabel5.setText("Edad:");
 
+        jTextFieldEdadAñadirS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldEdadAñadirSActionPerformed(evt);
+            }
+        });
+
         jLabel6.setText("Genero:");
 
         jLabel7.setText("Profesion:");
@@ -1346,6 +1352,10 @@ public class Igelec extends javax.swing.JFrame {
         } else {
             try {
                     // Creamos un nuevo SIMPATIZANTE basandonos en los datos que nos han proporcionado
+                    int edad = Integer.parseInt(jTextFieldEdadAñadirS.getText());
+                    if(edad<18){
+                        return;
+                    }
                     votantes.add(new Simpatizante(
                     jTextFieldNombreAñadirS.getText(),
                     Integer.parseInt(jTextFieldEdadAñadirS.getText()),
@@ -1650,6 +1660,10 @@ public class Igelec extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(jFrame4Mili, "Debes rellenar todos los campos", "Campos no válidos", JOptionPane.ERROR_MESSAGE);
         } else {
             try {
+                int edad = Integer.parseInt(jTextFieldEdadAñadirS1.getText());
+                if (edad<18){
+                    return;
+                };
                    // Creamos un nuevo MILITANTE basandonos en los datos que nos han proporcionado
                 Militante mil = new Militante(
                     jTextFieldNombreAñadirS1.getText(),
@@ -1998,6 +2012,10 @@ public class Igelec extends javax.swing.JFrame {
         };
         
     }//GEN-LAST:event_jButtonEvolucionActionPerformed
+
+    private void jTextFieldEdadAñadirSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEdadAñadirSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEdadAñadirSActionPerformed
 
     //metodo para limpiar cualquier tabla
     public void limpiarTabla(JTable tabla){

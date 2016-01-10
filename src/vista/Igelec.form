@@ -643,6 +643,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldEdadA&#xf1;adirS">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldEdadA&#xf1;adirSActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
