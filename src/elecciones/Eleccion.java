@@ -17,6 +17,7 @@ public class Eleccion implements Serializable {
     protected ArrayList<ItemVotos> resultadosTotalVotos = new ArrayList<>();
     protected ArrayList<ItemEscaños> resultadosTotalEscaños = new ArrayList<>();
     private ArrayList<Circunscripcion> eleccionesEnCircunscripcion = new ArrayList<>();
+    private static final long serialVersionUID = -1187279578359299039L;
 
 //Contructores
     public Eleccion(String nombre) {
