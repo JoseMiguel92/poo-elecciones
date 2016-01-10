@@ -72,8 +72,7 @@ public class Igelec extends javax.swing.JFrame {
                     "");
             try{
                 numVotos = Integer.parseInt(s);
-                if (numVotos<0) return -1;
-                return numVotos;
+                return (numVotos<0)?-1:numVotos;
             } catch (NumberFormatException e){
                 // Si falla al parsear devuelve -1
                 return -1;
@@ -1391,7 +1390,8 @@ public class Igelec extends javax.swing.JFrame {
     private void jButtonCargarMilitantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarMilitantesActionPerformed
         // TODO add your handling code here:
         JFileChooser fileChooser = new JFileChooser();
-        int opcion = fileChooser.showOpenDialog(this); //Se abre la ventana para seleccionar archivo a cargar.
+
+        int opcion = fileChooser.showOpenDialog(jFrame3); //Se abre la ventana para seleccionar archivo a cargar.
         if (opcion == JFileChooser.APPROVE_OPTION){
             // Creamos un String con la ruta del archivo seleccionado
             String archivo = fileChooser.getSelectedFile().getPath(); 

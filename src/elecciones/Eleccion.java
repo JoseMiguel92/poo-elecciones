@@ -63,7 +63,7 @@ public class Eleccion implements Serializable {
                 int votos = vots_itemVotos.getNumeroVotos();
                 int posicion = damePosicion_votos(partido);
                 if (posicion == -1){
-                    resultadosTotalVotos.add(vots_itemVotos);
+                    resultadosTotalVotos.add(new ItemVotos(partido,votos));
                 }else{
                     resultadosTotalVotos.get(posicion).setNumeroVotos(resultadosTotalVotos.get(posicion).getNumeroVotos()+votos);
                 }
@@ -88,7 +88,7 @@ public class Eleccion implements Serializable {
                 int escañosTemporal = escaños_itemEscaños.getNumeroEscaños();
                 int posicion = damePosicion_escaños(partido);
                 if (posicion == -1){
-                    resultadosTotalEscaños.add(escaños_itemEscaños);
+                    resultadosTotalEscaños.add(new ItemEscaños(partido,escañosTemporal));
                 }else{
                     resultadosTotalEscaños.get(posicion).setNumeroEscaños(resultadosTotalEscaños.get(posicion).getNumeroEscaños()+escañosTemporal);
                 }
