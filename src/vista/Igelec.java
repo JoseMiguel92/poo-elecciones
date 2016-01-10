@@ -986,7 +986,7 @@ public class Igelec extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nombre", "Partido", "Circunscripcion"
+                "Nombre", "Siglas", "Circunscripcion"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -998,11 +998,6 @@ public class Igelec extends javax.swing.JFrame {
             }
         });
         jScrollPane8.setViewportView(jTableImpresionElectos);
-        if (jTableImpresionElectos.getColumnModel().getColumnCount() > 0) {
-            jTableImpresionElectos.getColumnModel().getColumn(0).setResizable(false);
-            jTableImpresionElectos.getColumnModel().getColumn(1).setResizable(false);
-            jTableImpresionElectos.getColumnModel().getColumn(2).setResizable(false);
-        }
 
         jButtonVolverImpresionElectos.setText("Volver");
         jButtonVolverImpresionElectos.addActionListener(new java.awt.event.ActionListener() {
@@ -1933,7 +1928,7 @@ public class Igelec extends javax.swing.JFrame {
             for(Militante diputado: listaCircuns.getDiputados()){
                     modeloPartidos.addRow(new Object[]{
                     diputado.getNombreApellidos(),
-                    listaCircuns.getFormacionPolitica().getNombre(),
+                    listaCircuns.getFormacionPolitica().getSiglas(),
                     listaCircuns.getCircunscripcionPertenece()
                 }
                     );
