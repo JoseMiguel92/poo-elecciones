@@ -17,7 +17,7 @@ public class Lista implements Serializable{
     private ArrayList<Militante> diputados = new ArrayList<>(); // NO BORRAR
     private FormacionPolitica formacionPolitica;  // NO BORRAR
     private String circunscripcionPertenece; // NO BORRAR
-
+    private static final long serialVersionUID = 3545915645390216242L;
     public ArrayList<Militante> getDiputados() {
         return diputados;
     }
