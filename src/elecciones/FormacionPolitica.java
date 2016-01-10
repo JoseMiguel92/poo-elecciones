@@ -75,7 +75,7 @@ public abstract class FormacionPolitica implements Serializable{
             return false;
         }
         final FormacionPolitica other = (FormacionPolitica) obj;
-        if (!Objects.equals(this.nombre, other.nombre)) {
+        if (!Objects.equals(this.siglas, other.siglas)) {
             return false;
         }
         return true;
