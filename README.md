@@ -1,10 +1,13 @@
 Programación Orientada a Objetos – Curso 2015/2016
+
 Práctica Obligatoria Grupal POO 2015/2016: "Elecciones"
+
 NOTA:- Respecto al enunciado de la entrega de diseño, la información añadida que hay que tener en cuenta para la implementación aparecerá en cursiva y la información suprimida (que no hay que tener en cuenta) aparecerá tachada.
 Se pide realizar el diagrama de clases UML de un proyecto informático que permita la gestión de diferentes partidos políticos, así como su participación en procesos electorales.
- Un partido político tiene un nombre, unas siglas, un logo, un secretario general y un conjunto de votantes. Los votantes se dividen en militantes y simpatizantes. Los simpatizantes pueden pertenecer a más de un partido.
- Los votantes tienen nombre, apellidos y datos personales (edad, profesión, género). Los militantes tienen, además, una cuota a pagar y un carné.
- Los partidos pueden presentarse a elecciones. En cada elección se divide el territorio de voto en diferentes circunscripciones (pudiera ser sólo una). En cada circunscripción se ponen en juego un número determinado de escaños (al menos uno). El resultado de las elecciones corresponderá a la suma de los resultados de cada circunscripción.
+
+- Un partido político tiene un nombre, unas siglas, un logo, un secretario general y un conjunto de votantes. Los votantes se dividen en militantes y simpatizantes. Los simpatizantes pueden pertenecer a más de un partido.
+- Los votantes tienen nombre, apellidos y datos personales (edad, profesión, género). Los militantes tienen, además, una cuota a pagar y un carné.
+- Los partidos pueden presentarse a elecciones. En cada elección se divide el territorio de voto en diferentes circunscripciones (pudiera ser sólo una). En cada circunscripción se ponen en juego un número determinado de escaños (al menos uno). El resultado de las elecciones corresponderá a la suma de los resultados de cada circunscripción.
 o Existirá un número total de escaños a repartir, en todo el territorio. Este número será configurable. El número de escaños asignados a cada circunscripción será proporcional al número de habitantes que la circunscripción tenga.
 o Los resultados electorales se podrán introducir a mano, indicando el porcentaje de participación, además del número de votos obtenido por cada formación política, junto con los votos nulos y votos en blanco. También será posible simular estos resultados de forma que se calculen de forma aleatoria.
  En el marco de una elección, de entre los militantes de un partido saldrán las listas de candidatos para cada circunscripción. Estas listas estarán formados, por tantas personas como escaños reparta la circunscripción. Una vez realizado el recuento de votos se calcularán los escaños asignados a cada partido, y las personas que, procedentes de las listas, ocuparán esos escaños, de acuerdo al sistema D´Hondt, usando sólo las candidaturas que alcancen al menos el 3% de los votos válidos (ver anexo al final del documento).
