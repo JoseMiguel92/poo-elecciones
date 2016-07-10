@@ -14,9 +14,6 @@ o Los resultados electorales se podrán introducir a mano, indicando el porcenta
 o Las listas de militantes de los partidos (para cada circunscripción) se podrán introducir en el sistema a través de ficheros de texto. Opcionalmente también será posible hacerlo a través de formularios en la interfaz gráfica.
 - Los partidos se podrán presentar a las elecciones en coalición. En ese caso se formarán listas conjuntas, utilizando la proporción correspondiente de las listas originales de cada partido1.
 1 Si la coalición está formada por dos partidos, la primera mitad de cada lista. Si son tres, el primer tercio, y así sucesivamente.
-
-Programación Orientada a Objetos – Curso 2015/2016
-
 - Debe ser posible consultar los resultados de un proceso electoral (participación, votos, porcentaje y escaños obtenidos por cada formación). Además, de forma adicional debe ser posible consultar los diputados electos concretos, indicando para cada uno de ellos la formación a la que pertenecen y la circunscripción a la que representan. Toda esta información debe poder ser visualizada por pantalla y también en un fichero de texto.
 - Debe ser posible consultar los resultados que ha obtenido un partido político o coalición en diferentes procesos electorales, comprobando su evolución. Si un partido se ha presentado en coalición, el sistema ofrecerá los resultados conjuntos, advirtiendo tal circunstancia.
 - Debe ser posible, a partir de los resultados de un proceso electoral, ofrecer las combinaciones de partidos o coaliciones que otorgan mayoría absoluta.
@@ -36,7 +33,7 @@ Se enviará un archivo en formato comprimido que contenga:
 - Todos los archivos fuentes (.java y .form).
 - Un archivo ejecutable de java (.jar) para lanzar la aplicación.
 - Un archivo binario donde se encuentren datos cargados (varios Partidos políticos con Votantes, Militantes y Simpatizantes, varias Coaliciones, varias Elecciones con distintas Circunscripciones, etc.), de cara a hacer simulaciones.
-Programación Orientada a Objetos – Curso 2015/2016
+
 ANEXO: LEY D´HONDT
 - Explicación Ley D´Hondt: https://es.wikipedia.org/wiki/Sistema_d%27Hondt
 - Ejemplo de aplicación Ley D´Hondt: http://cadpea.ugr.es/Doc_AtribucionEsc.aspx
